@@ -1,8 +1,6 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/gchem/gchem_forcing_sep.F,v 1.7 2004/11/18 23:31:00 mlosch Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/gchem/gchem_forcing_sep.F,v 1.8 2004/11/19 20:17:48 mlosch Exp $
 C $Name:  $
 
-#include "CPP_OPTIONS.h"
-#include "PTRACERS_OPTIONS.h"
 #include "GCHEM_OPTIONS.h"
 
 CBOP

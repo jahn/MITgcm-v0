@@ -1,7 +1,6 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/gchem/gchem_readparms.F,v 1.4 2003/10/09 04:19:19 edhill Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/gchem/gchem_readparms.F,v 1.5 2004/11/19 20:17:48 mlosch Exp $
 C $Name:  $
 
-#include "PTRACERS_OPTIONS.h"
 #include "GCHEM_OPTIONS.h"
 
 CBOP
@@ -11,7 +10,7 @@ C !INTERFACE: ==========================================================
       SUBROUTINE GCHEM_READPARMS( myThid )
 
 C !DESCRIPTION:
-C     Initialize PTRACERS parameters, read in data.gchem
+C     Initialize GCHEM parameters, read in data.gchem
 
 C !USES: ===============================================================
       IMPLICIT NONE
