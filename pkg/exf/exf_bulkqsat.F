@@ -1,4 +1,4 @@
-c $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/exf/Attic/exf_bulkqsat.F,v 1.1 2001/05/14 22:08:40 heimbach Exp $
+c $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/exf/Attic/exf_bulkqsat.F,v 1.1.6.1 2003/03/07 03:33:24 heimbach Exp $
 
 #include "EXF_CPPOPTIONS.h"
 

@@ -1,4 +1,4 @@
-c $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/exf/exf_getforcing.F,v 1.2.6.2 2003/02/13 19:28:38 dimitri Exp $
+c $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/exf/exf_getforcing.F,v 1.2.6.3 2003/03/07 03:33:24 heimbach Exp $
 
 #include "CPP_OPTIONS.h"
 

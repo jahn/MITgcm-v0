@@ -1,4 +1,4 @@
-c $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/exf/exf_getffields.F,v 1.2.6.7 2003/03/03 17:27:31 heimbach Exp $
+c $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/exf/exf_getffields.F,v 1.2.6.8 2003/03/07 03:33:24 heimbach Exp $
 
 #include "EXF_CPPOPTIONS.h"
 
@@ -592,8 +592,9 @@ c             Salt flux from Precipitation and Evaporation.
 c     Update the tile edges.
       _EXCH_XY_R8(hflux,   mythid)
       _EXCH_XY_R8(sflux,   mythid)
-      _EXCH_XY_R8(ustress, mythid)
-      _EXCH_XY_R8(vstress, mythid)
+c      _EXCH_XY_R8(ustress, mythid)
+c      _EXCH_XY_R8(vstress, mythid)
+       CALL EXCH_UV_XY_RL(ustress, vstress, .TRUE., myThid)
 
 #ifdef SHORTWAVE_HEATING
       _EXCH_XY_R8(swflux, mythid)

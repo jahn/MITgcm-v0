@@ -1,4 +1,4 @@
-c $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/exf/exf_mapfields.F,v 1.1.6.3 2003/02/13 19:28:38 dimitri Exp $
+c $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/exf/exf_mapfields.F,v 1.1.6.4 2003/03/07 03:33:24 heimbach Exp $
 
 #include "EXF_CPPOPTIONS.h"
 
@@ -212,8 +212,9 @@ c     Update the tile edges.
 
       _EXCH_XY_R4(  qnet, mythid )
       _EXCH_XY_R4( empmr, mythid )
-      _EXCH_XY_R4(    fu, mythid )
-      _EXCH_XY_R4(    fv, mythid )
+c      _EXCH_XY_R4(    fu, mythid )
+c      _EXCH_XY_R4(    fv, mythid )
+       CALL EXCH_UV_XY_RS(fu, fv, .TRUE., myThid)
 #ifdef SHORTWAVE_HEATING
       _EXCH_XY_R4(   qsw, mythid )
 #endif

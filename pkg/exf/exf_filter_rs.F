@@ -1,4 +1,4 @@
-c $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/exf/Attic/exf_filter_rs.F,v 1.1.6.2 2003/02/13 19:28:38 dimitri Exp $
+c $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/exf/Attic/exf_filter_rs.F,v 1.1.6.3 2003/03/07 03:33:24 heimbach Exp $
 
 #include "EXF_CPPOPTIONS.h"
 
