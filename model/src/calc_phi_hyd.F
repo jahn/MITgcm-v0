@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/Attic/calc_phihyd.F,v 1.2 1998/08/20 18:43:11 cnh Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/calc_phi_hyd.F,v 1.1 1998/08/20 18:47:27 cnh Exp $
 
 #include "CPP_EEOPTIONS.h"
 
