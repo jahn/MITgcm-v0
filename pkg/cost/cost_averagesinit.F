@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/cost/Attic/cost_averagesinit.F,v 1.1.2.5 2003/06/19 15:21:16 heimbach Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/cost/Attic/cost_averagesinit.F,v 1.1.2.6 2003/06/20 05:19:17 heimbach Exp $
 
 #include "COST_CPPOPTIONS.h"
 
@@ -74,6 +74,7 @@ c--       Initialise surface pressure average.
 #endif
 
 #if (defined (ALLOW_THETA_COST_CONTRIBUTION) || \
+     defined (ALLOW_SST_COST_CONTRIBUTION) || \
      defined (ALLOW_CTDT_COST_CONTRIBUTION) || \
      defined (ALLOW_CTDTCLIM_COST_CONTRIBUTION) || \
      defined (ALLOW_XBT_COST_CONTRIBUTION) || \
@@ -88,20 +89,10 @@ c--       Initialise temperature average (3d).
             enddo
           enddo
           xx_tbar_mean_dummy = 0. _d 0
-#else
-#ifdef ALLOW_SST_COST_CONTRIBUTION
-c--       Initialise temperature average (2d).
-          k = 1
-          do j = jmin,jmax
-            do i =  imin,imax
-              tbar(i,j,bi,bj) = 0. _d 0
-            enddo
-          enddo
-          xx_tbar_mean_dummy = 0. _d 0
-#endif
 #endif
 
 #if (defined (ALLOW_SALT_COST_CONTRIBUTION) || \
+     defined (ALLOW_SSS_COST_CONTRIBUTION) || \
      defined (ALLOW_CTDS_COST_CONTRIBUTION) || \
      defined (ALLOW_CTDSCLIM_COST_CONTRIBUTION) || \
      defined (ALLOW_DRIFT_COST_CONTRIBUTION) || \
@@ -115,17 +106,6 @@ c--       Initialise salt average.
             enddo
           enddo
           xx_sbar_mean_dummy = 0. _d 0
-#else
-#ifdef ALLOW_SSS_COST_CONTRIBUTION
-c--       Initialise salinity average (2d).
-          k = 1
-          do j = jmin,jmax
-            do i =  imin,imax
-              sbar(i,j,bi,bj) = 0. _d 0
-            enddo
-          enddo
-          xx_sbar_mean_dummy = 0. _d 0
-#endif          
 #endif
 
 #if (defined (ALLOW_DRIFTER_COST_CONTRIBUTION) || \
