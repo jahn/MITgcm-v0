@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/ini_salt.F,v 1.4 1998/06/10 01:44:03 cnh Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/ini_salt.F,v 1.5 1998/06/15 05:13:56 cnh Exp $
 
 #include "CPP_EEOPTIONS.h"
 
@@ -82,5 +82,8 @@ C
       _EXCH_XYZ_R8(salt  , myThid )
       _EXCH_XYZ_R8(gs , myThid )
       _EXCH_XYZ_R8(gsNM1 , myThid )
+
+      CALL PLOT_FIELD_XYZRL( salt, 'Initial Salinity' , Nz, 1, myThid )
+
       RETURN
       END
