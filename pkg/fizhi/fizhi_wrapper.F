@@ -1,3 +1,7 @@
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/fizhi/fizhi_wrapper.F,v 1.4 2004/05/04 19:27:55 molod Exp $
+C $Name:  $
+
+#include "CPP_OPTIONS.h"
        subroutine fizhi_wrapper (myTime, myIter, myThid)
 c-----------------------------------------------------------------------
 c  Subroutine fizhi_wrapper - 'Wrapper' routine to interface
@@ -12,7 +16,6 @@ c        phys2dyn (4 calls - all physics tendencies)
 c        AtoC (u and v tendencies)
 c-----------------------------------------------------------------------
        implicit none
-#include "CPP_OPTIONS.h"
 #include "SIZE.h"
 #include "GRID.h"
 #include "land_SIZE.h"
