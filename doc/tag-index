@@ -1,8 +1,9 @@
-$Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/doc/tag-index,v 1.53.4.36 2003/04/30 08:23:07 dimitri Exp $
+$Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/doc/tag-index,v 1.53.4.37 2003/05/02 03:00:25 dimitri Exp $
 
     Notes on tags used in MITgcmUV
     ==============================
 
+ecco_c50_e30
 o corrected CPP option mismatch in exf_Bulk... functions for case 
   #define ALLOW_ATM_WIND && #undef ALLOW_ATM_TEMP
 o Merging from release1_p13 and from icebear5
