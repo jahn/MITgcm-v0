@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/inc/CPP_OPTIONS.h,v 1.19.4.3 2003/01/31 05:06:50 dimitri Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/inc/CPP_OPTIONS.h,v 1.19.4.4 2003/05/01 06:10:19 dimitri Exp $
 C $Name:  $
 
   These lines are here to deliberately cause a compile-time error.
@@ -18,6 +18,9 @@ C !DESCRIPTION:
 C CPP flags controlling which code in included in the files that
 C will be compiled.
 CEOP
+
+C o Include/exclude code for direct surface pressure solver
+#undef  ALLOW_DIRECT_SOLVER
 
 C o Include/exclude code for AIM package
 #undef  ALLOW_AIM

@@ -1,4 +1,4 @@
-c $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/exf/Attic/exf_param.h,v 1.1.4.7 2003/05/01 00:01:16 dimitri Exp $
+c $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/exf/Attic/exf_param.h,v 1.1.4.8 2003/05/01 06:10:19 dimitri Exp $
 c
 c
 c     ==================================================================
@@ -388,7 +388,7 @@ c for lat interpolation, arraysize currently set to 200 max data values
      & swflux_nlon, swflux_nlat,
      & runoff_lon0, runoff_lon_inc,
      & runoff_lat0, runoff_lat_inc,
-     & runoff_nlon, runoff_nlat
+     & runoff_nlon, runoff_nlat,
      & atemp_lat0, atemp_lat_inc,
      & atemp_nlon, atemp_nlat,
      & aqh_lon0, aqh_lon_inc,

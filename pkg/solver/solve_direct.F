@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/solver/Attic/solve_direct.F,v 1.1.2.1 2003/05/01 00:01:16 dimitri Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/solver/Attic/solve_direct.F,v 1.1.2.2 2003/05/01 06:10:19 dimitri Exp $
 
 #include "CPP_OPTIONS.h"
 
@@ -41,7 +41,8 @@ C     myThid - Thread on which I am working.
       _RL  cg2d_b(1-OLx:sNx+OLx,1-OLy:sNy+OLy,nSx,nSy)
       integer myThid
 
-#if defined(ALLOW_USE_MPI)
+#ifdef ALLOW_DIRECT_SOLVER
+#ifdef ALLOW_USE_MPI
 
 C     === Local variables ====
 C     bi, bj      - Block index in X and Y.
@@ -317,6 +318,7 @@ C--   Un-normalise the answer
         ENDDO
       ENDIF
 
-#endif
+#endif /* ALLOW_USE_MPI */
+#endif /* ALLOW_DIRECT_SOLVER */
 
       end

@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/solver/Attic/solve_check.F,v 1.1.2.1 2003/05/01 00:01:16 dimitri Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/solver/Attic/solve_check.F,v 1.1.2.2 2003/05/01 06:10:19 dimitri Exp $
 
 #include "CPP_OPTIONS.h"
 
@@ -29,8 +29,8 @@ C     !LOCAL VARIABLES:
 C     == Local variables ==
       CHARACTER*(MAX_LEN_MBUF) msgBuf
 
-
-#if defined(ALLOW_USE_MPI)
+#ifdef ALLOW_DIRECT_SOLVER
+#ifdef ALLOW_USE_MPI
 
 C     === Local variables ====
 C     bi, bj      - Block index in X and Y.
@@ -69,6 +69,7 @@ C      write(0,*) 'cg2d: Ax - b = ', sqrt(err)
       WRITE(msgBuf,'(A34,1PE24.14)') 'cg2d: Ax - b =',sqrt(err)
       CALL PRINT_MESSAGE(msgBuf,standardMessageUnit,SQUEEZE_RIGHT,1)
 
-#endif
+#endif /* ALLOW_USE_MPI */
+#endif /* ALLOW_DIRECT_SOLVER */
 
       end

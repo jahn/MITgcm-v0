@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/packages_check.F,v 1.9.4.3 2003/01/31 05:06:50 dimitri Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/packages_check.F,v 1.9.4.4 2003/05/01 06:10:19 dimitri Exp $
 C $Name:  $
 
 #include "CPP_OPTIONS.h"
@@ -82,6 +82,11 @@ CEOP
       IF (useSEAICE) CALL SEAICE_CHECK( myThid )
 #else
       IF (useSEAICE) CALL PACKAGES_CHECK_ERROR('SEAICE', myThid)
+#endif
+
+#ifndef ALLOW_DIRECT_SOLVER
+      IF (useDirectSolver)
+     &     CALL PACKAGES_CHECK_ERROR('DirectSolver', myThid)
 #endif
 
       RETURN

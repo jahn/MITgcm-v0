@@ -1,4 +1,4 @@
-c $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/exf/exf_readparms.F,v 1.1.4.9 2003/05/01 00:01:16 dimitri Exp $
+c $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/exf/exf_readparms.F,v 1.1.4.10 2003/05/01 06:10:19 dimitri Exp $
 
 #include "EXF_CPPOPTIONS.h"
 #ifdef ALLOW_OBCS
@@ -120,8 +120,8 @@ c     Surface flux data.
      & swflux_nlon, swflux_nlat,
      & runoff_lon0, runoff_lon_inc,
      & runoff_lat0, runoff_lat_inc,
-     & runoff_nlon, runoff_nlat
-     & ,atemp_lon0, atemp_lon_inc,
+     & runoff_nlon, runoff_nlat,
+     & atemp_lon0, atemp_lon_inc,
      & atemp_lat0, atemp_lat_inc,
      & atemp_nlon, atemp_nlat,
      & aqh_lon0, aqh_lon_inc,

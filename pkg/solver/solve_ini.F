@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/solver/Attic/solve_ini.F,v 1.1.2.1 2003/05/01 00:01:16 dimitri Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/solver/Attic/solve_ini.F,v 1.1.2.2 2003/05/01 06:10:19 dimitri Exp $
 
 #include "CPP_OPTIONS.h"
 
@@ -32,7 +32,8 @@ C     === Routine arguments ===
 C     myThid - Thread on which I am working.
       integer myThid
 
-#if defined(ALLOW_USE_MPI)
+#ifdef ALLOW_DIRECT_SOLVER
+#ifdef ALLOW_USE_MPI
 
 C     === Local variables ====
 C     bi, bj      - Block index in X and Y.
@@ -419,6 +420,7 @@ C--   Check info for error conditions
 #endif
       endif
 
-#endif
+#endif /* ALLOW_USE_MPI */
+#endif /* ALLOW_DIRECT_SOLVER */
 
       end
