@@ -1,4 +1,4 @@
-c $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/exf/exf_getffieldrec.F,v 1.11 2004/10/11 16:41:01 heimbach Exp $
+c $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/exf/exf_getffieldrec.F,v 1.12 2004/10/18 14:59:38 jmc Exp $
 
 #include "EXF_OPTIONS.h"
 
@@ -59,8 +59,8 @@ c     == routine arguments ==
 
       _RL     fldstartdate
       _RL     fldperiod
-      _RL     fldstartdate1
-      _RL     fldstartdate2
+      integer fldstartdate1
+      integer fldstartdate2
       logical usefldyearlyfields
       _RL     fac
       logical first
