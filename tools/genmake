@@ -1,6 +1,6 @@
 #!/bin/csh -f
 #
-# $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/tools/Attic/genmake,v 1.33 2001/03/06 16:12:45 jmc Exp $
+# $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/tools/Attic/genmake,v 1.33.2.1 2001/03/20 16:53:31 adcroft Exp $
 #
 # Makefile generator for MITgcm UV codes
 #   created  by cnh 03/98
@@ -180,7 +180,10 @@ foreach dr ($SOURCEDIRS)
   echo Adding mods directory $adr
 end
 if (! $?PACKAGES) then
-  set PACKAGES=(`cd $ROOTDIR/pkg; ls -1 | grep -v CVS`)
+  set PACKAGES=()
+  foreach pkg (`cd $ROOTDIR/pkg; ls -1 | grep -v CVS`)
+   if (-d $ROOTDIR/pkg/$pkg) set PACKAGES=($PACKAGES $pkg)
+  end
 endif
 foreach dr ($PACKAGES)
   set enable
