@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/convective_adjustment.F,v 1.8.2.3 2002/05/21 00:03:01 heimbach Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/convective_adjustment.F,v 1.8.2.4 2002/05/30 22:17:20 heimbach Exp $
 C $Name:  $
 
 #include "CPP_OPTIONS.h"
@@ -83,8 +83,9 @@ C-      Initialisation of Convection Counter
 #endif /* ALLOW_AUTODIFF_TAMC */
 
 #ifdef  ALLOW_KPP
+C-        CONVECT not needed with KPP mixing
         IF ( 
-     &      (.NOT.useKPP) ! CONVECT not needed with KPP mixing
+     &      (.NOT.useKPP)
      &     ) THEN
 #endif  /* ALLOW_KPP */
 
