@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/shap_filt/shap_filt_readparms.F,v 1.1.2.1 2001/05/07 17:08:53 jmc Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/shap_filt/shap_filt_readparms.F,v 1.1.2.2 2001/05/07 18:21:49 adcroft Exp $
 C $Name:  $
 
 #include "SHAP_FILT_OPTIONS.h"
@@ -22,7 +22,7 @@ C     === Routine arguments ===
 
 #ifdef ALLOW_SHAP_FILT
 
-      NAMELIST /SHAP_PARM01/ nShap, Shap_funct,
+      NAMELIST /SHAP_PARM01/ nShapT, nShapUV, Shap_funct,
      &          Shap_Trtau, Shap_TrDamp,
      &          Shap_uvtau, Shap_uvDamp 
 
@@ -48,7 +48,8 @@ c     SHAPIsOn=.TRUE.
      I                          myThid )
 
 C--   Default flags and values for Shapiro Filter
-      nShap = 0
+      nShapT = 0
+      nShapUV = 0
       Shap_funct = 1
       Shap_Trtau = deltaTtracer
       Shap_uvtau = deltaTMom

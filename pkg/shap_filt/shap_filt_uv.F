@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/shap_filt/Attic/shap_filt_uv.F,v 1.3.2.4 2001/05/07 17:08:53 jmc Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/shap_filt/Attic/shap_filt_uv.F,v 1.3.2.5 2001/05/07 18:21:49 adcroft Exp $
 C $Name:  $
 
 #include "SHAP_FILT_OPTIONS.h"
@@ -40,7 +40,7 @@ C     == Local variables ==
       _RL tmpScal
 #endif
 
-      IF (nShap.gt.0) THEN
+      IF (nShapUV.gt.0) THEN
 
         DO bj=myByLo(myThid),myByHi(myThid)
          DO bi=myBxLo(myThid),myBxHi(myThid)
@@ -64,7 +64,7 @@ C     == Local variables ==
 
 C      d_xx^n tmpFld 
 
-       DO N=1,nShap
+       DO N=1,nShapUV
 
         CALL EXCH_UV_XYZ_RL(tmpFldU,tmpFldV,.TRUE.,myThid)
 
@@ -148,7 +148,7 @@ C      F <-  [1-d_xx^n]F
 
 C      d_yy^n tmpFld 
 
-       DO N=1,nShap
+       DO N=1,nShapUV
 
         CALL EXCH_UV_XYZ_RL(tmpFldU,tmpFldV,.TRUE.,myThid)
 

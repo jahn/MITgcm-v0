@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/shap_filt/shap_filt_tracerold.F,v 1.3.2.1 2001/05/07 17:08:53 jmc Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/shap_filt/shap_filt_tracerold.F,v 1.3.2.2 2001/05/07 18:21:49 adcroft Exp $
 C $Name:  $
 
 #include "SHAP_FILT_OPTIONS.h"
@@ -40,7 +40,7 @@ C     == Local variables ==
       ENDDO
 
 C     Extract small-scale noise from tmpFldX (delta_ii^n)
-      DO N=1,nShap
+      DO N=1,nShapT
        N1=1+mod(N+1,2)
        N2=1+mod( N ,2)
        DO J=1-OLy,sNy+OLy
@@ -70,7 +70,7 @@ C     Extract small-scale noise from tmpFldX (delta_ii^n)
 #endif /* SEQUENTIAL_2D_SHAP */
 
 C     Extract small-scale noise from tmpFldY (delta_jj^n)
-      DO N=1,nShap
+      DO N=1,nShapT
        N1=1+mod(N+1,2)
        N2=1+mod( N ,2)
        DO J=1-OLy+1,sNy+OLy-1

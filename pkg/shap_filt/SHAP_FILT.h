@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/shap_filt/SHAP_FILT.h,v 1.1.2.1 2001/05/07 17:08:53 jmc Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/shap_filt/SHAP_FILT.h,v 1.1.2.2 2001/05/07 18:21:49 adcroft Exp $
 C $Name:  $
 
 #ifdef ALLOW_SHAP_FILT
@@ -8,8 +8,8 @@ C     Shap_funct : define which Shapiro Filter function is used
 C        = 1  (S1) : [1 - d_xx^n - d_yy^n]
 C        = 4  (S4) : [1 - d_xx^n][1- d_yy^n]
 C        = 2  (S2) : [1 - (d_xx+d_yy)^n]
-      INTEGER nShap, Shap_funct
-      COMMON /SHAP_FILT_INT/ nShap, Shap_funct
+      INTEGER nShapT, nShapUV, Shap_funct
+      COMMON /SHAP_FILT_INT/ nShapT, nShapUV, Shap_funct
 
 C     Shapiro Filter parameters
       _RL Shap_Trtau, Shap_TrDamp

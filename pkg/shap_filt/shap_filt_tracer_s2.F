@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/shap_filt/shap_filt_tracer_s2.F,v 1.1.2.3 2001/05/07 17:08:53 jmc Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/shap_filt/shap_filt_tracer_s2.F,v 1.1.2.4 2001/05/07 18:21:49 adcroft Exp $
 C $Name:  $
 
 #include "SHAP_FILT_OPTIONS.h"
@@ -34,7 +34,7 @@ C     == Local variables ==
       INTEGER bi,bj,K,I,J,N
       _RL tmpGrd(1-OLx:sNx+OLx,1-OLy:sNy+OLy)
 
-      IF (nShap.gt.0) THEN
+      IF (nShapT.gt.0) THEN
 
         DO bj=myByLo(myThid),myByHi(myThid)
          DO bi=myBxLo(myThid),myBxHi(myThid)
@@ -51,7 +51,7 @@ C     == Local variables ==
 
 C      ( d_xx +d_yy )^n tmpFld 
 
-       DO N=1,nShap
+       DO N=1,nShapT
 
         _EXCH_XYZ_R8( tmpFld, myThid )
 
