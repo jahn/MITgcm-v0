@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/shap_filt/Attic/shap_filt_uv.F,v 1.3.2.2 2001/04/12 10:52:50 cnh Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/shap_filt/Attic/shap_filt_uv.F,v 1.3.2.3 2001/05/07 16:23:58 adcroft Exp $
 C $Name:  $
 
 #include "SHAP_FILT_OPTIONS.h"
@@ -288,8 +288,6 @@ C      F <-  [1-d_yy^n]F
          ENDDO
         ENDDO
        ENDDO
-
-      CALL EXCH_UV_XYZ_RL(tmpFldU,tmpFldV,.TRUE.,myThid)
 
       ENDIF
 #endif /* ALLOW_SHAP_FILT */
