@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/Attic/ini_garrays.F,v 1.1.2.2 2001/03/16 16:54:50 adcroft Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/Attic/ini_garrays.F,v 1.1.2.3 2001/03/30 23:23:42 jmc Exp $
 C $Name:  $
 
 #include "CPP_OPTIONS.h"
@@ -68,9 +68,7 @@ C-      3D arrays
 C-      2D arrays
         DO J=1-Oly,sNy+Oly
          DO I=1-Olx,sNx+Olx
-#ifdef INCLUDE_CD_CODE
           etaNm1(I,J,bi,bj)=0.
-#endif
          ENDDO
         ENDDO
 
