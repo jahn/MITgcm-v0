@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/inc/PARAMS.h,v 1.45.2.3 2001/01/24 16:56:06 adcroft Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/inc/PARAMS.h,v 1.45.2.4 2001/01/26 22:18:45 adcroft Exp $
 C
 C     /==========================================================\
 C     | PARAMS.h                                                 |
@@ -378,7 +378,8 @@ C                          starting value (k=1) for vertical coordinate (rf(1)=R
      & externForcingCycle, externForcingPeriod,
      & viscAp, diffKpT, diffKpS, hFacMinDr, hFacMinDp,
      & theta_S, specVol_S, horiVertRatio, recip_horiVertRatio,
-     & latFFTFiltLo, ivdc_kappa, Ro_SeaLevel, zonal_filt_lat
+     & latFFTFiltLo, ivdc_kappa, Ro_SeaLevel, zonal_filt_lat,
+     & bottomDragLinear,bottomDragQuadratic
 
       _RL cg2dTargetResidual
       _RL cg3dTargetResidual
@@ -461,6 +462,8 @@ C                          starting value (k=1) for vertical coordinate (rf(1)=R
       _RL ivdc_kappa
       _RL Ro_SeaLevel
       _RL zonal_filt_lat
+      _RL bottomDragLinear
+      _RL bottomDragQuadratic
 
       COMMON /PARM_A/ HeatCapacity_Cp,recip_Cp,
      &                Lamba_theta
