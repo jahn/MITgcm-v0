@@ -1,4 +1,4 @@
-c $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/exf/Attic/exf_set_climsst.F,v 1.1.6.4 2003/02/13 19:28:38 dimitri Exp $
+c $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/exf/Attic/exf_set_climsst.F,v 1.1.6.5 2003/03/04 00:17:40 heimbach Exp $
 
 #include "EXF_CPPOPTIONS.h"
 
@@ -178,7 +178,7 @@ c     == end of interface ==
         do bi = mybxlo(mythid), mybxhi(mythid)
           do j = 1, sny
             do i = 1, snx
-              climsst (i,j,bi,bj) = 0. _d 0
+              climsst (i,j,bi,bj) = climsstconst
               climsst0(i,j,bi,bj) = 0. _d 0
               climsst1(i,j,bi,bj) = 0. _d 0
             enddo
