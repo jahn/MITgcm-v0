@@ -1,4 +1,9 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/verification/global_ocean.90x40x15/code_ad/CPP_OPTIONS.h,v 1.4 2003/10/21 15:29:20 edhill Exp $
+C
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/verification/global_ocean.90x40x15/code_ad/CPP_OPTIONS.h,v 1.5 2003/10/23 04:41:41 edhill Exp $
+C $Name:  $
+
+#include "AD_CONFIG.h"
+
 C
 C CPP flags controlling which code in included in the files that
 C will be compiled.

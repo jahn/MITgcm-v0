@@ -1,5 +1,8 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/ecco/ecco_readparms.F,v 1.5 2002/07/13 02:10:04 heimbach Exp $
+C
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/ecco/ecco_readparms.F,v 1.6 2003/10/23 04:41:40 edhill Exp $
+C $Name:  $
 
+#include "AD_CONFIG.h"
 #include "CPP_OPTIONS.h"
 
 

@@ -1,3 +1,9 @@
+C
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/verification/carbon/code/Attic/ECCO_CPPOPTIONS.h,v 1.8 2003/10/23 04:41:41 edhill Exp $
+C $Name:  $
+
+#include "AD_CONFIG.h"
+
 C 
 C CPP flags controlling which code is included in the files that
 C will be compiled.

@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/the_model_main.F,v 1.60 2003/10/09 04:19:18 edhill Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/the_model_main.F,v 1.61 2003/10/23 04:41:40 edhill Exp $
 C $Name:  $
 
 CBOI
@@ -402,6 +402,7 @@ C
 CEOI
 
 
+#include "AD_CONFIG.h"
 #include "PACKAGES_CONFIG.h"
 #include "CPP_OPTIONS.h"
 
