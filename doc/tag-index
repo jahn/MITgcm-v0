@@ -1,9 +1,16 @@
-$Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/doc/tag-index,v 1.53.4.51 2003/07/03 07:29:38 dimitri Exp $
+$Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/doc/tag-index,v 1.53.4.52 2003/07/07 16:34:38 heimbach Exp $
 
     Notes on tags used in MITgcmUV
     ==============================
 
-untagged
+ecco_c51_e34b
+o Modifications of obcs
+  - bug fixes in cost package
+  - bug fixes in grdchk package
+o new parameter maxKPPhbl in KPP
+o added input for obcs verification
+
+ecco_c51_e34a
 o Modifications to pkg/seaice, verification/lab_sea, and
   verification/natl_box_adjoint for testing sea-ice adjoint code.
 
