@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/kpp/KPP.h,v 1.2 2000/09/12 18:13:48 heimbach Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/kpp/KPP.h,v 1.3 2000/09/13 17:07:10 heimbach Exp $
 
 #ifdef ALLOW_KPP
 
