@@ -1,4 +1,4 @@
-# $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/verification/hs94.cs-32x32x5/input/Attic/.genmakerc,v 1.1.2.1 2001/04/10 02:16:41 adcroft Exp $
+# $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/verification/hs94.cs-32x32x5/input/Attic/.genmakerc,v 1.1.2.2 2001/04/10 03:20:09 cnh Exp $
 # $Name:  $
 
 # Disable packages that are not needed
@@ -10,3 +10,4 @@ set ENABLE=( $ENABLE )
 # We can also specify other defaults
 set ROOTDIR=../../..
 set MODS=../code
+
