@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/debug/debug_stats_rs.F,v 1.3 2003/10/09 04:19:19 edhill Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/debug/debug_stats_rs.F,v 1.4 2004/12/14 16:54:08 edhill Exp $
 C $Name:  $
 
 #include "DEBUG_OPTIONS.h"
@@ -46,7 +46,7 @@ C     === Local variables ====
      &      'DEBUG_STATS_RS: ',arrName,' mean=',theMean
       WRITE(*,'(A,A30,A,1PE22.14)')
      &      'DEBUG_STATS_RS: ',arrName,' S.D.=',theSD
-      _END_MASTER( )
+      _END_MASTER( myThid )
 
       RETURN
       END
