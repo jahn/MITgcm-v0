@@ -1,6 +1,6 @@
 #!/bin/csh -f
 #
-# $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/tools/Attic/genmake,v 1.33.2.2 2001/03/22 15:14:48 adcroft Exp $
+# $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/tools/Attic/genmake,v 1.33.2.3 2001/03/22 15:27:22 adcroft Exp $
 #
 # Makefile generator for MITgcm UV codes
 #   created  by cnh 03/98
@@ -194,6 +194,11 @@ foreach dr ($PACKAGES)
    endif
    if ($dr == $p) unset enable
    if ($p == 'all') unset enable
+#  The following allows entire trees to be disabled
+   if ($dr:h == $p) unset enable
+   if ($dr:h:h == $p) unset enable
+   if ($dr:h:h:h == $p) unset enable
+   if ($dr:h:h:h:h == $p) unset enable
   end
   foreach p ($ENABLE)
    if ($dr == $p) set enable
