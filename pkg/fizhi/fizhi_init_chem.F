@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/fizhi/fizhi_init_chem.F,v 1.12 2004/08/05 20:09:48 molod Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/fizhi/fizhi_init_chem.F,v 1.13 2004/08/05 20:11:11 molod Exp $
 C $Name:  $
 
 #include "FIZHI_OPTIONS.h"
@@ -170,7 +170,9 @@ c -------------------------------------
 C Note: 2 quantities in Ozone Dataset
       nrec = lev+(time-1)*nlev*2   
       read(ku,rec=nrec) o3
+#if defined( _BYTESWAPIO )
       call mds_byteswapr4(nlat,o3)
+#endif
            do lat=1,nlat
            oz(lat,nlev-lev+1,time) = o3(lat)
            enddo
