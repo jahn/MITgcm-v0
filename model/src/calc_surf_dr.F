@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/calc_surf_dr.F,v 1.3 2001/09/26 18:09:14 cnh Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/calc_surf_dr.F,v 1.4 2002/01/30 04:12:12 jmc Exp $
 C $Name:  $
 
 #include "CPP_OPTIONS.h"
@@ -60,7 +60,7 @@ CEOP
 
 C---+----1----+----2----+----3----+----4----+----5----+----6----+----7-|--+----|
 
-      IF (myIter.EQ.nIter0) THEN
+      IF (myIter.EQ.-1) THEN
 
        hFacInfMOM = hFacInf
 
