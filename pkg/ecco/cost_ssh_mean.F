@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/ecco/Attic/cost_ssh_mean.F,v 1.1 2003/11/06 22:10:08 heimbach Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/ecco/Attic/cost_ssh_mean.F,v 1.2 2004/10/11 16:38:53 heimbach Exp $
 
 #include "COST_CPPOPTIONS.h"
 
