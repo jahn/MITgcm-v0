@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/Attic/calc_mom_rhs.F,v 1.42.2.5 2001/01/17 15:05:59 jmc Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/Attic/calc_mom_rhs.F,v 1.42.2.6 2001/01/17 21:33:53 jmc Exp $
 
 #include "CPP_OPTIONS.h"
 
@@ -890,6 +890,13 @@ C     Pressure extrapolated forward in time
      &  +ab05*(cg2d_xNM1(i,j,bi,bj)*gBaro )
        ENDDO
       ENDDO
+      IF (staggerTimeStep) THEN
+       DO j=jMin,jMax
+        DO i=iMin,iMax
+         pf(i,j) = pf(i,j)+phi_hyd(i,j,k)*recip_rhoConst
+        ENDDO
+       ENDDO
+      ENDIF
 #endif /* INCLUDE_CD_CODE */
 C--   Zonal velocity coriolis term
 C     Note. As coded here, coriolis will not work with "thin walls"
