@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/gmredi/gmredi_calc_tensor.F,v 1.7.4.4 2003/03/07 03:57:33 heimbach Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/gmredi/gmredi_calc_tensor.F,v 1.7.4.5 2003/03/08 00:08:52 heimbach Exp $
 C $Name:  $
 
 #include "GMREDI_OPTIONS.h"
@@ -280,6 +280,7 @@ C     Gradient of Sigma at U points
       ENDDO
 
 #ifdef ALLOW_AUTODIFF_TAMC
+CADJ STORE SlopeSqr(:,:)       = comlev1_bibj_k, key=kkey, byte=isbyte
 CADJ STORE dSigmaDx(:,:)       = comlev1_bibj_k, key=kkey, byte=isbyte
 CADJ STORE dSigmaDy(:,:)       = comlev1_bibj_k, key=kkey, byte=isbyte
 CADJ STORE dsigmadrreal(:,:)   = comlev1_bibj_k, key=kkey, byte=isbyte
@@ -297,6 +298,7 @@ C     Calculate slopes for use in tensor, taper and/or clip
 cph( NEW
 #ifdef ALLOW_AUTODIFF_TAMC
 cph(
+CADJ STORE SlopeSqr(:,:)       = comlev1_bibj_k, key=kkey, byte=isbyte
 CADJ STORE taperfct(:,:)       = comlev1_bibj_k, key=kkey, byte=isbyte
 cph)
 #endif /* ALLOW_AUTODIFF_TAMC */
