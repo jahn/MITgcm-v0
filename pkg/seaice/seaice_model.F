@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/seaice/seaice_model.F,v 1.12 2003/11/06 22:13:00 heimbach Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/seaice/seaice_model.F,v 1.13 2003/11/13 06:35:15 dimitri Exp $
 C $Name:  $
 
 #include "SEAICE_OPTIONS.h"
@@ -28,7 +28,6 @@ C     === Global variables ===
 #include "FFIELDS.h"
 #include "SEAICE.h"
 #include "SEAICE_PARAMS.h"
-#include "SEAICE_EXTERNAL.h"
 
 #ifdef SEAICE_EXTERNAL_FORCING
 # include "SEAICE_FFIELDS.h"
