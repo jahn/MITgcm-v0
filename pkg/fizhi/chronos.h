@@ -1,3 +1,6 @@
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/fizhi/chronos.h,v 1.2 2004/06/16 19:22:18 molod Exp $
+C $Name:  $
+
 C **********************************************************************
 C *****                   Clock Variables                          *****
 C **********************************************************************
