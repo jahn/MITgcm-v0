@@ -1,7 +1,10 @@
-$Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/doc/tag-index,v 1.53.2.38 2003/05/22 20:49:14 dimitri Exp $
+$Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/doc/tag-index,v 1.53.2.39 2003/05/23 08:07:09 dimitri Exp $
 
     Notes on tags used in MITgcmUV
     ==============================
+
+release1_p17
+o added SEAICE_MULTILEVEL for 8-category sea-ice thermodynamics
 
 release1_p16
 o fixed gather/scatter inital MPI dialogue in ini_procs.F
