@@ -1,4 +1,4 @@
-c $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/exf/Attic/exf_bulkcdn.F,v 1.1.6.1 2003/03/07 03:33:24 heimbach Exp $
+c $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/exf/Attic/exf_bulkcdn.F,v 1.1.6.2 2003/03/25 22:50:42 heimbach Exp $
 
 #include "EXF_CPPOPTIONS.h"
 
@@ -32,7 +32,7 @@ c     ==================================================================
 
       implicit none
 
-#if (defined (ALLOW_BULKFORMULAE) && defined (ALLOW_ATM_TEMP))
+#if (defined (ALLOW_BULKFORMULAE))
 
 c     == global variables ==
 
