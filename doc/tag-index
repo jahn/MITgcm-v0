@@ -1,7 +1,18 @@
-$Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/doc/tag-index,v 1.53.4.32 2003/03/06 00:51:39 heimbach Exp $
+$Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/doc/tag-index,v 1.53.4.32.2.1 2003/03/07 22:24:06 dimitri Exp $
 
     Notes on tags used in MITgcmUV
     ==============================
+
+Branch icebear
+
+
+
+7 mar 03
+ Branched off ecco_c44_e27
+ Bug fix in pkg/ctrl/ctrl_init.F
+
+
+====================================================================
 
 ecco_c44_e27
 o exf:
