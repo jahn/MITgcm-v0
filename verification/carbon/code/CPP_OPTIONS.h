@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/verification/carbon/code/Attic/CPP_OPTIONS.h,v 1.5.4.2 2002/04/08 20:27:13 heimbach Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/verification/carbon/code/Attic/CPP_OPTIONS.h,v 1.5.4.3 2002/05/20 23:56:42 heimbach Exp $
 C
 C CPP flags controlling which code in included in the files that
 C will be compiled.
@@ -134,10 +134,13 @@ C o Read/write of checkpoint files for restarting.
 #undef OLD_STYLE_WITH_MANY_FILES
 
 C o Exact volume conservation
-#define EXACT_CONSERV
+#undef EXACT_CONSERV
 
 C o Add passive tracer advection routines
 #define ALLOW_PASSIVE_TRACER
+
+C o Include/exclude monitor package
+#define EXCLUDE_MONITOR
 
 C o Execution environment support options
 #include "CPP_EEOPTIONS.h"

@@ -1,8 +1,8 @@
-# $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/verification/carbon/code/Attic/.genmakerc,v 1.1.2.1 2002/02/26 16:05:17 adcroft Exp $
+# $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/verification/carbon/code/Attic/.genmakerc,v 1.1.2.2 2002/05/20 23:56:42 heimbach Exp $
 # $Name:  $
 
 # Disable packages that are not needed
-set DISABLE=( aim obcs zonal_filt cal exf )
+set DISABLE=( aim obcs zonal_filt cal exf monitor )
 
 # Enable packages that are needed but are disabled by default
 set ENABLE=( autodiff cost ctrl grdchk ecco kpp gmredi shap_filt )

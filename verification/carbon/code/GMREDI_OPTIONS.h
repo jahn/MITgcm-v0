@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/verification/carbon/code/Attic/GMREDI_OPTIONS.h,v 1.1.4.1 2002/04/08 20:27:13 heimbach Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/verification/carbon/code/Attic/GMREDI_OPTIONS.h,v 1.1.4.2 2002/05/20 23:56:42 heimbach Exp $
 C $Name:  $
 
 C CPP options file for GM/Redi package
@@ -14,7 +14,7 @@ C GM/Redi is enabled with ALLOW_GMREDI in CPP_OPTIONS.h
 
 C This allows the leading diagonal (top two rows) to be non-unity
 C (a feature required when tapering adiabatically).
-#define GM_NON_UNITY_DIAGONAL
+#undef GM_NON_UNITY_DIAGONAL
 
 C Allows to use different values of K_GM and K_Redi ; also to
 C be used with the advective form (Bolus velocity) of GM
