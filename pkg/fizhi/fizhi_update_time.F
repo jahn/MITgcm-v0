@@ -1,8 +1,8 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/fizhi/fizhi_update_time.F,v 1.3 2004/07/29 15:19:44 molod Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/fizhi/fizhi_update_time.F,v 1.4 2004/09/14 16:20:04 molod Exp $
 C $Name:  $
 
 #include "FIZHI_OPTIONS.h"
-      subroutine fizhi_update_time (myThid,deltat)
+      subroutine fizhi_update_time (myIter,myThid,deltat)
 C***********************************************************************
 C  Purpose
 C  -------
@@ -17,7 +17,7 @@ C***********************************************************************
 
 #include "chronos.h"
 
-      integer myThid
+      integer myIter, myThid
       _RL deltat
 
       integer ndt
