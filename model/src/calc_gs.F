@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/Attic/calc_gs.F,v 1.4 1998/05/28 03:34:52 cnh Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/Attic/calc_gs.F,v 1.5 1998/05/28 15:09:29 cnh Exp $
 
 #include "CPP_EEOPTIONS.h"
 
@@ -169,7 +169,7 @@ C           are not used.
       DO j=jMin,jMax
        DO i=iMin,iMax
         gS(i,j,k,bi,bj)=
-     &   -rHFacC(i,j,k,bi,bj)*rdzF(k)*_rdxF(i,j,bi,bj)*_rdyF(i,j,bi,bj)
+     &   -_rhFacC(i,j,k,bi,bj)*rdzF(k)*_rdxF(i,j,bi,bj)*_rdyF(i,j,bi,bj)
      &   *(
      &    +( fZon(i+1,j)-fZon(i,j) )
      &    +( fMer(i,j+1)-fMer(i,j) )
