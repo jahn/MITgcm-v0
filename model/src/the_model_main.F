@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/the_model_main.F,v 1.43.4.6 2003/02/27 22:29:13 dimitri Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/the_model_main.F,v 1.43.4.7 2003/02/28 03:32:47 dimitri Exp $
 C $Name:  $
 
 CBOI
@@ -553,7 +553,6 @@ C--   Final checkpoint (in case the in-loop checkpoint was missed)
       CALL TIMER_STOP ('WRITE_CHECKPOINT   [THE_MODEL_MAIN]',myThid)
 
       CALL TIMER_STOP ('ALL                [THE_MODEL_MAIN]',myThid)
-      
 
 C--   Write timer statistics
       IF ( myThid .EQ. 1 ) THEN
