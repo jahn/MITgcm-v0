@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/external_forcing_surf.F,v 1.7 2002/09/25 19:36:50 mlosch Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/external_forcing_surf.F,v 1.8 2002/09/25 20:04:27 mlosch Exp $
 C $Name:  $
 
 #include "CPP_OPTIONS.h"
@@ -48,7 +48,7 @@ CEOP
 
       if ( buoyancyRelation .eq. 'OCEANICP' ) then
        kSurface        = Nr 
-       convertVol2Mass = horiVertRatio
+       convertVol2Mass = gravity*rhoConstFresh
       else
        kSurface        = 1
        convertVol2Mass = 1. _d 0
