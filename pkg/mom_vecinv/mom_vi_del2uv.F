@@ -1,6 +1,7 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/mom_vecinv/mom_vi_del2uv.F,v 1.6 2004/03/08 21:20:03 adcroft Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/mom_vecinv/mom_vi_del2uv.F,v 1.7 2004/03/15 01:37:23 cnh Exp $
 C $Name:  $
 
+#include "PACKAGES_CONFIG.h"
 #include "CPP_OPTIONS.h"
 
       SUBROUTINE MOM_VI_DEL2UV(
