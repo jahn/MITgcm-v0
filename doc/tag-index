@@ -1,7 +1,17 @@
-$Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/doc/tag-index,v 1.53.2.10 2002/07/12 16:05:49 heimbach Exp $
+$Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/doc/tag-index,v 1.53.2.11 2002/10/23 18:26:35 mlosch Exp $
 
     Notes on tags used in MITgcmUV
     ==============================
+
+release1_p6
+o fixed the verification/global_ocean.90x40x15 experiment:
+ - new bathymetry (the world according to A., JMC, and M.)
+ - new initial fields and forcing fields (*.bin files)
+ - new POLY3.COEFFS (for the next release one should switch to a full
+   equation of state)
+ - fixed several errors and redundancies in the data file
+ - experiment uses looped cells
+ - added matlab directory with diagnostic scripts for plotting of output
 
 release1_p5
 o import recent fix from MAIN branch:
