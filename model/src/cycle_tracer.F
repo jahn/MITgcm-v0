@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/cycle_tracer.F,v 1.3 2001/02/04 14:38:46 cnh Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/cycle_tracer.F,v 1.4 2001/09/19 02:43:27 adcroft Exp $
 C $Name:  $
 
 #include "CPP_OPTIONS.h"
@@ -36,8 +36,7 @@ C     == Local variables ==
 C     Rotate tracer/gTracer/gTrNm1
       DO j=jMin,jMax
        DO i=iMin,iMax
-        tracer(i,j,k,bi,bj)=gTrNm1(i,j,k,bi,bj)
-        gTrNm1(i,j,k,bi,bj)=gTracer(i,j,k,bi,bj)
+        tracer(i,j,k,bi,bj)=gTracer(i,j,k,bi,bj)
        ENDDO
       ENDDO
 
