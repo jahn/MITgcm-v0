@@ -1,6 +1,6 @@
 #!/bin/csh -f
 #
-# $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/tools/Attic/genmake,v 1.22.2.6 2001/01/29 15:29:37 adcroft Exp $
+# $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/tools/Attic/genmake,v 1.22.2.7 2001/01/29 16:40:22 adcroft Exp $
 #
 # Makefile generator for MITgcm UV codes
 #   created  by cnh 03/98
@@ -120,7 +120,7 @@ echo Operating system: $mach
 if (! $?ROOTDIR) then
   set ROOTDIR = ( .. )
 else
-  if (! $?EXEDIR) set EXEDIR = ( ./ )
+  if (! $?EXEDIR) set EXEDIR = ( . )
 endif
 if (! -d $ROOTDIR) then
   echo Root directory $ROOTDIR not found.;exit 1
@@ -508,7 +508,7 @@ BUILDDIR    = ${BUILDDIR}
 SOURCEDIRS  = ${SOURCEDIRS}
 INCLUDEDIRS = ${INCLUDEDIRS}
 EXEDIR      = ${EXEDIR}
-EXECUTABLE  = \$(EXEDIR)${EXECUTABLE}
+EXECUTABLE  = \$(EXEDIR)/${EXECUTABLE}
 TOOLSDIR    = ${TOOLSDIR}
 
 EOF
