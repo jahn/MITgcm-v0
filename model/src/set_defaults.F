@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/set_defaults.F,v 1.44 2003/01/24 18:26:53 jmc Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/set_defaults.F,v 1.45 2003/02/18 05:33:54 dimitri Exp $
 C $Name:  $
 
 #include "CPP_OPTIONS.h"
@@ -135,6 +135,7 @@ Cml      sBeta               = 7.4D-4
       nonHydrostatic      = .FALSE.
       quasiHydrostatic    = .FALSE.
       globalFiles         = .FALSE.
+      useSingleCpuIO      = .FALSE.
       allowFreezing       = .FALSE.
       ivdc_kappa          = 0.D0
       groundAtK1          = .FALSE.
