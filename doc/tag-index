@@ -1,9 +1,11 @@
-$Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/doc/tag-index,v 1.53.4.18 2003/02/14 21:59:46 dimitri Exp $
+$Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/doc/tag-index,v 1.53.4.19 2003/02/14 23:10:35 dimitri Exp $
 
     Notes on tags used in MITgcmUV
     ==============================
 
 untagged
+o Added missing /* */ to CPP comments in pkg/seaice, pkg/exf,
+  kpp_transport_t.F,and ecco_the_main_loop.F
 o adjoint-friendly modifications to pkg/seaice
 
 ecco_c44_e26

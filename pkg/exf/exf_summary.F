@@ -1,4 +1,4 @@
-c $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/exf/exf_summary.F,v 1.1.6.2 2003/02/13 19:28:38 dimitri Exp $
+c $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/exf/exf_summary.F,v 1.1.6.3 2003/02/14 23:10:35 dimitri Exp $
 
 #include "EXF_CPPOPTIONS.h"
 
@@ -522,12 +522,12 @@ c--   Runoff.
      &'   >>  ',runofffile(1:il),'  <<'
       call print_message( msgbuf, standardmessageunit,
      &                    SQUEEZE_RIGHT , mythid)
-#else ALLOW_RUNOFF
+#else /* ALLOW_RUNOFF */
       write(msgbuf,'(a)')
      &'// ALLOW_RUNOFF:                   NOT defined'
       call print_message( msgbuf, standardmessageunit,
      &                    SQUEEZE_RIGHT , mythid)
-#endif ALLOW_RUNOFF
+#endif /* ALLOW_RUNOFF */
 
 #ifdef DOWNWARD_RADIATION
 c--   Downward shortwave.

@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/kpp/kpp_transport_t.F,v 1.7.6.2 2003/02/13 19:28:38 dimitri Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/kpp/kpp_transport_t.F,v 1.7.6.3 2003/02/14 23:10:35 dimitri Exp $
 C $Name:  $
 
 #include "KPP_OPTIONS.h"
@@ -38,7 +38,7 @@ C     == GLobal variables ==
 
 #ifdef ALLOW_SEAICE
 #include "SEAICE_EXTERNAL.h"
-#endif ALLOW_SEAICE
+#endif
 
 C     == Routine arguments ==
 C     iMin,iMax,jMin,  - Range of points for which calculation
@@ -77,7 +77,7 @@ C     I, J - Loop counters
      &         *recip_Cp*recip_rhoNil*recip_dRf(1)
      &         * (1.-KPPfrac(i,j,bi,bj))
      &         )
-#endif ALLOW_SEAICE
+#endif
 
        ENDDO
       ENDDO
