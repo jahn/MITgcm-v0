@@ -1,4 +1,4 @@
-c $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/exf/exf_readparms.F,v 1.1.4.4 2003/01/12 08:20:10 dimitri Exp $
+c $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/exf/exf_readparms.F,v 1.1.4.5 2003/01/12 09:18:32 dimitri Exp $
 
 #include "EXF_CPPOPTIONS.h"
 #ifdef ALLOW_OBCS
@@ -97,7 +97,8 @@ c     Surface flux data.
      &          exf_iprec,         exf_yftype,
      &           scal_hfl,           scal_ust,       scal_vst,
      &           scal_swf,           scal_sst,       scal_sss,
-     &     scal_apressure,           scal_sfl,       scal_runoff
+     &     scal_apressure,           scal_sfl,       scal_runoff,
+     &     EXFwindOnBgrid
 
       _BEGIN_MASTER(mythid)
 
@@ -243,6 +244,8 @@ c     scaling between exf units and MITgcm units
 
 cds   convert runoff from m/yr to m/s and change sign.
       scal_runoff    = -1.0/(86400.*365.0)
+c
+      EXFwindOnBgrid = .FALSE.
 
 c     Check for the availability of the right calendar version.
       if ( calendarversion .ne. usescalendarversion ) then

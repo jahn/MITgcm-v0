@@ -1,4 +1,4 @@
-# $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/verification/lab_sea/input/data.exf,v 1.1.2.2 2003/01/12 08:20:11 dimitri Exp $
+# $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/verification/lab_sea/input/data.exf,v 1.1.2.3 2003/01/12 09:18:32 dimitri Exp $
 #
 # *********************
 # External Forcing Data
@@ -78,4 +78,6 @@
 #
  exf_iprec         = 32,
  exf_yftype        = 'RL',
+#
+ EXFwindOnBgrid    = .TRUE.
  &
