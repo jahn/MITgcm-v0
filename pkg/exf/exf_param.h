@@ -1,4 +1,4 @@
-c $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/exf/Attic/exf_param.h,v 1.17 2004/04/20 19:16:48 mlosch Exp $
+c $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/exf/Attic/exf_param.h,v 1.18 2004/10/11 16:41:01 heimbach Exp $
 c
 c
 c     ==================================================================
@@ -206,6 +206,12 @@ c     File names.
       character*(128) lwdownfile
       character*(128) apressurefile
 
+      logical useExfYearlyFields
+      logical useExfCheckRange
+
+      common /exf_param_l/
+     &                          useExfYearlyFields,
+     &                          useExfCheckRange
       common /exf_param_i/
      &                          hfluxstartdate1,   hfluxstartdate2,
      &                          atempstartdate1,   atempstartdate2,
