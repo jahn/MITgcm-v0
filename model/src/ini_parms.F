@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/ini_parms.F,v 1.56.2.1 2001/04/03 02:39:18 adcroft Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/ini_parms.F,v 1.56.2.2 2001/04/04 15:52:07 adcroft Exp $
 C $Name:  $
 
 #include "CPP_OPTIONS.h"
@@ -82,7 +82,7 @@ C
 
 C--   Continuous equation parameters
       NAMELIST /PARM01/
-     & gravity, gBaro, rhonil, tAlpha, sBeta, f0, beta,
+     & gravity, gBaro, rhonil, tAlpha, sBeta, f0, beta, omega,
      & viscAh,  viscAz,  viscA4, cosPower,
      & diffKhT, diffKzT, diffK4T, 
      & diffKhS, diffKzS, diffK4S,
@@ -714,8 +714,10 @@ C--   Make metric term settings consistent with underlying grid.
        useConstantF  = .FALSE.
        useBetaPlaneF = .FALSE.
        useSphereF    = .TRUE.
-       omega         = 2.D0 * PI / ( 3600.D0 * 24.D0 )
        usingSphericalPolarMterms = metricTerms
+      ENDIF
+      IF ( usingCurvilinearGrid ) THEN
+       useSphereF    = .TRUE.
       ENDIF
 C--   p, z, r coord parameters
       DO K = 1, Nr

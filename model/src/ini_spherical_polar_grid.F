@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/ini_spherical_polar_grid.F,v 1.17.2.1 2001/03/15 15:12:57 adcroft Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/ini_spherical_polar_grid.F,v 1.17.2.2 2001/04/04 15:52:07 adcroft Exp $
 C $Name:  $
 
 #include "CPP_OPTIONS.h"
@@ -176,6 +176,7 @@ C         by formula
           dlon = delX( iGl(I,bi) )
           dlat = delY( jGl(J,bj) )
           dXG(I,J,bi,bj) = rSphere*COS(deg2rad*lat)*dlon*deg2rad
+          if (dXG(I,J,bi,bj).LT.1.) dXG(I,J,bi,bj)=0.
           dYG(I,J,bi,bj) = rSphere*dlat*deg2rad
          ENDDO
         ENDDO

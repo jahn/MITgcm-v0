@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/set_defaults.F,v 1.16.2.1 2001/04/03 02:39:18 adcroft Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/set_defaults.F,v 1.16.2.2 2001/04/04 15:52:07 adcroft Exp $
 C $Name:  $
 
 #include "CPP_OPTIONS.h"
@@ -74,6 +74,7 @@ C--   Set default "physical" parameters
       rhoNil              = 999.8D0
       f0                  = 1.D-4
       beta                = 1.D-11
+      omega               = 2.D0 * PI / ( 3600.D0 * 24.D0 )
       viscAh              = 0.D3
       diffKhT             = 0.D3
       diffKhS             = 0.D3
