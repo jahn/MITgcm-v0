@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/Attic/ini_garrays.F,v 1.1.2.1 2001/03/16 16:48:34 adcroft Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/Attic/ini_garrays.F,v 1.1.2.2 2001/03/16 16:54:50 adcroft Exp $
 C $Name:  $
 
 #include "CPP_OPTIONS.h"
@@ -14,6 +14,9 @@ C     === Global variables ===
 #include "EEPARAMS.h"
 #include "PARAMS.h"
 #include "DYNVARS.h"
+#ifdef ALLOW_NONHYDROSTATIC
+#include "GW.h"
+#endif
 
 C     == Routine arguments ==
 C     myThid -  Number of this instance of INI_UVEL 
