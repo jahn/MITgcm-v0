@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/Attic/ini_predictor.F,v 1.2 1998/08/20 16:28:44 cnh Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/Attic/ini_predictor.F,v 1.3 1998/08/22 17:51:08 cnh Exp $
 
 #include "CPP_EEOPTIONS.h"
 
@@ -21,7 +21,7 @@ C     == Local variables ==
 
       DO bj=1,nSy
        DO bi=1,nSx
-        DO k=1,Nz
+        DO k=1,Nr
          DO j=1-Oly,sNy+Oly
           DO i=1-Olx,sNx+Olx
            gUNm1(i,j,k,bi,bj)=uVel(i,j,k,bi,bj)
