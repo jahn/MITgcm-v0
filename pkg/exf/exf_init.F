@@ -1,4 +1,4 @@
-c $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/exf/Attic/exf_init.F,v 1.1.6.3 2003/02/13 19:28:38 dimitri Exp $
+c $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/exf/Attic/exf_init.F,v 1.1.6.4 2003/02/13 23:39:35 heimbach Exp $
 
 #include "EXF_CPPOPTIONS.h"
 
@@ -59,7 +59,7 @@ c     == end of interface ==
       call exf_init_swflux   ( mythid )
 #endif
 
-#ifdef EXF_READ_EVAP
+#if defined(ALLOW_ATM_TEMP) || defined(EXF_READ_EVAP)
       call exf_init_evap     ( mythid )
 #endif
 
