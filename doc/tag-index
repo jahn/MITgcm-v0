@@ -1,10 +1,15 @@
-$Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/doc/tag-index,v 1.53.4.8 2002/03/21 03:57:43 heimbach Exp $
+$Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/doc/tag-index,v 1.53.4.9 2002/03/24 17:28:25 heimbach Exp $
 
     Notes on tags used in MITgcmUV
     ==============================
 
 ecco_c44_e19
-o will contain merges from main trunk
+o merged necessary patches:
+  - AD-related changes for GMRedi
+  - fixes i KPP (delZ -> drF)
+  - hook to OBCS songe layer code in external_forcing
+  - errorMessageUnit non-zero in eeboot.F
+  - included GMREDI, EXACT_CONSERV to natl_box_adjoint verif.
 
 ecco_c44_e18
 o sponge layer code for obcs was missing
