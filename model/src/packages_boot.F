@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/packages_boot.F,v 1.1.2.1 2001/01/30 18:07:07 cnh Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/packages_boot.F,v 1.1.2.2 2001/01/30 21:02:59 adcroft Exp $
 C $Name:  $
 
 #include "CPP_OPTIONS.h"
@@ -31,6 +31,7 @@ C--   data.pkg namelists
       NAMELIST /PACKAGES/
      &          useKPP,
      &          useGMRedi,
+     &          useOBCS,
      &          useECCO
 
 C     === Local variables ===
@@ -54,8 +55,8 @@ C     iUnit       - Work variable for IO unit number
 C--   Default package configuration
       useGMRedi=.FALSE.
       useKPP=.FALSE.
+      useOBCS=.FALSE.
       useECCO=.FALSE.
-
 
 C--   Read parameters from open data file
       READ(UNIT=iUnit,NML=PACKAGES)

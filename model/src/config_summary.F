@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/config_summary.F,v 1.23.2.1 2001/01/18 22:34:09 jmc Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/config_summary.F,v 1.23.2.2 2001/01/30 21:02:59 adcroft Exp $
 
 #include "CPP_OPTIONS.h"
 
@@ -150,8 +150,6 @@ C     == Local variables ==
      & '  /* Momentum pressure term on/off flag */')
       CALL WRITE_0D_L( tempStepping,  INDEX_NONE,
      & 'tempStepping =', '  /* Temperature equation on/off flag */')
-      CALL WRITE_0D_L( openBoundaries, INDEX_NONE,
-     & 'openBoundaries =', '  /* OpenBoundaries on/off flag */')
       CALL WRITE_0D_L( nonHydrostatic, INDEX_NONE,
      & 'nonHydrostatic =', '  /* Non-Hydrostatic on/off flag */')
       WRITE(msgBuf,'(A)') '//  '

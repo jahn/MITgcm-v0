@@ -1,9 +1,10 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/gmredi/GMREDI.h,v 1.2 2000/11/13 16:35:28 heimbach Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/gmredi/GMREDI.h,v 1.2.2.1 2001/01/30 21:03:00 adcroft Exp $
 
 #ifdef ALLOW_GMREDI
 
 C     Package flag
-      logical gmrediIsOn
+      logical GMREDIisON
+      COMMON /GM_PACKAGE/ GMREDIisON
 
 C     GM/Redi parameters
       _RL GM_background_K

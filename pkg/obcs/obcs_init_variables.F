@@ -1,11 +1,12 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/Attic/obcs_init.F,v 1.1.2.1 2001/01/09 21:26:07 adcroft Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/obcs/obcs_init_variables.F,v 1.1.2.1 2001/01/30 21:03:00 adcroft Exp $
+C $Name:  $
 
-#include "CPP_OPTIONS.h"
+#include "OBCS_OPTIONS.h"
 
-      SUBROUTINE OBCS_INIT( myThid )
+      SUBROUTINE OBCS_INIT_VARIABLES( myThid )
 C     /==========================================================\
-C     | SUBROUTINE OBCS_INIT                                     |
-C     | o Initialise OBCs arrays                                 |
+C     | SUBROUTINE OBCS_INIT_VARIABLES                           |
+C     | o Initialise OBCs variable data                          |
 C     |==========================================================|
 C     |                                                          |
 C     \==========================================================/
@@ -15,6 +16,7 @@ C     === Global variables ===
 #include "SIZE.h"
 #include "EEPARAMS.h"
 #include "PARAMS.h"
+#include "DYNVARS.h"
 #include "OBCS.h"
 
 C     == Routine arguments ==
@@ -24,44 +26,11 @@ C     myThid -  Number of this instance of INI_DEPTHS
 #ifdef ALLOW_OBCS
 
 C     == Local variables ==
-      INTEGER iG, jG, iGm, jGm
       INTEGER bi, bj
       INTEGER I, J, K
-c
 
       DO bj = myByLo(myThid), myByHi(myThid)
        DO bi = myBxLo(myThid), myBxHi(myThid)
-
-        DO I=1-Olx,sNx+Olx
-         OB_Jn(I,bi,bj)=0
-         OB_Js(I,bi,bj)=0
-        ENDDO
-
-        DO J=1-Oly,sNy+Oly
-         OB_Ie(J,bi,bj)=0
-         OB_Iw(J,bi,bj)=0
-        ENDDO
-
-        DO J=1-Oly,sNy+Oly
-         jG = myYGlobalLo-1+(bj-1)*sNy+J
-         jGm = 1+mod( jG-1+Ny , Ny )
-         DO I=1,sNx
-          iG = myXGlobalLo-1+(bi-1)*sNx+I
-          iGm = 1+mod( iG-1+Nx , Nx )
-          IF (iG.EQ.OB_Ieast(jGm))  OB_Ie(J,bi,bj)=I
-          IF (iG.EQ.OB_Iwest(jGm))  OB_Iw(J,bi,bj)=I
-         ENDDO
-        ENDDO
-        DO J=1,sNy
-         jG = myYGlobalLo-1+(bj-1)*sNy+J
-         jGm = 1+mod( jG-1+Ny , Ny )
-         DO I=1-Olx,sNx+Olx
-          iG = myXGlobalLo-1+(bi-1)*sNx+I
-          iGm = 1+mod( iG-1+Nx , Nx )
-          IF (jG.EQ.OB_Jnorth(iGm)) OB_Jn(I,bi,bj)=J
-          IF (jG.EQ.OB_Jsouth(iGm)) OB_Js(I,bi,bj)=J
-         ENDDO
-        ENDDO
 
         DO K=1,Nr
          DO I=1-Olx,sNx+Olx
@@ -93,6 +62,25 @@ c
        ENDDO
       ENDDO
 
-#endif
+#ifdef ALLOW_ORLANSKI
+        IF (useOrlanskiNorth.OR.useOrlanskiSouth.OR.
+     &      useOrlanskiEast.OR.useOrlanskiWest) THEN
+          CALL ORLANSKI_INIT(bi, bj, myThid)
+        ENDIF
+#endif /* ALLOW_ORLANSKI */
+
+C--   Apply OBCS values to initial conditions for consistancy
+      DO bj = myByLo(myThid), myByHi(myThid)
+       DO bi = myBxLo(myThid), myBxHi(myThid)
+        CALL OBCS_CALC( bi, bj, startTime,
+     &        uVel, vVel, wVel, theta, salt, myThid )
+        DO K=1,Nr
+         CALL OBCS_APPLY_UV( bi, bj, k, uVel, vVel, myThid )
+         CALL OBCS_APPLY_TS( bi, bj, k, theta, salt, myThid )
+        ENDDO
+       ENDDO
+      ENDDO
+
+#endif /* ALLOW_OBCS */
       RETURN
       END

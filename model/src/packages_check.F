@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/packages_check.F,v 1.5.2.1 2001/01/30 18:07:07 cnh Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/packages_check.F,v 1.5.2.2 2001/01/30 21:02:59 adcroft Exp $
 C $Name:  $
 
 #include "CPP_OPTIONS.h"
@@ -41,5 +41,11 @@ C     msgBuf      - Informational/error meesage buffer
       IF (useGMRedi) CALL PACKAGES_CHECK_ERROR('GMREDI', myThid)
 #endif
 
-      return
-      end
+#ifdef ALLOW_OBCS
+      IF (useOBCS) CALL OBCS_CHECK( myThid )
+#else
+      IF (useOBCS) CALL PACKAGES_CHECK_ERROR('OBCS', myThid)
+#endif
+
+      RETURN
+      END

@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/set_defaults.F,v 1.11.2.5 2001/01/26 22:18:45 adcroft Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/set_defaults.F,v 1.11.2.6 2001/01/30 21:03:00 adcroft Exp $
 
 #include "CPP_OPTIONS.h"
 
@@ -105,7 +105,6 @@ C--   Set default "physical" parameters
       metricTerms         = .FALSE.
       implicitDiffusion   = .FALSE.
       implicitViscosity   = .FALSE.
-      openBoundaries      = .FALSE.
       nonHydrostatic      = .FALSE.
       globalFiles         = .FALSE.
       allowFreezing       = .FALSE.
@@ -167,16 +166,6 @@ C--   Input files
       uVelInitFile    = ' '
       vVelInitFile    = ' '
       pSurfInitFile   = ' '
-
-C--   OBCS
-      DO I=1,Nx
-       OB_Jnorth(I)=0
-       OB_Jsouth(I)=0
-      ENDDO
-      DO J=1,Ny
-       OB_Ieast(J)=0
-       OB_Iwest(J)=0
-      ENDDO
 
 C
       RETURN

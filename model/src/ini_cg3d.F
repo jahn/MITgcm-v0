@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/ini_cg3d.F,v 1.7.2.1 2001/01/09 21:26:07 adcroft Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/ini_cg3d.F,v 1.7.2.2 2001/01/30 21:02:59 adcroft Exp $
 
 #include "CPP_OPTIONS.h"
 
@@ -103,7 +103,7 @@ caja &     +drF(K-1)*_hFacC(i,j,k-1,bi,bj)*0.5
         ENDDO
 #ifdef ALLOW_OBCS
         DO K=1,Nr
-         IF (openBoundaries) THEN
+         IF (useOBCS) THEN
           DO I=1,sNx
            IF (OB_Jn(I,bi,bj).NE.0) THEN
             aS3d(I,OB_Jn(I,bi,bj),K,bi,bj)=0.

@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/Attic/the_correction_step.F,v 1.1.2.2 2001/01/09 21:26:07 adcroft Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/Attic/the_correction_step.F,v 1.1.2.3 2001/01/30 21:03:00 adcroft Exp $
 C Tag $Name:  $
 
 #include "CPP_OPTIONS.h"
@@ -104,7 +104,7 @@ CADJ STORE vvel (:,:,k,bi,bj) = comlev1_bibj, key = ikey, byte = isbyte
 CADJ STORE theta(:,:,k,bi,bj) = comlev1_bibj, key = ikey, byte = isbyte
 CADJ STORE salt (:,:,k,bi,bj) = comlev1_bibj, key = ikey, byte = isbyte
 #endif /* ALLOW_AUTODIFF_TAMC */
-          IF (openBoundaries) THEN
+          IF (useOBCS) THEN
             CALL OBCS_APPLY_UV(bi,bj,K,uVel,vVel,myThid)
           ENDIF
 #endif    /* ALLOW_OBCS */
