@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/ecco/Attic/the_main_loop.F,v 1.5 2004/03/24 21:49:53 heimbach Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/ecco/Attic/the_main_loop.F,v 1.6 2004/05/11 20:57:08 heimbach Exp $
 
 #include "PACKAGES_CONFIG.h"
 #include "CPP_OPTIONS.h"
@@ -298,6 +298,7 @@ CADJ INIT comlev1_bibj_k = COMMON,nchklev_1*nsx*nsy*nr*nthreads_chkpt
 c--
 # ifdef ALLOW_KPP
 CADJ INIT comlev1_kpp    = COMMON,nchklev_1*nsx*nsy
+CADJ INIT comlev1_kpp_k  = COMMON,nchklev_1*nsx*nsy*nr
 # endif /* ALLOW_KPP */
 c--
 # ifdef ALLOW_GMREDI
