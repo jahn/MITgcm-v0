@@ -1,6 +1,6 @@
 #!/bin/csh -f
 #
-# $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/tools/Attic/genmake,v 1.33.2.7 2001/03/28 19:39:58 adcroft Exp $
+# $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/tools/Attic/genmake,v 1.33.2.8 2001/04/05 15:49:51 jamous Exp $
 #
 # Makefile generator for MITgcm UV codes
 #   created  by cnh 03/98
@@ -323,7 +323,7 @@ switch ($platform$USEMPI)
     echo "Configuring for SGI Mips"
     set DEFINES    = ( ${DEFINES} '-DTARGET_SGI -DWORDLENGTH=4' )
     set INCLUDES   = ( '-I/usr/local/mpi/include' )
-    set FFLAGS     = ( '-extend_source -mp -mpio -bytereclen -r10000 -mips4' )
+    set FFLAGS     = ( '-extend_source -mp -mpio -bytereclen -r10000 -mips4 -r8 -static' )
     set FOPTIM     = ( '-O3' )
 #   set NOOPTFLAGS = ( '-O0' )
 #   set NOOPTFILES = ( 'barrier.F different_multiple.F ' \
