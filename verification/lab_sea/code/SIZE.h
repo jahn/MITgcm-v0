@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/verification/lab_sea/code/SIZE.h,v 1.1.2.1 2002/11/11 22:03:47 heimbach Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/verification/lab_sea/code/SIZE.h,v 1.1.2.2 2002/12/05 08:06:18 dimitri Exp $
 C
 CBOP
 C    !ROUTINE: SIZE.h

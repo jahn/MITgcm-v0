@@ -1,7 +1,23 @@
-$Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/doc/tag-index,v 1.53.2.15 2002/11/11 22:12:51 heimbach Exp $
+$Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/doc/tag-index,v 1.53.2.16 2002/12/05 08:06:17 dimitri Exp $
 
     Notes on tags used in MITgcmUV
     ==============================
+
+release1_p9
+o pkg/seaice
+  - removed GOTO's and added taf directives
+  - double precision constants to reduce the g77 (Linux)
+    to F77 (SGI) differences reported in release1_p8
+o tools/genmake
+  - added SGI options
+o verification/testscript
+  - updated to that of checkpoint47a_post
+o verification/global_ocean.90x40x15/input/eedata
+  - modified for SGI f77 compatibility
+o verification/lab_sea
+  - added description of sea-ice model
+  - added missing matlab routines
+  - added test of thermodynamics parallelization
 
 release1_p8
 o verification/natl_box:
