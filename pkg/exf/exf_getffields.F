@@ -1,4 +1,4 @@
-c $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/exf/exf_getffields.F,v 1.2.6.8 2003/03/07 03:33:24 heimbach Exp $
+c $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/exf/exf_getffields.F,v 1.2.6.9 2003/03/08 00:23:35 heimbach Exp $
 
 #include "EXF_CPPOPTIONS.h"
 
@@ -140,9 +140,10 @@ c     == local variables ==
 
 #ifdef ALLOW_BULKFORMULAE
 
+      _RL     aln
+
 #ifdef ALLOW_ATM_TEMP
       integer iter
-      _RL     aln
       _RL     delq
       _RL     deltap
       _RL     hqol
