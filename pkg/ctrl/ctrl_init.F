@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/ctrl/ctrl_init.F,v 1.3.6.7 2003/06/19 15:18:48 heimbach Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/ctrl/ctrl_init.F,v 1.3.6.8 2003/07/16 16:38:58 heimbach Exp $
 
 #include "CTRL_CPPOPTIONS.h"
 
@@ -1127,11 +1127,11 @@ c
 
 c     write masks and weights to files to be read by a master process
 c
-      call active_write_xyz( 'hFacC', hFacC,   1, 0, mythid, dummy)
-      call active_write_xyz( 'maskW', maskW,   1, 0, mythid, dummy)
-      call active_write_xyz( 'maskS', maskS,   1, 0, mythid, dummy)
+      call active_write_xyz_loc( 'hFacC', hFacC,   1, 0, mythid, dummy)
+      call active_write_xyz_loc( 'maskW', maskW,   1, 0, mythid, dummy)
+      call active_write_xyz_loc( 'maskS', maskS,   1, 0, mythid, dummy)
 #if (defined (ALLOW_EFLUXP0_CONTROL))
-      call active_write_xyz( 'hFacV', hFacV,   1, 0, mythid, dummy)
+      call active_write_xyz_loc( 'hFacV', hFacV,   1, 0, mythid, dummy)
 #endif
 
 c--   Summarize the control vector's setup.

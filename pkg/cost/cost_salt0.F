@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/cost/Attic/cost_salt0.F,v 1.1.2.1 2002/04/04 10:58:59 heimbach Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/cost/Attic/cost_salt0.F,v 1.1.2.2 2003/07/16 16:38:58 heimbach Exp $
 
 #include "COST_CPPOPTIONS.h"
 
@@ -94,19 +94,13 @@ c--   Read state record from global file.
 
       if (optimcycle .ge. 0) then
         ilfld = ilnblnk( xx_salt_file )
-        write(fnamefld(1:80),'(2a,i10.10)') xx_salt_file(1:ilfld),'.',
-     &                                   optimcycle
-      else
-        print*
-        print*,' cost_salt: optimcycle has a wrong value.'
-        print*,'                 optimcycle = ',optimcycle
-        print*
-        stop   '  ... stopped in cost_salt.'
+        write(fnamefld(1:80),'(2a,i10.10)') 
+     &       xx_salt_file(1:ilfld),'.',optimcycle
       endif
 
       fcthread = 0. _d 0
 
-      call active_read_xyz( fnamefld, tmpfld3d, irec, doglobalread,
+      call active_read_xyz_loc( fnamefld, tmpfld3d, irec, doglobalread,
      &                       ladinit, optimcycle, mythid
      &        , xx_salt_dummy )
 

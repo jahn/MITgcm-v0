@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/ctrl/ctrl_hfacc_ini.F,v 1.1.4.1 2003/03/07 03:06:41 heimbach Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/ctrl/ctrl_hfacc_ini.F,v 1.1.4.2 2003/07/16 16:38:58 heimbach Exp $
 
 #include "CTRL_CPPOPTIONS.h"
 
@@ -118,7 +118,7 @@ C--
       write(fnamehfacc(1:80),'(2a,i10.10)')
      &     xx_hfacc_file(1:il),'.',optimcycle
 #ifdef ALLOW_HFACC3D_CONTROL
-      call active_read_xyz( fnamehfacc, tmpfld3d, 1,
+      call active_read_xyz_loc( fnamehfacc, tmpfld3d, 1,
      &                      doglobalread, ladinit, optimcycle,
      &                      mythid, xx_hfacc_dummy )
       do bj = jtlo,jthi
@@ -134,7 +134,7 @@ C--
        enddo
       enddo
 #else /* ALLOW_HFACC3D_CONTROL undefined */
-      call active_read_xy( fnamehfacc, tmpfld2d, 1,
+      call active_read_xy_loc( fnamehfacc, tmpfld2d, 1,
      &                     doglobalread, ladinit, optimcycle,
      &                     mythid, xx_hfacc_dummy )
       do bj = jtlo,jthi

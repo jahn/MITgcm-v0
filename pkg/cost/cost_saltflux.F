@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/cost/Attic/cost_saltflux.F,v 1.1.2.2 2002/04/04 10:58:59 heimbach Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/cost/Attic/cost_saltflux.F,v 1.1.2.3 2003/07/16 16:38:58 heimbach Exp $
 
 #include "COST_CPPOPTIONS.h"
 
@@ -122,14 +122,8 @@ c     Number of records to be used.
 
       if (optimcycle .ge. 0) then
         ilfld=ilnblnk( xx_sflux_file )
-        write(fnamefld(1:80),'(2a,i10.10)') xx_sflux_file(1:ilfld),'.',
-     &                                   optimcycle
-      else
-        print*
-        print*,' cost_saltflux: optimcycle has a wrong value.'
-        print*,'                 optimcycle = ',optimcycle
-        print*
-        stop   '  ... stopped in cost_saltflux.'
+        write(fnamefld(1:80),'(2a,i10.10)') 
+     &       xx_sflux_file(1:ilfld),'.',optimcycle
       endif
 
       fcthread = 0. _d 0
@@ -147,7 +141,7 @@ c--   Loop 1 to compute mean forcing:
 
       do irec = 1,nrec
 
-        call active_read_xy( fnamefld, tmpfld2d, irec, doglobalread,
+        call active_read_xy_loc( fnamefld, tmpfld2d, irec, doglobalread,
      &                       ladinit, optimcycle, mythid
      &        , xx_sflux_dummy )
 
@@ -211,7 +205,7 @@ c--       Print cost function for each tile in each thread.
 c--   Loop 2 over records.
       do irec = 1,nrec
 
-        call active_read_xy( fnamefld, tmpfld2d, irec, doglobalread,
+        call active_read_xy_loc( fnamefld, tmpfld2d, irec, doglobalread,
      &                       ladinit, optimcycle, mythid
      &        , xx_sflux_dummy )
 
