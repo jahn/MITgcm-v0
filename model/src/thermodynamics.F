@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/thermodynamics.F,v 1.13.2.6 2002/07/11 14:24:26 heimbach Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/thermodynamics.F,v 1.13.2.7 2002/11/11 21:59:05 heimbach Exp $
 C $Name:  $
 
 #include "CPP_OPTIONS.h"
@@ -595,7 +595,7 @@ C--      Apply open boundary conditions
 #endif   /* ALLOW_OBCS */
 
 C--      Freeze water
-         IF (allowFreezing) THEN
+         IF ( allowFreezing .AND. .NOT. useSEAICE ) THEN
 #ifdef ALLOW_AUTODIFF_TAMC
 CADJ STORE gT(:,:,k,bi,bj) = comlev1_bibj_k
 CADJ &   , key = kkey, byte = isbyte

@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/inc/PARAMS.h,v 1.65.2.2 2002/04/08 20:10:36 heimbach Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/inc/PARAMS.h,v 1.65.2.3 2002/11/11 21:59:05 heimbach Exp $
 C $Name:  $
 C
 CBOP
@@ -577,7 +577,9 @@ C Logical flags for selecting packages
       LOGICAL useSHAP_FILT
       LOGICAL useZONAL_FILT
       LOGICAL useFLT
+      LOGICAL useSEAICE
       COMMON /PARM_PACKAGES/
      &        useKPP, useGMRedi, useOBCS, useAIM, useECCO, 
-     &        useSHAP_FILT, useZONAL_FILT, useGrdchk, useFLT
+     &        useSHAP_FILT, useZONAL_FILT, useGrdchk, useFLT, 
+     &        useSEAICE
 

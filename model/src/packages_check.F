@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/packages_check.F,v 1.9.4.1 2002/04/08 20:10:37 heimbach Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/packages_check.F,v 1.9.4.2 2002/11/11 21:59:05 heimbach Exp $
 C $Name:  $
 
 #include "CPP_OPTIONS.h"
@@ -70,6 +70,12 @@ CEOP
 
 #ifndef ALLOW_FLT
       IF (useFLT) CALL PACKAGES_CHECK_ERROR('FLT', myThid)
+#endif
+
+#ifdef ALLOW_SEAICE
+      IF (useSEAICE) CALL SEAICE_CHECK( myThid )
+#else
+      IF (useSEAICE) CALL PACKAGES_CHECK_ERROR('SEAICE', myThid)
 #endif
 
       RETURN
