@@ -1,3 +1,5 @@
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/gmredi/Attic/gmredi_init.F,v 1.5.6.3 2003/03/07 03:57:33 heimbach Exp $
+C $Name:  $
 
 #include "GMREDI_OPTIONS.h"
 

@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/gmredi/gmredi_readparms.F,v 1.4.6.1 2002/02/06 15:48:08 heimbach Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/gmredi/gmredi_readparms.F,v 1.4.6.2 2003/03/07 03:57:33 heimbach Exp $
 C $Name:  $
 
 #include "GMREDI_OPTIONS.h"
@@ -26,13 +26,16 @@ C     === Routine arguments ===
 #ifdef ALLOW_GMREDI
 
 C--   GM/Redi parameter
+C     GM_Small_Number :: epsilon used in computing the slope
+C     GM_slopeSqCutoff :: slope^2 cut-off value 
       NAMELIST /GM_PARM01/
-     &          GM_AdvForm,
+     &          GM_AdvForm, GM_AdvSeparate,
      &          GM_isopycK,
      &          GM_background_K, 
      &          GM_taper_scheme,
      &          GM_maxSlope,
      &          GM_Kmin_horiz,
+     &          GM_Small_Number, GM_slopeSqCutoff,
      &          GM_Visbeck_alpha,
      &          GM_Visbeck_length,
      &          GM_Visbeck_depth,
@@ -67,10 +70,13 @@ C     the package is active.
 
 C--   Default values GM/Redi
       GM_AdvForm          = .FALSE.
+      GM_AdvSeparate      = .FALSE.
       GM_isopycK          = -999.
       GM_background_K     = 0.
       GM_maxslope         = 1.0D-2
       GM_Kmin_horiz       = 0.
+      GM_Small_Number     = 1. _d -12
+      GM_slopeSqCutoff   = 1. _d +48
       GM_taper_scheme     = ' '
       GM_Scrit            = 0.004
       GM_Sd               = 0.001

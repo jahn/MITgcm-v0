@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/gmredi/gmredi_check.F,v 1.4.6.1 2002/02/06 15:48:08 heimbach Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/gmredi/gmredi_check.F,v 1.4.6.2 2003/03/07 03:57:33 heimbach Exp $
 C $Name:  $
 
 #include "CPP_OPTIONS.h"
@@ -43,6 +43,8 @@ C      GM/Redi needs implicit diffusion (will be packaged later)
 C- print out some kee parameters :
        CALL WRITE_0D_L( GM_AdvForm, INDEX_NONE,
      &  'GM_AdvForm =', '  /* if FALSE => use SkewFlux Form */')     
+       CALL WRITE_0D_L( GM_AdvSeparate, INDEX_NONE,
+     & 'GM_AdvSeparate =',' /* Calc Bolus & Euler Adv. separately */')     
        CALL WRITE_0D_L( GM_ExtraDiag, INDEX_NONE,
      &  'GM_ExtraDiag =','  /* Tensor Extra Diag (line 1&2) non 0 */')
        CALL WRITE_0D_R8( GM_isopycK, INDEX_NONE,'GM_isopycK =',
@@ -57,6 +59,10 @@ C- print out some kee parameters :
      &  ' GM_Visbeck_alpha =','   /* Visbeck alpha coeff. ( ) */')       
        WRITE(msgBuf,'(A,A40)')' Tapering/Cliping : ',GM_taper_scheme
        CALL PRINT_MESSAGE(msgBuf,standardMessageUnit,SQUEEZE_RIGHT,1)
+       CALL WRITE_0D_R8( GM_Small_Number, INDEX_NONE,
+     &  ' GM_Small_Number =','  /* epsilon used in slope calc */')       
+       CALL WRITE_0D_R8( GM_slopeSqCutoff, INDEX_NONE,
+     &  ' GM_slopeSqCutoff =', '  /* Slope^2 cut-off value */')       
 
       ENDIF
 
