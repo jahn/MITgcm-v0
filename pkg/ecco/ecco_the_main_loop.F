@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/ecco/Attic/ecco_the_main_loop.F,v 1.1.2.13 2003/03/04 22:09:47 heimbach Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/ecco/Attic/ecco_the_main_loop.F,v 1.1.2.14 2003/03/05 00:43:04 heimbach Exp $
 
 #include "CPP_OPTIONS.h"
 #ifdef ALLOW_OBCS
@@ -146,7 +146,14 @@ c--   Initialize storage for the outermost loop.
 CADJ  INIT tapelev3 = USER
 c--   Some more initialisations to please TAMC
 CADJ INIT tapelev_ini_bibj_k   = USER
-CADJ INIT onetape = common, 1
+CADJ INIT onetape = user
+cphCADJ INIT onetape = common, 1
+cph We want to avoid common blocks except in the inner loop.
+cph Reason: the active write and consecutive read may occur
+cph         in separate model executions for which the info
+cph         in common blocks are lost.
+cph Thus, we can only store real values (no integers)
+cph because we only have active file handling to real available.
 #ifdef ALLOW_TAMC_CHECKPOINTING
        nIter0 = INT( startTime/deltaTClock )
        ikey_dynamics = 1
@@ -313,7 +320,7 @@ c--     Set the model iteration counter and the model time.
 
 c--     Accumulate time averages of temperature, salinity, and SSH.
         call timer_start('COST_AVERAGESFIELDS   [ECCO MAIN]', mythid)
-        call cost_AveragesFields( mytime, myiter, mythid )
+        call cost_AveragesFields( mytime, mythid )
         call timer_stop ('COST_AVERAGESFIELDS   [ECCO MAIN]', mythid)
 #ifdef ALLOW_COST_ATLANTIC
 c--     Compute meridional heat transport 
@@ -558,11 +565,11 @@ c             Calculate current date.
 #ifdef ALLOW_COST
 
 #ifdef ALLOW_TAMC_CHECKPOINTING
-CADJ STORE mytime, myiter = onetape
+CADJ STORE mytime = onetape
 #endif
 c--   Accumulate time averages of temperature, salinity, and SSH.
       call timer_start('cost_AveragesFields [ECCO SPIN-DOWN]', mythid)
-      call cost_AveragesFields( mytime, myiter, mythid )
+      call cost_AveragesFields( mytime, mythid )
       call timer_stop ('cost_AveragesFields [ECCO SPIN-DOWN]', mythid)
 #ifdef ALLOW_TAMC_CHECKPOINTING
 c**************************************

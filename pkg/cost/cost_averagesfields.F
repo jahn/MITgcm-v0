@@ -1,11 +1,10 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/cost/Attic/cost_averagesfields.F,v 1.1.2.4 2002/04/04 10:58:58 heimbach Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/cost/Attic/cost_averagesfields.F,v 1.1.2.5 2003/03/05 00:43:04 heimbach Exp $
 
 #include "COST_CPPOPTIONS.h"
 
 
       subroutine cost_AveragesFields(
      I                                mytime,
-     I                                myiter,
      I                                mythid
      &                              )
 
@@ -35,6 +34,7 @@ c     == global variables ==
 
 #include "EEPARAMS.h"
 #include "SIZE.h"
+#include "PARAMS.h"
 #include "DYNVARS.h"
 #include "CG2D.h"
 #ifdef ALLOW_DRIFTW_COST_CONTRIBUTION 
@@ -49,11 +49,12 @@ c     == global variables ==
 c     == routine arguments ==
 
       _RL     mytime
-      integer myiter
+cph      integer myiter
       integer mythid
 
 c     == local variables ==
 
+      integer myiter
       integer bi,bj
       integer i,j,k
       integer itlo,ithi
@@ -98,6 +99,8 @@ c     == end of interface ==
       jmax = sny
       imin = 1
       imax = snx
+
+      myiter = niter0 + INT((mytime-starttime)/deltaTClock+0.5)
 
 c--   Get the time flags and record numbers for the time averaging.
 
