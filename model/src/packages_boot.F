@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/packages_boot.F,v 1.7.4.1 2002/02/06 15:48:07 heimbach Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/packages_boot.F,v 1.7.4.2 2003/02/13 19:28:37 dimitri Exp $
 C $Name:  $
 
 #include "CPP_OPTIONS.h"
@@ -52,7 +52,8 @@ C     data.pkg namelists
      &          useECCO,
      &          useSHAP_FILT,
      &          useZONAL_FILT,
-     &          useFLT
+     &          useFLT,
+     &          useSEAICE
 CEOP
 
       _BEGIN_MASTER(myThid)
@@ -77,6 +78,7 @@ C--   Default package configuration
       useSHAP_FILT=.FALSE.
       useZONAL_FILT=.FALSE.
       useFLT=.FALSE.
+      useSEAICE=.FALSE.
 
 C--   Read parameters from open data file
       READ(UNIT=iUnit,NML=PACKAGES)

@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/packages_init_variables.F,v 1.8.6.2 2002/05/30 21:01:36 heimbach Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/packages_init_variables.F,v 1.8.6.3 2003/02/13 19:28:37 dimitri Exp $
 C $Name:  $
 
 #include "CPP_OPTIONS.h"
@@ -23,17 +23,21 @@ C       |
 C       |-- KPP_INIT
 C       |-- KPP_OPEN_DIAGS
 C       |
+C       |-- SEAICE_INIT
+C       | 
 C       |-- OBCS_INIT_VARIABLES
 C       |
 C       |-- AIM_INIT
 C       |
 C       |-- CTRL_MAP_INI
 C       |
-C       |-- COST_INIT
+C       |-- EXF_INIT
+C       |
+C       |-- INI_FORCING
 C       |
 C       |-- ECCO_INIT
 C       |
-C       |-- INI_FORCING
+C       |-- COST_INIT
 
 C     !USES:
       IMPLICIT NONE
@@ -59,6 +63,11 @@ C--   Initialize KPP vertical mixing scheme.
        CALL KPP_INIT( myThid )
        CALL KPP_OPEN_DIAGS( myThid )
       ENDIF
+#endif
+
+#ifdef ALLOW_SEAICE
+C--   Initialize SEAICE model.
+      IF (useSEAICE) CALL SEAICE_INIT( myThid )
 #endif
 
 #ifdef ALLOW_OBCS

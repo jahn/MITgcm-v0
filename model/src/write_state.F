@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/write_state.F,v 1.15 2001/09/26 18:09:16 cnh Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/write_state.F,v 1.15.6.1 2003/02/13 19:28:37 dimitri Exp $
 C $Name:  $
 #include "CPP_OPTIONS.h"
 
@@ -84,7 +84,11 @@ CEOP
      &     myCurrentTime.EQ.endTime .OR.
      &     myCurrentTime.EQ.startTime
      &     ) THEN
-         iRec = int ( (myCurrentTime-startTime) / dumpFreq +1.5 )
+         IF ( dumpFreq .EQ. 0.0 ) THEN
+            iRec = 1
+         ELSE
+            iRec = int ( (myCurrentTime-startTime) / dumpFreq +1.5 )
+         ENDIF
          
 C--   Going to really do some IO. Make everyone except master thread wait.
          _BARRIER

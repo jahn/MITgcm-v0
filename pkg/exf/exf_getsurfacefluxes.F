@@ -1,4 +1,4 @@
-c $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/exf/exf_getsurfacefluxes.F,v 1.1.6.1 2002/02/06 23:18:53 heimbach Exp $
+c $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/exf/exf_getsurfacefluxes.F,v 1.1.6.2 2003/02/13 19:28:38 dimitri Exp $
 
 #include "EXF_CPPOPTIONS.h"
 
@@ -18,13 +18,13 @@ c
 c     started: Christian Eckert eckert@mit.edu  30-Jun-1999
 c
 c     changed: Christian Eckert eckert@mit.edu  14-Jan-2000
-c
 c              - Restructured the code in order to create a package
 c                for the MITgcmUV.
 c
 c              Christian Eckert eckert@mit.edu  12-Feb-2000
-c
 c              - Changed Routine names (package prefix: exf_)
+c
+c     mods for pkg/seaice: menemenlis@jpl.nasa.gov 20-Dec-2002
 c
 c     ==================================================================
 c     SUBROUTINE exf_GetSurfaceFluxes
@@ -66,10 +66,4 @@ c     == end of interface ==
       call ctrl_getlwflux ( mytime, myiter, mythid )
 #endif
 
-#ifdef ALLOW_CONTROL_NEW
-c     Get the surface forcing control fields.
-      call exfa_GetFFields( mytime, myiter, mythid )
-#endif
-
       end
-
