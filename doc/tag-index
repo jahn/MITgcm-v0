@@ -1,7 +1,17 @@
-$Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/doc/tag-index,v 1.53.4.2 2002/02/06 15:48:06 heimbach Exp $
+$Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/doc/tag-index,v 1.53.4.3 2002/02/06 23:00:33 heimbach Exp $
 
     Notes on tags used in MITgcmUV
     ==============================
+
+ecco-branch-mod3
+o this is the first part of changes necessary to reconcile
+  natl_box_adjoint verification (with and without grdchk).
+  This set of changes is relevant for ECCO only.
+  The next set/tag of changes (ecco-branch-mod4)
+  should be merged into the main trunk.
+  - update some options
+  - parameter lists of ecco_the_model_main and ecco_the_main_loop
+    differed from those of the MITgcm counterparts.
 
 ecco-branch-mod2
 o update ecco-branch-mod1 to checkpoint44
