@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/generic_advdiff/gad_u3_adv_x.F,v 1.3.4.1 2002/02/06 15:48:08 heimbach Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/generic_advdiff/gad_u3_adv_x.F,v 1.3.4.2 2003/03/07 03:55:23 heimbach Exp $
 C $Name:  $
 
 #include "GAD_OPTIONS.h"

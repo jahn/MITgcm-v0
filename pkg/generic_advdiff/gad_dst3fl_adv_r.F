@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/generic_advdiff/gad_dst3fl_adv_r.F,v 1.1.4.1 2002/02/06 15:48:08 heimbach Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/generic_advdiff/gad_dst3fl_adv_r.F,v 1.1.4.2 2003/03/07 03:55:23 heimbach Exp $
 C $Name:  $
 
 #include "GAD_OPTIONS.h"
@@ -33,9 +33,11 @@ C     == Routine arguments ==
       INTEGER myThid
 
 C     == Local variables ==
+C     wFld     :: velocity, vertical component
       INTEGER i,j,kp1,km1,km2,bi,bj
       _RL Rjm,Rj,Rjp,cfl,d0,d1
       _RL psiP,psiM,thetaP,thetaM
+      _RL wFld
 
       IF (.NOT. multiDimAdvection) THEN
 C      If using the standard time-stepping/advection schemes (ie. AB-II)
@@ -63,7 +65,9 @@ C      for maskC(...) and wVel(...)
         Rjm=(tracer(i,j,km2,bi,bj)-tracer(i,j,km1,bi,bj))
      &         *maskC(i,j,km1,bi_arg,bj_arg)
 
-        cfl=abs(wVel(i,j,k,bi_arg,bj_arg)*dTarg*recip_drc(k))
+c       wFld = wVel(i,j,k,bi_arg,bj_arg)
+        wFld = rTrans(i,j)*recip_rA(i,j,bi_arg,bj_arg)
+        cfl=abs(wFld*dTarg*recip_drC(k))
         d0=(2.D0-cfl)*(1.-cfl)*oneSixth
         d1=(1.D0-cfl*cfl)*oneSixth
 c       thetaP=0.D0
