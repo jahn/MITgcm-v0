@@ -1,6 +1,7 @@
-C $Id: state_summary.F,v 1.1.1.1 1998/04/22 19:15:30 cnh Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/state_summary.F,v 1.6 2001/02/04 14:38:48 cnh Exp $
+C $Name:  $
 
-#include "CPP_EEOPTIONS.h"
+#include "CPP_OPTIONS.h"
 
 CStartOfInterface
       SUBROUTINE STATE_SUMMARY( myThid )
@@ -17,6 +18,7 @@ C     |  2. Under multi-threading the summary is produced by     |
 C     |     the master thread. This threads reads data managed by|
 C     |     other threads.                                       |
 C     \==========================================================/
+      IMPLICIT NONE
 
 C     === Global variables ===
 #include "SIZE.h"
@@ -38,9 +40,11 @@ C     == Local variables ==
       _BEGIN_MASTER(myThid)
       WRITE(msgBuf,'(A)')
      &'// ======================================================='
-      CALL PRINT_MESSAGE( msgBuf, standardMessageUnit, SQUEEZE_RIGHT , 1)
+      CALL PRINT_MESSAGE( msgBuf, standardMessageUnit, 
+     &                    SQUEEZE_RIGHT , 1)
       WRITE(msgBuf,'(A)') '// Model current state'
-      CALL PRINT_MESSAGE( msgBuf, standardMessageUnit, SQUEEZE_RIGHT , 1)
+      CALL PRINT_MESSAGE( msgBuf, standardMessageUnit, 
+     &                    SQUEEZE_RIGHT , 1)
       WRITE(msgBuf,'(A)')
      &'// ======================================================='
       CALL PRINT_MESSAGE( msgBuf, standardMessageUnit,

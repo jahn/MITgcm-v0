@@ -1,4 +1,5 @@
-C $Id: eewrite_eeenv.F,v 1.1.1.1 1998/04/22 19:15:30 cnh Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/eesupp/src/eewrite_eeenv.F,v 1.6 2001/02/04 14:38:43 cnh Exp $
+C $Name:  $
 
 #include "CPP_EEOPTIONS.h"
 
@@ -14,6 +15,7 @@ C     | the computational mode in which the model operatoes. It  |
 C     | includes the computational grid but does not include any |
 C     | model specific nuerical parameters.                      |
 C     \==========================================================/
+      IMPLICIT NONE
 
 C     === Global data ===
 #include "SIZE.h"
@@ -25,43 +27,53 @@ CEndOfInterface
 C     === Local variables ===
       CHARACTER*(MAX_LEN_MBUF) msgBuf
       
-      WRITE(msgBuf,'(A)') '// ======================================================='
+      WRITE(msgBuf,'(A)') 
+     & '// ======================================================='
       CALL PRINT_MESSAGE( msgBuf, standardMessageUnit,
      &  SQUEEZE_RIGHT , 1)
 
-      WRITE(msgBuf,'(A)') '// Computational Grid Specification ( see files "SIZE.h" )'
+      WRITE(msgBuf,'(A)') 
+     & '// Computational Grid Specification ( see files "SIZE.h" )'
       CALL PRINT_MESSAGE( msgBuf, standardMessageUnit,
      &  SQUEEZE_RIGHT , 1)
 
-      WRITE(msgBuf,'(A)') '//                                  ( and "eedata"       )'
+      WRITE(msgBuf,'(A)') 
+     & '//                                  ( and "eedata"       )'
       CALL PRINT_MESSAGE( msgBuf, standardMessageUnit,
      &  SQUEEZE_RIGHT , 1)
 
-      WRITE(msgBuf,'(A)') '// ======================================================='
+      WRITE(msgBuf,'(A)') 
+     & '// ======================================================='
       CALL PRINT_MESSAGE( msgBuf, standardMessageUnit,
      &  SQUEEZE_RIGHT , 1)
 
-      WRITE(msgBuf,'(A,I5,A)') '     nPx =',nPx,' ; /* No. processes in X */'
+      WRITE(msgBuf,'(A,I5,A)') '     nPx =',nPx,
+     & ' ; /* No. processes in X */'
       CALL PRINT_MESSAGE( msgBuf, standardMessageUnit,
      &  SQUEEZE_RIGHT , 1)
 
-      WRITE(msgBuf,'(A,I5,A)') '     nPy =',nPy,' ; /* No. processes in Y */'
+      WRITE(msgBuf,'(A,I5,A)') '     nPy =',nPy,
+     & ' ; /* No. processes in Y */'
       CALL PRINT_MESSAGE( msgBuf, standardMessageUnit,
      &  SQUEEZE_RIGHT , 1)
 
-      WRITE(msgBuf,'(A,I5,A)') '     nSx =',nSx,' ; /* No. tiles in X per process */'
+      WRITE(msgBuf,'(A,I5,A)') '     nSx =',nSx,
+     & ' ; /* No. tiles in X per process */'
       CALL PRINT_MESSAGE( msgBuf, standardMessageUnit,
      &  SQUEEZE_RIGHT , 1)
 
-      WRITE(msgBuf,'(A,I5,A)') '     nSy =',nSy,' ; /* No. tiles in Y per process */'
+      WRITE(msgBuf,'(A,I5,A)') '     nSy =',nSy,
+     & ' ; /* No. tiles in Y per process */'
       CALL PRINT_MESSAGE( msgBuf, standardMessageUnit,
      &  SQUEEZE_RIGHT , 1)
 
-      WRITE(msgBuf,'(A,I5,A)') '     sNx =',sNx,' ; /* Tile size in X */'
+      WRITE(msgBuf,'(A,I5,A)') '     sNx =',sNx,
+     & ' ; /* Tile size in X */'
       CALL PRINT_MESSAGE( msgBuf, standardMessageUnit,
      &  SQUEEZE_RIGHT , 1)
 
-      WRITE(msgBuf,'(A,I5,A)') '     sNy =',sNy,' ; /* Tile size in Y */'
+      WRITE(msgBuf,'(A,I5,A)') '     sNy =',sNy,
+     & ' ; /* Tile size in Y */'
       CALL PRINT_MESSAGE( msgBuf, standardMessageUnit,
      &  SQUEEZE_RIGHT , 1)
 
@@ -75,15 +87,18 @@ C     === Local variables ===
       CALL PRINT_MESSAGE( msgBuf, standardMessageUnit,
      &  SQUEEZE_RIGHT , 1)
 
-      WRITE(msgBuf,'(A,I5,A)') '     nTx =',nTx,' ; /* No. threads in X per process */'
+      WRITE(msgBuf,'(A,I5,A)') '     nTx =',nTx,
+     & ' ; /* No. threads in X per process */'
       CALL PRINT_MESSAGE( msgBuf, standardMessageUnit,
      &  SQUEEZE_RIGHT , 1)
 
-      WRITE(msgBuf,'(A,I5,A)') '     nTy =',nTy,' ; /* No. threads in Y per process */'
+      WRITE(msgBuf,'(A,I5,A)') '     nTy =',nTy,
+     & ' ; /* No. threads in Y per process */'
       CALL PRINT_MESSAGE( msgBuf, standardMessageUnit,
      &  SQUEEZE_RIGHT , 1)
 
-      WRITE(msgBuf,'(A,I5,A)') '      nZ =', nZ,' ; /* No. levels in the vertical   */ '
+      WRITE(msgBuf,'(A,I5,A)') '      Nr =', Nr,
+     & ' ; /* No. levels in the vertical   */ '
       CALL PRINT_MESSAGE( msgBuf, standardMessageUnit,
      &  SQUEEZE_RIGHT , 1)
 

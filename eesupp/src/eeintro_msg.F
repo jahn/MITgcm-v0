@@ -1,4 +1,4 @@
-C $Id: eeintro_msg.F,v 1.1.1.1 1998/04/22 19:15:30 cnh Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/eesupp/src/eeintro_msg.F,v 1.5 1999/05/18 17:39:21 adcroft Exp $
 
 #include "CPP_EEOPTIONS.h"
 
@@ -10,6 +10,7 @@ C     | o Write basic introductory message.                      |
 C     |==========================================================|
 C     | This routine could be customised for different platforms.|
 C     \==========================================================/
+      IMPLICIT NONE
 
 C     === Global data ===
 #include "SIZE.h"
@@ -25,7 +26,8 @@ C     === Local variables ===
       WRITE(msgBuf,'(A)') '                '
       CALL PRINT_MESSAGE( msgBuf, standardMessageUnit,
      &  SQUEEZE_RIGHT , 1)
-      WRITE(msgBuf,'(A)') '// ======================================================'
+      WRITE(msgBuf,'(A)') 
+     &'// ======================================================'
       CALL PRINT_MESSAGE( msgBuf, standardMessageUnit,
      &  SQUEEZE_RIGHT , 1)
       WRITE(msgBuf,'(A)') '//                      MITgcm UV'
@@ -34,7 +36,8 @@ C     === Local variables ===
       WRITE(msgBuf,'(A)') '//                      ========='
       CALL PRINT_MESSAGE( msgBuf, standardMessageUnit,
      &  SQUEEZE_RIGHT , 1)
-      WRITE(msgBuf,'(A)') '// ======================================================'
+      WRITE(msgBuf,'(A)') 
+     &'// ======================================================'
       CALL PRINT_MESSAGE( msgBuf, standardMessageUnit,
      &  SQUEEZE_RIGHT , 1)
       WRITE(msgBuf,'(A)') '// execution environment starting up...'
@@ -49,7 +52,8 @@ C     === Local variables ===
       WRITE(msgBuf,'(A)') '// account cnh'
       CALL PRINT_MESSAGE( msgBuf, standardMessageUnit,
      &  SQUEEZE_RIGHT , 1)
-      WRITE(msgBuf,'(A)') '// MITgcm UV Release: 0.0.0'
+      WRITE(msgBuf,'(A)') 
+     &'// MITgcm UV Release: $Name:  $'
       CALL PRINT_MESSAGE( msgBuf, standardMessageUnit,
      &  SQUEEZE_RIGHT , 1)
       WRITE(msgBuf,'(A)') '   '

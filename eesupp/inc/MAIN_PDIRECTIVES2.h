@@ -1,4 +1,5 @@
-C $Id: MAIN_PDIRECTIVES2.h,v 1.1.1.1 1998/04/22 19:15:30 cnh Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/eesupp/inc/MAIN_PDIRECTIVES2.h,v 1.4 2001/02/04 14:38:42 cnh Exp $
+C $Name:  $
 C
 C     /==========================================================\
 C     | MAIN_PDIRECTIVES2.h                                      |
@@ -8,8 +9,8 @@ C     | various different compilers. The master preprocessor     |
 C     | file CPP_OPTIONS is used to select which of these options|
 C     | is included in the code.                                 |
 C     | Note: Only some of the directives require end blocks.    |
-C     |       For directives which don't require end blocks there|
-C     |       is no entry here.                                  |
+C     |      For directives which do not require end blocks there|
+C     |      is no entry here.                                   |
 C     \==========================================================/
 
 #if defined USE_KAP_THREADING
