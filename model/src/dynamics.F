@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/dynamics.F,v 1.65.2.3 2001/04/12 10:52:49 cnh Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/dynamics.F,v 1.65.2.4 2001/05/04 01:24:55 jmc Exp $
 C $Name:  $
 
 #include "CPP_OPTIONS.h"
@@ -668,10 +668,8 @@ Cjmc(end)
 
 #ifdef ALLOW_TIMEAVE
         IF (taveFreq.GT.0.) THEN 
-          IF ( bi.EQ.1 .AND. bj.EQ.1 ) THEN
-           CALL TIMEAVE_CUMULATE(phiHydtave, phiHyd, Nr,
-     I                               deltaTclock, bi, bj, myThid)
-          ENDIF
+          CALL TIMEAVE_CUMUL_1T(phiHydtave, phiHyd, Nr,
+     I                              deltaTclock, bi, bj, myThid)
           IF (ivdc_kappa.NE.0.) THEN
             CALL TIMEAVE_CUMULATE(ConvectCountTave, ConvectCount, Nr,
      I                              deltaTclock, bi, bj, myThid)
