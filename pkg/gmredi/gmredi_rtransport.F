@@ -1,11 +1,11 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/gmredi/gmredi_rtransport.F,v 1.5.2.1 2002/02/26 16:04:49 adcroft Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/gmredi/gmredi_rtransport.F,v 1.5.2.2 2002/11/07 17:03:41 heimbach Exp $
 C $Name:  $
 
 #include "GMREDI_OPTIONS.h"
 
       subroutine GMREDI_RTRANSPORT(
      I     iMin,iMax,jMin,jMax,bi,bj,K,
-     I     Tracer,
+     I     Tracer,tracerIdentity,
      U     df,
      I     myThid)
 C     /==========================================================\
@@ -32,6 +32,7 @@ C     df               - Diffusive flux component work array.
       INTEGER iMin,iMax,jMin,jMax,bi,bj,k
       _RL Tracer(1-OLx:sNx+OLx,1-OLy:sNy+OLy,Nr,nSx,nSy)
       _RL df    (1-OLx:sNx+OLx,1-OLy:sNy+OLy)
+      INTEGER tracerIdentity
       INTEGER myThid
 
 #ifdef ALLOW_GMREDI
