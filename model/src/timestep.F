@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/timestep.F,v 1.18.2.2 2001/01/17 15:05:59 jmc Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/timestep.F,v 1.18.2.3 2001/01/17 18:55:45 jmc Exp $
 
 #include "CPP_OPTIONS.h"
 
@@ -53,7 +53,7 @@ C     Step forward zonal velocity (store in Gu)
 
       IF (staggerTimeStep) THEN
 C--   -grad Phi_Hyd has not been incorporated to gU and is added here:
-        phxFac = pfFacMom*recip_rhoConst
+        phxFac = pfFacMom*deltaTmom*recip_rhoConst
         DO j=jMin,jMax
           DO i=iMin,iMax
             gUNm1(i,j,k,bi,bj)=gUNm1(i,j,k,bi,bj)
@@ -78,11 +78,11 @@ C     Step forward meridional velocity (store in Gv)
 
       IF (staggerTimeStep) THEN
 C--   -grad Phi_Hyd has not been incorporated to gV and is added here:
-        phyFac = pfFacMom*recip_rhoConst
+        phyFac = pfFacMom*deltaTmom*recip_rhoConst
         DO j=jMin,jMax
           DO i=iMin,iMax
             gVNm1(i,j,k,bi,bj)=gVNm1(i,j,k,bi,bj)
-     &       - _recip_dxC(i,j,bi,bj)
+     &       - _recip_dyC(i,j,bi,bj)
      &         *(phiHyd(i,j,k)-phiHyd(i-1,j,k))*phyFac                      
      &         *_maskS(i,j,k,bi,bj)
           ENDDO
