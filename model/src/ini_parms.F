@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/ini_parms.F,v 1.56.2.2 2001/04/04 15:52:07 adcroft Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/ini_parms.F,v 1.56.2.3 2001/04/06 13:02:39 jmc Exp $
 C $Name:  $
 
 #include "CPP_OPTIONS.h"
@@ -94,6 +94,7 @@ C--   Continuous equation parameters
      & saltDiffusion, saltAdvection, saltForcing,
      & implicSurfPress, implicDiv2DFlow,
      & implicitFreeSurface, rigidLid, freeSurfFac, hFacMin, hFacMinDz,
+     & exactConserv, nonlinFreeSurf, hFacInf, hFacSup,
      & staggerTimeStep,
      & tempStepping, saltStepping, momStepping,
      & implicitDiffusion, implicitViscosity,
@@ -108,7 +109,8 @@ C--   Continuous equation parameters
 
 C--   Elliptic solver parameters
       NAMELIST /PARM02/
-     & cg2dMaxIters, cg2dChkResFreq, cg2dTargetResidual, cg2dpcOffDFac,
+     & cg2dMaxIters, cg2dChkResFreq, cg2dTargetResidual, 
+     & cg2dTargetResWunit, cg2dpcOffDFac,
      & cg3dMaxIters, cg3dChkResFreq, cg3dTargetResidual
 
 C--   Time stepping parammeters
