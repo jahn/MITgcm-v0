@@ -1,11 +1,9 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/ecco/Attic/ecco_init.F,v 1.1.4.1 2002/04/08 20:10:38 heimbach Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/ecco/Attic/ecco_init.F,v 1.1.4.2 2002/05/30 22:15:00 heimbach Exp $
 
 #include "CPP_OPTIONS.h"
 
 
-      subroutine ecco_init(
-     I                      mythid
-     &                    )
+      subroutine ecco_init( mythid )
 
 c     ==================================================================
 c     SUBROUTINE ecco_init
@@ -47,7 +45,9 @@ c     == end of interface ==
 c--   Map the control variables onto the model state. 
       call ctrl_Map( mythid )
       _BARRIER
+#endif
 
+#ifdef ALLOW_COST
 c--   Initialise the cost function.
       call cost_InitVaria( mythid )
 

@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/packages_init_variables.F,v 1.8.4.1 2002/04/08 20:10:37 heimbach Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/packages_init_variables.F,v 1.8.4.2 2002/05/30 22:15:00 heimbach Exp $
 C $Name:  $
 
 #include "CPP_OPTIONS.h"
@@ -76,9 +76,6 @@ C--   Open boundaries data
 c--   Map the control variables onto the model state. 
       call ctrl_map_ini( mythid )
       _BARRIER
-c--   Initialise the cost function.
-      call cost_init( mythid )
-      _BARRIER
 #endif
 
 #ifdef INCLUDE_EXTERNAL_FORCING_PACKAGE
@@ -91,6 +88,12 @@ c--   Initialise the cost function.
       IF (useECCO) THEN
        CALL ECCO_INIT( myThid )
       ENDIF
+#else
+# ifdef ALLOW_COST
+c--   Initialise the cost function.
+      call cost_init( mythid )
+      _BARRIER
+# endif
 #endif
 
       RETURN
