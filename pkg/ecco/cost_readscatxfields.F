@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/ecco/Attic/cost_readscatxfields.F,v 1.2 2004/10/11 16:38:53 heimbach Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/ecco/Attic/cost_readscatxfields.F,v 1.3 2005/03/28 19:40:59 heimbach Exp $
 
 #include "COST_CPPOPTIONS.h"
 
@@ -112,8 +112,6 @@ cnew(
          imonth = irec
       endif
 
-      print *, 'ph-cost-scatx ', irec, imonth, iyear, fnametmp
-      
       call mdsreadfield( fnametmp, cost_iprec, cost_yftype, 1,
      &                   scatxdat, imonth, mythid )
 cnew)
