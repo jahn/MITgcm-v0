@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/config_summary.F,v 1.3 1998/04/24 02:06:06 cnh Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/config_summary.F,v 1.4 1998/04/24 02:08:39 cnh Exp $
 
 #include "CPP_EEOPTIONS.h"
 
@@ -57,7 +57,7 @@ C     == Local variables ==
 
       RETURN
   100 FORMAT(A,
-     &'$Name:  $'
+     &' '
      &)
       END
 
