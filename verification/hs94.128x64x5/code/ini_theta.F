@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/verification/hs94.128x64x5/code/Attic/ini_theta.F,v 1.1.2.2 2001/01/25 18:44:07 adcroft Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/verification/hs94.128x64x5/code/Attic/ini_theta.F,v 1.1.2.3 2001/01/25 18:47:58 adcroft Exp $
 
 #include "CPP_OPTIONS.h"
 
@@ -71,7 +71,6 @@ C           theta(I,J,K,bi,bj) = tRef(K)
          ENDDO
         ENDDO
        ENDDO
-       CALL WRITE_FLD_XYZ_RL( 'T1.',' ',theta,0,myThid)
        DO bj = myByLo(myThid), myByHi(myThid)
         DO bi = myBxLo(myThid), myBxHi(myThid)
          DO K=1,Nr
@@ -86,7 +85,6 @@ C--   Zonal FFT filter initial conditions
          ENDDO
         ENDDO
        ENDDO
-       CALL WRITE_FLD_XYZ_RL( 'T2.',' ',theta,0,myThid)
       ELSE
        _BEGIN_MASTER( myThid )
        CALL READ_FLD_XYZ_RL( hydrogThetaFile, ' ', theta, 0, myThid )
