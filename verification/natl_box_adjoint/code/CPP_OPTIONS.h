@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/verification/natl_box_adjoint/code/Attic/CPP_OPTIONS.h,v 1.1.2.2 2002/02/06 22:54:38 heimbach Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/verification/natl_box_adjoint/code/Attic/CPP_OPTIONS.h,v 1.1.2.3 2002/03/24 15:55:29 heimbach Exp $
 C
 
 C 
@@ -145,6 +145,9 @@ C o Use "OLD" UV geometry on sphere (definately *NOT* recommended)
 C   Note - only works with  #undef NO_SLIP_LATERAL  in calc_mom_rhs.F
 C          because the old code did not have no-slip BCs
 #undef  OLD_UV_GEOMETRY
+
+C o Include/exclude exact volume conservaion
+#define EXACT_CONSERV
 
 C o Execution environment support options
 #include "CPP_EEOPTIONS.h"
