@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/kpp/kpp_transport_t.F,v 1.7.6.3 2003/02/14 23:10:35 dimitri Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/kpp/kpp_transport_t.F,v 1.7.6.4 2003/03/07 04:20:57 heimbach Exp $
 C $Name:  $
 
 #include "KPP_OPTIONS.h"
@@ -62,7 +62,7 @@ C     I, J - Loop counters
      &         KappaRT(i,j,k) * KPPghat(i,j,km1,bi,bj) * drF(1) *
      &         ( SurfaceTendencyT(i,j,bi,bj) -
      &           Qsw(i,j,bi,bj)
-     &          *recip_Cp*recip_rhoNil*recip_dRf(1)
+     &          *recip_Cp*recip_rhoConst*recip_dRf(1)
      &          * (1.-KPPfrac(i,j,bi,bj))
      &         )
 
@@ -74,7 +74,7 @@ C     I, J - Loop counters
      &         ( SurfaceTendencyT(i,j,bi,bj) +
      &         SurfaceTendencyTice(i,j,bi,bj) -
      &         Qsw(i,j,bi,bj)
-     &         *recip_Cp*recip_rhoNil*recip_dRf(1)
+     &         *recip_Cp*recip_rhoConst*recip_dRf(1)
      &         * (1.-KPPfrac(i,j,bi,bj))
      &         )
 #endif
