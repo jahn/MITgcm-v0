@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/kpp/KPP_PARAMS.h,v 1.5 2000/11/13 16:37:02 heimbach Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/kpp/KPP_PARAMS.h,v 1.6 2001/01/29 20:09:23 heimbach Exp $
 
 C     /==========================================================\
 C     | KPP_PARAMS.h                                             |

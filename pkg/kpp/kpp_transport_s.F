@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/kpp/kpp_transport_s.F,v 1.4 2000/11/13 16:37:02 heimbach Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/kpp/kpp_transport_s.F,v 1.5 2001/01/29 20:09:23 heimbach Exp $
 
 #include "KPP_OPTIONS.h"
 
