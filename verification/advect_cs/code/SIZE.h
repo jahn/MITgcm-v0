@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/verification/advect_cs/code/SIZE.h,v 1.1 2001/09/28 02:30:09 adcroft Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/verification/advect_cs/code/SIZE.h,v 1.2 2004/09/27 14:49:44 jmc Exp $
 C
 C     /==========================================================\
 C     | SIZE.h Declare size of underlying computational grid.    |
@@ -37,8 +37,8 @@ C     Nr  - No. points in Z for full process domain.
       PARAMETER (
      &           sNx =  32,
      &           sNy =  32,
-     &           OLx =   3,
-     &           OLy =   3,
+     &           OLx =   4,
+     &           OLy =   4,
      &           nSx =   6,
      &           nSy =   1,
      &           nPx =   1,
