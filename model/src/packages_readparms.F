@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/packages_readparms.F,v 1.7.4.2 2002/03/21 03:51:21 heimbach Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/packages_readparms.F,v 1.7.4.3 2002/04/04 10:18:19 heimbach Exp $
 C $Name:  $
 
 #include "CPP_OPTIONS.h"
@@ -79,8 +79,19 @@ C--   Initialize KPP parameters
       IF (useZONAL_FILT) CALL ZONAL_FILT_READPARMS( myThid )
 #endif
 
+#ifdef ALLOW_FLT
+C--   Initialise Float positions
+      IF (useFLT) then
+       CALL FLT_INIT(nIter0,startTime,myThid )
+      _BARRIER
+      ENDIF
+#endif
+
 #ifdef ALLOW_OBCS
-      IF (useOBCS) CALL OBCS_READPARMS( myThid )
+      IF (useOBCS) THEN
+       CALL OBCS_READPARMS( myThid )
+       CALL OBCS_INIT_FIXED( myThid )
+      ENDIF
 #endif
 
 #ifdef ALLOW_AIM

@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/packages_init_fixed.F,v 1.4 2001/09/26 18:09:16 cnh Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/packages_init_fixed.F,v 1.4.6.1 2002/04/04 10:18:19 heimbach Exp $
 C $Name:  $
 
 #include "CPP_OPTIONS.h"
@@ -34,20 +34,6 @@ C     === Routine arguments ===
 C     myThid -  Number of this instances
       INTEGER myThid
 CEOP
-
-C--   Initialize fixed arrays for OBCS
-#ifdef ALLOW_OBCS
-      IF (useOBCS) THEN
-       CALL OBCS_INIT_FIXED( myThid )
-      ENDIF
-#endif
-#ifdef ALLOW_FLT
-C--   Initialise Float positions
-      IF (useFLT) then
-       CALL FLT_INIT(nIter0,startTime,myThid )
-      _BARRIER
-      ENDIF
-#endif
 
       RETURN
       END
