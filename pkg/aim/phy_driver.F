@@ -1,3 +1,6 @@
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/aim/Attic/phy_driver.F,v 1.1.2.2 2001/01/26 17:54:25 adcroft Exp $
+C $Name:  $
+
       SUBROUTINE PDRIVER (TYEAR)
 C--
 C--   SUBROUTINE PDRIVER (TYEAR)
@@ -219,5 +222,3 @@ C
 CdbgC--
       RETURN
       END
-
-C      $Id: phy_driver.F,v 1.1.2.1 2001/01/26 00:14:32 cnh Exp $

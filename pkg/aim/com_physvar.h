@@ -1,3 +1,6 @@
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/aim/Attic/com_physvar.h,v 1.1.2.2 2001/01/26 17:54:25 adcroft Exp $
+C $Name:  $
+
 C--
 C--   /PHYGR1/ : Model variables on gaussian grid
 C--    UG1    = u-wind
@@ -67,5 +70,3 @@ C--    EVAP   = evaporation [g/(m^2 s)] (1: land, 2: sea, 3: w. average)
      *                USTR(NGP,3), VSTR(NGP,3), SHF(NGP,3), EVAP(NGP,3),
      *                T0(NGP,2), Q0(NGP), QSAT0(NGP,2), SLR_DOWN(NGP),
      *                ST4S(NGP), SPEED0(NGP)
-C
-C      $Id: com_physvar.h,v 1.1.2.1 2001/01/26 00:14:32 cnh Exp $

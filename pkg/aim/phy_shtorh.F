@@ -1,3 +1,5 @@
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/aim/Attic/phy_shtorh.F,v 1.1.2.2 2001/01/26 17:54:25 adcroft Exp $
+C $Name:  $
  
       SUBROUTINE SHTORH (IMODE,NGP,TA,PS,SIG,QA,RH,QSAT)
 C--
@@ -115,4 +117,3 @@ C--
       RETURN
       END
 C
-C      $Id: phy_shtorh.F,v 1.1.2.1 2001/01/26 00:14:32 cnh Exp $

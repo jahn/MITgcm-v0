@@ -1,3 +1,5 @@
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/aim/Attic/phy_radiat.F,v 1.1.2.2 2001/01/26 17:54:25 adcroft Exp $
+C $Name:  $
 
       SUBROUTINE SOL_OZ (SOLC,TYEAR,FSOL,OZONE)
 
@@ -540,4 +542,3 @@ C
 C---						
       RETURN
       END
-C      $Id: phy_radiat.F,v 1.1.2.1 2001/01/26 00:14:32 cnh Exp $

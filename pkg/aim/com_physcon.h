@@ -1,3 +1,6 @@
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/aim/Attic/com_physcon.h,v 1.1.2.2 2001/01/26 17:54:25 adcroft Exp $
+C $Name:  $
+
 C--
 C--   /PHYCON/: Physical constants (initial. in INPHYS)
 C--    P0   = reference pressure
@@ -23,8 +26,3 @@ C--    FMU    = legendre polinomials in sin(lat)
       COMMON /FSIGMU/ SIG(NLEV), SIGL(NLEV), SIGH(0:NLEV), DSIG(NLEV),
      *                POUT(NLEV), GRDSIG(NLEV), GRDSCP(NLEV), 
      *                WVI(NLEV,2), FMU(NLAT,2)
-C
-C
-C
-C
-C      $Id: com_physcon.h,v 1.1.2.1 2001/01/26 00:14:32 cnh Exp $

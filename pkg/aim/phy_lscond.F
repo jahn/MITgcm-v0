@@ -1,3 +1,5 @@
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/aim/Attic/phy_lscond.F,v 1.1.2.2 2001/01/26 17:54:25 adcroft Exp $
+C $Name:  $
 
       SUBROUTINE LSCOND (PSA,QA,QSAT,
      *                   PRECLS,DTLSC,DQLSC)
@@ -77,4 +79,3 @@ C--   3. Large-scale precipitation
 C--
       RETURN
       END
-C      $Id: phy_lscond.F,v 1.1.2.1 2001/01/26 00:14:32 cnh Exp $

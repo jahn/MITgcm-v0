@@ -1,3 +1,6 @@
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/aim/Attic/com_forcon.h,v 1.1.2.2 2001/01/26 17:54:24 adcroft Exp $
+C $Namer: $
+
 C--
 C--   /FORCON/: Constants for forcing fields (initial. in INPHYS)
 C--    SOLC   = Solar constant (area averaged) in W/m^2
@@ -10,6 +13,3 @@ C--    SWWIL  = Soil wetness at wilting point
 
       COMMON /FORCON/ SOLC, ALBSEA, ALBICE, ALBSN, SDALB,
      &                SWCAP, SWWIl
-
- 
-C      $Id: com_forcon.h,v 1.1.2.1 2001/01/26 00:14:32 cnh Exp $

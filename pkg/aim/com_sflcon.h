@@ -1,3 +1,6 @@
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/aim/Attic/com_sflcon.h,v 1.1.2.2 2001/01/26 17:54:25 adcroft Exp $
+C $Name:  $
+
 C--
 C--   /SFLCON/: Constants for surface fluxes (initial. in INPHYS)
 C--    FWIND0 = ratio of near-sfc wind to lowest-level wind
@@ -16,6 +19,3 @@ C--    SWMAX  = Soil wetness (in mm) corresp. to potential evapotranspiration
 
       COMMON /SFLCON/ FWIND0, FTEMP0, FHUM0,
      *                CDL, CDS, CHL, CHS, VGUST, SWMAX
-
- 
-C      $Id: com_sflcon.h,v 1.1.2.1 2001/01/26 00:14:32 cnh Exp $

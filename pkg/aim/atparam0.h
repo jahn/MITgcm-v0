@@ -1,3 +1,6 @@
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/aim/Attic/atparam0.h,v 1.1.2.2 2001/01/26 17:54:24 adcroft Exp $
+C $Namer: $
+
       INTEGER ISC
       PARAMETER (ISC=1)
 
@@ -8,4 +11,3 @@
       PARAMETER (MX=MTRUN+1 , MX2=2*MX)
       PARAMETER (IL=sNy, NTRUN1=NTRUN+1 )
       PARAMETER ( MXP=ISC*MTRUN+1 )
-C     $Id: atparam0.h,v 1.1.2.1 2001/01/26 00:14:32 cnh Exp $
