@@ -1,9 +1,9 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/shap_filt/Attic/shap_filt_uv.F,v 1.3.2.6 2001/05/07 19:02:52 adcroft Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/shap_filt/shap_filt_uv_s1.F,v 1.1.2.1 2001/05/07 19:02:52 adcroft Exp $
 C $Name:  $
 
 #include "SHAP_FILT_OPTIONS.h"
 
-      SUBROUTINE SHAP_FILT_UV( 
+      SUBROUTINE SHAP_FILT_UV_S1( 
      U           uFld, vFld,
      I           myTime, myThid )
 C     /==========================================================\
@@ -34,9 +34,7 @@ C     == Local variables ==
       _RL tmpGrdU(1-OLx:sNx+OLx,1-OLy:sNy+OLy)
       _RL tmpGrdV(1-OLx:sNx+OLx,1-OLy:sNy+OLy)
       _RL maskZj,maskZp
-#ifndef SEQUENTIAL_2D_SHAP
       _RL tmpScal
-#endif
 
       IF (nShapUV.gt.0) THEN
 
@@ -115,28 +113,18 @@ C      F <-  [1-d_xx^n]F
          DO K=1,Nr
           DO J=1,sNy
            DO I=1,sNx+1
-#ifdef      SEQUENTIAL_2D_SHAP
-            tmpFldU(i,j,k,bi,bj)=uFld(i,j,k,bi,bj)-tmpFldU(i,j,k,bi,bj)
-            uFld(i,j,k,bi,bj)=tmpFldU(i,j,k,bi,bj)
-#else
             tmpScal=tmpFldU(i,j,k,bi,bj)
             tmpFldU(i,j,k,bi,bj)=uFld(i,j,k,bi,bj)
      &                *_maskW(i,j,k,bi,bj)
             uFld(i,j,k,bi,bj)=uFld(i,j,k,bi,bj)-0.5*tmpScal
-#endif   /* SEQUENTIAL_2D_SHAP */
            ENDDO
           ENDDO
           DO J=1,sNy+1
            DO I=1,sNx
-#ifdef      SEQUENTIAL_2D_SHAP
-            tmpFldV(i,j,k,bi,bj)=vFld(i,j,k,bi,bj)-tmpFldV(i,j,k,bi,bj)
-            vFld(i,j,k,bi,bj)=tmpFldV(i,j,k,bi,bj)
-#else
             tmpScal=tmpFldV(i,j,k,bi,bj)
             tmpFldV(i,j,k,bi,bj)=vFld(i,j,k,bi,bj)
      &                *_maskW(i,j,k,bi,bj)
             vFld(i,j,k,bi,bj)=vFld(i,j,k,bi,bj)-0.5*tmpScal
-#endif   /* SEQUENTIAL_2D_SHAP */
            ENDDO
           ENDDO
          ENDDO
@@ -266,22 +254,14 @@ C      F <-  [1-d_yy^n]F
          DO K=1,Nr
           DO J=1,sNy
            DO I=1,sNx+1
-#ifdef      SEQUENTIAL_2D_SHAP
-            uFld(i,j,k,bi,bj)=uFld(i,j,k,bi,bj)-tmpFldU(i,j,k,bi,bj)
-#else
             tmpScal=tmpFldU(i,j,k,bi,bj)
             uFld(i,j,k,bi,bj)=uFld(i,j,k,bi,bj)-0.5*tmpScal
-#endif   /* SEQUENTIAL_2D_SHAP */
            ENDDO
           ENDDO
           DO J=1,sNy+1
            DO I=1,sNx
-#ifdef      SEQUENTIAL_2D_SHAP
-            vFld(i,j,k,bi,bj)=vFld(i,j,k,bi,bj)-tmpFldV(i,j,k,bi,bj)
-#else
             tmpScal=tmpFldV(i,j,k,bi,bj)
             vFld(i,j,k,bi,bj)=vFld(i,j,k,bi,bj)-0.5*tmpScal
-#endif   /* SEQUENTIAL_2D_SHAP */
            ENDDO
           ENDDO
          ENDDO

@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/shap_filt/shap_filt_readparms.F,v 1.1.2.3 2001/05/07 18:40:02 adcroft Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/shap_filt/shap_filt_readparms.F,v 1.1.2.4 2001/05/07 19:02:51 adcroft Exp $
 C $Name:  $
 
 #include "SHAP_FILT_OPTIONS.h"
@@ -23,8 +23,8 @@ C     === Routine arguments ===
 #ifdef ALLOW_SHAP_FILT
 
       NAMELIST /SHAP_PARM01/ nShapT, nShapUV, Shap_funct,
-     &          Shap_Trtau, Shap_TrDamp,
-     &          Shap_uvtau, Shap_uvDamp 
+     &          Shap_Trtau, Shap_TrDamp, Shap_TrLength,
+     &          Shap_uvtau, Shap_uvDamp, Shap_uvLength
 
 C     === Local variables ===
 C     msgBuf      - Informational/error meesage buffer
@@ -52,9 +52,11 @@ C--   Default flags and values for Shapiro Filter
       nShapUV = 0
       Shap_funct = 2
       Shap_Trtau = deltaTtracer
-      Shap_uvtau = deltaTMom
       Shap_TrDamp = 0.
+      Shap_TrLength = 1.
+      Shap_uvtau = deltaTMom
       Shap_uvDamp = 0.
+      Shap_TrLength = 1.
 
 C--   Read parameters from open data file
       READ(UNIT=iUnit,NML=SHAP_PARM01)
