@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/dynamics.F,v 1.83.4.6 2003/06/24 23:05:28 heimbach Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/dynamics.F,v 1.83.4.7 2003/07/08 15:18:29 heimbach Exp $
 C $Name:  $
 
 #include "CPP_OPTIONS.h"
@@ -453,7 +453,7 @@ C     &                'phiHydLow', myThid )
 Cml)
 
 #ifndef DISABLE_DEBUGMODE
-      If (debugMode) THEN
+      If ( debugLevel .GE. debLevB ) THEN
        CALL DEBUG_STATS_RL(1,EtaN,'EtaN (DYNAMICS)',myThid)
        CALL DEBUG_STATS_RL(Nr,uVel,'Uvel (DYNAMICS)',myThid)
        CALL DEBUG_STATS_RL(Nr,vVel,'Vvel (DYNAMICS)',myThid)
