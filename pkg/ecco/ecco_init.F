@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/ecco/Attic/ecco_init.F,v 1.1.6.2 2002/03/25 22:50:46 heimbach Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/ecco/Attic/ecco_init.F,v 1.1.6.3 2002/04/04 10:34:57 heimbach Exp $
 
 #include "CPP_OPTIONS.h"
 
@@ -41,10 +41,6 @@ c     == external ==
 
 c     == end of interface ==
 
-#ifdef INCLUDE_EXTERNAL_FORCING_PACKAGE
-      call exf_init( mythid )
-#endif /* INCLUDE_EXTERNAL_FORCING_PACKAGE */
-
 #ifdef INCLUDE_ECCO_PACKAGE
 
 #ifdef ALLOW_COST
@@ -58,10 +54,6 @@ c--   Map the control variables onto the model state.
       call ctrl_init_variables ( mythid )
       call ctrl_map( mythid )
       _BARRIER
-#endif
-
-#ifndef INCLUDE_EXTERNAL_FORCING_PACKAGE
-      call ini_forcing( mythid )
 #endif
 
 #endif

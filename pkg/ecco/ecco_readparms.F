@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/ecco/ecco_readparms.F,v 1.2.6.2 2002/03/21 03:51:21 heimbach Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/ecco/ecco_readparms.F,v 1.2.6.3 2002/04/04 10:34:57 heimbach Exp $
 
 #include "CPP_OPTIONS.h"
 
@@ -121,13 +121,13 @@ c--   Estimation package.
       CALL optim_readparms( myThid )
       _BARRIER
 
-C--   Initialise the control vector.
-      CALL ctrl_init( myThid )
-      _BARRIER
-
 C--   Initialise the cost function.
       call cost_readparms( mythid )
       call cost_init( myThid )
+      _BARRIER
+
+C--   Initialise the control vector.
+      CALL ctrl_init( myThid )
       _BARRIER
 
 #ifdef ALLOW_GRADIENT_CHECK
@@ -141,8 +141,6 @@ C--   Initialise gradient check parameters
 c--   Initialise the ECCO diagnostics package.
       CALL diagnos_init( myThid )
       _BARRIER
-#else
-c--   Diagnostics not enabled.
 #endif
 
 #endif /* INCLUDE_ECCO_PACKAGE */
@@ -152,9 +150,6 @@ c-------------------------------- ECCO --------------------------------
 c--     Summarize the setup of the ECCO release.
         call ecco_summary( mythid )
       _END_MASTER( mythid )
-
-c--   Everyone else must wait for the parameters to be loaded and
-c--   the setup to be completed.
       _BARRIER
 
       end
