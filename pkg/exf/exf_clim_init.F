@@ -1,4 +1,4 @@
-c $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/exf/Attic/exf_clim_init.F,v 1.1 2001/05/14 22:08:40 heimbach Exp $
+c $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/exf/Attic/exf_clim_init.F,v 1.1.6.1 2002/02/06 23:18:53 heimbach Exp $
 
 #include "EXF_CPPOPTIONS.h"
 
@@ -35,8 +35,6 @@ c     == routine arguments ==
       integer mythid
 
 c     == local variables ==
-
-      integer i
 
 c     == end of interface ==
 
