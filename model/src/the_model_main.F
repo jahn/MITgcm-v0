@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/the_model_main.F,v 1.43.4.2 2002/12/27 08:01:54 dimitri Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/the_model_main.F,v 1.43.4.3 2003/01/31 05:06:51 dimitri Exp $
 C $Name:  $
 
 CBOI
@@ -345,6 +345,8 @@ C/\  | | | |-TIMEAVE_STATV_WRITE :: Time averages. see pkg/timeave
 C/\  | | | |-AIM_WRITE_DIAGS     :: Intermed. atmos diags. see pkg/aim
 C/\  | | | |-GMREDI_DIAGS        :: GM diags. see pkg/gmredi
 C/\  | | | |-KPP_DO_DIAGS        :: KPP diags. see pkg/kpp
+C/\  | | | |-SBO_CALC            :: SBO diags. see pkg/sbo
+C/\  | | | |-SBO_DIAGS           :: SBO diags. see pkg/sbo
 C/\  | | |
 C/\  | | |-WRITE_CHECKPOINT :: Do I/O for restart files.
 C/\  | |

@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/do_the_model_io.F,v 1.22 2001/09/26 18:09:14 cnh Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/do_the_model_io.F,v 1.22.4.1 2003/01/31 05:06:50 dimitri Exp $
 C $Name:  $
 
 #include "CPP_OPTIONS.h"
@@ -94,6 +94,14 @@ C--   Do KPP diagnostics.
 C--   Do KPP diagnostics.
       IF (useKPP)
      & CALL KPP_DO_DIAGS( myCurrentTime, myIter, myThid )
+#endif
+
+#ifdef ALLOW_SBO
+C--   Do SBO diagnostics.
+      IF (useSBO) THEN
+         CALL SBO_CALC ( myCurrentTime, myIter, myThid )
+         CALL SBO_DIAGS( myCurrentTime, myIter, myThid )
+      ENDIF
 #endif
 
       RETURN

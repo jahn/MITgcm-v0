@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/packages_readparms.F,v 1.7.2.5 2002/11/11 21:59:05 heimbach Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/packages_readparms.F,v 1.7.2.6 2003/01/31 05:06:51 dimitri Exp $
 C $Name:  $
 
 #include "CPP_OPTIONS.h"
@@ -30,6 +30,8 @@ C       |
 C       |-- GMREDI_READPARMS
 C       |
 C       |-- KPP_READPARMS
+C       |
+C       |-- SBO_READPARMS
 C       |
 C       |-- SEAICE_READPARMS
 C       |
@@ -71,6 +73,11 @@ C--   Initialize GM/Redi parameters
 #ifdef ALLOW_KPP
 C--   Initialize KPP parameters
       IF (useKPP) CALL KPP_READPARMS( myThid )
+#endif
+
+#ifdef ALLOW_SBO
+C--   Initialize SBO parameters
+      IF (useSBO) CALL SBO_READPARMS( myThid )
 #endif
 
 #ifdef ALLOW_SEAICE

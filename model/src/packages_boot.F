@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/packages_boot.F,v 1.7.2.2 2002/11/11 21:59:05 heimbach Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/packages_boot.F,v 1.7.2.3 2003/01/31 05:06:50 dimitri Exp $
 C $Name:  $
 
 #include "CPP_OPTIONS.h"
@@ -53,6 +53,7 @@ C     data.pkg namelists
      &          useSHAP_FILT,
      &          useZONAL_FILT,
      &          useFLT,
+     &          useSBO,
      &          useSEAICE
 CEOP
 
@@ -78,6 +79,7 @@ C--   Default package configuration
       useSHAP_FILT=.FALSE.
       useZONAL_FILT=.FALSE.
       useFLT=.FALSE.
+      useSBO=.FALSE.
       useSEAICE=.FALSE.
 
 C--   Read parameters from open data file

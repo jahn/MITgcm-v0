@@ -1,4 +1,4 @@
-$Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/doc/tag-index,v 1.53.2.19 2003/01/30 05:55:53 dimitri Exp $
+$Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/doc/tag-index,v 1.53.2.20 2003/01/31 05:06:50 dimitri Exp $
 
     Notes on tags used in MITgcmUV
     ==============================
@@ -9,6 +9,9 @@ o modifications for using pkg/exf with pkg/seaice
   - added basic radiation bulk formulae to pkg/exf
   - units/sign fix for evap computation in exf_getffields.F
   - updated verification/global_with_exf/results/output.txt
+o added pkg/sbo for computing IERS Special Bureau for the Oceans (SBO)
+  core products, including oceanic mass, center-of-mass, angular, and
+  bottom pressure.
 
 release1_p10
 o modifications for using pkg/exf with pkg/seaice
