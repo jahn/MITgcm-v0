@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/cost/Attic/cost_driftw.F,v 1.1.2.1 2002/04/04 10:58:58 heimbach Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/cost/Attic/cost_driftw.F,v 1.1.2.2 2003/06/19 15:21:16 heimbach Exp $
 
 #include "COST_CPPOPTIONS.h"
 
@@ -19,6 +19,10 @@ c
 c     started: from cost_drift
 c
 c     Armin Koehl  akoehl@ucsd.edu  26-Feb-2002
+c
+c     heimbach@mit.edu 17-Jun-2003 SIO merge:
+c             changed 1e12*cosphi(i,j,bi,bj) factor to
+c                     2.5e11*cosphi(i,j,bi,bj)
 c
 c     ==================================================================
 c     SUBROUTINE cost_Driftw
@@ -111,13 +115,6 @@ c--   Read tiled data.
         ilw = ilnblnk( wbarfile )
         write(fnamew(1:80),'(2a,i10.10)')
      &    wbarfile(1:ilw),'.',optimcycle
-     
-      else
-        print*
-        print*,' cost_Driftw: optimcycle has a wrong value.'
-        print*,'             optimcycle = ',optimcycle
-        print*
-        stop   '  ... stopped in cost_Driftw.'
       endif
       
       if (nmonsrec.lt.12) then 
@@ -211,7 +208,7 @@ c           the vertical velovity field. The error is 1e-4 m/s.
               do i = imin,imax
                   if (_hFacC(i,j,k,bi,bj) .ne. 0.) then
                      fctilew = fctilew +
-     &                  (1e12*cosphi(i,j,bi,bj)*
+     &                  (2.5e11*cosphi(i,j,bi,bj)*
      &          (wlmean(i,j,k,bi,bj)/nl - wfmean(i,j,k,bi,bj)/nf)*
      &          (wlmean(i,j,k,bi,bj)/nl - wfmean(i,j,k,bi,bj)/nf))
                   endif

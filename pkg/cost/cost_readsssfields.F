@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/cost/Attic/cost_readsssfields.F,v 1.1.2.2 2002/04/04 10:58:59 heimbach Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/cost/Attic/cost_readsssfields.F,v 1.1.2.3 2003/06/19 15:21:16 heimbach Exp $
 
 #include "COST_CPPOPTIONS.h"
 
@@ -82,8 +82,21 @@ ce    --> there is certainly a better place for this.
      &           (nmonthyear - mod(sssstartdate(1)/100,100) +
      &            1) + mod(modelstartdate(1)/100,100) - 1 + irec
       endif
-      call mdsreadfield( sssdatfile, cost_iprec, cost_yftype, 1, sssdat,
-     &                   sssrec, mythid )
+
+      if ( sssrec.gt.0 .and. sssdatfile .ne. ' ' ) then
+        call mdsreadfield( sssdatfile, cost_iprec, cost_yftype, 1,
+     &                   sssdat, sssrec, mythid )
+      else
+         do bj = jtlo,jthi
+            do bi = itlo,ithi
+               do j = jmin,jmax
+                  do i = imin,imax
+                     sssdat(i,j,bi,bj)=spval
+                  enddo
+               enddo
+            enddo
+         enddo
+      endif
 
       nobs = 0
       do bj = jtlo,jthi
@@ -96,7 +109,7 @@ ce    --> there is certainly a better place for this.
               else
                 sssmask(i,j,bi,bj) = 1. _d 0
               endif
-              if (sssdat(i,j,bi,bj) .lt. spval) then
+              if (sssdat(i,j,bi,bj) .le. spval) then
                 sssmask(i,j,bi,bj) = 0. _d 0
               endif
               if (sssdat(i,j,bi,bj) .eq. 0. _d 0 ) then

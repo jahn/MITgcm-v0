@@ -1,14 +1,12 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/cost/Attic/cost_summary.F,v 1.2.6.2 2002/04/04 10:58:59 heimbach Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/cost/Attic/cost_summary.F,v 1.2.6.3 2003/06/19 15:21:16 heimbach Exp $
 
 #include "COST_CPPOPTIONS.h"
 
 
-      subroutine cost_Summary(
-     I                         mythid
-     &                       )
+      subroutine cost_summary( mythid )
 
 c     ==================================================================
-c     SUBROUTINE cost_Summary
+c     SUBROUTINE cost_summary
 c     ==================================================================
 c
 c     o Summarize the cost function related parts of the ECCO release.
@@ -21,7 +19,7 @@ c              - Restructured the code in order to create a package
 c                for the MITgcmUV.
 c
 c     ==================================================================
-c     SUBROUTINE cost_Summary
+c     SUBROUTINE cost_summary
 c     ==================================================================
 
       implicit none
@@ -104,19 +102,23 @@ c     == end of interface ==
       call print_message( msgbuf, standardmessageunit,
      &                    SQUEEZE_RIGHT , mythid)
       write(msgbuf,'(a,e10.3)')
-     &'  Temperature (3d):             ',mult_temp
+     &'  Temperature Lev.:             ',mult_temp
       call print_message( msgbuf, standardmessageunit,
      &                    SQUEEZE_RIGHT , mythid)
       write(msgbuf,'(a,e10.3)')
-     &'  Salinity (3d):                ',mult_salt
+     &'  Salinity Lev.:                ',mult_salt
       call print_message( msgbuf, standardmessageunit,
      &                    SQUEEZE_RIGHT , mythid)
       write(msgbuf,'(a,e10.3)')
-     &'  Temperature (3d):             ',mult_temp0
+     &'  Temperature ini.:             ',mult_temp0
       call print_message( msgbuf, standardmessageunit,
      &                    SQUEEZE_RIGHT , mythid)
       write(msgbuf,'(a,e10.3)')
-     &'  Salinity (3d):                ',mult_salt0
+     &'  Salinity ini.:                ',mult_salt0
+      call print_message( msgbuf, standardmessageunit,
+     &                    SQUEEZE_RIGHT , mythid)
+      write(msgbuf,'(a,e10.3)')
+     &'  TMI Sea surface temperature:  ',mult_tmi
       call print_message( msgbuf, standardmessageunit,
      &                    SQUEEZE_RIGHT , mythid)
       write(msgbuf,'(a,e10.3)')
@@ -133,6 +135,14 @@ c     == end of interface ==
      &                    SQUEEZE_RIGHT , mythid)
       write(msgbuf,'(a,e10.3)')
      &'  CTD salinity:                 ',mult_ctds
+      call print_message( msgbuf, standardmessageunit,
+     &                    SQUEEZE_RIGHT , mythid)
+      write(msgbuf,'(a,e10.3)')
+     &'  CTD clim temperature:         ',mult_ctdtclim
+      call print_message( msgbuf, standardmessageunit,
+     &                    SQUEEZE_RIGHT , mythid)
+      write(msgbuf,'(a,e10.3)')
+     &'  CTD clim salinity:            ',mult_ctdsclim
       call print_message( msgbuf, standardmessageunit,
      &                    SQUEEZE_RIGHT , mythid)
       write(msgbuf,'(a,e10.3)')
@@ -159,12 +169,32 @@ c     == end of interface ==
      &'  drift between last and 1st year:',mult_sdrift
       call print_message( msgbuf, standardmessageunit,
      &                    SQUEEZE_RIGHT , mythid)
+      write(msgbuf,'(a,e10.3)')
+     &'  Ageostrophic bdy flow:        ',mult_ageos
+      call print_message( msgbuf, standardmessageunit,
+     &                    SQUEEZE_RIGHT , mythid)
+      write(msgbuf,'(a,e10.3)')
+     &'  OB North:                     ',mult_obcsn
+      call print_message( msgbuf, standardmessageunit,
+     &                    SQUEEZE_RIGHT , mythid)
+      write(msgbuf,'(a,e10.3)')
+     &'  OB South:                     ',mult_obcss
+      call print_message( msgbuf, standardmessageunit,
+     &                    SQUEEZE_RIGHT , mythid)
+      write(msgbuf,'(a,e10.3)')
+     &'  OB West:                      ',mult_obcsw
+      call print_message( msgbuf, standardmessageunit,
+     &                    SQUEEZE_RIGHT , mythid)
+      write(msgbuf,'(a,e10.3)')
+     &'  OB East:                      ',mult_obcse
+      call print_message( msgbuf, standardmessageunit,
+     &                    SQUEEZE_RIGHT , mythid)
+
+
       write(msgbuf,'(a)')
      &' '
       call print_message( msgbuf, standardmessageunit,
-     &                    SQUEEZE_RIGHT , mythid)
-     
-
+     &                    SQUEEZE_RIGHT , mythid)     
       write(msgbuf,'(a)')
      &' '
       call print_message( msgbuf, standardmessageunit,

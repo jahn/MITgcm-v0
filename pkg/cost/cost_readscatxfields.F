@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/cost/Attic/cost_readscatxfields.F,v 1.1.2.1 2002/04/04 10:58:59 heimbach Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/cost/Attic/cost_readscatxfields.F,v 1.1.2.2 2003/06/19 15:21:16 heimbach Exp $
 
 #include "COST_CPPOPTIONS.h"
 
@@ -82,8 +82,21 @@ ce    --> there is certainly a better place for this.
      &           (nmonthyear - mod(scatxstartdate(1)/100,100) +
      &            1) + mod(modelstartdate(1)/100,100) - 1 + irec
       endif
-      call mdsreadfield( scatxdatfile, cost_iprec, cost_yftype, 1, 
+
+      if ( scatxrec .gt. 0 .and. scatxdatfile .ne. ' ' ) then
+        call mdsreadfield( scatxdatfile, cost_iprec, cost_yftype, 1, 
      &                   scatxdat, scatxrec, mythid )
+      else
+         do bj = jtlo,jthi
+            do bi = itlo,ithi
+               do j = jmin,jmax
+                  do i = imin,imax
+                     scatxdat(i,j,bi,bj)=0. _d 0
+                  enddo
+               enddo
+            enddo
+         enddo
+      endif
 
       nobs = 0
       do bj = jtlo,jthi

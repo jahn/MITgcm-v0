@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/cost/Attic/cost_drift.F,v 1.1.2.1 2002/04/04 10:58:58 heimbach Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/cost/Attic/cost_drift.F,v 1.1.2.2 2003/06/19 15:21:16 heimbach Exp $
 
 #include "COST_CPPOPTIONS.h"
 
@@ -19,6 +19,10 @@ c
 c     started: from the "old" code
 c
 c              Elisabeth Remy eremy@ucsd.edu   july 31 2001
+c
+c              heimbach@mit.edu 17-Jun-2003: SIO merge:
+c              changed cosphi(i,j,bi,bj)*100.0 factor to
+c                      cosphi(i,j,bi,bj)*2.5
 c
 c     ==================================================================
 c     SUBROUTINE cost_Drift
@@ -119,13 +123,6 @@ c--   Read tiled data.
         ilsalt = ilnblnk( sbarfile )
         write(fnamesalt(1:80),'(2a,i10.10)')
      &    sbarfile(1:ilsalt),'.',optimcycle
-     
-      else
-        print*
-        print*,' cost_Drift: optimcycle has a wrong value.'
-        print*,'             optimcycle = ',optimcycle
-        print*
-        stop   '  ... stopped in cost_Drift.'
       endif
       
       if (nmonsrec.lt.12) then 

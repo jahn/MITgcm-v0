@@ -1,14 +1,12 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/cost/Attic/cost_averagesinit.F,v 1.1.2.4 2003/05/23 16:26:26 heimbach Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/cost/Attic/cost_averagesinit.F,v 1.1.2.5 2003/06/19 15:21:16 heimbach Exp $
 
 #include "COST_CPPOPTIONS.h"
 
 
-      subroutine cost_AveragesInit(
-     I                              mythid
-     &                            )
+      subroutine cost_averagesinit( mythid )
 
 c     ==================================================================
-c     SUBROUTINE cost_AveragesInit
+c     SUBROUTINE cost_averagesinit
 c     ==================================================================
 c
 c     o Set average fields for temperature, salinity, surface pressure,
@@ -23,7 +21,7 @@ c              - Restructured the code in order to create a package
 c                for the MITgcmUV.
 c
 c     ==================================================================
-c     SUBROUTINE cost_AveragesInit
+c     SUBROUTINE cost_averagesinit
 c     ==================================================================
 
       implicit none
@@ -77,6 +75,7 @@ c--       Initialise surface pressure average.
 
 #if (defined (ALLOW_THETA_COST_CONTRIBUTION) || \
      defined (ALLOW_CTDT_COST_CONTRIBUTION) || \
+     defined (ALLOW_CTDTCLIM_COST_CONTRIBUTION) || \
      defined (ALLOW_XBT_COST_CONTRIBUTION) || \
      defined (ALLOW_DRIFT_COST_CONTRIBUTION) || \
      defined (ALLOW_OBCS_COST_CONTRIBUTION))
@@ -104,6 +103,7 @@ c--       Initialise temperature average (2d).
 
 #if (defined (ALLOW_SALT_COST_CONTRIBUTION) || \
      defined (ALLOW_CTDS_COST_CONTRIBUTION) || \
+     defined (ALLOW_CTDSCLIM_COST_CONTRIBUTION) || \
      defined (ALLOW_DRIFT_COST_CONTRIBUTION) || \
      defined (ALLOW_OBCS_COST_CONTRIBUTION))
 c--       Initialise salt average.
@@ -129,7 +129,8 @@ c--       Initialise salinity average (2d).
 #endif
 
 #if (defined (ALLOW_DRIFTER_COST_CONTRIBUTION) || \
-     defined (ALLOW_OBCS_COST_CONTRIBUTION))
+     defined (ALLOW_CURMTR_COST_CONTRIBUTION) || \
+     defined (OBCS_AGEOS_COST_CONTRIBUTION))
 c--       Initialise uvel, vvel average.
           do k = 1,nr
             do j = jmin,jmax

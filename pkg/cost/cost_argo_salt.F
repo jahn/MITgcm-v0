@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/cost/Attic/cost_argo_salt.F,v 1.1.2.1 2002/04/04 10:58:58 heimbach Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/cost/Attic/cost_argo_salt.F,v 1.1.2.2 2003/06/19 15:21:16 heimbach Exp $
 
 #include "COST_CPPOPTIONS.h"
 
@@ -110,13 +110,7 @@ c--   Read state record from global file.
       if (optimcycle .ge. 0) then
         ilu=ilnblnk( sbarfile )
         write(fnamesalt(1:80),'(2a,i10.10)') 
-     &    sbarfile(1:ilu),'.', optimcycle
-      else
-        print*
-        print*,' cost_ARGO_SALT: optimcycle has a wrong value.'
-        print*,'                 optimcycle = ',optimcycle
-        print*
-        stop   '  ... stopped in cost_ARGO_SALT.'
+     &    sbarfile(1:ilu), '.', optimcycle
       endif
       
       fcthread_argos = 0. _d 0
@@ -130,8 +124,7 @@ c--     Read time averages and the monthly mean data.
      &          optimcycle, mythid
      &   , xx_sbar_mean_dummy )
   
-        call mdsreadfield( argosfile, cost_iprec, 'RL', nr, argosobs,
-     &                     irec, mythid)
+        call cost_readargos( irec, mythid )
 
 c--     Loop over this thread's tiles.
         do bj = jtlo,jthi
@@ -151,7 +144,7 @@ cph               if ( rC(K) .GT. -1000. ) then
 cph)
               do j = jmin,jmax
                 do i = imin,imax                 
-                   if (argosobs(i,j,k,bi,bj) .gt. spval .and.
+                   if (argosobs(i,j,k,bi,bj) .ge. spval .and.
      $                  _hFacC(i,j,13,bi,bj) .ne. 0. .and.
      $                  _hFacC(i,j,k,bi,bj) .ne. 0.) then
                       fctile_argos = fctile_argos + 
