@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/ini_depths.F,v 1.22.2.1 2001/03/30 23:05:12 jmc Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/ini_depths.F,v 1.22.2.2 2001/04/09 22:22:24 cnh Exp $
 C $Name:  $
 
 #include "CPP_OPTIONS.h"
@@ -93,7 +93,7 @@ C    &                    'RS', 1, H, 1, myThid )
        _END_MASTER(myThid)
       ENDIF
 
-      _EXCH_XY_R4(    H, myThid )
+C     _EXCH_XY_R4(    H, myThid )
 
       IF (usingSphericalPolarGrid) THEN
        DO bj = myByLo(myThid), myByHi(myThid)
@@ -107,7 +107,7 @@ C    &                    'RS', 1, H, 1, myThid )
        ENDDO
       ENDIF
 C
-      CALL PLOT_FIELD_XYRS(H,'Model depths (ini_depths)',1,myThid)
+C     CALL PLOT_FIELD_XYRS(H,'Model depths (ini_depths)',1,myThid)
 C
       IF (groundAtK1) THEN
        DO bj = myByLo(myThid), myByHi(myThid)
@@ -132,6 +132,9 @@ C
         ENDDO
        ENDDO
       ENDIF
+
+      _EXCH_XY_R4(    R_low, myThid )
+      _EXCH_XY_R4(    Ro_surf, myThid )
 
       RETURN
       END
