@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/grdchk/grdchk_print.F,v 1.6 2003/02/28 02:34:56 heimbach Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/grdchk/grdchk_print.F,v 1.7 2003/06/24 16:08:45 heimbach Exp $
 
 #include "CPP_OPTIONS.h"
 
