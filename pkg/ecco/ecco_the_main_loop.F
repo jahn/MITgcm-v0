@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/ecco/Attic/ecco_the_main_loop.F,v 1.1.2.12 2003/03/04 21:04:38 heimbach Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/ecco/Attic/ecco_the_main_loop.F,v 1.1.2.13 2003/03/04 22:09:47 heimbach Exp $
 
 #include "CPP_OPTIONS.h"
 #ifdef ALLOW_OBCS
@@ -565,9 +565,9 @@ c--   Accumulate time averages of temperature, salinity, and SSH.
       call cost_AveragesFields( mytime, myiter, mythid )
       call timer_stop ('cost_AveragesFields [ECCO SPIN-DOWN]', mythid)
 #ifdef ALLOW_TAMC_CHECKPOINTING
-CADJ STORE xx_psbar_mean_dummy = onetape
-CADJ STORE xx_tbar_mean_dummy = onetape
-CADJ STORE xx_sbar_mean_dummy = onetape
+c**************************************
+#include "checkpoint_bar_directives.h"
+c**************************************
 #endif
 
 #ifdef ALLOW_COST_ATLANTIC
