@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/dynamics.F,v 1.59 2001/02/04 14:38:47 cnh Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/dynamics.F,v 1.60 2001/02/07 16:28:54 adcroft Exp $
 C $Name:  $
 
 #include "CPP_OPTIONS.h"
@@ -286,7 +286,7 @@ C--       Integrate continuity vertically for vertical velocity
 
 #ifdef    ALLOW_OBCS
 #ifdef    ALLOW_NONHYDROSTATIC
-C--       Calculate future values on open boundaries
+C--       Apply OBC to W if in N-H mode
           IF (useOBCS.AND.nonHydrostatic) THEN
             CALL OBCS_APPLY_W( bi, bj, k, wVel, myThid )
           ENDIF
