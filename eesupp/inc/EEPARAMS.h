@@ -1,4 +1,4 @@
-C $Id: EEPARAMS.h,v 1.1 1998/04/22 19:15:30 cnh Exp $
+C $Id: EEPARAMS.h,v 1.1.1.1 1998/04/22 19:15:30 cnh Exp $
 C
 C     /==========================================================\
 C     | EEPARAMS.h                                               |
@@ -143,4 +143,4 @@ C                   but that makes it easier.
       INTEGER scrUnit2
       INTEGER standardMessageUnit
 
-C $Id: EEPARAMS.h,v 1.1 1998/04/22 19:15:30 cnh Exp $
+C $Id: EEPARAMS.h,v 1.1.1.1 1998/04/22 19:15:30 cnh Exp $

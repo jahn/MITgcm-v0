@@ -1,4 +1,4 @@
-C $Id: global_max.F,v 1.1 1998/04/22 19:15:30 cnh Exp $
+C $Id: global_max.F,v 1.1.1.1 1998/04/22 19:15:30 cnh Exp $
 
 C--   File global_max.F: Routines that perform global max reduction on an array
 C                        of thread values.
@@ -152,4 +152,4 @@ C
       RETURN
       END
 
-C $Id: global_max.F,v 1.1 1998/04/22 19:15:30 cnh Exp $
+C $Id: global_max.F,v 1.1.1.1 1998/04/22 19:15:30 cnh Exp $

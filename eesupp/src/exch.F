@@ -1,4 +1,4 @@
-C $Id: exch.F,v 1.1 1998/04/22 19:15:30 cnh Exp $
+C $Id: exch.F,v 1.1.1.1 1998/04/22 19:15:30 cnh Exp $
 
 #include "CPP_EEOPTIONS.h"
 
@@ -1381,4 +1381,4 @@ C--   y-axis exchanges
       RETURN
       END
 
-C $Id: exch.F,v 1.1 1998/04/22 19:15:30 cnh Exp $
+C $Id: exch.F,v 1.1.1.1 1998/04/22 19:15:30 cnh Exp $

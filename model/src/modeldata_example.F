@@ -1,4 +1,4 @@
-C $Id: modeldata_example.F,v 1.1 1998/04/22 19:15:30 cnh Exp $
+C $Id: modeldata_example.F,v 1.1.1.1 1998/04/22 19:15:30 cnh Exp $
 
 #include "CPP_EEOPTIONS.h"
 

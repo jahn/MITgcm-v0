@@ -1,4 +1,4 @@
-C $Id: config_summary.F,v 1.1 1998/04/22 19:15:30 cnh Exp $
+C $Id: config_summary.F,v 1.1.1.1 1998/04/22 19:15:30 cnh Exp $
 
 #include "CPP_EEOPTIONS.h"
 
@@ -57,7 +57,7 @@ C     == Local variables ==
 
       RETURN
   100 FORMAT(A,
-     &'$Id: config_summary.F,v 1.1 1998/04/22 19:15:30 cnh Exp $'
+     &'$Id: config_summary.F,v 1.1.1.1 1998/04/22 19:15:30 cnh Exp $'
      &)
       END
 

@@ -1,4 +1,4 @@
-C $Id: main.F,v 1.1 1998/04/22 19:15:30 cnh Exp $
+C $Id: main.F,v 1.1.1.1 1998/04/22 19:15:30 cnh Exp $
 
 C--   Get C preprocessor options
 #include "CPP_OPTIONS.h"
@@ -89,4 +89,4 @@ C--   Write closedown status
 C
       END
 
-C $Id: main.F,v 1.1 1998/04/22 19:15:30 cnh Exp $
+C $Id: main.F,v 1.1.1.1 1998/04/22 19:15:30 cnh Exp $

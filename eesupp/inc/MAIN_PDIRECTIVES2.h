@@ -1,4 +1,4 @@
-C $Id: MAIN_PDIRECTIVES2.h,v 1.1 1998/04/22 19:15:30 cnh Exp $
+C $Id: MAIN_PDIRECTIVES2.h,v 1.1.1.1 1998/04/22 19:15:30 cnh Exp $
 C
 C     /==========================================================\
 C     | MAIN_PDIRECTIVES2.h                                      |

@@ -1,4 +1,4 @@
-C $Id: ini_threading_environment.F,v 1.1 1998/04/22 19:15:30 cnh Exp $
+C $Id: ini_threading_environment.F,v 1.1.1.1 1998/04/22 19:15:30 cnh Exp $
 
 #include "CPP_EEOPTIONS.h"
 
@@ -558,4 +558,4 @@ C      Find thread to NW, NE, SW, SE - again with wrap around.
       RETURN
       END
 
-C $Id: ini_threading_environment.F,v 1.1 1998/04/22 19:15:30 cnh Exp $
+C $Id: ini_threading_environment.F,v 1.1.1.1 1998/04/22 19:15:30 cnh Exp $
