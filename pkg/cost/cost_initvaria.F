@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/cost/Attic/cost_initvaria.F,v 1.1.2.7 2003/06/20 05:30:14 heimbach Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/cost/Attic/cost_initvaria.F,v 1.1.2.8 2003/06/21 23:46:36 heimbach Exp $
 
 #include "COST_CPPOPTIONS.h"
 
@@ -121,6 +121,8 @@ c--   Initialize the tiled cost function contributions.
           objf_curmtr(bi,bj)   = 0. _d 0
           objf_ageos(bi,bj)    = 0. _d 0
           objf_ice(bi,bj)      = 0. _d 0
+          objf_diffkr(bi,bj)   = 0. _d 0
+          objf_kapgm(bi,bj)    = 0. _d 0
           objf_theta_ini_fin(bi,bj) = 0. _d 0
           objf_salt_ini_fin(bi,bj)  = 0. _d 0
         enddo
