@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/inc/GRID.h,v 1.14 2001/02/04 14:38:44 cnh Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/inc/GRID.h,v 1.14.2.1 2001/03/15 15:12:57 adcroft Exp $
 C $Name:  $
 C
 C     /==========================================================\
@@ -363,7 +363,8 @@ C                 metric term in V equation.
      &  saFac,
      &  xC,yC,rA,rAw,rAs,rAz,rC,rF,yC0,xC0,xG,yG,
      &  maskW,maskS,recip_rA,recip_rAw,recip_rAs,recip_rAz,
-     &  tanPhiAtU, tanPhiAtV
+     &  tanPhiAtU, tanPhiAtV,
+     &  cosfacU,cosfacV,sqcosfacU,sqcosfacV
       _RS dxC            (1-OLx:sNx+OLx,1-OLy:sNy+OLy,nSx,nSy)
       _RS dxF            (1-OLx:sNx+OLx,1-OLy:sNy+OLy,nSx,nSy)
       _RS dxG            (1-OLx:sNx+OLx,1-OLy:sNy+OLy,nSx,nSy)
@@ -416,6 +417,10 @@ C                 metric term in V equation.
       _RS maskS          (1-OLx:sNx+OLx,1-OLy:sNy+OLy,1:Nr,nSx,nSy)
       _RS tanPhiAtU      (1-OLx:sNx+OLx,1-OLy:sNy+OLy,nSx,nSy)
       _RS tanPhiAtV      (1-OLx:sNx+OLx,1-OLy:sNy+OLy,nSx,nSy)
+      _RL cosfacU(1-Oly:sNy+Oly,nSx,nSy)
+      _RL cosfacV(1-Oly:sNy+Oly,nSx,nSy)
+      _RL sqcosfacU(1-Oly:sNy+Oly,nSx,nSy)
+      _RL sqcosfacV(1-Oly:sNy+Oly,nSx,nSy)
 
 #ifdef ALLOW_NONHYDROSTATIC
       COMMON /GRID_NH/

@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/ini_cartesian_grid.F,v 1.15 2001/02/04 14:38:47 cnh Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/ini_cartesian_grid.F,v 1.15.2.1 2001/03/15 15:12:57 adcroft Exp $
 C $Name:  $
 
 #include "CPP_OPTIONS.h"
@@ -172,6 +172,18 @@ C     Calculate vertical face area
       _EXCH_XY_R4 (rAs      , myThid )
       _EXCH_XY_R4 (tanPhiAtU , myThid )
       _EXCH_XY_R4 (tanPhiAtV , myThid )
+
+C--     Cosine(lat) scaling
+      DO bj = myByLo(myThid), myByHi(myThid)
+       DO bi = myBxLo(myThid), myBxHi(myThid)
+        DO J=1-OLy,sNy+OLy
+         cosFacU(J,bi,bj)=1.
+         cosFacV(J,bi,bj)=1.
+         sqcosFacU(J,bi,bj)=1.
+         sqcosFacV(J,bi,bj)=1.
+        ENDDO
+       ENDDO
+      ENDDO
 
 C
       RETURN
