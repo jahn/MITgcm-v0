@@ -1,6 +1,6 @@
 #!/bin/csh -f
 #
-# $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/tools/Attic/genmake,v 1.56.4.1 2002/02/06 15:48:09 heimbach Exp $
+# $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/tools/Attic/genmake,v 1.56.4.2 2002/02/06 23:19:41 heimbach Exp $
 # $Name:  $
 #
 # Makefile generator for MITgcm UV codes
@@ -393,7 +393,6 @@ switch ($platform$USEMPI)
   case SunOS:
     set LN         = ( '/usr/bin/ln -s' )
     set CPP        = ( '/usr/ccs/lib/cpp -P' )
-    set S64        = ( cat )
     set DEFINES    = ( ${DEFINES} '-DTARGET_SUN -DWORDLENGTH=4 -D_d=E' )
     set FFLAGS     = ( '-stackvar -explicitpar -vpara -e -u -noautopar -r8 -i4 -fsimple=0' )
     set FOPTIM     = ( '-dalign -O3 -xarch=v9' )
@@ -404,7 +403,6 @@ switch ($platform$USEMPI)
   case SunOS+mpi:
     set LN         = ( '/usr/bin/ln -s' )
     set CPP        = ( '/usr/ccs/lib/cpp -P' )
-    set S64        = ( cat )
     set DEFINES    = ( ${DEFINES} '-DTARGET_SUN -DWORDLENGTH=4 -D_d=E' )
     set INCLUDES   = ( '-I/usr/local/mpi/include' )
     set LIBS       = ( '-L/usr/local/mpi/lib/solaris/ch_shmem -lmpi -lthread' \
