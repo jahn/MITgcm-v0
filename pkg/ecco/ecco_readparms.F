@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/ecco/ecco_readparms.F,v 1.2.4.2 2002/05/30 22:15:00 heimbach Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/ecco/ecco_readparms.F,v 1.2.4.3 2002/07/11 14:59:00 heimbach Exp $
 
 #include "CPP_OPTIONS.h"
 
@@ -84,7 +84,7 @@ C--   Initialise the ECCO State Estimation package.
 #ifdef ALLOW_ECCO_OPTIMIZATION
 c--   Initialise the optimization-related parts of the ECCO State
 c--   Estimation package.
-      call optim_init( myThid )
+      call optim_readparms( myThid )
       _BARRIER
 #endif
 
