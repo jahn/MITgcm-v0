@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/forward_step.F,v 1.23.2.7 2002/12/27 08:01:54 dimitri Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/forward_step.F,v 1.23.2.8 2003/02/14 22:30:15 dimitri Exp $
 C $Name:  $
 
 #include "CPP_OPTIONS.h"
@@ -156,7 +156,7 @@ C     theta is dumped or time-averaged.
          CALL SEAICE_MODEL( myTime, myIter, myThid )
          CALL TIMER_STOP ('SEAICE_MODEL       [FORWARD_STEP]',myThid)
       ENDIF
-#endif ALLOW_SEAICE
+#endif
 
 C--   Step forward fields and calculate time tendency terms.
       CALL TIMER_START('THERMODYNAMICS      [FORWARD_STEP]',mythid)

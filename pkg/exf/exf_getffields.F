@@ -1,4 +1,4 @@
-c $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/exf/exf_getffields.F,v 1.2.4.6 2003/01/30 05:55:53 dimitri Exp $
+c $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/exf/exf_getffields.F,v 1.2.4.7 2003/02/14 22:30:15 dimitri Exp $
 
 #include "EXF_CPPOPTIONS.h"
 
@@ -280,7 +280,7 @@ c     Net short wave radiative flux.
 #ifdef EXF_READ_EVAP
 c     Evaporation
       call exf_set_evap   ( mycurrenttime, mycurrentiter, mythid )
-#endif EXF_READ_EVAP
+#endif
 
 #ifdef ALLOW_DOWNWARD_RADIATION
 

@@ -1,4 +1,4 @@
-c $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/exf/exf_readparms.F,v 1.1.4.7 2003/02/12 07:55:53 dimitri Exp $
+c $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/exf/exf_readparms.F,v 1.1.4.8 2003/02/14 22:30:15 dimitri Exp $
 
 #include "EXF_CPPOPTIONS.h"
 #ifdef ALLOW_OBCS
@@ -328,7 +328,7 @@ c     check for consistency
 #ifdef EXF_READ_EVAP
       call cal_FullDate(     evapstartdate1,     evapstartdate2,
      &                       evapstartdate ,             mythid )
-#endif EXF_READ_EVAP
+#endif
 
 #ifdef ALLOW_RUNOFF
       call cal_FullDate(   runoffstartdate1,   runoffstartdate2,

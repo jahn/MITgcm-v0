@@ -1,9 +1,11 @@
-$Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/doc/tag-index,v 1.53.2.27 2003/02/14 16:37:34 dimitri Exp $
+$Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/doc/tag-index,v 1.53.2.28 2003/02/14 22:30:15 dimitri Exp $
 
     Notes on tags used in MITgcmUV
     ==============================
 
 release1_p12_pre
+o Added missing /* */ to CPP comments in pkg/seaice, pkg/exf,
+  kpp_transport_t.F, forward_step.F, and the_main_loop.F
 o Updated useSingleCpuIO option in mdsio_writefield.F to
   work with multi-field files, e.g., for single-file pickup.
 o pkg/seaice:
