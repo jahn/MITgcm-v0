@@ -1,7 +1,7 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/ini_cg2d.F,v 1.33.2.1 2001/03/23 20:44:53 adcroft Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/ini_cg2d.F,v 1.33.2.2 2001/03/23 20:46:07 adcroft Exp $
 C $Name:  $
 
-#include "CG2D_OPTIONS.h"
+#include "CPP_OPTIONS.h"
 
       SUBROUTINE INI_CG2D( myThid )
 C     /==========================================================\
