@@ -1,4 +1,4 @@
-# $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/verification/global2x2_tot/input/Attic/data.exf,v 1.1.2.1 2002/04/04 12:10:49 heimbach Exp $
+# $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/verification/global2x2_tot/input/Attic/data.exf,v 1.1.2.2 2003/05/12 20:02:01 heimbach Exp $
 #
 # *********************
 # External Forcing Data
@@ -48,10 +48,6 @@
  lwfluxstartdate2  = 60000,
  lwfluxperiod      = 86400.0,
 #
- runoffstartdate1  = 19920101,
- runoffstartdate2  = 60000,
- runoffperiod      = 86400.0,
-#
  hfluxfile         = 'NCEP_tot-sw_92-97_2x2',
  sfluxfile         = 'NCEP_R_eminusp_92-97_2x2',
  ustressfile       = 'NCEP_R_ustr_92-97_2x2',
@@ -63,7 +59,6 @@
  precipfile        = 'PH_pratesfc_020_016_23',
  lwfluxfile        = 'PH_lwflsfc_020_016_23',
  swfluxfile        = 'NCEP_R_sw_92-97_2x2',
- runofffile        = 'run-off.bin_2x2',
 #
  exf_iprec         = 32,
  exf_yftype        = 'RL',
