@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/grdchk/grdchk_getadxx.F,v 1.2 2001/07/13 14:50:46 heimbach Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/grdchk/grdchk_getadxx.F,v 1.2.6.1 2002/04/04 10:28:50 heimbach Exp $
 
 #include "CTRL_CPPOPTIONS.h"
 
@@ -78,7 +78,7 @@ c--   == end of interface ==
          il=ilnblnk( xx_theta_file )
          write(fname(1:80),'(80a)') ' '
          write(fname(1:80),'(3a,i10.10)')
-     &        yadmark, xx_theta_file(1:il),'.',optimcycle
+     &        yadprefix, xx_theta_file(1:il),'.',optimcycle
 
          call active_read_xyz( fname, tmpfld3d, 1,
      &                         doglobalread, ladinit, optimcycle,
