@@ -1,13 +1,21 @@
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/packages_readparms.F,v 1.1.2.1 2001/01/30 18:07:07 cnh Exp $
+C $Name:  $
+
 #include "CPP_OPTIONS.h"
 
 CStartOfInterface
       SUBROUTINE PACKAGES_READPARMS(myThid)
 C     /==========================================================\
 C     | SUBROUTINE PACKAGES_READPARMS                            |
-C     | o Read runtime configuration parameters from             |
-C     |   file data.${pkg} for every package ${pkg}              |
+C     | o Read runtime package configuration parameters          |
 C     |==========================================================|
-C     |                                                          |
+C     |   Packages can have internal runtime configuration       |
+C     |   parameters. A package provides a routine               |
+C     |   ${PKGNAME}_READ_PARMS to read these parameters. In     |
+C     |   general this routine should read parameters from a file|
+C     |   called data.${pkgname}.                                |
+C     |   This routine (S/R PACKAGES_READPARMS) calls per-package|
+C     |   parameter reading routines.                            |
 C     \==========================================================/
       IMPLICIT NONE
 

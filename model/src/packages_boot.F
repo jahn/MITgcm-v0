@@ -1,12 +1,20 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/packages_boot.F,v 1.1 2000/09/11 20:42:57 heimbach Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/packages_boot.F,v 1.1.2.1 2001/01/30 18:07:07 cnh Exp $
+C $Name:  $
 
 #include "CPP_OPTIONS.h"
 
       SUBROUTINE PACKAGES_BOOT( myThid )
 C     /==========================================================\
 C     | SUBROUTINE PACKAGES_BOOT                                 |
-C     | o Routine to initialize package configuration            |
+C     | o Routine to parse runtime package selection file        |
 C     |==========================================================|
+C     | Routine reads a flat file which contains a single flag   |
+C     | for each known "package". Flag can enables runtime       |
+C     | activation or deactivation of a package. The data is read|
+C     | from a file called data.pkg.                             |
+C     | Note - If a runtime activation flag is set on but the    |
+C     |        package code was not included in the build then   |
+C     |        the default behavior is to stop with an error.    |
 C     \==========================================================/
       IMPLICIT NONE
 
