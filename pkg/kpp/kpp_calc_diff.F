@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/kpp/Attic/kpp_calc_diff.F,v 1.4 2000/09/13 17:07:11 heimbach Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/kpp/Attic/kpp_calc_diff.F,v 1.5 2000/11/13 16:37:02 heimbach Exp $
 
 #include "KPP_OPTIONS.h"
 
