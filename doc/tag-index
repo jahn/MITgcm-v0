@@ -1,7 +1,24 @@
-$Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/doc/tag-index,v 1.53.4.7 2002/02/15 22:34:05 heimbach Exp $
+$Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/doc/tag-index,v 1.53.4.8 2002/03/21 03:57:43 heimbach Exp $
 
     Notes on tags used in MITgcmUV
     ==============================
+
+ecco_c44_e19
+o will contain merges from main trunk
+
+ecco_c44_e18
+o sponge layer code for obcs was missing
+  - added hook in external_forcing.F
+  - added storing for TAF
+o new routine cost_init_barfiles to initialise
+  adjoint fields adtbar, adsbar, adpsbar
+  (needed in conjunction with corrected ladinit for active I/O)
+o cleaned up and corrected order in packages_readparms, ecco_readparms
+o corrected and simplified weights for obcs controls
+  - weight fields simplified
+  - bug fix in ctrl_pack
+  - no more write of control vector in ctrl_pack
+o i/j index bug fixes in cost_ssh_mean
 
 ecco_c44_e17
 o bug fixes in cost package
