@@ -1,8 +1,9 @@
-$Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/doc/tag-index,v 1.403 2004/12/04 23:26:49 heimbach Exp $
+$Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/doc/tag-index,v 1.404 2004/12/05 23:29:56 jmc Exp $
 
     Notes on tags used in MITgcmUV
     ==============================
 
+o implement Implicit Vertical advection for pTracers
 o depth convergence accelerator: replace deltaTtracer by dTtracerLev(k)
   (implemented also for implicit vertical diffusion & advection)
 o OBCS: extend application of tracer open boundary conditions
