@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/dynamics.F,v 1.54.2.2 2001/01/08 20:41:31 adcroft Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/dynamics.F,v 1.54.2.3 2001/01/09 14:39:34 adcroft Exp $
 
 #include "CPP_OPTIONS.h"
 
@@ -576,7 +576,7 @@ C        and step forward storing the result in gUnm1, gVnm1, etc...
          IF ( momStepping ) THEN
            CALL CALC_MOM_RHS(
      I         bi,bj,iMin,iMax,jMin,jMax,k,km1,kup,kDown,
-     I         xA,yA,uTrans,vTrans,rTrans,rVel,maskC,
+     I         xA,yA,uTrans,vTrans,maskC,
      I         phiHyd,KappaRU,KappaRV,
      U         fVerU, fVerV,
      I         myTime, myThid)
