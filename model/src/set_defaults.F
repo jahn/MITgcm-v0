@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/set_defaults.F,v 1.11.2.1 2001/01/17 14:58:17 jmc Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/set_defaults.F,v 1.11.2.2 2001/01/18 22:34:09 jmc Exp $
 
 #include "CPP_OPTIONS.h"
 
@@ -44,6 +44,7 @@ C--   Grid parameters
 C     Vertical gridding
       rkFacDefault         = 1.D0
       horiVertRatio        = 1.D0
+      Ro_SeaLevel = 0.
       DO k=1,Nr
        delRdefault(k) = 0.
       ENDDO
@@ -109,6 +110,7 @@ C--   Set default "physical" parameters
       globalFiles         = .FALSE.
       allowFreezing       = .FALSE.
       ivdc_kappa          = 0.D0
+      groundAtK1          = .FALSE.
 
 C--   Elliptic solver parameters
       cg2dMaxIters       = 150
