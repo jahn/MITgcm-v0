@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/ini_masks_etc.F,v 1.20.2.5 2001/04/12 10:52:49 cnh Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/ini_masks_etc.F,v 1.20.2.6 2001/05/01 13:21:40 adcroft Exp $
 C $Name:  $
 
 #include "CPP_OPTIONS.h"
@@ -177,7 +177,7 @@ C     hFacW and hFacS (at U and V points)
         ENDDO
        ENDDO
       ENDDO
-      CALL EXCH_UV_XYZ_RL(hFacW,hFacS,.FALSE.,myThid)
+      CALL EXCH_UV_XYZ_RS(hFacW,hFacS,.FALSE.,myThid)
 C     The following block allows thin walls representation of non-periodic
 C     boundaries such as happen on the lat-lon grid at the N/S poles.
 C     We should really supply a flag for doing this.
