@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/cost/cost_final_restore.F,v 1.1.2.1 2003/03/04 21:04:38 heimbach Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/cost/cost_final_restore.F,v 1.1.2.2 2003/03/04 21:58:49 heimbach Exp $
 
 #include "COST_CPPOPTIONS.h"
 
@@ -21,7 +21,6 @@ c     == global variables ==
 #include "SIZE.h"
 
 #include "cost.h"
-#include "tamc.h"
 
 c     == routine arguments ==
 
@@ -44,7 +43,7 @@ c
               read(unit=76,fmt=*) idivbeg,idivend
               close(unit=76)
            else
-              idivbeg = nchklev_3
+              idivbeg = -2
            endif
 c
            if ( idivbeg .EQ. 0 ) then
