@@ -1,10 +1,13 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/verification/natl_box_adjoint/code_seaice/Attic/CPP_OPTIONS.h,v 1.1.2.1 2003/02/14 08:19:22 dimitri Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/verification/natl_box_adjoint/code_seaice/Attic/CPP_OPTIONS.h,v 1.1.2.2 2003/02/14 10:04:26 dimitri Exp $
 C
 
 C 
 C CPP flags controlling which code in included in the files that
 C will be compiled.
 C
+
+C o Include/exclude code for sea-ice model
+#define  ALLOW_SEAICE
 
 C o Include/exclude code for GM/Redi parameterization
 #define  ALLOW_GMREDI
