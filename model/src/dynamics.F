@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/dynamics.F,v 1.83.2.4 2002/04/17 01:38:00 heimbach Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/dynamics.F,v 1.83.2.5 2002/07/11 14:24:26 heimbach Exp $
 C $Name:  $
 
 #include "CPP_OPTIONS.h"
@@ -82,6 +82,9 @@ C     == Global variables ===
 # include "FFIELDS.h"
 # ifdef ALLOW_KPP
 #  include "KPP.h"
+# endif
+# ifdef ALLOW_GMREDI
+#  include "GMREDI.h"
 # endif
 #endif /* ALLOW_AUTODIFF_TAMC */
 #ifdef ALLOW_TIMEAVE
@@ -221,6 +224,13 @@ C     uninitialised but inert locations.
         phiSurfY(i,j) = 0. _d 0
        ENDDO
       ENDDO
+
+C-- Call to routine for calculation of
+C   Eliassen-Palm-flux-forced U-tendency,
+C   if desired:
+#ifdef INCLUDE_EP_FORCING_CODE
+      CALL CALC_EP_FORCING(myThid)
+#endif
 
 #ifdef ALLOW_AUTODIFF_TAMC
 C--   HPF directive to help TAMC
@@ -385,12 +395,9 @@ C--      Apply open boundary conditions
 C--     end of dynamics k loop (1:Nr)
         ENDDO
 
-
-
 C--     Implicit viscosity
         IF (implicitViscosity.AND.momStepping) THEN
 #ifdef    ALLOW_AUTODIFF_TAMC
-          idkey = iikey + 3
 CADJ STORE gUNm1(:,:,:,bi,bj) = comlev1_bibj , key=ikey, byte=isbyte
 #endif    /* ALLOW_AUTODIFF_TAMC */
           CALL IMPLDIFF(
@@ -399,7 +406,6 @@ CADJ STORE gUNm1(:,:,:,bi,bj) = comlev1_bibj , key=ikey, byte=isbyte
      U         gUNm1,
      I         myThid )
 #ifdef    ALLOW_AUTODIFF_TAMC
-          idkey = iikey + 4
 CADJ STORE gVNm1(:,:,:,bi,bj) = comlev1_bibj , key=ikey, byte=isbyte
 #endif    /* ALLOW_AUTODIFF_TAMC */
           CALL IMPLDIFF(
@@ -419,7 +425,6 @@ C--      Apply open boundary conditions
 
 #ifdef    INCLUDE_CD_CODE
 #ifdef    ALLOW_AUTODIFF_TAMC
-          idkey = iikey + 5
 CADJ STORE vVelD(:,:,:,bi,bj) = comlev1_bibj , key=ikey, byte=isbyte
 #endif    /* ALLOW_AUTODIFF_TAMC */
           CALL IMPLDIFF(
@@ -428,7 +433,6 @@ CADJ STORE vVelD(:,:,:,bi,bj) = comlev1_bibj , key=ikey, byte=isbyte
      U         vVelD,
      I         myThid )
 #ifdef    ALLOW_AUTODIFF_TAMC
-          idkey = iikey + 6
 CADJ STORE uVelD(:,:,:,bi,bj) = comlev1_bibj , key=ikey, byte=isbyte
 #endif    /* ALLOW_AUTODIFF_TAMC */
           CALL IMPLDIFF(
