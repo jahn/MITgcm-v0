@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/verification/global_ocean.cs32x15/code/CPP_OPTIONS.h,v 1.7 2004/04/06 01:24:28 jmc Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/verification/global_ocean.cs32x15/code/CPP_OPTIONS.h,v 1.8 2004/05/03 21:34:04 dimitri Exp $
 C $Name:  $
 
 #ifndef CPP_OPTIONS_H
