@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/Attic/the_correction_step.F,v 1.6 2001/03/08 20:32:35 jmc Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/Attic/the_correction_step.F,v 1.6.2.1 2001/03/30 23:47:03 jmc Exp $
 C Tag $Name:  $
 
 #include "CPP_OPTIONS.h"
@@ -24,6 +24,11 @@ C     == Global variables ===
 #include "EEPARAMS.h"
 #include "PARAMS.h"
 #include "DYNVARS.h"
+
+#ifdef EXACT_CONSERV
+      COMMON /TEMP_SURF_POS/ etaStar
+      _RL etaStar(1-Olx:sNx+Olx,1-Oly:sNy+Oly,nSx,nSy)
+#endif 
 
 C     == Routine arguments ==
 C     myTime - Current time in simulation
@@ -114,6 +119,14 @@ CADJ STORE salt (:,:,k,bi,bj) = comlev1_bibj, key = ikey, byte = isbyte
 C--     End DO K=1,Nr
         ENDDO
 
+#ifdef EXACT_CONSERV
+        IF (exactConvserv) THEN
+C--     Compute again "eta" to satisfy exactly the total Volume Conservation :
+          CALL CALC_EXACT_ETA( bi,bj, etaStar, phiSurfX,phiSurfY,
+     I                         myTime, myIter, myThid )
+        ENDIF
+#endif /* EXACT_CONSERV */ 
+
 C--     Convectively adjust new fields to be statically stable
         CALL CONVECTIVE_ADJUSTMENT(
      I       bi, bj, iMin, iMax, jMin, jMax,
@@ -127,6 +140,10 @@ C--     Convectively adjust new fields to be statically stable
 
        ENDDO
       ENDDO
+
+#ifdef EXACT_CONSERV
+       IF (exactConvserv) _EXCH_XY_R8(etaN, myThid ) 
+#endif /* EXACT_CONSERV */ 
 
       RETURN
       END

@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/solve_for_pressure.F,v 1.19 2001/03/09 20:45:09 adcroft Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/solve_for_pressure.F,v 1.19.2.1 2001/03/30 23:47:03 jmc Exp $
 C $Name:  $
 
 #include "CPP_OPTIONS.h"
@@ -25,6 +25,11 @@ C     == Global variables
 #endif
 #ifdef ALLOW_OBCS
 #include "OBCS.h"
+#endif
+
+#ifdef EXACT_CONSERV
+      COMMON /TEMP_SURF_POS/ etaStar
+      _RL etaStar(1-Olx:sNx+Olx,1-Oly:sNy+Oly,nSx,nSy)
 #endif
 
 C     == Routine arguments ==
@@ -112,6 +117,15 @@ C-jmc
          ENDDO
         ENDDO
 #endif
+
+#ifdef EXACT_CONSERV
+C--     For exact conservation of fluid, store Explicit term in etaStar :
+        DO j=1,sNy
+         DO i=1,sNx
+          etaStar(i,j,bi,bj) = -cg2d_b(i,j,bi,bj)
+         ENDDO
+        ENDDO
+#endif /* EXACT_CONSERV */
 
 #ifdef ALLOW_OBCS
         IF (useOBCS) THEN
