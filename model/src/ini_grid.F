@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/ini_grid.F,v 1.7.2.1 2001/04/03 02:42:25 adcroft Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/ini_grid.F,v 1.7.2.2 2001/05/16 20:54:49 jmc Exp $
 C $Name:  $
 
 #include "CPP_OPTIONS.h"
@@ -73,6 +73,7 @@ C     and general post-analysis)
       CALL WRITE_FLD_XY_RS( 'YC',' ',YC,0,myThid)
       CALL WRITE_FLD_XY_RS( 'XG',' ',XG,0,myThid)
       CALL WRITE_FLD_XY_RS( 'YG',' ',YG,0,myThid)
+      CALL WRITE_FLD_XY_RS( 'AC',' ',rA,0,myThid)
 
       RETURN
       END
