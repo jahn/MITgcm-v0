@@ -1,7 +1,11 @@
-$Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/doc/tag-index,v 1.53.4.54 2003/07/24 22:02:51 heimbach Exp $
+$Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/doc/tag-index,v 1.53.4.55 2003/07/28 15:38:41 heimbach Exp $
 
     Notes on tags used in MITgcmUV
     ==============================
+
+ecco-C51_e34e
+o bug fix in cost_drifter
+o updating timeave package in ecco-branch to c51
 
 ecco_c51_e34d
 o modif's to restore TAMC compatibility
