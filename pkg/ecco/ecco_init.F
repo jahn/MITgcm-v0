@@ -1,14 +1,12 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/ecco/Attic/ecco_init.F,v 1.1.6.3 2002/04/04 10:34:57 heimbach Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/ecco/Attic/ecco_init.F,v 1.1.6.4 2002/05/30 21:01:36 heimbach Exp $
 
 #include "CPP_OPTIONS.h"
 
 
-      subroutine ecco_Init(
-     I                      mythid
-     &                    )
+      subroutine ecco_init( mythid )
 
 c     ==================================================================
-c     SUBROUTINE ecco_Init
+c     SUBROUTINE ecco_init
 c     ==================================================================
 c
 c     o Initialize the ECCO release of the MITgcmUV.
@@ -20,7 +18,7 @@ c
 c     changed: Christian Eckert eckert@mit.edu
 c
 c     ==================================================================
-c     SUBROUTINE ecco_Init
+c     SUBROUTINE ecco_init
 c     ==================================================================
 
       implicit none

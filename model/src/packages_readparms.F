@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/packages_readparms.F,v 1.7.4.3 2002/04/04 10:18:19 heimbach Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/packages_readparms.F,v 1.7.4.4 2002/05/30 21:01:36 heimbach Exp $
 C $Name:  $
 
 #include "CPP_OPTIONS.h"
@@ -101,29 +101,38 @@ C     IF (useAIM) CALL AIM_READPARMS ( myThid )
 #endif
 
 #if (defined (ALLOW_ADJOINT_RUN) || defined (ALLOW_TANGENTLINEAR_RUN))
-
 C--   Initialise the optim. parameters.
       call optim_readparms( myThid )
       _BARRIER
-
 C--   Initialise the control vector.
       CALL ctrl_init( myThid )
       _BARRIER
-
-C--   Initialise the cost function.
-      call cost_readparms( mythid )
-      _BARRIER
+#endif
 
 #ifdef ALLOW_GRADIENT_CHECK
 C--   Initialise gradient check parameters
       if (useGrdchk) call grdchk_readparms( myThid )
 #endif
 
-#endif /* ALLOW_ADJOINT_RUN */
+#ifdef ALLOW_CALENDAR
+C--   Initialise the calendar package.
+      call cal_readparms( myThid )
+#endif
+
+C--   Custom routine to set forcing fields.
+#ifdef INCLUDE_EXTERNAL_FORCING_PACKAGE
+      call exf_readparms  ( mythid )
+#endif
 
 #ifdef INCLUDE_ECCO_PACKAGE
 c--   Initialize ECCO package parameters
       IF (useECCO) CALL ECCO_READPARMS ( myThid )
+#else
+# ifdef ALLOW_COST
+C--   Initialise the cost function.
+      call cost_readparms( mythid )
+      _BARRIER
+# endif
 #endif
 
       END

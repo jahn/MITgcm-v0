@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/ecco/Attic/ecco_the_main_loop.F,v 1.1.2.4 2002/04/04 11:00:03 heimbach Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/ecco/Attic/ecco_the_main_loop.F,v 1.1.2.5 2002/05/30 21:03:46 heimbach Exp $
 
 #include "CPP_OPTIONS.h"
 #ifdef ALLOW_OBCS
@@ -136,6 +136,7 @@ c--   == end of interface ==
 c--   Initialize storage for the outermost loop.
 CADJ  INIT tapelev3 = USER
 c--   Some more initialisations to please TAMC
+CADJ INIT tapelev_ini_bibj_k   = USER
 #ifdef ALLOW_TAMC_CHECKPOINTING
        nIter0 = INT( startTime/deltaTClock )
        ikey_dynamics = 1
