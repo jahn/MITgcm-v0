@@ -1,7 +1,10 @@
-$Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/doc/tag-index,v 1.53.4.34 2003/03/21 23:15:48 heimbach Exp $
+$Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/doc/tag-index,v 1.53.4.35 2003/03/25 22:52:33 heimbach Exp $
 
     Notes on tags used in MITgcmUV
     ==============================
+
+o corrected CPP option mismatch in exf_Bulk... functions for case 
+  #define ALLOW_ATM_WIND && #undef ALLOW_ATM_TEMP
 
 ecco_c50_e29
 Bug fix for merging between c50 and KPP.
