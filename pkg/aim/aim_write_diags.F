@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/aim/Attic/aim_write_diags.F,v 1.4 2001/03/06 18:01:13 jmc Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/aim/Attic/aim_write_diags.F,v 1.4.2.1 2001/04/05 15:09:45 jamous Exp $
 C $Name:  $
 
 #include "AIM_OPTIONS.h"
@@ -104,6 +104,9 @@ C      Reset averages to zero
          CALL TIMEAVE_RESET(PRECNVtave,1, bi, bj, myThid)
          CALL TIMEAVE_RESET(PRECLStave,1, bi, bj, myThid)
          CALL TIMEAVE_RESET(CLOUDCtave,1, bi, bj, myThid)
+         DO k=1,Nr
+           AIM_TimeAve(k,bi,bj)=0.
+         ENDDO                     
         ENDDO
        ENDDO
 
