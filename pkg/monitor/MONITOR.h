@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/monitor/MONITOR.h,v 1.1.4.2 2003/03/07 04:50:40 heimbach Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/monitor/MONITOR.h,v 1.1.4.3 2003/06/24 23:10:27 heimbach Exp $
 C $Name:  $
 C
 C     /==========================================================\
@@ -48,3 +48,9 @@ C--   COMMON /MON_C/ Monitor character variables
 C     mon_pref   - Prefix used for monitor output
       COMMON /MON_C/ mon_pref
       CHARACTER*(MAX_LEN_MBUF) mon_pref
+
+C--   COMMON /MON_L/ Monitor logical variables
+C     mon_overrideStop - Allow code to continue even if model state is
+C                        heading out of bounds
+      COMMON /MON_L/ mon_overrideStop
+      LOGICAL mon_overrideStop

@@ -1,7 +1,7 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/monitor/monitor.F,v 1.7.4.2 2003/03/07 04:50:40 heimbach Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/monitor/monitor.F,v 1.7.4.3 2003/06/24 23:10:27 heimbach Exp $
 C $Name:  $
 
-#include "CPP_OPTIONS.h"
+#include "MONITOR_OPTIONS.h"
 
       SUBROUTINE MONITOR(
      I                myIter, myTime, myThid )
@@ -82,9 +82,14 @@ C      Print the numerical stablility parameters for current state
        CALL MON_ADVCFLW2('_W_hf',wVel,recip_hFacC,
      &                               recip_drC,dT,myThid)
 
-C      Print stats for KE
-       CALL MON_SET_PREF('ke',myThid)
-       CALL MON_KE(myThid)
+C-     Print stats for KE
+       CALL MON_KE(myIter, myThid)
+
+C-     Print stats for (relative,absolute) Vorticity AND Pot.Vort. 
+       CALL MON_VORT3(myIter, myThid)
+
+C      Check that solution is within reasonable bounds
+       CALL MON_SOLUTION(myIter,myTime,myThid)
 
 C      Print stats for surface correction terms (Linear Free-Surf)
        CALL MON_SURFCOR(myThid)

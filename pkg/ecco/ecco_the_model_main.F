@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/ecco/Attic/ecco_the_model_main.F,v 1.1.2.10 2003/06/20 05:30:15 heimbach Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/ecco/Attic/ecco_the_model_main.F,v 1.1.2.11 2003/06/24 23:08:38 heimbach Exp $
 C $Name:  $
 
 CBOI
@@ -465,8 +465,16 @@ CEOP
 c--   set default:
       lastdiva = .TRUE.
 
+#ifndef DISABLE_DEBUGMODE
+      IF (debugMode) CALL DEBUG_ENTER('THE_MODEL_MAIN',myThid)
+#endif
+
 C--   This timer encompasses the whole code
       CALL TIMER_START('ALL                    [THE_MODEL_MAIN]',myThid)
+
+#ifndef DISABLE_DEBUGMODE
+      IF (debugMode) CALL DEBUG_CALL('INITIALISE_FIXED',myThid)
+#endif
 
 C--   Set model configuration (fixed arrays)
       CALL TIMER_START('INITIALISE_FIXED       [THE_MODEL_MAIN]',myThid)
@@ -528,7 +536,7 @@ cph      CALL TIMER_START('G_THE_MAIN_LOOP           [TANGENT RUN]',mythid)
 cph      CALL G_THE_MAIN_LOOP ( myCurrentTime, myCurrentIter, myThid )
 cph      CALL TIMER_STOP ('G_THE_MAIN_LOOP           [TANGENT RUN]',mythid)
 c--
-#endif
+#endif /* ALLOW_TANGENTLINEAR_RUN */
       _BARRIER
 
       _BEGIN_MASTER( mythid )
@@ -550,6 +558,10 @@ c--
 #endif
 
 #else /* ALLOW_ADJOINT_RUN undef */
+
+#ifndef DISABLE_DEBUGMODE
+      IF (debugMode) CALL DEBUG_CALL('THE_MAIN_LOOP',myThid)
+#endif
 
 C--   Call time stepping loop of full model
       CALL TIMER_START('THE_MAIN_LOOP          [THE_MODEL_MAIN]',myThid)
@@ -578,6 +590,10 @@ C--   Write timer statistics
        CALL TIMER_PRINTALL( myThid )
        CALL COMM_STATS
       ENDIF
+
+#ifndef DISABLE_DEBUGMODE
+      IF (debugMode) CALL DEBUG_LEAVE('THE_MODEL_MAIN',myThid)
+#endif
 
       RETURN
       END
