@@ -1,4 +1,4 @@
-C     $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/aim/Attic/aim_calc_diags.F,v 1.1.2.1 2001/01/26 00:14:31 cnh Exp $
+C     $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/aim/Attic/aim_calc_diags.F,v 1.1.2.2 2001/01/26 00:39:11 cnh Exp $
 C     $Name:  $
 
 #include "AIM_OPTIONS.h"
@@ -9,7 +9,6 @@ C     /==========================================================\
 C     | SUBROUTINE AIM_CALC_DIAGS                                |
 C     | o Calculate AIM diagnostics                              |
 C     \==========================================================/
-      IMPLICIT NONE
 
 C     === Global variables ===
 #include "SIZE.h"
