@@ -1,3 +1,5 @@
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/inc/CG2D.h,v 1.9.6.2 2003/03/07 05:31:47 heimbach Exp $
+C $Name:  $
 
 CBOP
 C     !ROUTINE: CG2D.h
@@ -52,5 +54,10 @@ C     cg2d_s -   "
       COMMON /CG2D_I_WK_R/
      & cg2d_q, cg2d_r, cg2d_s
       _RL  cg2d_q(1-OLx:sNx+OLx,1-OLy:sNy+OLy,nSx,nSy)
+#ifdef LETS_MAKE_JAM
+      _RL  cg2d_r(1-1:sNx+1,1-1:sNy+1,nSx,nSy)
+      _RL  cg2d_s(1-1:sNx+1,1-1:sNy+1,nSx,nSy)
+#else
       _RL  cg2d_r(1-OLx:sNx+OLx,1-OLy:sNy+OLy,nSx,nSy)
       _RL  cg2d_s(1-OLx:sNx+OLx,1-OLy:sNy+OLy,nSx,nSy)
+#endif
