@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/inc/SURFACE.h,v 1.1 2001/03/06 16:31:04 jmc Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/inc/SURFACE.h,v 1.1.2.1 2001/03/30 22:45:06 jmc Exp $
 C $Name:  $
 C
 C     /==========================================================\
@@ -17,3 +17,7 @@ C     recip_Bo     = 1/Bo_surf
       _RL  Bo_surf(1-OLx:sNx+OLx,1-OLy:sNy+OLy,nSx,nSy)
       _RL  recip_Bo(1-OLx:sNx+OLx,1-OLy:sNy+OLy,nSx,nSy)
 
+C--   COMMON /SURF_INDEX/ Common block for surface related index
+C     k_surf - vertical index of the surface tracer cell
+      COMMON /SURF_INDEX/ k_surf
+      INTEGER k_surf(1-OLx:sNx+OLx,1-OLy:sNy+OLy,nSx,nSy)
