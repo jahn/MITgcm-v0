@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/obcs/Attic/OBCS.h,v 1.3.6.2 2002/02/09 02:14:30 heimbach Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/obcs/Attic/OBCS.h,v 1.3.6.3 2003/06/19 15:35:33 heimbach Exp $
 C $Name:  $
 
 #ifdef ALLOW_OBCS
@@ -177,5 +177,10 @@ C
       _RL OBEw (1-Oly:sNy+Oly,Nr,nSx,nSy)
       _RL OBWw (1-Oly:sNy+Oly,Nr,nSx,nSy)
 #endif /* ALLOW_NONHYDROSTATIC */
+
+#ifdef ALLOW_OBCS_CONTROL
+       common /gg_volflux/ shiftvel
+       _RL shiftvel(2)
+#endif
 
 #endif /* ALLOW_OBCS */

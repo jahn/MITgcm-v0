@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/obcs/obcs_init_variables.F,v 1.4.6.2 2002/02/09 02:18:03 heimbach Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/obcs/obcs_init_variables.F,v 1.4.6.3 2003/06/19 15:35:33 heimbach Exp $
 C $Name:  $
 
 #include "OBCS_OPTIONS.h"
@@ -114,7 +114,7 @@ C     == Local variables ==
           OBWt1(J,K,bi,bj)=0. _d 0
           OBWs1(J,K,bi,bj)=0. _d 0
 # endif
-#endif /* ALLOW_OBCS_EAST */
+#endif /* ALLOW_OBCS_WEST */
          ENDDO
         ENDDO
 
