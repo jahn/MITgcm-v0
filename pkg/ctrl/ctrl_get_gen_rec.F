@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/ctrl/ctrl_get_gen_rec.F,v 1.1.2.1 2003/06/19 15:18:48 heimbach Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/ctrl/ctrl_get_gen_rec.F,v 1.1.2.2 2003/06/24 18:36:47 heimbach Exp $
 
 #include "CTRL_CPPOPTIONS.h"
 
@@ -35,9 +35,10 @@ c     == global variables ==
 #include "EEPARAMS.h"
 #include "SIZE.h"
 
-#include "cal.h"
-#include "ecco.h"
 #include "ctrl.h"
+#ifdef ALLOW_CALENDAR
+# include "cal.h"
+#endif
 
 c     == routine arguments ==
 
@@ -53,6 +54,8 @@ c     == routine arguments ==
       integer mythid
 
 c     == local variables ==
+
+#ifdef ALLOW_CALENDAR
 
       integer mydate(4)
       integer previousdate(4)
@@ -166,6 +169,8 @@ c     Do some printing for the protocol.
      &                      SQUEEZE_RIGHT , mythid)
       _END_MASTER( mythid )
 #endif
+
+#endif /* ALLOW_CALENDAR */
 
       return
       end

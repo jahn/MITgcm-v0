@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/ctrl/ctrl_get_gen.F,v 1.1.2.1 2003/06/19 15:18:48 heimbach Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/ctrl/ctrl_get_gen.F,v 1.1.2.2 2003/06/24 18:36:47 heimbach Exp $
 
 #include "CTRL_CPPOPTIONS.h"
 
@@ -31,8 +31,10 @@ c     == global variables ==
 
 #include "ctrl.h"
 #include "ctrl_dummy.h"
-#include "exf_fields.h"
 #include "optim.h"
+#ifdef INCLUDE_EXTERNAL_FORCING_PACKAGE
+# include "exf_fields.h"
+#endif
 
 c     == routine arguments ==
 
@@ -50,6 +52,8 @@ c     == routine arguments ==
       integer mythid
 
 c     == local variables ==
+
+#ifdef INCLUDE_EXTERNAL_FORCING_PACKAGE
 
       integer bi,bj
       integer i,j,k
@@ -139,6 +143,8 @@ c--       Calculate mask for tracer cells (0 => land, 1 => water).
           enddo
         enddo
       enddo
+
+#endif /* INCLUDE_EXTERNAL_FORCING_PACKAGE */
 
       end
 
