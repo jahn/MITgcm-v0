@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/Attic/find_wvel.F,v 1.3 1998/05/26 21:29:45 cnh Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/Attic/find_wvel.F,v 1.4 1998/05/27 05:57:02 cnh Exp $
 
 #include "CPP_EEOPTIONS.h"
 
@@ -35,7 +35,7 @@ C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/mod
 ! Volume transport thru' Western faces
        do j=jMin,jMax
         do i=iMin,iMax
-         Utrans(i,j)=dyF(i,j,bi,bj)*dzF(k)*Uvel(i,j,k,bi,bj)
+         Utrans(i,j)=_dyF(i,j,bi,bj)*dzF(k)*Uvel(i,j,k,bi,bj)
         enddo
        enddo
 
