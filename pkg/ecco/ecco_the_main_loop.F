@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/ecco/Attic/ecco_the_main_loop.F,v 1.1.2.15 2003/03/08 00:13:12 heimbach Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/ecco/Attic/ecco_the_main_loop.F,v 1.1.2.16 2003/05/23 16:26:26 heimbach Exp $
 
 #include "CPP_OPTIONS.h"
 #ifdef ALLOW_OBCS
@@ -708,7 +708,15 @@ c     and the last year.
       call cost_driftw( myiter, mytime, mythid )
       call timer_stop ('cost_Driftw        [ECCO SPIN-DOWN]', mythid)
 #endif
+      _BARRIER
 
+c--   Compute initial vs. final T/S deviation
+#ifdef ALLOW_COST_INI_FIN
+      call timer_start('cost_ini_fin       [ECCO SPIN-DOWN]', mythid)
+      call cost_theta_ini_fin( myiter, mytime, mythid )
+      call cost_salt_ini_fin( myiter, mytime, mythid )
+      call timer_stop ('cost_ini_fin       [ECCO SPIN-DOWN]', mythid)
+#endif
       _BARRIER
 
 c--   Sum all cost function contributions.

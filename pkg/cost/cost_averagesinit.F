@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/cost/Attic/cost_averagesinit.F,v 1.1.2.3 2002/04/04 10:58:58 heimbach Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/cost/Attic/cost_averagesinit.F,v 1.1.2.4 2003/05/23 16:26:26 heimbach Exp $
 
 #include "COST_CPPOPTIONS.h"
 
@@ -185,10 +185,15 @@ c--       Initialise salinity average (2d).
             enddo
           enddo  
           xx_sflux_mean_dummy = 0. _d 0
-#endif    
+#endif
 
         enddo
       enddo
+
+#ifdef ALLOW_COST_INI_FIN
+      xx_theta_ini_fin_dummy = 0. _d 0
+      xx_salt_ini_fin_dummy = 0. _d 0
+#endif
 
       return
       end

@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/cost/Attic/cost_initvaria.F,v 1.1.2.4 2003/02/27 22:12:17 dimitri Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/cost/Attic/cost_initvaria.F,v 1.1.2.5 2003/05/23 16:26:26 heimbach Exp $
 
 #include "COST_CPPOPTIONS.h"
 
@@ -101,6 +101,8 @@ c--   Initialize the tiled cost function contributions.
           objf_obcsw(bi,bj)    = 0. _d 0
           objf_obcse(bi,bj)    = 0. _d 0
           objf_ice(bi,bj)      = 0. _d 0
+          objf_theta_ini_fin(bi,bj) = 0. _d 0
+          objf_salt_ini_fin(bi,bj)  = 0. _d 0
         enddo
       enddo
 

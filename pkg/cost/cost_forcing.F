@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/cost/Attic/cost_forcing.F,v 1.1.2.1 2002/02/05 20:23:57 heimbach Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/cost/Attic/cost_forcing.F,v 1.1.2.2 2003/05/23 16:26:26 heimbach Exp $
 
 #include "COST_CPPOPTIONS.h"
 
@@ -34,9 +34,13 @@ c     == global variables ==
 
 #include "SIZE.h"
 #include "EEPARAMS.h"
+#include "DYNVARS.h"
 
 #include "cal.h"
+#include "cost.h"
 #include "ctrl.h"
+#include "ctrl_dummy.h"
+#include "optim.h"
 
 c     == routine arguments ==
 
@@ -48,6 +52,13 @@ c     == local variables ==
 
       integer startrec
       integer endrec
+      integer ilfld
+      character*(80) fnamefld
+
+c     == external functions ==
+
+      integer  ilnblnk
+      external ilnblnk
 
 c     == end of interface ==
 
@@ -116,5 +127,19 @@ c--   Meridional wind speed contribution to the cost function.
       call cost_vwind( myiter, mytime,
      &                     startrec, endrec, mythid )
 #endif
+
+#ifdef ALLOW_COST_INI_FIN
+      ilfld = ilnblnk( xx_theta_ini_fin_file )
+      write(fnamefld(1:80),'(2a,i10.10)') 
+     &     xx_theta_ini_fin_file(1:ilfld),'.',optimcycle
+      call active_write_xyz( fnamefld, theta, 1, optimcycle, mythid,
+     &                     xx_theta_ini_fin_dummy )
+c
+      ilfld = ilnblnk( xx_salt_ini_fin_file )
+      write(fnamefld(1:80),'(2a,i10.10)') 
+     &     xx_salt_ini_fin_file(1:ilfld),'.',optimcycle
+      call active_write_xyz( fnamefld, salt, 1, optimcycle, mythid,
+     &                     xx_salt_ini_fin_dummy )
+#endif      
 
       end
