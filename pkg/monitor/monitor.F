@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/monitor/monitor.F,v 1.27 2004/12/04 00:13:01 jmc Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/monitor/monitor.F,v 1.28 2004/12/17 01:25:01 jmc Exp $
 C $Name:  $
 
 #include "MONITOR_OPTIONS.h"
@@ -156,12 +156,12 @@ C         Dynamics field monitor finish
           ENDIF
 #endif /* ALLOW_USE_MPI */
 
-          mon_write_stdout = .FALSE.
-          mon_write_mnc    = .FALSE.
-
           _END_MASTER(myThid)
         ENDIF
-        
+
+        mon_write_stdout = .FALSE.
+        mon_write_mnc    = .FALSE.
+
       ENDIF
 
       RETURN
