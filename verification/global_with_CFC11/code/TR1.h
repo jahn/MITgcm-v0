@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/inc/Attic/TR1.h,v 1.2.4.1 2003/05/01 18:18:28 dimitri Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/verification/global_with_CFC11/code/Attic/TR1.h,v 1.1.2.1 2003/05/01 18:18:28 dimitri Exp $
 C $Name:  $
 C
 CBOP

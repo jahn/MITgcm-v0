@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/Attic/ini_tr1.F,v 1.2.4.2 2003/05/01 18:18:28 dimitri Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/verification/global_with_CFC11/code/Attic/ini_tr1.F,v 1.1.2.1 2003/05/01 18:18:29 dimitri Exp $
 C $Name:  $
 
 #include "CPP_OPTIONS.h"
@@ -128,14 +128,14 @@ c_ ---------------------------------------------------------------------
 c_ RCS lines preceded by "c_ "
 c_ ---------------------------------------------------------------------
 c_
-c_ $Source: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/Attic/ini_tr1.F,v $
-c_ $Revision: 1.2.4.2 $
-c_ $Date: 2003/05/01 18:18:28 $   ;  $State: Exp $
+c_ $Source: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/verification/global_with_CFC11/code/Attic/ini_tr1.F,v $
+c_ $Revision: 1.1.2.1 $
+c_ $Date: 2003/05/01 18:18:29 $   ;  $State: Exp $
 c_ $Author: dimitri $ ;  $Locker:  $
 c_
 c_ ---------------------------------------------------------------------
 c_ $Log: ini_tr1.F,v $
-c_ Revision 1.2.4.2  2003/05/01 18:18:28  dimitri
+c_ Revision 1.1.2.1  2003/05/01 18:18:29  dimitri
 c_ release1_p15
 c_ o Added CFC-11 diagnostics, see
 c_   verification/global_with_CFC11/README

@@ -1,7 +1,11 @@
-$Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/doc/tag-index,v 1.53.2.36 2003/05/01 00:01:15 dimitri Exp $
+$Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/doc/tag-index,v 1.53.2.37 2003/05/01 18:18:28 dimitri Exp $
 
     Notes on tags used in MITgcmUV
     ==============================
+
+release1_p15
+o Added CFC-11 diagnostics, see
+  verification/global_with_CFC11/README
 
 release1_p14
 o Added interpolation routine pkg/exf/new_interp.F for on-the-fly
