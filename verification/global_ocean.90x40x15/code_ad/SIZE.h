@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/verification/global_ocean.90x40x15/code_ad/SIZE.h,v 1.1.2.1 2002/05/20 23:55:46 heimbach Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/verification/global_ocean.90x40x15/code_ad/SIZE.h,v 1.1.2.2 2002/07/12 15:51:09 heimbach Exp $
 C $Name:  $
 
 C
@@ -56,4 +56,7 @@ C                routine buufers.
       INTEGER MAX_OLY
       PARAMETER ( MAX_OLX = OLx,
      &            MAX_OLY = OLy )
+ 
+      integer     nobcs
+      parameter ( nobcs = 4 )
 

@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/verification/carbon/code/Attic/SIZE.h,v 1.1 2001/07/13 13:19:00 heimbach Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/verification/carbon/code/Attic/SIZE.h,v 1.1.4.1 2002/07/12 15:51:09 heimbach Exp $
 C $Name:  $
 C
 C     /==========================================================\
@@ -56,3 +56,5 @@ C                routine buufers.
       PARAMETER ( MAX_OLX = OLx,
      &            MAX_OLY = OLy )
 
+      integer     nobcs
+      parameter ( nobcs = 4 )
