@@ -1,4 +1,4 @@
-$Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/doc/tag-index,v 1.53.4.44 2003/06/20 05:43:06 heimbach Exp $
+$Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/doc/tag-index,v 1.53.4.45 2003/06/20 20:08:13 heimbach Exp $
 
     Notes on tags used in MITgcmUV
     ==============================
@@ -12,7 +12,6 @@ o Modif's to enable tangent linear run in ECCO environment
     (i.e. computation of trajectory in TLM mode)
   * incorrect g_active_write_...
   * (re-) init of bar files and g_bar files
-  * still a problem for TLM of seaice code... later.
 o Reverted back to 3-dim. tbar, sbar for SST, SSS bar files.
 o MERGES:
   * obcs/ ctrl/ G. Gebbie code
@@ -24,6 +23,8 @@ o replaced mutiple ctrl_get... by single generic ctrl_get_gen.F
   (except obcs)
 o somewhat cleaned package initialisation sequence for
   ctrl/ cost/ ecco/
+o extended grdchk to enable obcs gradient checks
+o some generalizations for easier TLM <-> ADM switches
 
 ecco_c50_e32
 o Patrick's adjoint-model storage directives for pkg/seaice
