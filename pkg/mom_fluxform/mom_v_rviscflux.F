@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/mom_fluxform/Attic/mom_v_rviscflux.F,v 1.3 2001/09/26 19:05:21 adcroft Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/mom_fluxform/Attic/mom_v_rviscflux.F,v 1.4 2002/12/16 21:40:07 mlosch Exp $
 C $Name:  $
 
 #include "CPP_OPTIONS.h"
@@ -57,6 +57,7 @@ C     - Laplacian  and bi-harmonic terms
      &   *rAs(i,j,bi,bj)
      &   *( vFld(i,j,k,bi,bj)-vFld(i,j,kp1,bi,bj)
      &    )*rkFac*recip_drC(kp1)
+     &    *_maskS(i,j,k,bi,bj)
      &    *_maskS(i,j,kp1,bi,bj)
        ENDDO
       ENDDO
