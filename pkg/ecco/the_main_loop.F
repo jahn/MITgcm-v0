@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/ecco/Attic/the_main_loop.F,v 1.1 2003/11/06 22:10:08 heimbach Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/ecco/Attic/the_main_loop.F,v 1.2 2003/11/13 19:35:10 heimbach Exp $
 
 #include "PACKAGES_CONFIG.h"
 #include "CPP_OPTIONS.h"
@@ -717,7 +717,7 @@ c--   Accumulate time averages of temperature, salinity, and SSH.
       call timer_stop ('cost_averagesfields [ECCO SPIN-DOWN]', mythid)
 #ifdef ALLOW_DIVIDED_ADJOINT
 c**************************************
-#include "checkpoint_bar_directives.h"
+#include "cost_averages_bar_directives.h"
 c**************************************
 #endif
 
