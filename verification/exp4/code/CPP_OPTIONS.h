@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/verification/exp4/code/CPP_OPTIONS.h,v 1.8 2001/03/06 16:18:51 jmc Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/verification/exp4/code/CPP_OPTIONS.h,v 1.8.2.1 2001/04/02 18:24:02 adcroft Exp $
 C $Name:  $
 C
 
@@ -22,7 +22,7 @@ C o Shortwave heating as extra term in external_forcing.F
 #endif
 
 C o Include/exclude code for Shapiro filters
-#define ALLOW_SHAP_FILT
+#undef  ALLOW_SHAP_FILT
 
 C o Include/exclude code for C-D grid method of integrating the 
 C   coriolis terms
