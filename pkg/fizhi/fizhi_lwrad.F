@@ -1,3 +1,6 @@
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/fizhi/fizhi_lwrad.F,v 1.1 2004/06/15 14:47:23 molod Exp $
+C $Name:  $
+
       subroutine lwrio (nymd,nhms,istrip,npcs,
      .                  pz,tz,qz,plz,plze,pkz,pkht,oz,co2,
      .                  cfc11,cfc12,cfc22,

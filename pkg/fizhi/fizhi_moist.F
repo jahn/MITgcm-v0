@@ -1,3 +1,6 @@
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/fizhi/fizhi_moist.F,v 1.1 2004/06/15 14:47:23 molod Exp $
+C $Name:  $
+                                                                                    
       subroutine moistio (ndmoist,istrip,npcs,pz,tz,qz,ntracer,ptracer,
      .   pkht,qqz,dumoist,dvmoist,dtmoist,dqmoist,
      .   im,jm,lm,sige,sig,dsig,ptop,
