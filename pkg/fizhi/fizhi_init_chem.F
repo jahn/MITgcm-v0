@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/fizhi/fizhi_init_chem.F,v 1.1 2004/06/07 20:26:43 molod Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/fizhi/fizhi_init_chem.F,v 1.2 2004/06/08 15:09:01 molod Exp $
 C $Name:  $
 
       subroutine fizhi_init_chem(mythid,nozlats,nozlevs,ozlats,ozlevs,
