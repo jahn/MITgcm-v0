@@ -1,0 +1,15 @@
+# $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/verification/aim.5l_Equatorial_Channel/input/Attic/.genmakerc,v 1.4 2001/05/29 14:01:47 adcroft Exp $
+# $Name:  $
+
+# Force use of PGI f77
+if (`uname` == 'Linux') set platform=( Linux+pgi )
+
+# Disable packages that are not needed
+set DISABLE=( $DISABLE kpp gmredi obcs )
+
+# Enable packages that are needed but are disabled by default
+set ENABLE=( aim )
+
+# We can also specify other defaults
+set ROOTDIR=../../..
+set MODS=../code
