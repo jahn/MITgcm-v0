@@ -1,11 +1,9 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/grdchk/grdchk_init.F,v 1.2.6.1 2002/05/30 19:55:16 heimbach Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/grdchk/grdchk_init.F,v 1.2.6.2 2003/03/04 01:25:20 heimbach Exp $
 
 #include "CTRL_CPPOPTIONS.h"
 
 
-      subroutine grdchk_init(
-     I                       mythid
-     &                      )
+      subroutine grdchk_init( mythid )
 
 c     ==================================================================
 c     SUBROUTINE grdchk_init
@@ -85,6 +83,14 @@ c--   control variable on the current tile.
             do bi = itlo,ithi
                do k = 1,ncvarnrmax(grdchkvarindex)
                   nwettile(bi,bj,k) = nwetwtile(bi,bj,k)
+               enddo
+            enddo
+         enddo
+      else if ( ncvargrd(grdchkvarindex) .eq. 'v' ) then
+         do bj = jtlo,jthi
+            do bi = itlo,ithi
+               do k = 1,ncvarnrmax(grdchkvarindex)
+                  nwettile(bi,bj,k) = nwetvtile(bi,bj,k)
                enddo
             enddo
          enddo
