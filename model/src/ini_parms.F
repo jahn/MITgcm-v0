@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/ini_parms.F,v 1.24 1998/07/29 18:33:47 adcroft Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/ini_parms.F,v 1.25 1998/08/19 13:37:52 cnh Exp $
 
 #include "CPP_OPTIONS.h"
 
@@ -530,6 +530,9 @@ C--   Input files
        CALL MODELDATA_EXAMPLE( myThid )
        STOP 'ABNORMAL END: S/R INI_PARMS'
   12  CONTINUE
+
+C
+      CLOSE(iUnit)
 
       _END_MASTER(myThid)
 
