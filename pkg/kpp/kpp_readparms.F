@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/kpp/kpp_readparms.F,v 1.4.6.2 2002/12/27 08:01:55 dimitri Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/kpp/kpp_readparms.F,v 1.4.6.3 2003/02/05 07:13:00 dimitri Exp $
 C $Name:  $
 #include "KPP_OPTIONS.h"
 
@@ -26,9 +26,10 @@ C     === Local variables ===
 C     msgBuf      - Informational/error meesage buffer
 C     errIO       - IO error flag
 C     iUnit       - Work variable for IO unit number
+C     k           - Loop counter
 
       CHARACTER*(MAX_LEN_MBUF) msgBuf
-      INTEGER errIO, iUnit
+      INTEGER errIO, iUnit, k
 
 C--   KPP vertical mixing parameters
       NAMELIST /KPP_PARM01/
@@ -60,8 +61,8 @@ C--   KPP vertical mixing parameters
 
 C--   set default KPP vertical mixing parameters
       kpp_freq      = deltaTClock
-      kpp_dumpFreq  = 0.
-      kpp_taveFreq  = 0.
+      kpp_dumpFreq  = dumpFreq
+      kpp_taveFreq  = taveFreq
       KPPmixingMaps = .FALSE.
       KPPwriteState = .FALSE.
       minKPPhbl     = drF(1)*0.5
