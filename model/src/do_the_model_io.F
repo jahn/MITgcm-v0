@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/do_the_model_io.F,v 1.22.6.2 2003/03/07 23:10:20 heimbach Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/do_the_model_io.F,v 1.22.6.3 2003/06/19 15:22:09 heimbach Exp $
 C $Name:  $
 
 #include "CPP_OPTIONS.h"
@@ -94,11 +94,17 @@ C--   Do time averages
        CALL TIMEAVE_STATV_WRITE( myCurrentTime, myIter, myThid )
       ENDIF
 #endif
+
 #ifdef ALLOW_AIM
 C--   Do AIM time averages
       IF (useAIM)
      &  CALL AIM_WRITE_TAVE( myCurrentTime, myIter, myThid )
 #endif                                                             
+
+#ifdef ALLOW_OBCS
+      IF (useOBCS)
+     & CALL OBCS_DIAGS( myCurrentTime, myIter, myThid )
+#endif
 
 #ifdef ALLOW_GMREDI
 C--   Do KPP diagnostics.

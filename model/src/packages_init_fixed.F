@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/packages_init_fixed.F,v 1.4.6.2 2003/03/07 23:10:21 heimbach Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/packages_init_fixed.F,v 1.4.6.3 2003/06/19 15:22:09 heimbach Exp $
 C $Name:  $
 
 #include "CPP_OPTIONS.h"
@@ -61,6 +61,19 @@ C--   Latitude circle filter initialisation
        CALL ZONAL_FILT_INIT(myThid)
       _BARRIER
       ENDIF
+#endif
+
+#if (defined (ALLOW_ADJOINT_RUN) || \
+     defined (ALLOW_TANGENTLINEAR_RUN) || \
+     defined (ALLOW_ECCO_OPTIMIZATION)) 
+C--   Initialise the control variables
+      CALL CTRL_INIT( myThid )
+      _BARRIER
+#endif
+
+#ifdef INCLUDE_ECCO_PACKAGE
+C--   Initialise ecco-specific cost function.
+       IF (useECCO) CALL COST_INIT( myThid )
 #endif
 
       RETURN
