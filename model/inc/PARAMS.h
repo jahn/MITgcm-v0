@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/inc/PARAMS.h,v 1.49.2.1 2001/04/02 16:37:20 adcroft Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/inc/PARAMS.h,v 1.49.2.2 2001/04/03 02:39:18 adcroft Exp $
 C $Name:  $
 C
 C     /==========================================================\
@@ -186,6 +186,7 @@ C     globalFiles    - Selects between "global" and "tiled" files
 C     allowFreezing  - Allows water to freeze and form ice
 C     groundAtK1  - put the surface(k=1) at the Lower Boundary (=ground)
       COMMON /PARM_L/ usingCartesianGrid, usingSphericalPolarGrid,
+     & usingCurvilinearGrid,
      & no_slip_sides,no_slip_bottom,
      & staggerTimeStep,
      & momViscosity, momAdvection, momForcing, useCoriolis, 
@@ -202,6 +203,7 @@ C     groundAtK1  - put the surface(k=1) at the Lower Boundary (=ground)
      & allowFreezing, groundAtK1
       LOGICAL usingCartesianGrid
       LOGICAL usingSphericalPolarGrid
+      LOGICAL usingCurvilinearGrid
       LOGICAL usingSphericalPolarMTerms
       LOGICAL no_slip_sides
       LOGICAL no_slip_bottom

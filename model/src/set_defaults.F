@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/set_defaults.F,v 1.16 2001/03/06 17:25:07 jmc Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/set_defaults.F,v 1.16.2.1 2001/04/03 02:39:18 adcroft Exp $
 C $Name:  $
 
 #include "CPP_OPTIONS.h"
@@ -63,6 +63,8 @@ C     In spherical polar distances are in degrees
       phiMin               = 0.0
       thetaMin             = 0.
       rSphere              = 6370. * 1.D3
+C     General curvilinear coordinate system
+      usingCurvilinearGrid = .FALSE.
 
 C--   Set default "physical" parameters
       DO K =1,Nr
