@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/initialise_varia.F,v 1.9 2001/03/06 17:19:25 jmc Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/initialise_varia.F,v 1.9.2.1 2001/05/14 17:57:22 adcroft Exp $
 C $Name:  $
 
 #include "CPP_OPTIONS.h"
@@ -34,6 +34,9 @@ C     == Local variables ==
       INTEGER bi,bj,K,iMin,iMax,jMin,jMax
 
       _BARRIER
+C--   Initialize non-state field arrays (ie. Gu,Gv,...) to zero [always]
+      CALL INI_GARRAYS( myThid )
+
 C--   Initialise model fields.
 C     Starting values of U, V, W, temp., salt. and tendency terms
 C     are set here. Fields are either set to default or read from
