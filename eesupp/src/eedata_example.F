@@ -1,7 +1,9 @@
-C $Id: eedata_example.F,v 1.1.1.1 1998/04/22 19:15:30 cnh Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/eesupp/src/eedata_example.F,v 1.4 2001/02/04 14:38:42 cnh Exp $
+C $Name:  $
 
 #include "CPP_EEOPTIONS.h"
 
+      SUBROUTINE EEDATA_EXAMPLE
 C     /==========================================================\
 C     | S/R EEDATA_EXAMPLE                                       |
 C     | o Write example eedata file                              |
@@ -11,7 +13,7 @@ C     | =====                                                    |
 C     | Some systems require & as the namelist terminator.       |
 C     | Other systems use a / character.                         |
 C     \==========================================================/
-      SUBROUTINE EEDATA_EXAMPLE
+      IMPLICIT NONE
 #include "SIZE.h"
 #include "EEPARAMS.h"
 
