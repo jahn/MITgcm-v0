@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/ecco/Attic/ecco_the_main_loop.F,v 1.1.2.7 2003/02/14 23:10:35 dimitri Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/ecco/Attic/ecco_the_main_loop.F,v 1.1.2.8 2003/02/27 22:12:17 dimitri Exp $
 
 #include "CPP_OPTIONS.h"
 #ifdef ALLOW_OBCS
@@ -48,6 +48,9 @@ c                undef ALLOW_TAMC_CHECKPOINTING
 c
 c              Patrick Heimbach heimbach@mit.edu 6-Jun-2000
 c              - corrected initialisation of comlev1 common blocks
+
+c              Dimitris Menemenlis  menemenlis@jpl.nasa.gov 26-Feb-2003
+c              - modifications for pkg/seaice
 c
 c     ==================================================================
 c     SUBROUTINE the_main_loop
@@ -361,6 +364,7 @@ C     theta is dumped or time-averaged.
       IF ( useSEAICE ) THEN
          CALL TIMER_START('SEAICE_MODEL       [FORWARD_STEP]',myThid)
          CALL SEAICE_MODEL( myTime, myIter, myThid )
+         CALL COST_ICE    ( myTime, myIter, myThid )
          CALL TIMER_STOP ('SEAICE_MODEL       [FORWARD_STEP]',myThid)
       ENDIF
 #endif

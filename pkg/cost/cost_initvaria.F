@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/cost/Attic/cost_initvaria.F,v 1.1.2.3 2002/04/04 10:58:59 heimbach Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/cost/Attic/cost_initvaria.F,v 1.1.2.4 2003/02/27 22:12:17 dimitri Exp $
 
 #include "COST_CPPOPTIONS.h"
 
@@ -14,11 +14,10 @@ c
 c     o Initialise the variable cost function part.
 c
 c     started: Christian Eckert eckert@mit.edu 30-Jun-1999
-c
 c     changed: Christian Eckert eckert@mit.edu 18-Apr-2000
-c
 c              - Restructured the code in order to create a package
 c                for the MITgcmUV.
+c     added sea-ice term: menemenlis@jpl.nasa.gov 26-Feb-2003
 c
 c     ==================================================================
 c     SUBROUTINE cost_InitVaria
@@ -101,6 +100,7 @@ c--   Initialize the tiled cost function contributions.
           objf_obcss(bi,bj)    = 0. _d 0
           objf_obcsw(bi,bj)    = 0. _d 0
           objf_obcse(bi,bj)    = 0. _d 0
+          objf_ice(bi,bj)      = 0. _d 0
         enddo
       enddo
 
