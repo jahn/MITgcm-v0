@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/land/land_readparms.F,v 1.6 2004/07/09 03:17:44 edhill Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/land/land_readparms.F,v 1.7 2004/10/10 14:16:04 jmc Exp $
 C $Name:  $
 
 #include "LAND_OPTIONS.h"
@@ -334,8 +334,10 @@ C---+----1----+----2----+----3----+----4----+----5----+----6----+----7-|--+----|
 C--   Everyone else must wait for the parameters to be loaded
       _BARRIER
 
-      CALL LAND_MNC_INIT(sNx,sNy, OLx,OLy, nSx,nSy, nPx,nPy, 
-     &     land_nLev, myThid)
+      IF ( useMNC ) THEN 
+        CALL LAND_MNC_INIT(sNx,sNy, OLx,OLy, nSx,nSy, nPx,nPy, 
+     &       land_nLev, myThid)
+      ENDIF
 
 #endif /* ALLOW_LAND */
 
