@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/obcs/OBCS_OPTIONS.h,v 1.2.8.1 2002/02/05 20:23:59 heimbach Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/obcs/OBCS_OPTIONS.h,v 1.2.8.2 2002/02/09 02:18:03 heimbach Exp $
 C $Name:  $
  
 C CPP options file for OBCS package
@@ -13,6 +13,9 @@ C OBCS is enabled with ALLOW_OBCS in CPP_OPTIONS.h
 
 C This include hooks to the Orlanski Open Boundary Radiation code
 #undef ALLOW_ORLANSKI
+
+C Enable OB values to be prescribed via EXF package
+#define ALLOW_OBCS_PRESCRIBE
 
 C This includes hooks to sponge layer treatment of uvel, vvel
 #undef ALLOW_OBCS_SPONGE
