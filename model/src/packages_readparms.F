@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/packages_readparms.F,v 1.30 2004/05/14 21:08:28 heimbach Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/packages_readparms.F,v 1.31 2004/06/03 20:02:02 molod Exp $
 C $Name:  $
 
 #include "PACKAGES_CONFIG.h"
@@ -164,6 +164,13 @@ CAMM
 C--   set diagnostics choices
       IF ( usediagnostics ) call diag_readparms(myThid )
 #endif /* ALLOW_DIAGNOSTICS */
+CAMM
+
+CAMM
+#ifdef ALLOW_FIZHI
+C--   set model date and time and other fizhi parameters
+      IF ( usefizhi ) call fizhi_readparms(myThid )
+#endif /* ALLOW_FIZHI */
 CAMM
 
       RETURN
