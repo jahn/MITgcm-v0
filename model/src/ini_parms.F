@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/ini_parms.F,v 1.52 2000/09/11 23:04:18 heimbach Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/ini_parms.F,v 1.52.2.1 2001/01/17 14:58:17 jmc Exp $
 
 #include "CPP_OPTIONS.h"
 
@@ -93,6 +93,7 @@ C--   Continuous equation parameters
      & tempDiffusion, tempAdvection, tempForcing,
      & saltDiffusion, saltAdvection, saltForcing,
      & implicitFreeSurface, rigidLid, freeSurfFac, hFacMin, hFacMinDz,
+     & staggerTimeStep,
      & tempStepping, saltStepping, momStepping,
      & implicitDiffusion, implicitViscosity,
      & viscAr, diffKrT, diffKrS, hFacMinDr,

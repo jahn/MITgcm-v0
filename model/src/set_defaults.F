@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/set_defaults.F,v 1.11 2000/09/11 20:51:48 heimbach Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/set_defaults.F,v 1.11.2.1 2001/01/17 14:58:17 jmc Exp $
 
 #include "CPP_OPTIONS.h"
 
@@ -92,6 +92,7 @@ C--   Set default "physical" parameters
       rigidLid            = .FALSE.
       hFacMin             = 1.D0
       hFacMinDrDefault    = 0.D0
+      staggerTimeStep     = .FALSE.
       momViscosity        = .TRUE.
       momAdvection        = .TRUE.
       momForcing          = .TRUE.
