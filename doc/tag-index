@@ -1,14 +1,15 @@
-$Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/doc/tag-index,v 1.53.4.23 2003/02/23 01:42:40 dimitri Exp $
+$Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/doc/tag-index,v 1.53.4.24 2003/02/24 06:14:55 dimitri Exp $
 
     Notes on tags used in MITgcmUV
     ==============================
 
-untagged
+icebear3
 o Removed spurious iikey and idkey
 o pkg/exf
   - bug fix in treatment of downward radiation
 o pkg/seaice
   - added initial sea-ice thickness parameter SEAICE_initialHEFF
+o updated verification/natl_box_adjoint
 
 icebear2
 o Added missing /* */ to CPP comments in pkg/seaice, pkg/exf,
