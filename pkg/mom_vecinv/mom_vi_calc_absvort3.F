@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/mom_vecinv/Attic/mom_vi_calc_absvort3.F,v 1.1.2.1 2001/03/30 21:13:33 adcroft Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/mom_vecinv/Attic/mom_vi_calc_absvort3.F,v 1.1.2.2 2001/04/09 18:36:45 adcroft Exp $
 C $Name:  $
 
 #include "CPP_OPTIONS.h"
@@ -34,8 +34,6 @@ C     == Local variables ==
       IF (momAdvection) nonLinFac=0.
       useCoriolisFac=0.
       IF (useCoriolis) useCoriolisFac=1.
-
-      nonLinFac=1.
 
       DO J=1-Oly,sNy+Oly
        DO I=1-Olx,sNx+Olx
