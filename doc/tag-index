@@ -1,7 +1,12 @@
-$Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/doc/tag-index,v 1.53.4.38 2003/05/23 18:03:31 heimbach Exp $
+$Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/doc/tag-index,v 1.53.4.39 2003/05/23 22:06:20 dimitri Exp $
 
     Notes on tags used in MITgcmUV
     ==============================
+
+o merged with checkpoint50g_post (pkg/seaice and verification/lab_sea)
+  - added SEAICE_MULTILEVEL for 8-category sea-ice thermodynamics
+  - LSR sea-ice dynamic solver moved to SouthWest B-grid location and
+    made the default because of faster convergence than ADI
 
 ecco_c50_e31
 o exf totally restructured
