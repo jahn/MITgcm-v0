@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/ctrl/ctrl_pack.F,v 1.4.6.2 2002/03/21 03:55:16 heimbach Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/ctrl/ctrl_pack.F,v 1.4.6.3 2002/04/04 10:24:47 heimbach Exp $
 
 #include "CTRL_CPPOPTIONS.h"
 
@@ -67,6 +67,7 @@ c     == local variables ==
       integer irec
       integer ig,jg
       integer ivartype
+      integer iobcs
 
       logical doglobalread
       logical ladinit
@@ -244,6 +245,18 @@ c--       Header information.
           write(cunit) (ncvarnrmax(i), i=1,maxcvars)
           write(cunit) (ncvargrd(i),   i=1,maxcvars)
           write(cunit)
+#ifdef ALLOW_OBCSN_CONTROL
+          write(cunit) ((nWetobcsn(1,1,k,iobcs), k=1,nr),iobcs= 1,nobcs)
+#endif
+#ifdef ALLOW_OBCSS_CONTROL
+          write(cunit) ((nWetobcss(1,1,k,iobcs), k=1,nr),iobcs= 1,nobcs)
+#endif
+#ifdef ALLOW_OBCSW_CONTROL
+          write(cunit) ((nWetobcsw(1,1,k,iobcs), k=1,nr),iobcs= 1,nobcs)
+#endif
+#ifdef ALLOW_OBCSE_CONTROL
+          write(cunit) ((nWetobcse(1,1,k,iobcs), k=1,nr),iobcs= 1,nobcs)
+#endif
 
 #ifdef ALLOW_THETA0_CONTROL
           ivartype = 1

@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/ctrl/Attic/ctrl_map.F,v 1.1.2.1 2002/02/05 20:23:58 heimbach Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/ctrl/Attic/ctrl_map.F,v 1.1.2.2 2002/04/04 10:24:47 heimbach Exp $
 
 #include "CTRL_CPPOPTIONS.h"
 
@@ -96,6 +96,8 @@ c--   Temperature field.
               do i = imin,imax
                 theta(i,j,k,bi,bj) = theta(i,j,k,bi,bj) +
      &                               fac*tmpfld3d(i,j,k,bi,bj)
+                if(theta(i,j,k,bi,bj).lt.-2.0) 
+     &               theta(i,j,k,bi,bj)= -2.0  
 cph                gtNm1(i,j,k,bi,bj) = gtNm1(i,j,k,bi,bj) +
 cph     &                               fac*tmpfld3d(i,j,k,bi,bj)
               enddo
