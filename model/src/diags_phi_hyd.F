@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/diags_phi_hyd.F,v 1.1.2.2 2003/06/24 23:05:28 heimbach Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/diags_phi_hyd.F,v 1.1.2.3 2003/07/18 20:50:06 heimbach Exp $
 C $Name:  $
 
 #include "CPP_OPTIONS.h"
@@ -55,7 +55,6 @@ CEOP
         DO j=jMin,jMax
          DO i=iMin,iMax
            totPhiHyd(i,j,k,bi,bj) = phiHydC(i,j)
-c    &            - gravity*rC(k)*recip_horiVertRatio
      &            + Bo_surf(i,j,bi,bj)*etaN(i,j,bi,bj)
      &            + phi0surf(i,j,bi,bj) 
          ENDDO

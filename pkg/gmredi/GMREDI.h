@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/gmredi/GMREDI.h,v 1.5.6.3 2003/03/07 03:57:33 heimbach Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/gmredi/GMREDI.h,v 1.5.6.4 2003/07/18 20:50:06 heimbach Exp $
 C $Name:  $
 
 #ifdef ALLOW_GMREDI
@@ -42,8 +42,8 @@ C     GM_slopeSqCutoff :: slope^2 cut-off value
 
       _RL op5
       _RL op25
-      PARAMETER( op5 = 0.5 _d 0 )
-      PARAMETER( op25 = 0.25 _d 0 )
+      PARAMETER( op5 = 0.5D0 )
+      PARAMETER( op25 = 0.25D0 )
 
 C     More GM/Redi parameters diagnosed from previous block
 C     (not directly user configured)
