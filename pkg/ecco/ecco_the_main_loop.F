@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/ecco/Attic/ecco_the_main_loop.F,v 1.1.2.9 2003/02/28 03:54:44 dimitri Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/ecco/Attic/ecco_the_main_loop.F,v 1.1.2.10 2003/03/04 02:48:21 heimbach Exp $
 
 #include "CPP_OPTIONS.h"
 #ifdef ALLOW_OBCS
@@ -92,6 +92,9 @@ c They provide the fields to be stored.
 # endif
 # ifdef ALLOW_OBCS
 #  include "OBCS.h"
+# endif
+# ifdef ALLOW_SEAICE
+#  include "SEAICE.h"
 # endif
 
 # include "tamc.h"
@@ -361,14 +364,15 @@ C     to diagnose surface buoyancy fluxes and for the non-local transport
 C     term.  Because this call precedes model thermodynamics, temperature
 C     under sea-ice may not be "exactly" at the freezing point by the time
 C     theta is dumped or time-averaged.
-      IF ( useSEAICE ) THEN
+cph this simple runtime flag causes a lot of recomp.
+cph      IF ( useSEAICE ) THEN
          CALL TIMER_START('SEAICE_MODEL       [FORWARD_STEP]',myThid)
          CALL SEAICE_MODEL( myTime, myIter, myThid )
          CALL TIMER_STOP ('SEAICE_MODEL       [FORWARD_STEP]',myThid)
 #ifdef ALLOW_COST_ICE
          CALL COST_ICE    ( myTime, myIter, myThid )
 #endif
-      ENDIF
+cph      ENDIF
 #endif /* ALLOW_SEAICE */
 
 #ifdef ALLOW_AUTODIFF_TAMC
