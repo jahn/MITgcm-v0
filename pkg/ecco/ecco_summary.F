@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/ecco/ecco_summary.F,v 1.1.2.1 2002/02/05 20:23:59 heimbach Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/ecco/ecco_summary.F,v 1.1.2.2 2002/04/04 11:00:03 heimbach Exp $
 
 #include "CPP_OPTIONS.h"
 
@@ -244,15 +244,15 @@ c--   Read the EGM data from file.
      &                    SQUEEZE_RIGHT , mythid)
 #endif
 
-#ifdef ALLOW_NSCAT_DATA 
+#ifdef ALLOW_SCAT_COST_CONTRIBUTION 
 c--   Use NSCAT data for getting the weights.
       write(msgbuf,'(a)')
-     &'// ALLOW_NSCAT_DATA:                     defined'
+     &'// ALLOW_SCAT_COST_CONTRIBUTION:                     defined'
       call print_message( msgbuf, standardmessageunit,
      &                    SQUEEZE_RIGHT , mythid)
 #else
       write(msgbuf,'(a)')
-     &'// ALLOW_NSCAT_DATA:                 NOT defined'
+     &'// ALLOW_SCAT_COST_CONTRIBUTION:                 NOT defined'
       call print_message( msgbuf, standardmessageunit,
      &                    SQUEEZE_RIGHT , mythid)
 #endif
