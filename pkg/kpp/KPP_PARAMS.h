@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/kpp/KPP_PARAMS.h,v 1.7 2001/02/04 14:38:50 cnh Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/kpp/KPP_PARAMS.h,v 1.7.8.1 2003/07/07 16:18:47 heimbach Exp $
 C $Name:  $
 
 C     /==========================================================\
@@ -74,9 +74,10 @@ C-----------------------------------------------------------------------
      &        KPPmixingMaps, KPPwriteState
 
       _KPP_RL minKPPhbl
+      _KPP_RL maxKPPhbl
 
       COMMON /KPP_PARM_R/
-     &        minKPPhbl
+     &        minKPPhbl, maxKPPhbl
 
 c======================  file "kmixcom.h" =======================
 c
