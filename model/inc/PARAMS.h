@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/inc/PARAMS.h,v 1.65.2.5 2003/02/05 07:12:59 dimitri Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/inc/PARAMS.h,v 1.65.2.6 2003/02/18 07:32:01 dimitri Exp $
 C $Name:  $
 C
 CBOP
@@ -167,11 +167,11 @@ C     tempAdvection :: Flag which turns advection of temperature on
 C                     and off.
 C     tempForcing   :: Flag which turns external forcing of temperature on
 C                     and off.
-C     saltDiffusion :: Flag which turns diffusion of salinit on
+C     saltDiffusion :: Flag which turns diffusion of salinity on
 C                     and off.
-C     saltAdvection :: Flag which turns advection of salinit on
+C     saltAdvection :: Flag which turns advection of salinity on 
 C                     and off.
-C     saltForcing   :: Flag which turns external forcing of salinit on
+C     saltForcing   :: Flag which turns external forcing of salinity on
 C                     and off.
 C     useRealFreshWaterFlux :: if true (=Natural BCS), treats P+R-E flux 
 C                         as a real Fresh Water (=> changes the seal level)

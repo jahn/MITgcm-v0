@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/the_main_loop.F,v 1.21.2.6 2003/02/14 22:30:15 dimitri Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/the_main_loop.F,v 1.21.2.7 2003/02/18 07:32:01 dimitri Exp $
 
 #include "CPP_OPTIONS.h"
 
@@ -187,12 +187,10 @@ CADJ &    = COMMON,nchklev_1*nsx*nsy*nr*nthreads_chkpt*maxpass*maxcube
 #endif /* DISABLE_MULTIDIM_ADVECTION */
 c--
 #ifdef ALLOW_BULKFORMULAE
-#ifndef EXF_NO_BULK_COMPUTATIONS
 CADJ INIT comlev1_exf_1
 CADJ &     = COMMON,nchklev_1*snx*nsx*sny*nsy*nthreads_chkpt
 CADJ INIT comlev1_exf_2
 CADJ &     = COMMON,niter_bulk*nchklev_1*snx*nsx*sny*nsy*nthreads_chkpt
-#endif /* EXF_NO_BULK_COMPUTATIONS */
 #endif /* ALLOW_BULKFORMULAE */
 
           do ilev_1 = 1,nchklev_1
