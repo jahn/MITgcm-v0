@@ -1,6 +1,7 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/fizhi/fizhi_mpistuff.F,v 1.3 2004/07/14 17:31:57 molod Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/fizhi/fizhi_mpistuff.F,v 1.4 2004/07/26 18:45:17 molod Exp $
 C $Name:  $
 
+#include "FIZHI_OPTIONS.h"
       subroutine my_finalize
       implicit none
 #ifdef ALLOW_USE_MPI
