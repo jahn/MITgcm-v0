@@ -1,6 +1,6 @@
 #!/bin/csh -f
 #
-# $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/tools/Attic/genmake,v 1.56.4.4 2002/04/04 11:12:40 heimbach Exp $
+# $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/tools/Attic/genmake,v 1.56.4.5 2003/02/28 09:34:05 dimitri Exp $
 # $Name:  $
 #
 # Makefile generator for MITgcm UV codes
@@ -348,6 +348,7 @@ switch ($platform$USEMPI)
     set INCLUDES   = ( '-I/usr/local/mpi/include' )
     set FFLAGS     = ( '-extend_source -mp -mpio -bytereclen -r10000 -mips4 -r8 -static' )
     set FOPTIM     = ( '-O3' )
+#   set FOPTIM     = ( '-g -DEBUG:subscript_check=ON:trap_uninitialized=ON:verbose_runtime=ON -MP:check_reshape=ON' )
 #   set NOOPTFLAGS = ( '-O0' )
 #   set NOOPTFILES = ( 'barrier.F different_multiple.F ' \
 #                      'external_fields_load.F' )
