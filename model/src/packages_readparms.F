@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/packages_readparms.F,v 1.7.2.3 2002/05/30 22:15:00 heimbach Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/packages_readparms.F,v 1.7.2.4 2002/07/11 14:06:45 heimbach Exp $
 C $Name:  $
 
 #include "CPP_OPTIONS.h"
@@ -103,7 +103,7 @@ C--   Initialise gradient check parameters
       if (useGrdchk) call grdchk_readparms( myThid )
 #endif
 
-#ifdef
+#ifdef ALLOW_CALENDAR
 C--   Initialise the calendar package.
       call cal_readparms( myThid )
 #endif
