@@ -1,4 +1,5 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/inc/DXG_MACROS.h,v 1.2 1998/05/27 05:18:38 cnh Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/inc/DXG_MACROS.h,v 1.3 2001/02/04 14:38:44 cnh Exp $
+C $Name:  $
 C
 C     /==========================================================\
 C     | DXG_MACROS.h                                             |

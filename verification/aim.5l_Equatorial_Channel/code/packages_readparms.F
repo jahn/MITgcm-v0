@@ -1,3 +1,5 @@
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/verification/aim.5l_Equatorial_Channel/code/Attic/packages_readparms.F,v 1.3 2001/02/04 14:38:51 cnh Exp $
+C $Name:  $
 #include "CPP_OPTIONS.h"
 
 CStartOfInterface

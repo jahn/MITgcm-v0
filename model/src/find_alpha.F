@@ -1,4 +1,5 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/find_alpha.F,v 1.2 2000/11/13 16:32:58 heimbach Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/find_alpha.F,v 1.3 2001/02/04 14:38:47 cnh Exp $
+C $Name:  $
 
 #include "CPP_OPTIONS.h"
 #define USE_FACTORIZED_POLY

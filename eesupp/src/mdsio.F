@@ -1,4 +1,5 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/eesupp/src/Attic/mdsio.F,v 1.8 2000/11/13 16:18:21 heimbach Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/eesupp/src/Attic/mdsio.F,v 1.9 2001/02/04 14:38:43 cnh Exp $
+C $Name:  $
 
 #include "CPP_OPTIONS.h"
 

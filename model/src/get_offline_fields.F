@@ -1,4 +1,5 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/Attic/get_offline_fields.F,v 1.5 1998/12/09 16:11:51 adcroft Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/Attic/get_offline_fields.F,v 1.6 2001/02/04 14:38:47 cnh Exp $
+C $Name:  $
 
 #include "CPP_OPTIONS.h"
  

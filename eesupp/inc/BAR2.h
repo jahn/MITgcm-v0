@@ -1,4 +1,5 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/eesupp/inc/BAR2.h,v 1.1 1998/09/29 18:54:25 cnh Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/eesupp/inc/BAR2.h,v 1.2 2001/02/04 14:38:41 cnh Exp $
+C $Name:  $
 C
 C     /==========================================================\
 C     | BAR2.h                                                   |

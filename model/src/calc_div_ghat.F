@@ -1,4 +1,5 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/calc_div_ghat.F,v 1.10 2000/03/14 17:47:25 adcroft Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/calc_div_ghat.F,v 1.11 2001/02/04 14:38:45 cnh Exp $
+C $Name:  $
 
 #include "CPP_OPTIONS.h"
 

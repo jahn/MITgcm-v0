@@ -1,4 +1,5 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/inc/Attic/GW.h,v 1.2 2001/02/02 21:04:47 adcroft Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/inc/Attic/GW.h,v 1.3 2001/02/04 14:38:44 cnh Exp $
+C $Name:  $
 
 #ifdef ALLOW_NONHYDROSTATIC
 C     /==========================================================\

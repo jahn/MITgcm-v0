@@ -1,3 +1,5 @@
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/eesupp/src/exch_init.F,v 1.3 2001/02/04 14:38:43 cnh Exp $
+C $Name:  $
       SUBROUTINE EXCH_INIT
 C     /==========================================================\
 C     | SUBROUTINE EXCH_INIT                                     |

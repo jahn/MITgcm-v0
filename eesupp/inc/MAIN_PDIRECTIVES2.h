@@ -1,4 +1,5 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/eesupp/inc/MAIN_PDIRECTIVES2.h,v 1.3 1998/10/28 03:11:33 cnh Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/eesupp/inc/MAIN_PDIRECTIVES2.h,v 1.4 2001/02/04 14:38:42 cnh Exp $
+C $Name:  $
 C
 C     /==========================================================\
 C     | MAIN_PDIRECTIVES2.h                                      |

@@ -1,4 +1,5 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/Attic/calc_common_factors.F,v 1.13 2001/02/02 21:04:47 adcroft Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/Attic/calc_common_factors.F,v 1.14 2001/02/04 14:38:45 cnh Exp $
+C $Name:  $
 
 #include "CPP_OPTIONS.h"
 

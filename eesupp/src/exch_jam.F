@@ -1,4 +1,5 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/eesupp/src/Attic/exch_jam.F,v 1.3 2000/03/24 19:24:02 adcroft Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/eesupp/src/Attic/exch_jam.F,v 1.4 2001/02/04 14:38:43 cnh Exp $
+C $Name:  $
 
 #include "CPP_EEOPTIONS.h"
 

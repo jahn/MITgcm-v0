@@ -1,4 +1,5 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/inc/CPP_OPTIONS.h,v 1.13 2000/11/13 16:32:57 heimbach Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/inc/CPP_OPTIONS.h,v 1.14 2001/02/04 14:38:44 cnh Exp $
+C $Name:  $
 C
 
 C 

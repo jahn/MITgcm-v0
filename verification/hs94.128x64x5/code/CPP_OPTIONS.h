@@ -1,4 +1,5 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/verification/hs94.128x64x5/code/CPP_OPTIONS.h,v 1.2 2001/02/02 21:36:33 adcroft Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/verification/hs94.128x64x5/code/CPP_OPTIONS.h,v 1.3 2001/02/04 14:38:52 cnh Exp $
+C $Name:  $
 C
 
 C 

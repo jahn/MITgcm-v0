@@ -1,4 +1,5 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/verification/front_relax/code/Attic/CPP_EEOPTIONS.h,v 1.1 2000/04/10 14:37:58 adcroft Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/verification/front_relax/code/Attic/CPP_EEOPTIONS.h,v 1.2 2001/02/04 14:38:52 cnh Exp $
+C $Name:  $
 C
 C     /==========================================================\
 C     | CPP_EEOPTIONS.h                                          |

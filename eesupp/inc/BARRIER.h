@@ -1,4 +1,5 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/eesupp/inc/BARRIER.h,v 1.2 1998/04/23 20:59:34 cnh Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/eesupp/inc/BARRIER.h,v 1.3 2001/02/04 14:38:41 cnh Exp $
+C $Name:  $
 C
 C     /==========================================================\
 C     | FBAR.h                                                   |

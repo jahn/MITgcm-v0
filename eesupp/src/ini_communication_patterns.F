@@ -1,4 +1,5 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/eesupp/src/ini_communication_patterns.F,v 1.2 1999/05/24 14:25:55 adcroft Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/eesupp/src/ini_communication_patterns.F,v 1.3 2001/02/04 14:38:43 cnh Exp $
+C $Name:  $
 
 #include "CPP_EEOPTIONS.h"
 

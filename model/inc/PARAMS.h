@@ -1,4 +1,5 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/inc/PARAMS.h,v 1.46 2001/02/02 21:04:47 adcroft Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/inc/PARAMS.h,v 1.47 2001/02/04 14:38:45 cnh Exp $
+C $Name:  $
 C
 C     /==========================================================\
 C     | PARAMS.h                                                 |

@@ -1,4 +1,5 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/kpp/kpp_calc.F,v 1.5 2000/11/29 22:29:23 adcroft Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/kpp/kpp_calc.F,v 1.6 2001/02/04 14:38:50 cnh Exp $
+C $Name:  $
 
 #include "KPP_OPTIONS.h"
 

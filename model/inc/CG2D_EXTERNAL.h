@@ -1,4 +1,5 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/inc/Attic/CG2D_EXTERNAL.h,v 1.1 1998/10/28 03:11:35 cnh Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/inc/Attic/CG2D_EXTERNAL.h,v 1.2 2001/02/04 14:38:44 cnh Exp $
+C $Name:  $
 C
 C     /==========================================================\
 C     | CG2D_EXTERNAL.h                                          |

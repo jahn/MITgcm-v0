@@ -1,3 +1,5 @@
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/diags/inc/Attic/AVER.h,v 1.8 2001/02/04 14:38:41 cnh Exp $
+C $Name:  $
 C
 C--   98/06/12 - elk
 C

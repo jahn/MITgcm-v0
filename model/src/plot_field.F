@@ -1,4 +1,5 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/plot_field.F,v 1.10 1999/03/22 15:54:04 adcroft Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/plot_field.F,v 1.11 2001/02/04 14:38:48 cnh Exp $
+C $Name:  $
 
 #include "CPP_OPTIONS.h"
 

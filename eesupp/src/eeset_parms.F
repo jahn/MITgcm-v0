@@ -1,4 +1,5 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/eesupp/src/eeset_parms.F,v 1.10 2001/01/29 20:00:14 heimbach Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/eesupp/src/eeset_parms.F,v 1.11 2001/02/04 14:38:43 cnh Exp $
+C $Name:  $
 
 #include "CPP_EEOPTIONS.h"
 

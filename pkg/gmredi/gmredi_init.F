@@ -1,4 +1,5 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/gmredi/Attic/gmredi_init.F,v 1.3 2001/01/29 20:07:39 heimbach Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/gmredi/Attic/gmredi_init.F,v 1.4 2001/02/04 14:38:49 cnh Exp $
+C $Name:  $
 
 #include "GMREDI_OPTIONS.h"
 

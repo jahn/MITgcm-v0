@@ -1,4 +1,5 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/packages_init_variables.F,v 1.2 2001/02/02 21:04:48 adcroft Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/packages_init_variables.F,v 1.3 2001/02/04 14:38:48 cnh Exp $
+C $Name:  $
 
 #include "CPP_OPTIONS.h"
 

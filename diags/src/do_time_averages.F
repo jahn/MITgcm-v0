@@ -1,3 +1,5 @@
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/diags/src/Attic/do_time_averages.F,v 1.12 2001/02/04 14:38:41 cnh Exp $
+C $Name:  $
 #include "CPP_EEOPTIONS.h"
 
       SUBROUTINE DO_TIME_AVERAGES(
