@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/eesupp/inc/EEPARAMS.h,v 1.10.6.1 2003/03/04 01:25:20 heimbach Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/eesupp/inc/EEPARAMS.h,v 1.10.6.2 2003/05/28 14:22:10 heimbach Exp $
 C $Name:  $
 CBOP
 C     !ROUTINE: EEPARAMS.h
@@ -10,8 +10,8 @@ C     *==========================================================*
 C     | EEPARAMS.h                                               |
 C     *==========================================================*
 C     | Parameters for "execution environemnt". These are used   |
-C     | by both the particular numerical model and the "execution|
-C     | environment" support routines.                           |
+C     | by both the particular numerical model and the execution |
+C     | environment support routines.                            |
 C     *==========================================================*
 CEOP
 
