@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/verification/global2x2_tot/code/Attic/SIZE.h,v 1.1.2.1 2002/04/04 12:05:47 heimbach Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/verification/global2x2_tot/code/Attic/SIZE.h,v 1.1.2.2 2003/05/12 19:58:38 heimbach Exp $
 C
 C     /==========================================================\
 C     | SIZE.h Declare size of underlying computational grid.    |
@@ -35,7 +35,7 @@ C     Nr  - No. points in Z for full process domain.
       INTEGER Ny
       INTEGER Nr
       PARAMETER (
-     &           sNx =  30,
+     &           sNx =  60,
      &           sNy =  40,
      &           OLx =   3,
      &           OLy =   3,
@@ -43,7 +43,7 @@ C     Nr  - No. points in Z for full process domain.
      &           nSy =   1,
 cph     &           nPx =  1,
 cph     &           nPy =  1,
-     &           nPx =   6,
+     &           nPx =   3,
      &           nPy =   2,
      &           Nx  = sNx*nSx*nPx,
      &           Ny  = sNy*nSy*nPy,
