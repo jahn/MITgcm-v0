@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/fizhi/fizhi_wrapper.F,v 1.20 2004/10/07 00:06:09 molod Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/fizhi/fizhi_wrapper.F,v 1.21 2004/10/07 01:20:47 molod Exp $
 C $Name:  $
 
 #include "FIZHI_OPTIONS.h"
@@ -122,6 +122,7 @@ c Compute physics increments
      .  iras,nlwcld,cldtot_lw,cldras_lw,cldlsp_lw,nlwlz,lwlz,
      .  nswcld,cldtot_sw,cldras_sw,cldlsp_sw,nswlz,swlz,
      .  imstturbsw,imstturblw,qliqavesw,qliqavelw,fccavesw,fccavelw,
+     .  raincon,rainlsp,snowfall,
      .  duphy,dvphy,dthphy,dsphy)
        enddo
        enddo
