@@ -1,4 +1,4 @@
-$Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/doc/tag-index,v 1.53.2.23 2003/02/07 03:59:42 dimitri Exp $
+$Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/doc/tag-index,v 1.53.2.24 2003/02/07 06:07:17 dimitri Exp $
 
     Notes on tags used in MITgcmUV
     ==============================
@@ -6,6 +6,9 @@ $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/doc/t
 untagged modifications
 o Updated useSingleCpuIO option in mdsio_writefield.F to
   work with multi-field files, e.g., for single-file pickup.
+o pkg/seaice:
+  - bug fix in growth.F: QNET for no shortwave case
+  - default initial ice thickness changed from 1 m to 0 m
 
 release1_p11
 o Modifications for using pkg/exf with pkg/seaice
