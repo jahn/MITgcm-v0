@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/cost/Attic/cost_ssh.F,v 1.1.2.2 2002/02/15 22:27:47 heimbach Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/cost/Attic/cost_ssh.F,v 1.1.2.3 2002/04/04 10:58:59 heimbach Exp $
 
 #include "COST_CPPOPTIONS.h"
 
@@ -114,6 +114,19 @@ c--   First, read tiled data.
       ilps=ilnblnk( psbarfile )
       write(fname(1:80),'(2a,i10.10)') 
      &     psbarfile(1:ilps),'.',optimcycle
+
+#ifdef ECCO_VERBOSE
+      write(msgbuf,'(a)') ' '
+      call print_message( msgbuf, standardmessageunit,
+     &                    SQUEEZE_RIGHT , mythid)
+      write(msgbuf,'(a,i8.8)')
+     &  ' cost_SSH: number of records to process = ',ndaysrec
+      call print_message( msgbuf, standardmessageunit,
+     &                    SQUEEZE_RIGHT , mythid)
+      write(msgbuf,'(a)') ' '
+      call print_message( msgbuf, standardmessageunit,
+     &                    SQUEEZE_RIGHT , mythid)
+#endif
 
 c--   ============
 c--   Mean values.

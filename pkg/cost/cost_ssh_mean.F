@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/cost/Attic/cost_ssh_mean.F,v 1.1.2.2 2002/03/21 03:52:29 heimbach Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/cost/Attic/cost_ssh_mean.F,v 1.1.2.3 2002/04/04 10:58:59 heimbach Exp $
 
 #include "COST_CPPOPTIONS.h"
 
@@ -38,11 +38,10 @@ c     == global variables ==
 #include "SIZE.h"
 #include "PARAMS.h"
 
-#include "EESUPPORT.h"
-
 #include "cost.h"
 
 #ifdef ALLOW_EGM96_ERROR_COV
+# include "EESUPPORT.h"
 # include "cost_sph.h"
 #endif
 
@@ -205,7 +204,7 @@ c--         --> no weighting by cosphi.
         do bi = itlo,ithi
           do j = jmin,jmax
             do i = imin,imax
-              diff = psmean(i,j,bi,bj) - tpmean(i,j,bi,bj) - offset
+              diff = psmean(i,j,bi,bj) - tpmean(i,j,bi,bj) + offset
               sumc = sumc + diff*diff
      &                    * wp(i,j,bi,bj)*tpmeanmask(i,j,bi,bj)
 ce            --> check masks!

@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/cost/Attic/cost_xbt.F,v 1.1.2.2 2002/02/15 22:27:47 heimbach Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/cost/Attic/cost_xbt.F,v 1.1.2.3 2002/04/04 10:58:59 heimbach Exp $
 
 #include "COST_CPPOPTIONS.h"
 
@@ -58,11 +58,10 @@ c     == local variables ==
       _RL fctile_xbt
       _RL fcthread_xbt
       _RL www (1-olx:snx+olx,1-oly:sny+oly)
-      _RL wtmp (1-olx:snx+olx,1-oly:sny+oly)
       _RL tmpobs (1-olx:snx+olx,1-oly:sny+oly)
-      _RL tmpbar (1-olx:snx+olx,1-oly:sny+oly)
       _RL cmask (1-olx:snx+olx,1-oly:sny+oly)  
       _RL spval
+      _RL ztop,rl_35,rl_0
       
       character*(80) fnametheta
 
@@ -75,6 +74,8 @@ c     == external functions ==
 
       integer  ilnblnk
       external ilnblnk
+      _RL SW_PTMP
+      external SW_PTMP
 
 c     == end of interface ==
 
@@ -87,15 +88,15 @@ c     == end of interface ==
       imin = 1
       imax = snx
       
-      spval = -9990.
+      spval = -2.
+      ztop  = -.981*1.027
+      rl_35 = 35.0
+      rl_0  = 0.0
 
 c--   Read state record from global file.
       doglobalread = .false.
       ladinit      = .false.
       
-c      call cal_TimePassed( topexstartdate, middate, difftime, mythid )
-c      call cal_ToSeconds( difftime, diffsecs, mythid )
-
 #ifdef ALLOW_XBT_COST_CONTRIBUTION
 
 #ifdef ECCO_VERBOSE
@@ -134,17 +135,10 @@ c--     Read time averages and the monthly mean data.
      &          optimcycle, mythid
      &   , xx_tbar_mean_dummy )
   
-ce     &                       myiter, mytime )
-
 c--     Determine the record to be read on observations.
 
-c        levoff = mod(modelstartdate(1)/100,100)
-c        levmon = (irec-1) + levoff
-c        levmon = mod(levmon-1,12)+1
-              
-ccc        call cost_ReadCtd( mythid )
-        call mdsreadfield( xbtfile, 64, 'RL', nr, xbtobs, irec,
-     &                     mythid)
+        call mdsreadfield( xbtfile, cost_iprec, 'RL', nr, xbtobs,
+     &                     irec, mythid)
 
 c--     Loop over this thread's tiles.
         do bj = jtlo,jthi
@@ -166,34 +160,41 @@ c--           Determine the weights to be used.
                   if (xbtobs(i,j,k,bi,bj) .lt. spval) then
                     cmask(i,j) = 0. _d 0
                   endif
+
+cph(
+cph               print *, 'WARNING: SPECIFIC SETUP FOR ECCO'
+cph               below statement could be replaced by following
+cph               to make it independnet of Nr:
+cph
+cph               if ( rC(K) .GT. -1000. ) then
+cph)
+c--               set cmask=0 in areas shallower than 1000m 
+                  if (_hFacC(i,j,13,bi,bj) .eq. 0.) then
+                    cmask(i,j) = 0. _d 0
+                  endif           
+       
+                  if (_hFacC(i,j,k,bi,bj) .eq. 0.) then
+                    cmask(i,j) = 0. _d 0
+                  endif                  
                   
                 enddo
               enddo
               
               do j = jmin,jmax
                 do i = imin,imax
-                  www(i,j)    = cosphi(i,j,bi,bj)*cmask(i,j)                
-                  tmpobs(i,j) = xbtobs(i,j,k,bi,bj)
-                  tmpbar(i,j) = tbar(i,j,k,bi,bj)
-                  wtmp(i,j) = wtheta(k,bi,bj)
-                enddo
-              enddo
-
-              do j = jmin,jmax
-                do i = imin,imax
+                  www(i,j)    = cosphi(i,j,bi,bj)*cmask(i,j)
+                  tmpobs(i,j) = SW_PTMP(rl_35,
+     $                 xbtobs(i,j,k,bi,bj),ztop*rc(k),rl_0) 
 c--               The array ctdtobs contains CTD temperature.
-                  if(cmask(i,j).eq.1.0) then 
-                    print *,'cost_xbt',i,j,tmpbar(i,j),tmpobs(i,j)
-                  endif
-                  fctile_xbt = fctile_xbt + 
-     &                             (wtmp(i,j)*www(i,j))*
-     &                             (tmpbar(i,j)-tmpobs(i,j))*
-     &                             (tmpbar(i,j)-tmpobs(i,j))
 
+                  fctile_xbt = fctile_xbt + 
+     &                 (wtheta2(i,j,k,bi,bj)*www(i,j))*
+     &                 (tbar(i,j,k,bi,bj)-tmpobs(i,j))*
+     &                 (tbar(i,j,k,bi,bj)-tmpobs(i,j))
                 enddo
               enddo
-            enddo
 c--         End of loop over layers.
+            enddo
 
             fcthread_xbt    = fcthread_xbt    + fctile_xbt
             objf_xbt(bi,bj) = objf_xbt(bi,bj) + fctile_xbt   
@@ -207,7 +208,7 @@ c--         End of loop over layers.
             call print_message( msgbuf, standardmessageunit,
      &                          SQUEEZE_RIGHT , mythid)
             write(msgbuf,'(a,d22.15)')
-     &        ' COST_XBT: cost function         = ', fctile_ctdt
+     &        ' COST_XBT: cost function         = ', fctile_xbt
             call print_message( msgbuf, standardmessageunit,
      &                      SQUEEZE_RIGHT , mythid)
             write(msgbuf,'(a)') ' '
@@ -225,7 +226,7 @@ c--     Print cost function for all tiles.
         call print_message( msgbuf, standardmessageunit,
      &                      SQUEEZE_RIGHT , mythid)
         write(msgbuf,'(a,i8.8)')
-     &    ' cost_CTDT: irec =  ',irec
+     &    ' cost_XBT: irec =  ',irec
         call print_message( msgbuf, standardmessageunit,
      &                      SQUEEZE_RIGHT , mythid)
         write(msgbuf,'(a,a,d22.15)')
@@ -242,7 +243,7 @@ c--     Print cost function for all tiles.
 c--   End of second loop over records.
 
 #else
-c--   Do not enter the calculation of the CTD temperature contribution
+c--   Do not enter the calculation of the XBT temperature contribution
 c--   to the final cost function.
       
       fctile_xbt   = 0. _d 0
@@ -257,12 +258,12 @@ crg
         call print_message( msgbuf, standardmessageunit,
      &                      SQUEEZE_RIGHT , mythid)
         write(msgbuf,'(a,a)')
-     &    ' cost_CTDT: no contribution of XBT temperature ',
+     &    ' cost_XBT: no contribution of XBT temperature ',
      &                    ' to cost function.'
         call print_message( msgbuf, standardmessageunit,
      &                      SQUEEZE_RIGHT , mythid)
         write(msgbuf,'(a,a,i9.8)')
-     &    ' cost_CDTT: number of records that would have',
+     &    ' cost_XBT: number of records that would have',
      &                      ' been processed: ',nrec
         call print_message( msgbuf, standardmessageunit,
      &                      SQUEEZE_RIGHT , mythid)

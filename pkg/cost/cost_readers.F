@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/cost/Attic/cost_readers.F,v 1.1.2.1 2002/02/05 20:23:57 heimbach Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/cost/Attic/cost_readers.F,v 1.1.2.2 2002/04/04 10:58:59 heimbach Exp $
 
 #include "COST_CPPOPTIONS.h"
 
@@ -105,6 +105,19 @@ c     == end of interface ==
               if (abs(ersobs(i,j,bi,bj)) .lt. 1.d-8 ) then
                  ersmask(i,j,bi,bj) = 0. _d 0
               endif
+
+cph(
+cph               print *, 'WARNING: SPECIFIC SETUP FOR ECCO'
+cph               below statement could be replaced by following
+cph               to make it independnet of Nr:
+cph
+cph               if ( rC(K) .GT. -1000. ) then
+cph)
+c             set tpmask=0 in areas shallower than 1000m 
+              if (_hFacC(i,j,13,bi,bj) .eq. 0.) then
+                ersmask(i,j,bi,bj) = 0. _d 0
+              endif
+
               ersmask(i,j,bi,bj) = ersmask(i,j,bi,bj)*frame(i,j)
               ersobs(i,j,bi,bj)  = ersobs(i,j,bi,bj)*
      *                             ersmask(i,j,bi,bj)*
