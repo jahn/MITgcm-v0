@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/seaice/Attic/budget.F,v 1.12 2004/07/16 01:21:47 jmc Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/seaice/Attic/budget.F,v 1.13 2004/07/22 23:43:43 dimitri Exp $
 C $Name:  $
 
 #include "SEAICE_OPTIONS.h"
@@ -27,7 +27,7 @@ C     Subset of variables from SEAICE.h
       _RL QNETI      (1-OLx:sNx+OLx,1-OLy:sNy+OLy,  nSx,nSy)
       _RL QSWO       (1-OLx:sNx+OLx,1-OLy:sNy+OLy,  nSx,nSy)
       _RL QSWI       (1-OLx:sNx+OLx,1-OLy:sNy+OLy,  nSx,nSy)
-      COMMON/TRANS/HEFF,HSNOW
+      COMMON/SEAICE_TRANS/HEFF,HSNOW
       COMMON/QFLUX/QNETO,QNETI,QSWO,QSWI
 
 C     === Routine arguments ===
