@@ -1,4 +1,5 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/aim/Attic/ini_inphys.F,v 1.1.2.1 2001/01/26 00:14:32 cnh Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/aim/Attic/ini_inphys.F,v 1.1.2.2 2001/01/26 17:53:55 adcroft Exp $
+C $Name:  $
 
 #include "CPP_OPTIONS.h"
 
@@ -74,7 +75,8 @@ C
 C
       DO K=1,NLEV
        SIG(K)  = FSG(K)
-       SIGL(K) = DLOG(FSG(K))
+Cg77   SIGL(K) = DLOG(FSG(K))
+       SIGL(K) = LOG(FSG(K))
        SIGH(K) = HSG(K)
        DSIG(K) = HSG(K)-HSG(K-1)
 C      POUT(K) = PRLEV(FSG(K))

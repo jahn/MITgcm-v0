@@ -1,3 +1,5 @@
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/aim/Attic/phy_convmf.F,v 1.1.2.2 2001/01/26 17:53:55 adcroft Exp $
+C $Name:  $
 
 cmolt      SUBROUTINE CONVMF (PSA,SE,QA,QSAT,
       SUBROUTINE CONVMF (PSA,TA,QA,QSAT,
@@ -139,7 +141,7 @@ C
       DO J=1,NGP
         DO k=2,NLEVxy(J)-1
           stab(J,K)=dThdpHat(J,K)+ALHC*(QSAT(J,K)-QSAT(J,NLEVxy(J)))
-     &              -WVI(K,2)*(dThdp(J,K) +ALHC*(QSAT(J,K) -QSAT(J,K+1)) )
+     &        -WVI(K,2)*(dThdp(J,K) +ALHC*(QSAT(J,K) -QSAT(J,K+1)) )
         ENDDO
       ENDDO
 C
@@ -153,7 +155,8 @@ C     2.2 Humidity exceeding prescribed threshold
 C
       DO J=1,NGP
         IF ( NLEVxy(J) .NE. 0 ) THEN
-         IF (QA(J,NLEVxy(J)).LT.RHBL*QSAT(J,NLEVxy(J))) ITOP(J)=NLEVxy(J)
+         IF (QA(J,NLEVxy(J)).LT.RHBL*QSAT(J,NLEVxy(J)))
+     &          ITOP(J)=NLEVxy(J)
         ENDIF
         IDEPTH(J)=NLEVxy(J)-ITOP(J)
       ENDDO
@@ -243,8 +246,3 @@ C
 C
       RETURN
       END
-
-
-
-
-C      $Id: phy_convmf.F,v 1.1.2.1 2001/01/26 00:14:32 cnh Exp $
