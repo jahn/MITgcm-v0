@@ -1,9 +1,9 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/mom_vecinv/Attic/mom_vi_calc_absvort3.F,v 1.2 2001/05/29 14:01:39 adcroft Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/mom_common/mom_calc_absvort3.F,v 1.1 2004/05/24 20:03:44 adcroft Exp $
 C $Name:  $
 
-#include "CPP_OPTIONS.h"
+#include "MOM_COMMON_OPTIONS.h"
 
-      SUBROUTINE MOM_VI_CALC_ABSVORT3( 
+      SUBROUTINE MOM_CALC_ABSVORT3( 
      I        bi,bj,k,
      I        vort3,
      O        omega3,
