@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/cal/cal_getdate.F,v 1.1 2001/05/14 22:07:26 heimbach Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/cal/cal_getdate.F,v 1.2 2003/09/23 04:34:25 dimitri Exp $
 
 #include "CAL_CPPOPTIONS.h"
 

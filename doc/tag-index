@@ -1,7 +1,11 @@
-$Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/doc/tag-index,v 1.176 2003/08/07 02:31:28 dimitri Exp $
+$Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/doc/tag-index,v 1.177 2003/09/23 04:34:23 dimitri Exp $
 
     Notes on tags used in MITgcmUV
     ==============================
+
+untagged
+o Mods and bug fixes to pkg/cal and pkg/exf needed for computation
+  of tracer Green's fucntions for ocean inversion project.
 
 checkpoint51f_pre
 o Added on-the-fly spatial interpolation capability
