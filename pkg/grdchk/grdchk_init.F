@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/grdchk/grdchk_init.F,v 1.2.4.1 2002/05/30 22:12:32 heimbach Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/grdchk/grdchk_init.F,v 1.2.4.2 2002/07/11 15:00:29 heimbach Exp $
 
 #include "CTRL_CPPOPTIONS.h"
 
@@ -85,6 +85,14 @@ c--   control variable on the current tile.
             do bi = itlo,ithi
                do k = 1,ncvarnrmax(grdchkvarindex)
                   nwettile(bi,bj,k) = nwetwtile(bi,bj,k)
+               enddo
+            enddo
+         enddo
+      else if ( ncvargrd(grdchkvarindex) .eq. 'v' ) then
+         do bj = jtlo,jthi
+            do bi = itlo,ithi
+               do k = 1,ncvarnrmax(grdchkvarindex)
+                  nwettile(bi,bj,k) = nwetvtile(bi,bj,k)
                enddo
             enddo
          enddo
