@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/calc_gw.F,v 1.12 2004/04/05 21:46:18 jmc Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/calc_gw.F,v 1.13 2004/04/06 00:31:54 jmc Exp $
 C     !DESCRIPTION: \bv
 C $Name:  $
 
@@ -27,7 +27,6 @@ C     !USES:
 C     == Global variables ==
 #include "SIZE.h"
 #include "DYNVARS.h"
-#include "FFIELDS.h"
 #include "EEPARAMS.h"
 #include "PARAMS.h"
 #include "GRID.h"
