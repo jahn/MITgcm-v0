@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/eesupp/inc/CPP_EEOPTIONS.h,v 1.22 2004/03/27 03:51:50 edhill Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/eesupp/inc/CPP_EEOPTIONS.h,v 1.23 2004/09/04 18:19:20 edhill Exp $
 C $Name:  $
 
 CBOP
@@ -102,3 +102,5 @@ C           filled in some way.
 #endif /* _CPP_EEOPTIONS_H_ */
 
 #include "CPP_EEMACROS.h"
+
+#include "BUILD_INFO.h"
