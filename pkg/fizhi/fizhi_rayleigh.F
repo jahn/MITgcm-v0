@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/fizhi/fizhi_rayleigh.F,v 1.6 2004/10/26 19:29:10 molod Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/fizhi/fizhi_rayleigh.F,v 1.7 2004/12/14 19:56:45 molod Exp $
 C $Name:  $
 
 #include "FIZHI_OPTIONS.h"
@@ -37,8 +37,8 @@ C **********************************************************************
 
 #ifdef ALLOW_DIAGNOSTICS
 #include "SIZE.h"
-#include "diagnostics_SIZE.h"
-#include "diagnostics.h"
+#include "DIAGNOSTICS_SIZE.h"
+#include "DIAGNOSTICS.h"
 #endif
 
       integer myid,im,jm,lm,bi,bj
