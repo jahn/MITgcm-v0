@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/ctrl/ctrl_readparms.F,v 1.1.2.1 2003/06/19 15:18:48 heimbach Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/ctrl/ctrl_readparms.F,v 1.1.2.2 2003/06/20 19:38:05 heimbach Exp $
 
 #include "CTRL_CPPOPTIONS.h"
 
@@ -173,7 +173,11 @@ c--     Set default values.
         xx_efluxp_file      = ' '
         xx_bottomdrag_file  = ' '
 
+#ifndef ALLOW_TANGENTLINEAR_RUN
         yadmark             = 'ad'
+#else
+        yadmark             = 'g_'
+#endif
         yctrlid             = 'MIT_CE_000'
         ctrlname            = ' '
         costname            = ' '
