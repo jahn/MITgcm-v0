@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/eesupp/src/check_threads.F,v 1.12 2003/11/11 23:04:50 edhill Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/eesupp/src/check_threads.F,v 1.13 2004/03/27 03:51:50 edhill Exp $
 C $Name:  $
 
 #include "CPP_EEOPTIONS.h"
@@ -12,7 +12,7 @@ C     !INTERFACE:
 
 C     !DESCRIPTION:
 C     *==========================================================
-C     | SUBROUTINE CHECK_THREADS                                 
+C     | SUBROUTINE CHECK\_THREADS                                 
 C     | o Check that all the threads we need did indeed start.    
 C     *========================================================== 
 C     | This routine is called during the initialisation phase    

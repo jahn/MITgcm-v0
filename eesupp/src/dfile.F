@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/eesupp/src/Attic/dfile.F,v 1.11 2001/02/04 14:38:42 cnh Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/eesupp/src/Attic/dfile.F,v 1.12 2004/03/27 03:51:50 edhill Exp $
 C $Name:  $
 
 #include "CPP_EEOPTIONS.h"
@@ -49,7 +49,7 @@ C   subsequent calls to DFILE_SET routines.
       SUBROUTINE DFILE_CLOSE(
      I                       fileHandle, myThid)
 C     /==========================================================\
-C     | SUBROUTINE DFILE_CLOSE                                   |
+C     | SUBROUTINE DFILE\_CLOSE                                   |
 C     | o Close model "dump" file.                               |
 C     |==========================================================|
 C     | Controlling routine for doing actual I/O operations.     |
