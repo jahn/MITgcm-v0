@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/cost/cost_final_restore.F,v 1.1.2.2 2003/03/04 21:58:49 heimbach Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/cost/cost_final_restore.F,v 1.1.2.3 2003/03/05 23:32:29 heimbach Exp $
 
 #include "COST_CPPOPTIONS.h"
 
@@ -8,6 +8,10 @@ C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg
 c     ==================================================================
 c     SUBROUTINE cost_final_restore
 c     ==================================================================
+c
+c     Restore cost function value
+c     This is required in conjunction with DIVA
+c     heimbach@mit.edu 5-Mar-2003
 c
 c     ==================================================================
 c     SUBROUTINE cost_final_restore
@@ -26,6 +30,8 @@ c     == routine arguments ==
 
       integer mythid
       logical lastdiva
+
+# ifdef ALLOW_DIVIDED_ADJOINT
 
 c     == local variables ==
       logical exst
@@ -56,5 +62,7 @@ c
          _END_MASTER( mythid )
       ENDIF
       _BARRIER
+
+#endif
 
       end
