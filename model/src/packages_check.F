@@ -1,4 +1,4 @@
- $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/packages_check.F,v 1.3 2000/09/13 17:11:34 heimbach Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/packages_check.F,v 1.4 2000/09/13 20:35:07 heimbach Exp $
 
 #include "CPP_OPTIONS.h"
 
