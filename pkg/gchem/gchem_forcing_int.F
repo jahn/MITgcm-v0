@@ -1,3 +1,6 @@
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/gchem/Attic/gchem_forcing_int.F,v 1.3 2004/07/13 18:04:42 jmc Exp $
+C $Name:  $
+
 #include "CPP_OPTIONS.h"
 #include "PTRACERS_OPTIONS.h"
 #include "GCHEM_OPTIONS.h"
@@ -22,6 +25,7 @@ C !USES: ===============================================================
 #include "EEPARAMS.h"
 #include "PARAMS.h"
 #ifdef ALLOW_PTRACERS
+#include "PTRACERS_SIZE.h"
 #include "PTRACERS.h"
 #endif
 
