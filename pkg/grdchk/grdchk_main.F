@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/grdchk/grdchk_main.F,v 1.3.6.1 2002/05/30 19:55:17 heimbach Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/grdchk/grdchk_main.F,v 1.3.6.2 2003/02/13 23:36:18 heimbach Exp $
 
 #include "CPP_OPTIONS.h"
 
@@ -166,6 +166,14 @@ cph)
          grdchk_epsfac = 1. _d 0
       end if
 
+      print *, 'ph-grd 3 -------------------------------'
+      print ('(2a)'), 
+     &     ' ph-grd 3  proc    #    i    j    k            fc ref',
+     &     '        fc + eps        fc - eps'
+      print ('(2a)'), 
+     &     ' ph-grd 3  proc    #    i    j    k          adj grad',
+     &     '         fd grad      1 - fd/adj'
+
 c--   Compute the finite difference approximations.
 c--   Cycle through all processes doing NINT(nend-nbeg+1)/nstep
 c--   gradient checks.
@@ -295,11 +303,11 @@ cph)
                   
 cph(
                      print *, 'ph-grd 3 -------------------------------'
-                     print '(a,4I5,3(1x,E15.9))', 'ph-grd 3 ',
-     &                    ichknum,itilepos,jtilepos,layer,
+                     print '(a,5I5,2x,3(1x,E15.9))', ' ph-grd 3 ',
+     &                    myprocid,ichknum,itilepos,jtilepos,layer,
      &                    fcref, fcpertplus, fcpertminus
-                     print '(a,4I5,3(1x,E15.9))', 'ph-grd 3 ',
-     &                    ichknum,ichkmem(ichknum),
+                     print '(a,5I5,2x,3(1x,E15.9))', ' ph-grd 3 ',
+     &                    myprocid,ichknum,ichkmem(ichknum),
      &                    icompmem(ichknum),itestmem(ichknum),
      &                    adxxmemo, gfd, ratio
 cph)

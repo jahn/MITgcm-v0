@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/grdchk/grdchk_getxx.F,v 1.2.6.1 2002/05/30 19:55:16 heimbach Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/grdchk/grdchk_getxx.F,v 1.2.6.2 2003/02/13 23:36:18 heimbach Exp $
 
 #include "CTRL_CPPOPTIONS.h"
 
@@ -200,6 +200,90 @@ c--   == end of interface ==
      &                         mythid, dummy)
 
 #endif /* ALLOW_VSTRESS_CONTROL */
+
+#ifdef ALLOW_ATEMP_CONTROL
+      else if ( grdchkvarindex .eq. 7 ) then
+         il=ilnblnk( xx_atemp_file )
+         write(fname(1:80),'(80a)') ' '
+         write(fname(1:80),'(2a,i10.10)')
+     &        xx_atemp_file(1:il),'.',optimcycle
+
+         call active_read_xy( fname, tmpfld2d, icvrec,
+     &                        doglobalread, ladinit, optimcycle,
+     &                        mythid, dummy)
+
+         xx_comp_ref = tmpfld2d( itilepos,jtilepos,itile,jtile )
+         xx_comp_pert = xx_comp_ref + grdchk_eps
+         tmpfld2d( itilepos,jtilepos,itile,jtile ) = xx_comp_pert
+
+         call active_write_xy( fname, tmpfld2d, icvrec,
+     &                         optimcycle,
+     &                         mythid, dummy)
+
+#endif /* ALLOW_ATEMP_CONTROL */
+
+#ifdef ALLOW_AQH_CONTROL
+      else if ( grdchkvarindex .eq. 8 ) then
+         il=ilnblnk( xx_aqh_file )
+         write(fname(1:80),'(80a)') ' '
+         write(fname(1:80),'(2a,i10.10)')
+     &        xx_aqh_file(1:il),'.',optimcycle
+
+         call active_read_xy( fname, tmpfld2d, icvrec,
+     &                        doglobalread, ladinit, optimcycle,
+     &                        mythid, dummy)
+
+         xx_comp_ref = tmpfld2d( itilepos,jtilepos,itile,jtile )
+         xx_comp_pert = xx_comp_ref + grdchk_eps
+         tmpfld2d( itilepos,jtilepos,itile,jtile ) = xx_comp_pert
+
+         call active_write_xy( fname, tmpfld2d, icvrec,
+     &                         optimcycle,
+     &                         mythid, dummy)
+
+#endif /* ALLOW_AQH_CONTROL */
+
+#ifdef ALLOW_UWIND_CONTROL
+      else if ( grdchkvarindex .eq. 9 ) then
+         il=ilnblnk( xx_uwind_file )
+         write(fname(1:80),'(80a)') ' '
+         write(fname(1:80),'(2a,i10.10)')
+     &        xx_uwind_file(1:il),'.',optimcycle
+
+         call active_read_xy( fname, tmpfld2d, icvrec,
+     &                        doglobalread, ladinit, optimcycle,
+     &                        mythid, dummy)
+
+         xx_comp_ref = tmpfld2d( itilepos,jtilepos,itile,jtile )
+         xx_comp_pert = xx_comp_ref + grdchk_eps
+         tmpfld2d( itilepos,jtilepos,itile,jtile ) = xx_comp_pert
+
+         call active_write_xy( fname, tmpfld2d, icvrec,
+     &                         optimcycle,
+     &                         mythid, dummy)
+
+#endif /* ALLOW_UWIND_CONTROL */
+
+#ifdef ALLOW_VWIND_CONTROL
+      else if ( grdchkvarindex .eq. 10 ) then
+         il=ilnblnk( xx_vwind_file )
+         write(fname(1:80),'(80a)') ' '
+         write(fname(1:80),'(2a,i10.10)')
+     &        xx_vwind_file(1:il),'.',optimcycle
+
+         call active_read_xy( fname, tmpfld2d, icvrec,
+     &                        doglobalread, ladinit, optimcycle,
+     &                        mythid, dummy)
+
+         xx_comp_ref = tmpfld2d( itilepos,jtilepos,itile,jtile )
+         xx_comp_pert = xx_comp_ref + grdchk_eps
+         tmpfld2d( itilepos,jtilepos,itile,jtile ) = xx_comp_pert
+
+         call active_write_xy( fname, tmpfld2d, icvrec,
+     &                         optimcycle,
+     &                         mythid, dummy)
+
+#endif /* ALLOW_VWIND_CONTROL */
 
 #ifdef ALLOW_TR10_CONTROL
       else if ( grdchkvarindex .eq. 17 ) then
