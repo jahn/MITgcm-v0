@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/ecco/Attic/ecco_the_main_loop.F,v 1.1.2.8 2003/02/27 22:12:17 dimitri Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/ecco/Attic/ecco_the_main_loop.F,v 1.1.2.9 2003/02/28 03:54:44 dimitri Exp $
 
 #include "CPP_OPTIONS.h"
 #ifdef ALLOW_OBCS
@@ -364,10 +364,12 @@ C     theta is dumped or time-averaged.
       IF ( useSEAICE ) THEN
          CALL TIMER_START('SEAICE_MODEL       [FORWARD_STEP]',myThid)
          CALL SEAICE_MODEL( myTime, myIter, myThid )
-         CALL COST_ICE    ( myTime, myIter, myThid )
          CALL TIMER_STOP ('SEAICE_MODEL       [FORWARD_STEP]',myThid)
-      ENDIF
+#ifdef ALLOW_COST_ICE
+         CALL COST_ICE    ( myTime, myIter, myThid )
 #endif
+      ENDIF
+#endif /* ALLOW_SEAICE */
 
 #ifdef ALLOW_AUTODIFF_TAMC
 C       Include call to a dummy routine. Its adjoint will be 
