@@ -1,0 +1,15 @@
+# $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/verification/natl_box_obcs/input/Attic/data.exf_clim,v 1.1.2.1 2003/07/07 16:32:08 heimbach Exp $
+#
+# *********************************
+# External Forcing Climatology Data
+# *********************************
+ &EXF_CLIM_NML
+#
+ climtempfile = ' ',
+ climsaltfile = ' ',
+ climsstfile  = 'DS_SST.020_016_23.24',
+ climsssfile  = ' ',
+#
+ exf_clim_iprec     = 64,
+ exf_clim_yftype    = 'RL',
+ /
