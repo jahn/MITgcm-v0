@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/ini_vel.F,v 1.1.2.1 2001/03/16 16:48:34 adcroft Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/ini_vel.F,v 1.1.2.2 2001/04/09 19:15:33 adcroft Exp $
 C $Name:  $
 
 #include "CPP_OPTIONS.h"
@@ -49,14 +49,14 @@ C     Read an initial state for each component if required
        _BEGIN_MASTER( myThid )
        CALL READ_FLD_XYZ_RL( uVelInitFile, ' ', uVel, 0, myThid )
        _END_MASTER(myThid)
-       _EXCH_XYZ_R8(uVel  , myThid )
+c      _EXCH_XYZ_R8(uVel  , myThid )
       ENDIF
 
       IF (vVelInitFile .NE. ' ') THEN
        _BEGIN_MASTER( myThid )
        CALL READ_FLD_XYZ_RL( vVelInitFile, ' ', vVel, 0, myThid )
        _END_MASTER(myThid)
-       _EXCH_XYZ_R8(vVel  , myThid )
+c      _EXCH_XYZ_R8(vVel  , myThid )
       ENDIF
 
       DO bj = myByLo(myThid), myByHi(myThid)
@@ -75,6 +75,11 @@ C     Read an initial state for each component if required
         ENDDO
        ENDDO
       ENDDO
+
+c     IF (uVelInitFile .NE. ' ' .OR. vVelInitFile .NE. ' ') THEN
+       CALL EXCH_UV_XYZ_RL(uVel,vVel,.TRUE.,myThid)
+       _EXCH_XYZ_R8(wVel,myThid)
+c     ENDIF
 
       RETURN
       END
