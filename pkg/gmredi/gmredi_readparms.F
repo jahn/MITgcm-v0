@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/gmredi/gmredi_readparms.F,v 1.6 2002/03/06 01:56:27 jmc Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/gmredi/gmredi_readparms.F,v 1.7 2002/11/14 22:43:49 heimbach Exp $
 C $Name:  $
 
 #include "GMREDI_OPTIONS.h"
