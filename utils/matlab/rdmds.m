@@ -43,7 +43,7 @@ function [AA] = rdmds(fnamearg,varargin)
 %     'n' 'l' 'b' 'd' 'g' 'c' 'a' 's'  - see FOPEN for more details
 %  
 %  
-% $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/utils/matlab/rdmds.m,v 1.7 2001/08/30 13:47:31 adcroft Exp $
+% $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/utils/matlab/rdmds.m,v 1.8 2001/09/10 14:09:42 adcroft Exp $
 
 % Default options
 ieee='b';
@@ -96,7 +96,7 @@ else
 end
 
 % Match name of all meta-files
-allfiles=dir( sprintf('%s.*.meta',fname) );
+allfiles=dir( sprintf('%s*.meta',fname) );
 
 if size(allfiles,1)==0
  disp(sprintf('No files match the search: %s.*.meta',fname));
