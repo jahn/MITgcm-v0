@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/inc/CG2D.h,v 1.7.2.1 2001/03/23 20:30:13 adcroft Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/inc/CG2D.h,v 1.7.2.2 2001/04/02 20:05:04 adcroft Exp $
 C $Name:  $
  
 C     /==========================================================\
@@ -38,10 +38,5 @@ C     cg2d_s -   "
       COMMON /CG2D_I_WK_R/
      & cg2d_q, cg2d_r, cg2d_s
       _RL  cg2d_q(1-OLx:sNx+OLx,1-OLy:sNy+OLy,nSx,nSy)
-#ifdef USE_OPTIMIZED_OVERLAPS
       _RL  cg2d_r(1-1:sNx+1,1-1:sNy+1,nSx,nSy)
       _RL  cg2d_s(1-1:sNx+1,1-1:sNy+1,nSx,nSy)
-#else
-      _RL  cg2d_r(1-Olx:sNx+Olx,1-Oly:sNy+Oly,nSx,nSy)
-      _RL  cg2d_s(1-Olx:sNx+Olx,1-Oly:sNy+Oly,nSx,nSy)
-#endif
