@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/verification/aim.5l_cs/code/CPP_OPTIONS.h,v 1.1 2001/06/18 17:40:06 cnh Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/verification/aim.5l_cs/code/CPP_OPTIONS.h,v 1.2 2003/06/12 21:07:56 jmc Exp $
 C $Name:  $
 C
 
@@ -9,6 +9,9 @@ C
 
 C o Include/exclude code for AIM package
 #define ALLOW_AIM
+
+C o Include/exclude code for Land package (use only with AIM)
+#define ALLOW_LAND
 
 C o Include/exclude code for GM/Redi parameterization
 #undef  ALLOW_GMREDI
