@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/verification/lab_sea/code/Attic/CPP_OPTIONS.NOEXF.h,v 1.1.2.1 2002/12/27 08:01:56 dimitri Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/verification/lab_sea/code/Attic/CPP_OPTIONS.NOEXF.h,v 1.1.2.2 2003/02/05 09:27:32 dimitri Exp $
 C $Name:  $
 C
 
@@ -13,6 +13,9 @@ CEOP
 
 C o Include/exclude code for AIM package
 #undef  ALLOW_AIM
+
+C o Include/exclude IERS Special Bureau for the Oceans diagnostics
+#define   ALLOW_SBO
 
 C o Include/exclude code for sea-ice model
 #define  ALLOW_SEAICE
