@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/eesupp/inc/EEPARAMS.h,v 1.10 2001/09/21 03:54:35 cnh Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/eesupp/inc/EEPARAMS.h,v 1.10.4.1 2003/05/01 00:01:15 dimitri Exp $
 C $Name:  $
 CBOP
 C     !ROUTINE: EEPARAMS.h
@@ -19,7 +19,7 @@ C     MAX_LEN_MBUF         - Default message buffer max. size
 C     MAX_LEN_FNAM         - Default file name max. size
 C     MAX_LEN_PREC         - Default record length for reading "parameter" files
       INTEGER MAX_LEN_MBUF
-      PARAMETER ( MAX_LEN_MBUF = 512 )
+      PARAMETER ( MAX_LEN_MBUF = 2048 )
       INTEGER MAX_LEN_FNAM
       PARAMETER ( MAX_LEN_FNAM = 512 )
       INTEGER MAX_LEN_PREC
@@ -108,7 +108,7 @@ C     MAX_NO_BARRIERS - Maximum number of distinct thread "barriers"
       INTEGER MAX_NO_THREADS
       PARAMETER ( MAX_NO_THREADS =   32 )
       INTEGER MAX_NO_PROCS
-      PARAMETER ( MAX_NO_PROCS   =  128 )
+      PARAMETER ( MAX_NO_PROCS   =  1024 )
       INTEGER MAX_NO_BARRIERS
       PARAMETER ( MAX_NO_BARRIERS = 1 )
 

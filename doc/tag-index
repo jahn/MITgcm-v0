@@ -1,7 +1,14 @@
-$Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/doc/tag-index,v 1.53.2.35 2003/04/30 02:24:55 dimitri Exp $
+$Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/doc/tag-index,v 1.53.2.36 2003/05/01 00:01:15 dimitri Exp $
 
     Notes on tags used in MITgcmUV
     ==============================
+
+release1_p14
+o Added interpolation routine pkg/exf/new_interp.F for on-the-fly
+  interpolation.  Enable with USE_EXF_INTERPOLATION and specify
+  input grids in data.exf
+o Added direct pressure solver pkg/solver.
+  See pkg/solver/README.directSolver for instructions.
 
 release1_p13
 o bug fix for pkg/seaice dynamic solver

@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/ini_cg2d.F,v 1.37.4.1 2002/04/08 20:10:37 heimbach Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/ini_cg2d.F,v 1.37.4.2 2003/05/01 00:01:15 dimitri Exp $
 C $Name:  $
 
 #include "CPP_OPTIONS.h"
@@ -270,6 +270,11 @@ C     CALL PLOT_FIELD_XYRS( pC, 'pC   INI_CG2D.2' , 1, myThid )
 C     CALL PLOT_FIELD_XYRS( pW, 'pW   INI_CG2D.2' , 1, myThid )
 C     CALL PLOT_FIELD_XYRS( pS, 'pS   INI_CG2D.2' , 1, myThid )
 CcnhDebugEnds
+
+Cbnc
+      if (useDirectSolver)
+     &	  call solve_ini (mythid)
+Cbnc
 
       RETURN
       END
