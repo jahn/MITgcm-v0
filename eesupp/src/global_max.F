@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/eesupp/src/global_max.F,v 1.2 1998/04/23 20:37:30 cnh Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/eesupp/src/global_max.F,v 1.3 1998/04/23 20:56:54 cnh Exp $
 
 C--   File global_max.F: Routines that perform global max reduction on an array
 C                        of thread values.
@@ -151,5 +151,3 @@ C--   Don't leave until we are sure that the max is done
 C
       RETURN
       END
-
-C $Id: global_max.F,v 1.2 1998/04/23 20:37:30 cnh Exp $
