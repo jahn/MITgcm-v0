@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/ini_parms.F,v 1.16 1998/06/10 16:05:39 adcroft Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/ini_parms.F,v 1.17 1998/06/12 19:33:33 cnh Exp $
 
 #include "CPP_EEOPTIONS.h"
 
@@ -436,6 +436,7 @@ C     Initialize EOS coefficients (3rd order polynomial)
        usingSphericalPolarMterms = .TRUE.
        metricTerms = .TRUE.
        mTFacMom = 1
+
       ENDIF
 
 C--   Input files
