@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/set_defaults.F,v 1.79 2005/01/03 23:16:32 jmc Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/set_defaults.F,v 1.80 2005/01/04 15:57:22 jmc Exp $
 C $Name:  $
 
 #include "CPP_OPTIONS.h"
@@ -258,6 +258,7 @@ C--   Input files
       thetaClimFile   = ' '
       saltClimFile    = ' '
       EmPmRfile       = ' '
+      saltFluxFile    = ' '
       surfQfile       = ' '
       surfQnetFile    = ' '
       surfQswFile     = ' '
