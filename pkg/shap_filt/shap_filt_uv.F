@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/shap_filt/Attic/shap_filt_uv.F,v 1.3.2.6 2001/05/07 19:02:52 adcroft Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/shap_filt/Attic/shap_filt_uv.F,v 1.3.2.7 2001/05/09 13:14:36 adcroft Exp $
 C $Name:  $
 
 #include "SHAP_FILT_OPTIONS.h"
@@ -134,7 +134,7 @@ C      F <-  [1-d_xx^n]F
 #else
             tmpScal=tmpFldV(i,j,k,bi,bj)
             tmpFldV(i,j,k,bi,bj)=vFld(i,j,k,bi,bj)
-     &                *_maskW(i,j,k,bi,bj)
+     &                *_maskS(i,j,k,bi,bj)
             vFld(i,j,k,bi,bj)=vFld(i,j,k,bi,bj)-0.5*tmpScal
 #endif   /* SEQUENTIAL_2D_SHAP */
            ENDDO
