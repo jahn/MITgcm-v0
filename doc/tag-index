@@ -1,4 +1,4 @@
-$Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/doc/tag-index,v 1.53.4.32.2.1 2003/03/07 22:24:06 dimitri Exp $
+$Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/doc/tag-index,v 1.53.4.32.2.2 2003/03/11 18:20:38 dimitri Exp $
 
     Notes on tags used in MITgcmUV
     ==============================
@@ -9,8 +9,14 @@ Branch icebear
 
 7 mar 03
  Branched off ecco_c44_e27
- Bug fix in pkg/ctrl/ctrl_init.F
-
+ pkg/ctrl/ctrl_init.F
+   Fix for determination of startrec and endrec.
+ pkg/cal/cal_toseconds.F
+   Fix for negative intervals shorter than 1 day.
+ pkg/cost/cost_ice.F, cost.h, cost_readparms.F
+   Added costIceStart and costIceEnd.
+ verification/natl_box_adjoint.
+   Updated test experiments
 
 ====================================================================
 
