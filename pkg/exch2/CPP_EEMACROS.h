@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/verification/hs94.cs-32x32x5/code/Attic/CPP_EEMACROS.h,v 1.1 2004/01/09 20:46:10 afe Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/exch2/Attic/CPP_EEMACROS.h,v 1.1 2004/01/12 20:41:59 afe Exp $
 C $Name:  $
 
 CBOP
