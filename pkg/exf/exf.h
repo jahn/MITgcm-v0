@@ -1,4 +1,4 @@
-c $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/exf/Attic/exf.h,v 1.1 2001/05/14 22:08:40 heimbach Exp $
+c $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/exf/Attic/exf.h,v 1.1.4.1 2002/12/27 08:01:54 dimitri Exp $
 c
 c
 c     ==================================================================
@@ -21,5 +21,5 @@ c     ==================================================================
       character*(5) externalforcingversion
       character*(5) usescalendarversion
 
-      parameter(    externalforcingversion = '0.2.0' )
+      parameter(    externalforcingversion = '0.2.1' )
       parameter(    usescalendarversion    = '0.2.0' )

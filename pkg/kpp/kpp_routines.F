@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/kpp/kpp_routines.F,v 1.9.4.1 2002/07/11 14:16:04 heimbach Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/kpp/kpp_routines.F,v 1.9.4.2 2002/12/27 08:01:55 dimitri Exp $
 C $Name:  $
 
 #include "KPP_OPTIONS.h"
@@ -661,10 +661,11 @@ c     fRi, fcon             function of Rig
       _KPP_RL Rig
       _KPP_RL fRi, fcon
       _KPP_RL ratio
-      integer i, ki, mr
+      integer i, ki
       _KPP_RL c1, c0
 
 #ifdef ALLOW_KPP_VERTICALLY_SMOOTH
+      integer mr
 CADJ INIT kpp_ri_tape_mr = common, 1
 #endif
 

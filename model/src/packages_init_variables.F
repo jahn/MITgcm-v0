@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/packages_init_variables.F,v 1.8.4.3 2002/11/11 21:59:05 heimbach Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/packages_init_variables.F,v 1.8.4.4 2002/12/27 08:01:54 dimitri Exp $
 C $Name:  $
 
 #include "CPP_OPTIONS.h"
@@ -31,11 +31,13 @@ C       |-- AIM_INIT
 C       |
 C       |-- CTRL_MAP_INI
 C       |
-C       |-- COST_INIT
+C       |-- EXF_INIT
+C       |
+C       |-- INI_FORCING
 C       |
 C       |-- ECCO_INIT
 C       |
-C       |-- INI_FORCING
+C       |-- COST_INIT
 
 C     !USES:
       IMPLICIT NONE

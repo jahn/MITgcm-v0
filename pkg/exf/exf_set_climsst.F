@@ -1,4 +1,4 @@
-c $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/exf/Attic/exf_set_climsst.F,v 1.1.4.2 2002/11/07 17:07:57 heimbach Exp $
+c $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/exf/Attic/exf_set_climsst.F,v 1.1.4.3 2002/12/27 08:01:55 dimitri Exp $
 
 #include "EXF_CPPOPTIONS.h"
 
@@ -21,6 +21,7 @@ c                for the MITgcmUV.
 c              Christian Eckert eckert@mit.edu 12-Feb-2000
 c              - Changed Routine names (package prefix: exf_)
 c     changed: heimbach@mit.edu 08-Feb-2002
+c     changed: menemenlis@jpl.nasa.gov 20-Dec-2002
 c
 c     ==================================================================
 c     SUBROUTINE exf_set_climsst
@@ -104,8 +105,8 @@ c     get record numbers and interpolation factor for climsst
 c     Loop over tiles.
       do bj = mybylo(mythid),mybyhi(mythid)
         do bi = mybxlo(mythid),mybxhi(mythid)
-          do j = 1-oly,sny+oly
-            do i = 1-olx,snx+olx
+          do j = 1,sny
+            do i = 1,snx
 
 c             Set to freezing temperature if less
               if (climsst0(i,j,bi,bj) .lt. climtempfreeze) then

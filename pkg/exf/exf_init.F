@@ -1,4 +1,4 @@
-c $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/exf/Attic/exf_init.F,v 1.1.4.2 2002/11/07 17:07:56 heimbach Exp $
+c $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/exf/Attic/exf_init.F,v 1.1.4.3 2002/12/27 08:01:55 dimitri Exp $
 
 #include "EXF_CPPOPTIONS.h"
 
@@ -14,6 +14,7 @@ c
 c     o This routine initialises the forcing
 c
 c     started: Ralf.Giering@FastOpt.de 25-Mai-20000
+c     included evaporation; menemenlis@jpl.nasa.gov 20-Dec-2002
 c
 c     ==================================================================
 c     SUBROUTINE exf_init
@@ -41,6 +42,10 @@ c     == end of interface ==
 
       call exf_init_ustress( mythid )
       call exf_init_vstress( mythid )
+
+#ifdef EXF_READ_EVAP
+      call exf_init_evap   ( mythid )
+#endif EXF_READ_EVAP
 
 #ifdef ALLOW_RUNOFF
       call exf_init_runoff ( mythid )

@@ -1,4 +1,4 @@
-c $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/exf/exf_getffields.F,v 1.2.4.2 2002/11/07 17:07:56 heimbach Exp $
+c $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/exf/exf_getffields.F,v 1.2.4.3 2002/12/27 08:01:55 dimitri Exp $
 
 #include "EXF_CPPOPTIONS.h"
 
@@ -115,6 +115,9 @@ c
 c              heimbach@mit.edu, 10-Jan-2002
 c              - changes to enable field swapping
 c
+c              menemenlis@jpl.nasa.gov, 20-Dec-2002
+c              - Added EXF_READ_EVAP and EXF_NO_BULK_COMPUTATIONS.
+c
 c     ==================================================================
 c     SUBROUTINE exf_GetFFields
 c     ==================================================================
@@ -175,7 +178,6 @@ c     == local variables ==
       _RL     xsq
       _RL     x
       _RL     tau
-      _RL     evap(1-olx:snx+olx,1-oly:sny+oly,nsx,nsy)
 #ifdef ALLOW_AUTODIFF_TAMC
       integer ikey_1
       integer ikey_2
@@ -210,6 +212,11 @@ c     == external functions ==
 c     == end of interface ==
 
 c     determine forcing field records
+
+#ifdef EXF_READ_EVAP
+c     Evaporation
+      call exf_set_evap( mycurrenttime, mycurrentiter, mythid )
+#endif EXF_READ_EVAP
 
 #ifdef ALLOW_BULKFORMULAE
 
@@ -304,6 +311,9 @@ c     Net short wave radiative flux.
 #endif
 
 #endif /* ALLOW_BULKFORMULAE */
+
+#if ~defined(EXF_NO_BULK_COMPUTATIONS) || ~defined(EXF_READ_EVAP)
+C--   Use atmospheric state to compute surace fluxes.
 
 c     Loop over tiles.
 #ifdef ALLOW_AUTODIFF_TAMC
@@ -514,7 +524,9 @@ CADJ STORE sw     = comlev1_exf_1, key = ikey_1
 
                 hs(i,j,bi,bj)      = atmcp*tau*tstar/ustar
                 hl(i,j,bi,bj)      = flamb*tau*qstar/ustar
+#ifndef EXF_READ_EVAP
                 evap(i,j,bi,bj)    = tau*qstar/ustar
+#endif EXF_READ_EVAP
                 ustress(i,j,bi,bj) = tau*cw
                 vstress(i,j,bi,bj) = tau*sw
               else
@@ -572,6 +584,8 @@ c             Salt flux from Precipitation and Evaporation.
           enddo
         enddo
       enddo
+
+#endif EXF_NO_BULK_COMPUTATIONS
 
 c     Update the tile edges.
       _EXCH_XY_R8(hflux,   mythid)

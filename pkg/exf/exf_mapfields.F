@@ -1,4 +1,4 @@
-c $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/exf/exf_mapfields.F,v 1.1.4.1 2002/11/07 17:07:56 heimbach Exp $
+c $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/exf/exf_mapfields.F,v 1.1.4.2 2002/12/27 08:01:55 dimitri Exp $
 
 #include "EXF_CPPOPTIONS.h"
 
@@ -48,6 +48,10 @@ c              Patrick Heimbach, heimbach@mit.edu  23-May-2000
 c
 c              - sign change of ustress/vstress incorporated into
 c                scaling factors scal_ust, scal_vst
+c
+c              Dimitris Menemenlis, menemenlis@jpl.nasa.gov 20-Dec-2002
+c
+c              - removed: empmr(i,j,bi,bj) = scal_prc*precip(i,j,bi,bj)
 c
 c     ==================================================================
 c     SUBROUTINE exf_mapfields
@@ -125,11 +129,7 @@ c             Heat flux.
           do j = jmin,jmax
             do i = imin,imax
 c             Salt flux.
-#if (defined (ALLOW_BULKFORMULAE)  && defined (ALLOW_ATM_TEMP))
-              empmr(i,j,bi,bj) = scal_prc*precip(i,j,bi,bj)
-#else
               empmr(i,j,bi,bj) = scal_sfl*sflux(i,j,bi,bj)
-#endif
             enddo
           enddo
 
