@@ -1,4 +1,4 @@
-# $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/verification/natl_box_adjoint/input_bulk/Attic/data.exf,v 1.1.2.1 2003/02/13 23:49:42 heimbach Exp $
+# $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/verification/natl_box_adjoint/input_bulk/Attic/data.exf,v 1.1.2.2 2003/05/23 16:22:13 heimbach Exp $
 #
 # *********************
 # External Forcing Data
@@ -64,6 +64,6 @@
  exf_iprec   = 64,
  exf_yftype  = 'RL',
 #
- exf_inscal_ust    = -1.,
- exf_inscal_vst    = -1.,
+ exf_inscal_ustress    = -1.,
+ exf_inscal_vstress    = -1.,
  &
