@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/ecco/Attic/ecco_the_model_main.F,v 1.1.2.1 2002/02/05 20:23:59 heimbach Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/ecco/Attic/ecco_the_model_main.F,v 1.1.2.2 2002/02/06 22:55:38 heimbach Exp $
 C $Name:  $
 
 #include "CPP_OPTIONS.h"
@@ -105,7 +105,7 @@ C--   Set model configuration (fixed arrays)
 
 C--   Call time stepping loop of full model
       CALL TIMER_START('THE_MAIN_LOOP      [THE_MODEL_MAIN]',myThid)
-      CALL THE_MAIN_LOOP( myThid )
+      CALL THE_MAIN_LOOP( myCurrentTime, myCurrentIter, myThid )
       CALL TIMER_STOP ('THE_MAIN_LOOP      [THE_MODEL_MAIN]',myThid)
 
 #endif /* ALLOW_ADJOINT_RUN */

@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/ecco/Attic/ecco_the_main_loop.F,v 1.1.2.1 2002/02/05 20:23:59 heimbach Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/ecco/Attic/ecco_the_main_loop.F,v 1.1.2.2 2002/02/06 22:55:38 heimbach Exp $
 
 #include "CPP_OPTIONS.h"
 #ifdef ALLOW_OBCS
@@ -6,7 +6,7 @@ C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg
 #endif
 
 
-      subroutine the_main_loop( mythid )
+      subroutine the_main_loop( myTime, myIter, mythid )
 
 c     ==================================================================
 c     SUBROUTINE the_main_loop
@@ -73,6 +73,9 @@ c They provide the fields to be stored.
 
 # ifdef INCLUDE_EXTERNAL_FORCING_PACKAGE
 #  include "exf_fields.h"
+#  ifdef ALLOW_BULKFORMULAE
+#   include "exf_constants.h"
+#  endif
 # endif
 # ifdef ALLOW_PASSIVE_TRACER
 #  include "TR1.h"
@@ -91,9 +94,6 @@ c They provide the fields to be stored.
 # include "ctrl.h"
 # include "ctrl_dummy.h"
 # include "cost.h"
-# ifdef ALLOW_BULKFORMULAE
-#  include "exf_constants.h"
-# endif
 
 #endif /* ALLOW_AUTODIFF_TAMC */
 c**************************************
