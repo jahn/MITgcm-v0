@@ -1,6 +1,7 @@
-C     $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/verification/aim.5l_Equatorial_Channel/code/Attic/external_forcing.F,v 1.3 2001/05/29 14:01:46 adcroft Exp $
+C     $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/verification/aim.5l_Equatorial_Channel/code/Attic/external_forcing.F,v 1.4 2003/10/31 20:35:32 edhill Exp $
 C     $Name:  $
 
+#include "PACKAGES_CONFIG.h"
 #include "CPP_OPTIONS.h"
 
 CStartOfInterface
