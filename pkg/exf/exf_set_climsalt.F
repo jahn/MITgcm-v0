@@ -1,4 +1,4 @@
-c $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/exf/Attic/exf_set_climsalt.F,v 1.1.6.2 2002/02/09 02:05:15 heimbach Exp $
+c $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/exf/Attic/exf_set_climsalt.F,v 1.1.6.3 2002/11/28 12:55:43 heimbach Exp $
 
 #include "EXF_CPPOPTIONS.h"
 
@@ -76,7 +76,8 @@ c     get record numbers and interpolation factor for climsalt
 #endif
 
       if ( first ) then
-        call mdsreadfield( climsaltfile, exf_clim_iprec
+        if ( climsaltfile .NE. ' ' )
+     &        call mdsreadfield( climsaltfile, exf_clim_iprec
      &                   , exf_clim_yftype, nr
      &                   , climsalt1, count0, mythid
      &                   )
@@ -90,7 +91,8 @@ c     get record numbers and interpolation factor for climsalt
       if (( first ) .or. ( changed )) then
         call exf_SwapFFields_3d( climsalt0, climsalt1, mythid )
 
-        call mdsreadfield( climsaltfile, exf_clim_iprec
+        if ( climsaltfile .NE. ' ' )
+     &       call mdsreadfield( climsaltfile, exf_clim_iprec
      &                   , exf_clim_yftype, nr
      &                   , climsalt1, count1, mythid
      &                   )
