@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/ctrl/ctrl_unpack.F,v 1.4.4.1 2002/04/08 20:10:38 heimbach Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/ctrl/ctrl_unpack.F,v 1.4.4.2 2002/05/14 20:39:35 heimbach Exp $
 
 #include "CTRL_CPPOPTIONS.h"
 
@@ -171,10 +171,10 @@ c     Initialise temporary files
                   do ip = 1,nPx
                      do bi = itlo,ithi
                         do i = imin,imax
-#ifdef ALLOW_ADJOINT_RUN
-                           globfld3d(i,bi,ip,j,bj,jp,k) = 0.0
-#else
+#ifdef ALLOW_TANGENTLINEAR_RUN
                            globfld3d(i,bi,ip,j,bj,jp,k) = 1.0
+#else
+                           globfld3d(i,bi,ip,j,bj,jp,k) = 0.0
 #endif
                         enddo
                      enddo
@@ -189,10 +189,10 @@ c     Initialise temporary files
                do ip = 1,nPx
                   do bi = itlo,ithi
                      do i = imin,imax
-#ifdef ALLOW_ADJOINT_RUN
-                        globfld2d(i,bi,ip,j,bj,jp) = 0.0
-#else
+#ifdef ALLOW_TANGENTLINEAR_RUN
                         globfld2d(i,bi,ip,j,bj,jp) = 1.0
+#else
+                        globfld2d(i,bi,ip,j,bj,jp) = 0.0
 #endif
                      enddo
                   enddo
