@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/ini_grid.F,v 1.2 1998/04/24 02:05:41 cnh Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/ini_grid.F,v 1.3 1998/04/24 02:10:20 cnh Exp $
 
 #include "CPP_EEOPTIONS.h"
 
@@ -62,5 +62,3 @@ C--   Set up grid coordinate system
 C
       RETURN
       END
-
-C     $Id: ini_grid.F,v 1.2 1998/04/24 02:05:41 cnh Exp $
