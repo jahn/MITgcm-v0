@@ -1,7 +1,7 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/monitor/mon_ke.F,v 1.10 2003/05/02 22:29:07 jmc Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/monitor/mon_ke.F,v 1.11 2003/05/13 18:18:05 adcroft Exp $
 C $Name:  $
 
-#include "CPP_OPTIONS.h"
+#include "MONITOR_OPTIONS.h"
 
       SUBROUTINE MON_KE(
      I                  myIter, myThid )
