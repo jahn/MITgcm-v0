@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/dynamics.F,v 1.54.2.9 2001/01/12 21:02:46 adcroft Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/dynamics.F,v 1.54.2.10 2001/01/17 15:05:59 jmc Exp $
 
 #include "CPP_OPTIONS.h"
 
@@ -517,12 +517,21 @@ C--       kDown  Cycles through 2,1 to point to current layer
           jMax = sNy+OLy-1
 
 C--      Integrate hydrostatic balance for phiHyd with BC of 
-C--      phiHyd(z=0)=0
-         CALL CALC_PHI_HYD(
+C        phiHyd(z=0)=0
+C        distinguishe between Stagger and Non Stagger time stepping
+         IF (staggerTimeStep) THEN
+           CALL CALC_PHI_HYD(
+     I        bi,bj,iMin,iMax,jMin,jMax,k,
+     I        gTnm1, gSnm1,
+     U        phiHyd, phiHydInterface,
+     I        myThid )
+         ELSE
+           CALL CALC_PHI_HYD(
      I        bi,bj,iMin,iMax,jMin,jMax,k,
      I        theta, salt,
      U        phiHyd, phiHydInterface,
      I        myThid )
+         ENDIF
 
 C--      Calculate accelerations in the momentum equations (gU, gV, ...)
 C        and step forward storing the result in gUnm1, gVnm1, etc...
@@ -533,7 +542,7 @@ C        and step forward storing the result in gUnm1, gVnm1, etc...
      U         fVerU, fVerV,
      I         myTime, myThid)
            CALL TIMESTEP(
-     I         bi,bj,iMin,iMax,jMin,jMax,k,
+     I         bi,bj,iMin,iMax,jMin,jMax,k,phiHyd,
      I         myIter, myThid)
 
 #ifdef   ALLOW_OBCS

@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/Attic/calc_mom_rhs.F,v 1.42.2.4 2001/01/09 15:51:58 adcroft Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/Attic/calc_mom_rhs.F,v 1.42.2.5 2001/01/17 15:05:59 jmc Exp $
 
 #include "CPP_OPTIONS.h"
 
@@ -196,6 +196,12 @@ C     o V momentum equation
       IF (implicitViscosity) THEN
        ArDudrFac = 0.
        ArDvdrFac = 0.
+      ENDIF
+
+C-- with stagger time stepping, grad Phi_Hyp is directly incoporated in TIMESTEP
+      IF (staggerTimeStep) THEN
+        phxFac = 0.
+        phyFac = 0.
       ENDIF
 
 C--   Adams-Bashforth weighting factors
