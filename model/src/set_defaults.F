@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/set_defaults.F,v 1.13 2001/02/04 14:38:48 cnh Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/set_defaults.F,v 1.14 2001/02/05 19:27:38 adcroft Exp $
 C $Name:  $
 
 #include "CPP_OPTIONS.h"
@@ -114,7 +114,7 @@ C--   Set default "physical" parameters
       nShap               = 0
       zonal_filt_lat      = 90.
       zonal_filt_sinpow   = 2
-      zonal_filt_cospow   = 4
+      zonal_filt_cospow   = 2
       bottomDragLinear    = 0.
       bottomDragQuadratic = 0.
 
