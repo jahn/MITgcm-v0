@@ -1,8 +1,9 @@
-$Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/doc/tag-index,v 1.199 2003/10/30 12:00:41 edhill Exp $
+$Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/doc/tag-index,v 1.200 2003/10/30 12:24:44 edhill Exp $
 
     Notes on tags used in MITgcmUV
     ==============================
 
+checkpoint51p_post
 o create initial cd_code package
   - WARNING: the initialization of fields within packages
     is broken because INI_FIELDS (where READ_CHECKPOINT is
