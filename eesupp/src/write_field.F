@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/eesupp/src/Attic/read_field_xyzr8.F,v 1.2 1998/04/23 20:37:31 cnh Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/eesupp/src/Attic/write_field.F,v 1.1 1998/04/27 18:54:36 cnh Exp $
 
 #include "CPP_EEOPTIONS.h"
 
