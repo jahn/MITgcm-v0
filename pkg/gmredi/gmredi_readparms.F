@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/gmredi/gmredi_readparms.F,v 1.9 2003/11/12 03:58:48 jmc Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/gmredi/gmredi_readparms.F,v 1.10 2005/01/03 14:35:37 jmc Exp $
 C $Name:  $
 
 #include "GMREDI_OPTIONS.h"
@@ -18,7 +18,6 @@ C     === Global variables ===
 #include "PARAMS.h"
 #include "GRID.h"
 #include "GMREDI.h"
-#include "GMREDI_DIAGS.h"
 
 C     === Routine arguments ===
       INTEGER myThid

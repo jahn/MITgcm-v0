@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/gmredi/gmredi_calc_psi_b.F,v 1.6 2004/11/21 15:57:17 jmc Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/gmredi/gmredi_calc_psi_b.F,v 1.7 2005/01/03 14:35:37 jmc Exp $
 C $Name:  $
 
 #include "GMREDI_OPTIONS.h"
@@ -23,7 +23,6 @@ C     == Global variables ==
 #include "EEPARAMS.h"
 #include "PARAMS.h"
 #include "GMREDI.h"
-#include "GMREDI_DIAGS.h"
 
 #ifdef ALLOW_AUTODIFF_TAMC
 #include "tamc.h"
