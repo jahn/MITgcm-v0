@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/solve_for_pressure.F,v 1.27.4.1 2002/04/08 20:10:37 heimbach Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/solve_for_pressure.F,v 1.27.4.2 2002/07/11 22:18:07 jmc Exp $
 C $Name:  $
 
 #include "CPP_OPTIONS.h"
@@ -144,20 +144,24 @@ C--   Add source term arising from w=d/dt (p_s + p_nh)
 C Northern boundary
           IF (OB_Jn(I,bi,bj).NE.0) THEN
            cg2d_b(I,OB_Jn(I,bi,bj),bi,bj)=0.
+           cg2d_x(I,OB_Jn(I,bi,bj),bi,bj)=0.
           ENDIF
 C Southern boundary
           IF (OB_Js(I,bi,bj).NE.0) THEN
            cg2d_b(I,OB_Js(I,bi,bj),bi,bj)=0.
+           cg2d_x(I,OB_Js(I,bi,bj),bi,bj)=0.
           ENDIF
          ENDDO
          DO j=1,sNy
 C Eastern boundary
           IF (OB_Ie(J,bi,bj).NE.0) THEN
            cg2d_b(OB_Ie(J,bi,bj),J,bi,bj)=0.
+           cg2d_x(OB_Ie(J,bi,bj),J,bi,bj)=0.
           ENDIF
 C Western boundary
           IF (OB_Iw(J,bi,bj).NE.0) THEN
            cg2d_b(OB_Iw(J,bi,bj),J,bi,bj)=0.
+           cg2d_x(OB_Iw(J,bi,bj),J,bi,bj)=0.
           ENDIF
          ENDDO
         ENDIF
@@ -165,7 +169,7 @@ C Western boundary
        ENDDO
       ENDDO
 
-#ifndef EXCLUDE_DEBUGMODE
+#ifndef DISABLE_DEBUGMODE
       IF (debugMode) THEN
        CALL DEBUG_STATS_RL(1,cg2d_b,'cg2d_b (SOLVE_FOR_PRESSURE)',
      &                        myThid)
@@ -187,7 +191,7 @@ C     see CG2D.h for the interface to this routine.
      I           myThid )
       _EXCH_XY_R8(cg2d_x, myThid )
 
-#ifndef EXCLUDE_DEBUGMODE
+#ifndef DISABLE_DEBUGMODE
       IF (debugMode) THEN
        CALL DEBUG_STATS_RL(1,cg2d_x,'cg2d_x (SOLVE_FOR_PRESSURE)',
      &                        myThid)
