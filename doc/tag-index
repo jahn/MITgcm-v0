@@ -1,4 +1,4 @@
-$Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/doc/tag-index,v 1.53.4.19 2003/02/14 23:10:35 dimitri Exp $
+$Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/doc/tag-index,v 1.53.4.20 2003/02/15 12:40:30 dimitri Exp $
 
     Notes on tags used in MITgcmUV
     ==============================
@@ -7,6 +7,7 @@ untagged
 o Added missing /* */ to CPP comments in pkg/seaice, pkg/exf,
   kpp_transport_t.F,and ecco_the_main_loop.F
 o adjoint-friendly modifications to pkg/seaice
+o added verification/lab_sea as per release1_p12_pre
 
 ecco_c44_e26
 o Merging pkg/exf and pkg/seaice from cvs tag ecco_ice2

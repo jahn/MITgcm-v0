@@ -1,0 +1,9 @@
+# $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/verification/lab_sea/input/Attic/.genmakerc,v 1.4.2.1 2003/02/15 12:40:30 dimitri Exp $
+# $Name:  $
+
+# Disable packages that are not needed
+#set DISABLE=( aim obcs zonal_filt shap_filt autodiff cost ctrl grdchk )
+
+# Enable packages that are needed but are disabled by default
+set ENABLE=( cal exf sbo seaice )
+
