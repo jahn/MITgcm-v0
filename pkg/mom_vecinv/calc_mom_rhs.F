@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/mom_vecinv/Attic/calc_mom_rhs.F,v 1.1.2.1 2001/03/30 21:13:33 adcroft Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/mom_vecinv/Attic/calc_mom_rhs.F,v 1.1.2.2 2001/04/02 17:59:08 adcroft Exp $
 C $Name:  $
 
 #include "CPP_OPTIONS.h"
@@ -408,8 +408,18 @@ C--   Set dv/dt on boundaries to zero
       ENDDO
 
 C--   Horizontal Coriolis terms
-c ??? CALL MOM_VI_CORIOLIS(bi,bj,K,uFld,vFld,omega3,uCf,vCf,myThid)
+c     CALL MOM_VI_CORIOLIS(bi,bj,K,uFld,vFld,omega3,r_hFacZ,
+c    &                     uCf,vCf,myThid)
+c     DO j=jMin,jMax
+c      DO i=iMin,iMax
+c       gU(i,j,k,bi,bj) = (gU(i,j,k,bi,bj)+uCf(i,j))
+c    &                    *_maskW(i,j,k,bi,bj)
+c       gV(i,j,k,bi,bj) = (gV(i,j,k,bi,bj)+vCf(i,j))
+c    &                    *_maskS(i,j,k,bi,bj)
+c      ENDDO
+c     ENDDO
       CALL MOM_VI_U_CORIOLIS(bi,bj,K,vFld,omega3,r_hFacZ,uCf,myThid)
+c     CALL MOM_VI_U_CORIOLIS(bi,bj,K,vFld,vort3,r_hFacZ,uCf,myThid)
       DO j=jMin,jMax
        DO i=iMin,iMax
         gU(i,j,k,bi,bj) = (gU(i,j,k,bi,bj)+uCf(i,j))
@@ -417,6 +427,7 @@ c ??? CALL MOM_VI_CORIOLIS(bi,bj,K,uFld,vFld,omega3,uCf,vCf,myThid)
        ENDDO
       ENDDO
       CALL MOM_VI_V_CORIOLIS(bi,bj,K,uFld,omega3,r_hFacZ,vCf,myThid)
+c     CALL MOM_VI_V_CORIOLIS(bi,bj,K,uFld,vort3,r_hFacZ,vCf,myThid)
       DO j=jMin,jMax
        DO i=iMin,iMax
         gV(i,j,k,bi,bj) = (gV(i,j,k,bi,bj)+vCf(i,j))
