@@ -1,7 +1,10 @@
-$Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/doc/tag-index,v 1.53.2.34 2003/03/03 06:58:38 dimitri Exp $
+$Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/doc/tag-index,v 1.53.2.35 2003/04/30 02:24:55 dimitri Exp $
 
     Notes on tags used in MITgcmUV
     ==============================
+
+release1_p13
+o bug fix for pkg/seaice dynamic solver
 
 release1_p13_pre
 o Added net flux to downward flux conversion to pkg/exf/exf_getffields.F
