@@ -1,7 +1,10 @@
-$Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/doc/tag-index,v 1.53.4.17 2003/02/13 23:56:23 heimbach Exp $
+$Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/doc/tag-index,v 1.53.4.18 2003/02/14 21:59:46 dimitri Exp $
 
     Notes on tags used in MITgcmUV
     ==============================
+
+untagged
+o adjoint-friendly modifications to pkg/seaice
 
 ecco_c44_e26
 o Merging pkg/exf and pkg/seaice from cvs tag ecco_ice2
