@@ -1,3 +1,6 @@
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/diagnostics/Attic/fill_diagnostics.F,v 1.8 2004/05/05 00:39:21 edhill Exp $
+C $Name:  $
+
       subroutine fill_diagnostics (myThid, chardiag, levflg, nlevs, 
      .          bibjflg, bi, bj, arrayin) 
 C***********************************************************************

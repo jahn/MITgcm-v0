@@ -1,3 +1,6 @@
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/fizhi/Attic/update_chemistry_exports-fake.F,v 1.2 2004/05/05 00:39:21 edhill Exp $
+C $Name:  $
+
        subroutine update_chemistry_exports (myTime, myIter, myThid)
 c----------------------------------------------------------------------
 c  Subroutine update_chemistry_exports - 'Wrapper' routine to update

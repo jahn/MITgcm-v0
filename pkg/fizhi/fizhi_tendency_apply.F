@@ -1,3 +1,6 @@
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/fizhi/fizhi_tendency_apply.F,v 1.3 2004/05/05 00:39:21 edhill Exp $
+C $Name:  $
+
       subroutine fizhi_tendency_apply_u(iMin, iMax, jMin, jMax,
      .    bi,bj,kLev,myTime,myThid)
 C=======================================================================

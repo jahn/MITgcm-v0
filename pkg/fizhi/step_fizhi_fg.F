@@ -1,3 +1,6 @@
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/fizhi/step_fizhi_fg.F,v 1.3 2004/05/05 00:39:21 edhill Exp $
+C $Name:  $
+
        subroutine step_fizhi_fg (myTime, myIter, myThid, dt)
 c-----------------------------------------------------------------------
 c  Subroutine step_fizhi_fg - 'Wrapper' routine to advance

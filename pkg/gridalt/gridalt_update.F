@@ -1,3 +1,6 @@
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/gridalt/gridalt_update.F,v 1.5 2004/05/05 00:39:21 edhill Exp $
+C $Name:  $
+
        subroutine gridalt_update(myThid)
 c***********************************************************************
 c subroutine gridalt_update

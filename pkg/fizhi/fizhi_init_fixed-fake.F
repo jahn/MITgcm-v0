@@ -1,3 +1,6 @@
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/fizhi/Attic/fizhi_init_fixed-fake.F,v 1.3 2004/05/05 00:39:21 edhill Exp $
+C $Name:  $
+
        subroutine fizhi_init_fixed (myThid)
 c-----------------------------------------------------------------------
 c  Routine to initialise the fizhi package.
