@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/cost/Attic/cost_averagesfields.F,v 1.1.2.2 2002/02/15 22:27:46 heimbach Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/cost/Attic/cost_averagesfields.F,v 1.1.2.3 2002/03/21 03:51:21 heimbach Exp $
 
 #include "COST_CPPOPTIONS.h"
 
@@ -67,8 +67,6 @@ c     == local variables ==
       logical endofmonth
 
       integer ilps, ils,ilt
-
-      _RL     dummy
 
       character*(128) fnamepsbar
       character*(128) fnametbar

@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/ecco/ecco_readparms.F,v 1.2.6.1 2002/02/05 20:23:58 heimbach Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/ecco/ecco_readparms.F,v 1.2.6.2 2002/03/21 03:51:21 heimbach Exp $
 
 #include "CPP_OPTIONS.h"
 
@@ -118,16 +118,16 @@ C--   Custom routine to set forcing fields.
 #ifdef ALLOW_ECCO_OPTIMIZATION
 c--   Initialise the optimization-related parts of the ECCO State
 c--   Estimation package.
-      CALL optim_init( myThid )
+      CALL optim_readparms( myThid )
+      _BARRIER
+
+C--   Initialise the control vector.
+      CALL ctrl_init( myThid )
       _BARRIER
 
 C--   Initialise the cost function.
       call cost_readparms( mythid )
       call cost_init( myThid )
-      _BARRIER
-
-C--   Initialise the control vector.
-      CALL ctrl_init( myThid )
       _BARRIER
 
 #ifdef ALLOW_GRADIENT_CHECK

@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/cost/Attic/cost_init.F,v 1.2.6.1 2002/02/05 20:23:57 heimbach Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/cost/Attic/cost_init.F,v 1.2.6.2 2002/03/21 03:51:21 heimbach Exp $
 
 #include "COST_CPPOPTIONS.h"
 
@@ -64,9 +64,19 @@ c--   Get the weights that are to be used for the individual cost
 c--   function contributions.
       call cost_weights( mythid )
 
+cph(
+      print *, 'vor cost_init_barfiles'
+cph)
+c--   Initialise adjoint of monthly mean files calculated
+c--   in cost_averagesfields (and their ad...).
+      call cost_init_barfiles( mythid )
+cph(
+      print *, 'nach cost_init_barfiles'
+cph)
+
 c--   Summarize the cost function's setup.
       _BEGIN_MASTER( mythid )
-        call cost_Summary( mythid )
+      call cost_summary( mythid )
       _END_MASTER( mythid )
 
       _BARRIER

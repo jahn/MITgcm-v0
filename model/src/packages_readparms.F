@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/packages_readparms.F,v 1.7.4.1 2002/02/06 15:48:07 heimbach Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/packages_readparms.F,v 1.7.4.2 2002/03/21 03:51:21 heimbach Exp $
 C $Name:  $
 
 #include "CPP_OPTIONS.h"
@@ -91,15 +91,16 @@ C     IF (useAIM) CALL AIM_READPARMS ( myThid )
 
 #if (defined (ALLOW_ADJOINT_RUN) || defined (ALLOW_TANGENTLINEAR_RUN))
 
-C--   Initialise the cost function.
-      call cost_readparms( mythid )
+C--   Initialise the optim. parameters.
+      call optim_readparms( myThid )
       _BARRIER
 
 C--   Initialise the control vector.
       CALL ctrl_init( myThid )
       _BARRIER
-C--   Initialise the optim. parameters.
-      call optim_readparms( myThid )
+
+C--   Initialise the cost function.
+      call cost_readparms( mythid )
       _BARRIER
 
 #ifdef ALLOW_GRADIENT_CHECK
