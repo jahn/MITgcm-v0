@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/verification/global_ocean.90x40x15/code/Attic/CPP_EEOPTIONS.h,v 1.1 2001/09/28 14:53:34 adcroft Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/verification/global_ocean.90x40x15/code/Attic/CPP_EEOPTIONS.h,v 1.2 2003/10/28 22:58:00 edhill Exp $
 C $Name:  $
 
 C
