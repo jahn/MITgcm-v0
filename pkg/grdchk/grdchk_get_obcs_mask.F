@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/grdchk/grdchk_get_obcs_mask.F,v 1.1.2.1 2003/06/21 23:45:52 heimbach Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/grdchk/grdchk_get_obcs_mask.F,v 1.1.2.2 2003/07/07 16:18:18 heimbach Exp $
 
 #include "CTRL_CPPOPTIONS.h"
 
@@ -64,6 +64,7 @@ c     == end of interface ==
 
       _BEGIN_MASTER( mythid )
 
+      if ( grdchkvarindex .EQ. 11 ) then
 #ifdef ALLOW_OBCSN_CONTROL
       write(fname(1:80),'(80a)') ' '
       write(fname(1:80),'(a)') 'maskobcsn'
@@ -86,6 +87,7 @@ c
       enddo
 #endif
 
+      else if ( grdchkvarindex .EQ. 12 ) then
 #ifdef ALLOW_OBCSS_CONTROL
       write(fname(1:80),'(80a)') ' '
       write(fname(1:80),'(a)') 'maskobcss'
@@ -108,6 +110,7 @@ c
       enddo
 #endif
 
+      else if ( grdchkvarindex .EQ. 13 ) then
 #ifdef ALLOW_OBCSW_CONTROL
       write(fname(1:80),'(80a)') ' '
       write(fname(1:80),'(a)') 'maskobcsw'
@@ -130,6 +133,7 @@ c
       enddo
 #endif
 
+      else if ( grdchkvarindex .EQ. 14 ) then
 #ifdef ALLOW_OBCSE_CONTROL
       write(fname(1:80),'(80a)') ' '
       write(fname(1:80),'(a)') 'maskobcse'
@@ -151,6 +155,7 @@ c
 c
       enddo
 #endif
+      endif
 
       _END_MASTER( mythid )
 

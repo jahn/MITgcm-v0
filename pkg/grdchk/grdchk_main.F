@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/grdchk/grdchk_main.F,v 1.3.6.5 2003/06/20 19:38:59 heimbach Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/grdchk/grdchk_main.F,v 1.3.6.6 2003/07/07 16:18:18 heimbach Exp $
 
 #include "CPP_OPTIONS.h"
 
@@ -94,6 +94,7 @@ c     == local variables ==
       integer j,  jmin, jmax
       integer k
 
+      integer iobcs
       integer icomp
       integer ichknum
       integer icvrec

@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/grdchk/grdchk_loc.F,v 1.2.6.3 2003/06/20 19:38:59 heimbach Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/grdchk/grdchk_loc.F,v 1.2.6.4 2003/07/07 16:18:18 heimbach Exp $
 
 #include "CTRL_CPPOPTIONS.h"
 
@@ -125,15 +125,16 @@ c--   set max loop index for obcs multiplicities
 
 c--   Start to loop over records.
         do irec = irecwrk, ncvarrecs(grdchkvarindex)
-         do bj = bjwrk, jthi
-          do bi = biwrk, ithi
-           do k = kwrk, ncvarnrmax(grdchkvarindex)
-            do iobcs = iobcswrk, nobcsmax
+cph         do iobcs = iobcswrk, nobcsmax
+         iobcs = MOD((irec-1),nobcsmax) + 1
+          do bj = bjwrk, jthi
+           do bi = biwrk, ithi
+            do k = kwrk, ncvarnrmax(grdchkvarindex)
 
              if ( (ierr .ne. 0) .and.
      &              (icomp .gt. itest) .and.
      &              (icomp .le. itest + nwettile(bi,bj,k,iobcs))) then
-               icvrec = iobcs + (irec-1)*nobcsmax
+               icvrec = irec
                itile  = bi
                jtile  = bj
 
@@ -198,9 +199,6 @@ c--   Start to loop over records.
              else
 c
              endif
-c--   End of loop over iobcs
-             enddo
-             iobcswrk = 1
 c--   End of loop over k
             enddo
             kwrk = 1
@@ -210,8 +208,12 @@ c--   End of loop over bi
 c--   End of loop over bj
           enddo
           bjwrk = 1
-c--   End of loop over records.
+c--   End of loop over iobcs
+cph         enddo
+cph         iobcswrk = 1
+c--   End of loop over irec records.
          enddo
+c
         else
             if ( icomp .gt. maxncvarcomps ) then
 c--           Such a component does not exist.

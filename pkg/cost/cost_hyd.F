@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/cost/Attic/cost_hyd.F,v 1.1.2.4 2003/06/19 15:21:16 heimbach Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/cost/Attic/cost_hyd.F,v 1.1.2.5 2003/07/07 16:18:17 heimbach Exp $
 
 #include "COST_CPPOPTIONS.h"
 
@@ -94,6 +94,11 @@ cgg   Would prefer to calculate this before the actual run.
 
 #ifdef ALLOW_SALT_COST_CONTRIBUTION
       call cost_salt  ( myiter, mytime, mythid )
+#endif
+
+#if   (defined (ALLOW_OBCS_COST_CONTRIBUTION) && \
+       defined (OBCS_AGEOS_COST_CONTRIBUTION))
+      call cost_obcs_ageos ( myiter,mytime, mythid)
 #endif
 
       end

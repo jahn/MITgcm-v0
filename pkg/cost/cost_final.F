@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/cost/cost_final.F,v 1.2.6.6 2003/06/19 15:21:16 heimbach Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/cost/cost_final.F,v 1.2.6.7 2003/07/07 16:18:17 heimbach Exp $
 
 #include "COST_CPPOPTIONS.h"
 
@@ -382,6 +382,7 @@ c--   Each process has calculated the global part for itself.
         write(ifc,*) 'f_ctds =', f_ctds
         write(ifc,*) 'f_ctdtclim =', f_ctdtclim
         write(ifc,*) 'f_ctdsclim =', f_ctdsclim
+        write(ifc,*) 'f_curmtr =', f_curmtr
         write(ifc,*) 'f_xbt =', f_xbt
         write(ifc,*) 'f_argot =', f_argot
         write(ifc,*) 'f_argos =', f_argos
