@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/verification/natl_box_forward/code/Attic/CPP_OPTIONS.h,v 1.1.2.1 2002/02/05 20:34:44 heimbach Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/verification/natl_box_forward/code/Attic/CPP_OPTIONS.h,v 1.1.2.2 2003/02/15 14:18:51 dimitri Exp $
 C
 
 C 
@@ -151,6 +151,3 @@ C o Include/exclude code specific to the ECCO/SEALION version.
 #ifdef INCLUDE_ECCO_PACKAGE
 #include "ECCO_CPPOPTIONS.h"
 #endif
-
-
-
