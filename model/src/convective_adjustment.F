@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/convective_adjustment.F,v 1.8.2.1 2002/02/26 16:04:47 adcroft Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/convective_adjustment.F,v 1.8.2.2 2002/04/08 20:27:12 heimbach Exp $
 C $Name:  $
 
 #include "CPP_OPTIONS.h"
@@ -27,10 +27,14 @@ C     == Global data ==
 #ifdef ALLOW_TIMEAVE
 #include "TIMEAVE_STATV.h"
 #endif 
+#ifdef ALLOW_PASSIVE_TRACER
+#include "TR1.h"
+#endif
 #ifdef ALLOW_AUTODIFF_TAMC
 #include "tamc.h"
 #include "tamc_keys.h"
 #endif /* ALLOW_AUTODIFF_TAMC */
+
       EXTERNAL DIFFERENT_MULTIPLE
       LOGICAL  DIFFERENT_MULTIPLE
 
