@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/Attic/calc_gs.F,v 1.22.2.1 2001/01/09 16:21:18 adcroft Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/Attic/calc_gs.F,v 1.22.2.2 2001/01/17 15:09:05 jmc Exp $
 
 #include "CPP_OPTIONS.h"
 
@@ -301,7 +301,9 @@ C--   External forcing term(s)
 
 #ifdef INCLUDE_LAT_CIRC_FFT_FILTER_CODE
 C--
-      CALL FILTER_LATCIRCS_FFT_APPLY( gS, 1, sNy, k, k, bi, bj, 1, myThid)
+      CALL FILTER_LATCIRCS_FFT_APPLY( 
+     U     gS, 
+     I     1, sNy, k, k, bi, bj, 1, myThid)
 #endif
 
       RETURN
