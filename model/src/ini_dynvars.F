@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/ini_dynvars.F,v 1.5.4.2 2003/03/07 23:10:21 heimbach Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/ini_dynvars.F,v 1.5.4.3 2003/06/24 23:05:29 heimbach Exp $
 C $Name:  $
 
 #include "CPP_OPTIONS.h"
@@ -67,8 +67,6 @@ C-      3D arrays
            gSnm1(I,J,K,bi,bj)=0. _d 0
 
 #ifdef INCLUDE_CD_CODE
-           guCD(I,J,K,bi,bj)=0. _d 0
-           gvCD(I,J,K,bi,bj)=0. _d 0
            uNM1(I,J,K,bi,bj)=0. _d 0
            vNM1(I,J,K,bi,bj)=0. _d 0
            uVeld(I,J,K,bi,bj)=0. _d 0

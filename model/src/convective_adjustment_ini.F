@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/convective_adjustment_ini.F,v 1.3.6.4 2003/03/07 23:10:20 heimbach Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/convective_adjustment_ini.F,v 1.3.6.5 2003/06/24 23:05:28 heimbach Exp $
 C $Name:  $
 
 #include "CPP_OPTIONS.h"
@@ -201,13 +201,6 @@ C-          Convectively mix passive tracers across interface K
 C--       End DO K=1,Nr
           ENDDO
        
-#ifdef ALLOW_TIMEAVE 
-          IF (myIter.ne.nIter0 .AND. taveFreq.GT.0.) THEN
-            CALL TIMEAVE_CUMULATE(ConvectCountTave, ConvectCount, Nr,
-     I                               deltaTclock, bi, bj, myThid)
-          ENDIF
-#endif /* ALLOW_TIMEAVE */
-
 #ifdef  ALLOW_KPP
 C--     End IF (.NOT.useKPP)
         ENDIF

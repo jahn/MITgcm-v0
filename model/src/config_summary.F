@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/config_summary.F,v 1.30.6.1 2003/03/07 23:10:20 heimbach Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/config_summary.F,v 1.30.6.2 2003/06/24 23:05:28 heimbach Exp $
 C $Name:  $
 
 #include "CPP_OPTIONS.h"
@@ -163,6 +163,10 @@ CEOP
      &'   /* Gravitational acceleration ( m/s^2 ) */')
       CALL WRITE_0D_R8( gBaro,   INDEX_NONE,'gBaro =',
      &'   /* Barotropic gravity ( m/s^2 ) */')
+      CALL WRITE_0D_R8(rotationPeriod,INDEX_NONE,'rotationPeriod =',
+     &'   /* Rotation Period ( s ) */')
+      CALL WRITE_0D_R8( omega,   INDEX_NONE,'omega =',
+     &'   /* Angular velocity ( rad/s ) */')
       CALL WRITE_0D_R8( f0,      INDEX_NONE,'f0 =',
      &'   /* Reference coriolis parameter ( 1/s ) */')
       CALL WRITE_0D_R8( beta,    INDEX_NONE,'beta =',
@@ -256,6 +260,10 @@ CEOP
      & 'saltForcing  =', '  /* Salinity forcing on/off flag */')
       CALL WRITE_0D_L( nonHydrostatic, INDEX_NONE,
      & 'nonHydrostatic =', '  /* Non-Hydrostatic on/off flag */')
+      CALL WRITE_0D_L( useCDscheme,  INDEX_NONE,
+     & 'useCDscheme =', '  /* CD scheme on/off flag */')
+      CALL WRITE_0D_L( useJamartWetPoints,  INDEX_NONE,
+     & 'useJamartWetPoints=',' /* Coriolis WetPoints method flag */')
       WRITE(msgBuf,'(A)') '//  '
       CALL PRINT_MESSAGE( msgBuf, standardMessageUnit, 
      &                    SQUEEZE_RIGHT , 1)
@@ -303,10 +311,12 @@ CEOP
      &'   /* put T,S Forcing in Adams-Bash. stepping */')
       CALL WRITE_0D_R8( abeps, INDEX_NONE,'abeps =',
      &'   /* Adams-Bashforth stabilizing weight */')
+      IF (useCDscheme) THEN
       CALL WRITE_0D_R8( tauCD, INDEX_NONE,'tauCD =',
      &'   /* CD coupling time-scale ( s ) */')
       CALL WRITE_0D_R8( rCD, INDEX_NONE,'rCD =',
      &'   /* Normalised CD coupling parameter */')
+      ENDIF
       CALL WRITE_0D_R8( startTime, INDEX_NONE,'startTime =',
      &'   /* Run start time ( s ). */')
       CALL WRITE_0D_R8( endTime, INDEX_NONE,'endTime =',

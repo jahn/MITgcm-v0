@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/initialise_varia.F,v 1.20.4.3 2003/03/07 23:10:21 heimbach Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/initialise_varia.F,v 1.20.4.4 2003/06/24 23:05:29 heimbach Exp $
 C $Name:  $
 
 #include "CPP_OPTIONS.h"
@@ -44,7 +44,7 @@ C       |-- INI_AUTODIFF
 C       |
 C       |-- PACKAGES_INIT_VARIABLES
 C       |
-C       |-- THE_CORRECTION_STEP
+C       |-- THE_CORRECTION_STEP (if restart from old pickup files)
 C       |
 C       |-- CALL CONVECTIVE_ADJUSTMENT_INI
 C       |

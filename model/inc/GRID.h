@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/inc/GRID.h,v 1.17.4.2 2003/03/07 05:31:47 heimbach Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/inc/GRID.h,v 1.17.4.3 2003/06/24 23:05:05 heimbach Exp $
 C $Name:  $
 C
 CBOP
@@ -314,7 +314,7 @@ C     drF    - Cell face separation along Z axis ( units of r ).
 C     Rcolumn  -Total thickness (in r_unit) of the fluid column
 C     R_low  - base of fluid in r_unit (Depth(m) / Pressure(Pa) at top Atmos.)
 C     Ro_surf- surface reference (at rest) position, r_unit.
-C     klowC  - index of the lowest ``wet cell'' (2D)
+C     klowC  - index of the lowest "wet cell" (2D)
 C     hFac   - Fraction of cell in vertical which is open i.e how 
 C              "lopped" a cell is (dimensionless scale factor).
 C              Note: The code needs terms like MIN(hFac,hFac(I+1))

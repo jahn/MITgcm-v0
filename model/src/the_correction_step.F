@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/Attic/the_correction_step.F,v 1.15.4.3 2003/03/07 23:10:21 heimbach Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/Attic/the_correction_step.F,v 1.15.4.4 2003/06/24 23:05:29 heimbach Exp $
 C Tag $Name:  $
 
 #include "CPP_OPTIONS.h"
@@ -15,14 +15,12 @@ C     |1rst Part : Update U,V,T,S.
 C     |
 C     | The arrays used for time stepping are cycled.
 C     | Tracers:
-C     |           T(n) = Gt(n-1)
-C     |           Gt(n-1) = Gt(n)
+C     |           T(n) = Gt(n)
 C     | Momentum:
-C     |           V(n) = Gv(n-1) - dt * grad Eta
-C     |           Gv(n-1) = Gv(n)
+C     |           V(n) = Gv(n) - dt * grad Eta
 C     |
 C     |part1: update U,V,T,S                                      
-C     |  U*,V* (contained in gUnm1,gVnm1) have the surface        
+C     |  U*,V* (contained in gU,gV) have the surface        
 C     |     pressure gradient term added and the result stored    
 C     |     in U,V (contained in uVel, vVel)                      
 C     |  T* (contained in gT) is copied to T (theta)           

@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/impldiff.F,v 1.17.6.3 2003/03/07 23:10:20 heimbach Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/impldiff.F,v 1.17.6.4 2003/06/24 23:05:29 heimbach Exp $
 C $Name:  $
 
 #include "CPP_OPTIONS.h"

@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/eesupp/src/ini_procs.F,v 1.14.6.2 2003/05/12 19:52:22 heimbach Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/eesupp/src/ini_procs.F,v 1.14.6.3 2003/06/24 23:04:30 heimbach Exp $
 C $Name:  $
 #include "CPP_EEOPTIONS.h"
 CBOP
@@ -550,4 +550,4 @@ C
       RETURN
       END
 
-C $Id: ini_procs.F,v 1.14.6.2 2003/05/12 19:52:22 heimbach Exp $
+C $Id: ini_procs.F,v 1.14.6.3 2003/06/24 23:04:30 heimbach Exp $

@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/packages_check.F,v 1.9.6.3 2003/06/19 15:22:09 heimbach Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/packages_check.F,v 1.9.6.4 2003/06/24 23:05:29 heimbach Exp $
 C $Name:  $
 
 #include "CPP_OPTIONS.h"
@@ -58,6 +58,10 @@ CEOP
 
 #ifndef ALLOW_AIM
       IF (useAIM) CALL PACKAGES_CHECK_ERROR('AIM', myThid)
+#endif
+
+#ifndef ALLOW_LAND
+      IF (useLand) CALL PACKAGES_CHECK_ERROR('LAND', myThid)
 #endif
 
 #ifndef ALLOW_PTRACERS
