@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/aim/Attic/aim_write_diags.F,v 1.4.2.1 2001/04/05 15:09:45 jamous Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/aim/Attic/aim_write_diags.F,v 1.4.2.2 2001/04/18 19:01:51 jmc Exp $
 C $Name:  $
 
 #include "AIM_OPTIONS.h"
@@ -19,6 +19,10 @@ C     === Global variables ===
       LOGICAL  DIFFERENT_MULTIPLE
       EXTERNAL DIFFERENT_MULTIPLE
 
+C Common (shared with RD_WR_FLD routines in read_write_fld.F)
+      COMMON /RD_WR_FLD/ globalFile
+      LOGICAL globalFile 
+
 C     == Routine arguments ==
 C     myTime - Current time of simulation ( s )
 C     myIter - Iteration number
@@ -34,7 +38,8 @@ C     == Local variables ==
       INTEGER bi, bj, K
       CHARACTER*(MAX_LEN_MBUF) fn
       LOGICAL gf
-      gf = .TRUE.
+c_jmc gf = .TRUE.
+      gf = globalFile
 
 #ifdef ALLOW_TIMEAVE
 
