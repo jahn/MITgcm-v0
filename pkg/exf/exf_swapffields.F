@@ -1,4 +1,4 @@
-c $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/exf/exf_swapffields.F,v 1.1.4.1 2002/04/08 20:10:39 heimbach Exp $
+c $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/exf/exf_swapffields.F,v 1.1.4.2 2002/11/07 17:07:57 heimbach Exp $
 
 #include "EXF_CPPOPTIONS.h"
 

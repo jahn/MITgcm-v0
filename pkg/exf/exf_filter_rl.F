@@ -1,4 +1,4 @@
-c $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/exf/exf_filter_rl.F,v 1.1 2001/05/14 22:08:40 heimbach Exp $
+c $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/exf/exf_filter_rl.F,v 1.1.4.1 2002/11/07 17:07:56 heimbach Exp $
 
 #include "EXF_CPPOPTIONS.h"
 
@@ -28,8 +28,8 @@ c     == global variables ==
 #include "SIZE.h"
 #include "GRID.h"
 #include "exf_constants.h"
-#include "exfa.h"
-#include "exfa_param.h"
+#include "exf.h"
+#include "exf_param.h"
 
 c     == routine arguments ==
 
