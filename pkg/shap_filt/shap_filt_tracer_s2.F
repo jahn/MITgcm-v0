@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/shap_filt/shap_filt_tracer_s2.F,v 1.1.2.2 2001/05/07 16:29:08 adcroft Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/shap_filt/shap_filt_tracer_s2.F,v 1.1.2.3 2001/05/07 17:08:53 jmc Exp $
 C $Name:  $
 
 #include "SHAP_FILT_OPTIONS.h"
@@ -19,6 +19,7 @@ C     == Global variables ===
 #include "PARAMS.h"
 #include "GRID.h"
 #ifdef ALLOW_SHAP_FILT
+#include "SHAP_FILT.h"
 #include "SHAP_FILT_TRACER.h"
 #endif
 
