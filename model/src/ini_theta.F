@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/ini_theta.F,v 1.11 1998/12/09 16:11:52 adcroft Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/ini_theta.F,v 1.12 1999/07/30 15:42:59 adcroft Exp $
 
 #include "CPP_OPTIONS.h"
 
@@ -43,8 +43,8 @@ C     I,J,K
       INTEGER iC, jC, iD, jD
       INTEGER iG, jG
       INTEGER bi, bj
-      INTEGER  I,  J, K
-      REAL rad, rD
+      INTEGER I, J, K
+      _RL     rad, rD
 
       _BARRIER
 
