@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/convective_adjustment.F,v 1.1.2.2 2001/01/08 20:41:31 adcroft Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/convective_adjustment.F,v 1.1.2.3 2001/01/12 21:02:46 adcroft Exp $
 
 #include "CPP_OPTIONS.h"
 
@@ -58,7 +58,7 @@ CADJ STORE salt (:,:,k-1,bi,bj) = comlev1_bibj, key = ikey, byte = isbyte
 C-          Density of K-1 layer (above W(K)) reference to K-1 T-level
             CALL FIND_RHO(
      I           bi,bj,iMin,iMax,jMin,jMax,K-1,K-1,eosType,
-c    I           theta,salt,    ! We will soon pass theta & salt as arguments
+     I           theta,salt,
      O           rhoKm1,
      I           myThid )
 
@@ -69,7 +69,7 @@ CADJ STORE salt (:,:,k,bi,bj) = comlev1_bibj, key = ikey, byte = isbyte
 #endif /* ALLOW_AUTODIFF_TAMC */
             CALL FIND_RHO(
      I           bi,bj,iMin,iMax,jMin,jMax,K,K-1,eosType,
-c    I           theta,salt,    ! We will soon pass theta & salt as arguments
+     I           theta,salt,
      O           rhoK,
      I           myThid )
 
