@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/ecco/ecco_readparms.F,v 1.2.6.4 2002/05/30 21:01:36 heimbach Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/ecco/ecco_readparms.F,v 1.2.6.5 2003/05/12 20:02:41 heimbach Exp $
 
 #include "CPP_OPTIONS.h"
 
@@ -51,6 +51,9 @@ c     == end of interface ==
 c--   ECCO parameters.
       namelist /ECCO_PARMS/
      &                      expId
+
+c--   initialise
+      expId = 'MITECCO_0.'
     
       _BEGIN_MASTER( myThid )
         open( unit=scrunit1, status='scratch' )
