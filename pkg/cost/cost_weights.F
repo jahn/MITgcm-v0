@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/cost/Attic/cost_weights.F,v 1.1.2.3 2002/04/04 10:58:59 heimbach Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/cost/Attic/cost_weights.F,v 1.1.2.4 2002/05/30 20:01:26 heimbach Exp $
 
 #include "COST_CPPOPTIONS.h"
 
@@ -295,7 +295,7 @@ c--           Test for missing values.
                  wsalt2(i,j,k,bi,bj) = 0. _d 0
               else
                  wsalt2(i,j,k,bi,bj)=
-     $                ( ratio/(wsalt(k,bi,bj)*wsalt(k,bi,bj) 
+     $                ( SQRT(wsalt(k,bi,bj)*wsalt(k,bi,bj) 
      $                  +wsalt2(i,j,k,bi,bj)*wsalt2(i,j,k,bi,bj)) )
      $                *frame(i,j)
               endif
@@ -337,7 +337,7 @@ c--           Test for missing values.
                  wtheta2(i,j,k,bi,bj) = 0. _d 0
               else
                  wtheta2(i,j,k,bi,bj)=
-     $                ( ratio/(wtheta(k,bi,bj)*wtheta(k,bi,bj) 
+     $                ( SQRT(wtheta(k,bi,bj)*wtheta(k,bi,bj) 
      $                  +wtheta2(i,j,k,bi,bj)*wtheta2(i,j,k,bi,bj)) )
      $                *frame(i,j)
               endif
@@ -857,7 +857,7 @@ c--   Units have to be checked!
                     wtheta2(i,j,k,bi,bj) = ratio
      &                   /wtheta2(i,j,k,bi,bj)/wtheta2(i,j,k,bi,bj)
                  else
-                    wtheta(k,bi,bj) = 1.0 _d 0
+                    wtheta2(i,j,k,bi,bj) = 1.0 _d 0
                  endif
                  if (wsalt2(i,j,k,bi,bj) .ne. 0.) then
                     wsalt2(i,j,k,bi,bj) = ratio

@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/cost/Attic/cost_hyd.F,v 1.1.2.2 2002/04/04 10:58:58 heimbach Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/cost/Attic/cost_hyd.F,v 1.1.2.3 2002/05/30 20:01:26 heimbach Exp $
 
 #include "COST_CPPOPTIONS.h"
 
@@ -59,6 +59,9 @@ c     == end of interface ==
       call cost_sss   ( myiter, mytime, mythid )
 #endif
 
+#ifdef ALLOW_SST_COST_CONTRIBUTION
+      call cost_sst   ( myiter, mytime, mythid )
+#endif
 
 #ifdef ALLOW_CTDS_COST_CONTRIBUTION
       call cost_ctds  ( myiter, mytime, mythid )

@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/cost/cost_final.F,v 1.2.6.2 2002/04/04 10:58:58 heimbach Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/cost/cost_final.F,v 1.2.6.3 2002/05/30 20:01:26 heimbach Exp $
 
 #include "COST_CPPOPTIONS.h"
 
@@ -132,7 +132,7 @@ c--   Sum up all contributions.
           print*,' --> objf_tauu(bi,bj)    =',objf_tauu(bi,bj)
           print*,' --> objf_tauum(bi,bj)   =',objf_tauum(bi,bj)
           print*,' --> objf_tauv(bi,bj)    =',objf_tauv(bi,bj)
-          print*,' --> objf_tauum(bi,bj)   =',objf_tauum(bi,bj)
+          print*,' --> objf_tauvm(bi,bj)   =',objf_tauvm(bi,bj)
           print*,' --> objf_hflux(bi,bj)   =',objf_hflux(bi,bj)
           print*,' --> objf_hflux(bi,bj)   =',objf_hfluxm(bi,bj)
           print*,' --> objf_hflux(bi,bj)   =',objf_hfluxmm(bi,bj)
@@ -172,13 +172,13 @@ c--   Sum up all contributions.
      &            + mult_tauu    * objf_tauu(bi,bj)
      &            + mult_tauu    * objf_tauum(bi,bj)
      &            + mult_tauv    * objf_tauv(bi,bj)
-     &            + mult_tauu    * objf_tauvm(bi,bj)
+     &            + mult_tauv    * objf_tauvm(bi,bj)
      &            + mult_hflux   * objf_hflux(bi,bj)  
      &            + mult_hflux   * objf_hfluxm(bi,bj)  
      &            + mult_hflux   * objf_hfluxmm(bi,bj)  
      &            + mult_sflux   * objf_sflux(bi,bj)  
-     &            + mult_hflux   * objf_sfluxm(bi,bj)  
-     &            + mult_hflux   * objf_sfluxmm(bi,bj)  
+     &            + mult_sflux   * objf_sfluxm(bi,bj)  
+     &            + mult_sflux   * objf_sfluxmm(bi,bj)  
      &            + mult_h       * objf_h(bi,bj)
      &            + mult_atl     * objf_atl(bi,bj)
      &            + mult_ctdt    * objf_ctdt(bi,bj)

@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/cost/Attic/cost_readtopexmean.F,v 1.1.2.2 2002/04/04 10:58:59 heimbach Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/cost/Attic/cost_readtopexmean.F,v 1.1.2.3 2002/05/30 20:01:26 heimbach Exp $
 
 #include "COST_CPPOPTIONS.h"
 
@@ -95,7 +95,7 @@ cph               if ( rC(K) .GT. -1000. ) then
 cph)
 c             set tpmask=0 in areas shallower than 1000m 
               if (_hFacC(i,j,13,bi,bj) .eq. 0.) then
-                ersmask(i,j,bi,bj) = 0. _d 0
+                tpmeanmask(i,j,bi,bj) = 0. _d 0
               endif
 
               tpmeanmask(i,j,bi,bj) = tpmeanmask(i,j,bi,bj)*frame(i,j)
