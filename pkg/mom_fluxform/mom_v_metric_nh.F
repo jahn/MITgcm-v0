@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/mom_fluxform/Attic/mom_v_metric_nh.F,v 1.3 2001/09/26 19:05:21 adcroft Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/mom_fluxform/Attic/mom_v_metric_nh.F,v 1.3.6.1 2003/03/07 04:46:40 heimbach Exp $
 C $Name:  $
 
 #include "CPP_OPTIONS.h"
@@ -57,7 +57,7 @@ CEOP
      &    *0.25*(wVelBottomOverride*
      &           (wFld(i,j,kp1,bi,bj)+wFld(i,j-1,kp1,bi,bj))
      &           +wFld(i,j, k ,bi,bj)+wFld(i,j-1, k ,bi,bj)
-     &          )*rkFac*recip_horiVertRatio
+     &          )*rkFac*recip_horiVertRatio*gravitySign
        ENDDO
       ENDDO
 
