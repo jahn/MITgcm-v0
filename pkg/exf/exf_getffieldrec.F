@@ -1,4 +1,4 @@
-c $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/exf/exf_getffieldrec.F,v 1.1.6.3 2003/03/07 03:33:24 heimbach Exp $
+c $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/exf/exf_getffieldrec.F,v 1.1.6.4 2003/06/19 15:31:51 heimbach Exp $
 
 #include "CPP_OPTIONS.h"
 
@@ -99,7 +99,7 @@ c     fldsecs cycle around
          fldsecs0=mod(fldsecs,repeatPeriod)
 c        print *,'repeat: ',fldsecs
 c     Determine the flux record just after mycurrentdate.
-         count0 = int(fldsecs0/fldperiod) + 1
+         count0 = int(fldsecs0+0.5/fldperiod) + 1
          fldsecs1  = int((fldsecs+fldperiod+0.5)/fldperiod)*fldperiod
          fldsecs1=mod(fldsecs1,repeatPeriod+0.5)
 c        print *,'repeat: ',fldsecs1
