@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/do_oceanic_phys.F,v 1.15 2004/12/10 20:15:10 heimbach Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/do_oceanic_phys.F,v 1.16 2004/12/14 04:36:33 jmc Exp $
 C $Name:  $
 
 #include "PACKAGES_CONFIG.h"
@@ -313,10 +313,10 @@ C--     end of diagnostic k loop (Nr:1)
         ENDDO
 
 #ifdef ALLOW_DIAGNOSTICS
-        IF ( usediagnostics .AND. 
+        IF ( useDiagnostics .AND. 
      &       (useGMRedi .OR. ivdc_kappa.NE.0.) ) THEN
-          CALL fill_diagnostics (myThid, 'DRHODR  ', 0, Nr,
-     &         3, bi, bj, sigmaR)
+          CALL DIAGNOSTICS_FILL (sigmaR, 'DRHODR  ', 0, Nr,
+     &         2, bi, bj, myThid)
         ENDIF
 #endif
 
