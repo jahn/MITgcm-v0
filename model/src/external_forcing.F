@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/external_forcing.F,v 1.13.4.1 2002/04/08 20:27:12 heimbach Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/external_forcing.F,v 1.13.4.2 2002/04/17 01:39:18 heimbach Exp $
 C $Name:  $
 
 #include "CPP_OPTIONS.h"
@@ -58,7 +58,7 @@ C     Add windstress momentum impulse into the top-layer
        ENDDO
       ENDIF
 
-#ifdef ALLOW_OBCS
+#if (defined (ALLOW_OBCS) && defined (ALLOW_OBCS_SPONGE))
       IF (useOBCS) THEN
        CALL OBCS_SPONGE_U(
      I           iMin, iMax, jMin, jMax,bi,bj,kLev,
@@ -123,7 +123,7 @@ C     Add windstress momentum impulse into the top-layer
        ENDDO
       ENDIF
 
-#ifdef ALLOW_OBCS
+#if (defined (ALLOW_OBCS) && defined (ALLOW_OBCS_SPONGE))
       IF (useOBCS) THEN
        CALL OBCS_SPONGE_V(
      I           iMin, iMax, jMin, jMax,bi,bj,kLev,
@@ -211,7 +211,7 @@ C Penetrating SW radiation
       ENDDO
 #endif
 
-#ifdef ALLOW_OBCS
+#if (defined (ALLOW_OBCS) && defined (ALLOW_OBCS_SPONGE))
       IF (useOBCS) THEN
        CALL OBCS_SPONGE_T(
      I           iMin, iMax, jMin, jMax,bi,bj,kLev,
@@ -276,7 +276,7 @@ C     Add fresh-water in top-layer
        ENDDO
       ENDIF
 
-#ifdef ALLOW_OBCS
+#if (defined (ALLOW_OBCS) && defined (ALLOW_OBCS_SPONGE))
       IF (useOBCS) THEN
        CALL OBCS_SPONGE_S(
      I           iMin, iMax, jMin, jMax,bi,bj,kLev,
