@@ -1,0 +1,11 @@
+# $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/verification/carbon/code_ftl/Attic/.genmakerc,v 1.1.2.1 2002/05/14 20:36:22 heimbach Exp $
+# $Name:  $
+
+# Disable packages that are not needed
+set DISABLE=( aim obcs zonal_filt cal exf )
+
+# Enable packages that are needed but are disabled by default
+set ENABLE=( autodiff cost ctrl grdchk ecco kpp gmredi shap_filt )
+
+# We can also specify other defaults
+set ROOTDIR=..
