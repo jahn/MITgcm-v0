@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/shap_filt/shap_filt_apply_uv.F,v 1.1 2001/12/11 14:35:02 jmc Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/shap_filt/shap_filt_apply_uv.F,v 1.1.4.1 2002/02/06 15:48:09 heimbach Exp $
 C $Name:  $
 
 #include "SHAP_FILT_OPTIONS.h"

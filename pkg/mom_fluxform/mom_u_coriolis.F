@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/mom_fluxform/mom_u_coriolis.F,v 1.4 2001/09/28 03:25:15 adcroft Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/mom_fluxform/mom_u_coriolis.F,v 1.4.4.1 2002/02/06 15:48:08 heimbach Exp $
 C $Name:  $
 
 #include "CPP_OPTIONS.h"
@@ -43,6 +43,8 @@ C  uCoriolisTerm        :: Coriolis term
 C !LOCAL VARIABLES: ====================================================
 C  i,j                  :: loop indices
       INTEGER I,J
+      _RL one
+      PARAMETER(one=1.d0)
 CEOP
 
       IF (useEnergyConservingCoriolis) THEN
@@ -67,6 +69,19 @@ C Original discretization
      &     vFld( i ,j)+vFld( i ,j+1)
      &    +vFld(i-1,j)+vFld(i-1,j+1)
      &         )
+        ENDDO
+       ENDDO
+      ENDIF
+
+      IF (useJamartWetPoints) THEN
+C Scale term so that only "wet" points are used
+C Due to: Jamart and Ozer, 1986, JGR 91 (C9), 10,621-10,631
+C         "Numerical Boundary Layers and Spurious Residual Flows"
+       DO j=1-Oly,sNy+Oly-1
+        DO i=1-Olx+1,sNx+Olx
+         uCoriolisTerm(i,j) = uCoriolisTerm(i,j)
+     & *4.d0/max(one, maskS( i , j ,k,bi,bj)+maskS( i ,j+1,k,bi,bj)
+     &               +maskS(i-1, j ,k,bi,bj)+maskS(i-1,j+1,k,bi,bj) )
         ENDDO
        ENDDO
       ENDIF

@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/ini_dynvars.F,v 1.5 2001/09/26 18:09:15 cnh Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/ini_dynvars.F,v 1.5.4.1 2002/02/06 15:48:07 heimbach Exp $
 C $Name:  $
 
 #include "CPP_OPTIONS.h"

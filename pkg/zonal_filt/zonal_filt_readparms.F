@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/zonal_filt/zonal_filt_readparms.F,v 1.1 2001/12/11 14:47:32 jmc Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/zonal_filt/zonal_filt_readparms.F,v 1.1.4.1 2002/02/06 15:48:09 heimbach Exp $
 C $Name:  $
 
 #include "ZONAL_FILT_OPTIONS.h"

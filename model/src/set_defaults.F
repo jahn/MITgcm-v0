@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/set_defaults.F,v 1.30 2001/09/28 03:25:15 adcroft Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/set_defaults.F,v 1.30.4.1 2002/02/06 15:48:07 heimbach Exp $
 C $Name:  $
 
 #include "CPP_OPTIONS.h"
@@ -134,9 +134,6 @@ C--   Set default "physical" parameters
       allowFreezing       = .FALSE.
       ivdc_kappa          = 0.D0
       groundAtK1          = .FALSE.
-      zonal_filt_lat      = 90.
-      zonal_filt_sinpow   = 2
-      zonal_filt_cospow   = 2
       bottomDragLinear    = 0.
       bottomDragQuadratic = 0.
       usePickupBeforeC35    = .FALSE.
@@ -148,6 +145,7 @@ C--   Set default "physical" parameters
       tracerAdvScheme     = 2
       multiDimAdvection   = .TRUE.
       useEnergyConservingCoriolis = .FALSE.
+      useJamartWetPoints  = .FALSE.
 
 C--   Atmospheric physical parameters (e.g.: EOS)
       atm_po =  1.D5
