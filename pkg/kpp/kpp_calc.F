@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/kpp/kpp_calc.F,v 1.8 2001/05/14 21:42:07 heimbach Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/kpp/kpp_calc.F,v 1.9 2001/09/27 18:08:57 adcroft Exp $
 C $Name:  $
 
 #include "KPP_OPTIONS.h"
@@ -674,7 +674,7 @@ C     the bottom of the mixing layer.
 
       ENDIF
 
-#endif ALLOW_KPP
+#endif /* ALLOW_KPP */
 
       RETURN
       END
