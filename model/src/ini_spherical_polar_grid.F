@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/ini_spherical_polar_grid.F,v 1.14.2.3 2001/01/29 22:10:12 jmc Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/ini_spherical_polar_grid.F,v 1.14.2.4 2001/01/30 19:12:15 jmc Exp $
 
 #include "CPP_OPTIONS.h"
 
@@ -113,16 +113,16 @@ C       Back-step to the outer grid-line of the "halo" region
 C--     Calculate coordinates of cell corners for N+1 grid-lines
         DO J=1-Oly,sNy+Oly +1
          xGloc(1-Olx,J) = xG0
-         DO I=2-Olx,sNx+Olx +1
-c         xGloc(I,J) = xGloc(I-1,J) + delX(1+mod(Nx-1+iG-1+i,Nx))
-          xGloc(I,J) = xGloc(I-1,J) + delX( iGl(I,bi) )
+         DO I=1-Olx,sNx+Olx
+c         xGloc(I+1,J) = xGloc(I,J) + delX(1+mod(Nx-1+iG-1+i,Nx))
+          xGloc(I+1,J) = xGloc(I,J) + delX( iGl(I,bi) )
          ENDDO
         ENDDO
         DO I=1-Olx,sNx+Olx +1
          yGloc(I,1-Oly) = yG0
-         DO J=2-Oly,sNy+Oly +1
-c         yGloc(I,J) = yGloc(I,J-1) + delY(1+mod(Ny-1+jG-1+j,Ny))
-          yGloc(I,J) = yGloc(I,J-1) + delY( jGl(J,bj) )
+         DO J=1-Oly,sNy+Oly
+c         yGloc(I,J+1) = yGloc(I,J) + delY(1+mod(Ny-1+jG-1+j,Ny))
+          yGloc(I,J+1) = yGloc(I,J) + delY( jGl(J,bj) )
          ENDDO
         ENDDO
 
