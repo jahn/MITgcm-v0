@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/convective_adjustment_ini.F,v 1.3.6.1 2002/03/24 17:25:19 heimbach Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/convective_adjustment_ini.F,v 1.3.6.2 2002/05/30 20:02:12 heimbach Exp $
 C $Name:  $
 
 #include "CPP_OPTIONS.h"
@@ -98,8 +98,9 @@ CADJ INIT tapelev_ini_bibj_k   = USER
 #endif /* ALLOW_AUTODIFF_TAMC */
 
 #ifdef  ALLOW_KPP
+C-        CONVECT not needed with KPP mixing
         IF ( 
-     &      (.NOT.useKPP) ! CONVECT not needed with KPP mixing
+     &      (.NOT.useKPP)
      &     ) THEN
 #endif  /* ALLOW_KPP */
 
