@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/ctrl/ctrl_getrec.F,v 1.1.2.1 2002/02/05 20:23:58 heimbach Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/ctrl/ctrl_getrec.F,v 1.1.2.2 2003/03/03 17:27:31 heimbach Exp $
 
 #include "CTRL_CPPOPTIONS.h"
 
@@ -200,8 +200,8 @@ c     Determine the flux record just before mycurrentdate.
       call cal_TimePassed( fldstartdate, mydate, difftime,
      &                     mythid )
       call cal_ToSeconds( difftime, fldsecs, mythid )
-      fldsecs  = int(fldsecs/fldperiod)*fldperiod
-      fldcount = int(fldsecs/fldperiod) + 1
+      fldsecs  = int((fldsecs+0.5)/fldperiod)*fldperiod
+      fldcount = int((fldsecs+0.5)/fldperiod) + 1
 
 c     Set switches for reading new records.
       first = ((mytime - modelstart) .lt. 0.5*modelstep)

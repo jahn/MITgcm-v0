@@ -1,4 +1,4 @@
-c $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/exf/exf_getffields.F,v 1.2.6.6 2003/02/28 09:34:05 dimitri Exp $
+c $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/exf/exf_getffields.F,v 1.2.6.7 2003/03/03 17:27:31 heimbach Exp $
 
 #include "EXF_CPPOPTIONS.h"
 
@@ -309,9 +309,8 @@ CHPF$  INDEPENDENT
 
           k = 1
 
-cdm? can olx, oly be eliminated?
-          do j = 1-oly,sny+oly
-            do i = 1-olx,snx+olx
+          do j = 1,sny
+            do i = 1,snx
 
 #ifdef ALLOW_BULKFORMULAE
 
@@ -324,8 +323,8 @@ cdm? can olx, oly be eliminated?
                max3 = nTx*nTy
                act4 = ikey_dynamics - 1
 
-               ikey_1 = i+olx
-     &              + sNx*(j+oly-1)
+               ikey_1 = i
+     &              + sNx*(j-1)
      &              + sNx*sNy*act1
      &              + sNx*sNy*max1*act2
      &              + sNx*sNy*max1*max2*act3
@@ -451,8 +450,8 @@ CADJ STORE sh     = comlev1_exf_1, key = ikey_1
 
 #ifdef ALLOW_AUTODIFF_TAMC
                    ikey_2 = iter
-     &                  + niter_bulk*(i+olx-1)
-     &                  + sNx*niter_bulk*(j+oly-1)
+     &                  + niter_bulk*(i-1)
+     &                  + sNx*niter_bulk*(j-1)
      &                  + sNx*niter_bulk*sNy*act1
      &                  + sNx*niter_bulk*sNy*max1*act2
      &                  + sNx*niter_bulk*sNy*max1*max2*act3
