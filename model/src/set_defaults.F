@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/set_defaults.F,v 1.11.2.3 2001/01/23 15:58:59 adcroft Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/set_defaults.F,v 1.11.2.4 2001/01/24 16:56:07 adcroft Exp $
 
 #include "CPP_OPTIONS.h"
 
@@ -112,6 +112,9 @@ C--   Set default "physical" parameters
       ivdc_kappa          = 0.D0
       groundAtK1          = .FALSE.
       nShap               = 0
+      zonal_filt_lat      = 90.
+      zonal_filt_sinpow   = 2
+      zonal_filt_cospow   = 4
 
 C--   Elliptic solver parameters
       cg2dMaxIters       = 150

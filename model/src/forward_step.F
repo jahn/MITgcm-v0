@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/forward_step.F,v 1.4.2.2 2001/01/23 15:58:59 adcroft Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/forward_step.F,v 1.4.2.3 2001/01/24 16:56:07 adcroft Exp $
 
 #include "CPP_OPTIONS.h"
 
@@ -97,13 +97,19 @@ C--   Step forward W field in N-H algorithm
       ENDIF
 #endif
 
-#ifdef INCLUDE_SHAPIRO_FILTER_CODE
+#ifdef ALLOW_SHAP_FILT
 C--   Step forward all tiles, filter and exchange.
       CALL TIMER_START('SHAP_FILT          [FORWARD_STEP]',myThid)
       CALL SHAP_FILT_APPLY( 
      I                     gUnm1, gVnm1, gTnm1, gSnm1,
      I                     myCurrentTime, myCurrentIter, myThid )
       CALL TIMER_STOP ('SHAP_FILT          [FORWARD_STEP]',myThid)
+#endif
+
+#ifdef ALLOW_ZONAL_FILT
+      CALL ZONAL_FILT_APPLY(
+     U           gUnm1, gVnm1, gTnm1, gSnm1,
+     I           myThid )
 #endif
 
 C--   Do IO if needed.

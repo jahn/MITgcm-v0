@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/ini_parms.F,v 1.52.2.3 2001/01/23 15:58:59 adcroft Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/ini_parms.F,v 1.52.2.4 2001/01/24 16:56:07 adcroft Exp $
 
 #include "CPP_OPTIONS.h"
 
@@ -101,7 +101,8 @@ C--   Continuous equation parameters
      & rhoConst, buoyancyRelation, HeatCapacity_Cp,
      & writeBinaryPrec, readBinaryPrec, writeStatePrec,
      & openBoundaries, nonHydrostatic, globalFiles,
-     & allowFreezing, ivdc_kappa, nShap
+     & allowFreezing, ivdc_kappa,
+     & nShap, zonal_filt_lat, zonal_filt_sinpow, zonal_filt_cospow
 
 C--   Elliptic solver parameters
       NAMELIST /PARM02/
