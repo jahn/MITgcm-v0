@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/verification/exp4/Attic/CPP_OPTIONS.h,v 1.1 1998/12/08 19:44:29 adcroft Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/verification/exp4/code/CPP_OPTIONS.h,v 1.1 1998/12/15 00:02:27 adcroft Exp $
 C
 
 C 
