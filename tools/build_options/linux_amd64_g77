@@ -1,6 +1,6 @@
 #!/bin/bash
 #
-#  $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/tools/build_options/Attic/linux_x86_64_g77,v 1.2 2003/11/13 22:03:39 edhill Exp $
+#  $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/tools/build_options/linux_amd64_g77,v 1.1 2004/01/03 05:31:36 edhill Exp $
 #  $Name:  $
 #
 # Build options for Suse 9 Opteron
