@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/ini_grid.F,v 1.10.4.1 2002/02/06 15:48:07 heimbach Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/ini_grid.F,v 1.10.4.2 2003/03/07 23:10:21 heimbach Exp $
 C $Name:  $
 
 #include "CPP_OPTIONS.h"
@@ -89,6 +89,8 @@ C     and general post-analysis)
       CALL WRITE_FLD_XY_RS( 'DYC',' ',DYC,0,myThid)
 
 C--   Print out statistics of each horizontal grid array (helps when debugging)
+
+#ifndef EXCLUDE_MONITOR
       CALL MON_PRINTSTATS_RS(1,XC,'XC',myThid)
       CALL MON_PRINTSTATS_RS(1,XG,'XG',myThid)
       CALL MON_PRINTSTATS_RS(1,DXC,'DXC',myThid)
@@ -105,6 +107,7 @@ C--   Print out statistics of each horizontal grid array (helps when debugging)
       CALL MON_PRINTSTATS_RS(1,RAW,'RAW',myThid)
       CALL MON_PRINTSTATS_RS(1,RAS,'RAS',myThid)
       CALL MON_PRINTSTATS_RS(1,RAZ,'RAZ',myThid)
+#endif
 
       RETURN
       END

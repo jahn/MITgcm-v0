@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/impldiff.F,v 1.17.6.2 2002/05/30 21:02:53 heimbach Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/impldiff.F,v 1.17.6.3 2003/03/07 23:10:20 heimbach Exp $
 C $Name:  $
 
 #include "CPP_OPTIONS.h"
@@ -74,6 +74,7 @@ C--   Old aLower
         DO i=iMin,iMax
           a(i,j,k) = -deltaTX*recip_hFac(i,j,k,bi,bj)*recip_drF(k)
      &               *KappaRX(i,j, k )*recip_drC( k )
+          IF (recip_hFac(i,j,k-1,bi,bj).EQ.0.) a(i,j,k)=0.
         ENDDO
        ENDDO
       ENDDO

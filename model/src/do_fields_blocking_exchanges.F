@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/do_fields_blocking_exchanges.F,v 1.7 2001/09/26 18:09:14 cnh Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/do_fields_blocking_exchanges.F,v 1.7.6.1 2003/03/07 23:10:20 heimbach Exp $
 C $Name:  $
 
 #include "CPP_OPTIONS.h"
@@ -22,6 +22,7 @@ C     !USES:
 C     == Global variables ===
 #include "SIZE.h"
 #include "EEPARAMS.h"
+#include "PARAMS.h"
 #include "DYNVARS.h"
 #ifdef ALLOW_PASSIVE_TRACER
 #include "TR1.h"
@@ -44,8 +45,13 @@ c     _EXCH_XYZ_R8( gSNm1 , myThid )
 c     _EXCH_XYZ_R8( uVel , myThid )
 c     _EXCH_XYZ_R8( vVel , myThid )
       CALL EXCH_UV_XYZ_RL(uVel,vVel,.TRUE.,myThid)
+      _EXCH_XYZ_R8( wVel , myThid )
+      IF ( exactConserv .AND. implicDiv2Dflow .NE. 0. _d 0)
+     & _EXCH_XY_R8( etaN , myThid )
+      IF ( .NOT.staggerTimeStep .OR. cAdjFreq .NE. 0. _d 0) THEN
       _EXCH_XYZ_R8( theta , myThid )
       _EXCH_XYZ_R8( salt , myThid )
+      ENDIF
 #ifdef ALLOW_PASSIVE_TRACER
       _EXCH_XYZ_R8( Tr1  , myThid )
 #endif
@@ -56,7 +62,12 @@ c     _EXCH_XYZ_R8( gvCD , myThid )
       _EXCH_XYZ_R8( uVelD , myThid )
       _EXCH_XYZ_R8( vVelD , myThid )
 #endif
+      IF ( useDynP_inEos_Zc )
+     & _EXCH_XYZ_RL( totPhiHyd , myThid )
+
+#ifdef ALLOW_PTRACERS
+      CALL PTRACERS_FIELDS_BLOCKING_EXCHANGES(myThid)
+#endif /* ALLOW PTRACERS */
 
       RETURN
       END
- 

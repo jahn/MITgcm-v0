@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/packages_check.F,v 1.9.6.1 2003/02/13 19:28:37 dimitri Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/packages_check.F,v 1.9.6.2 2003/03/07 23:10:21 heimbach Exp $
 C $Name:  $
 
 #include "CPP_OPTIONS.h"
@@ -60,8 +60,26 @@ CEOP
       IF (useAIM) CALL PACKAGES_CHECK_ERROR('AIM', myThid)
 #endif
 
+#ifndef ALLOW_PTRACERS
+      IF (usePTRACERS) CALL PACKAGES_CHECK_ERROR('PTRACERS', myThid)
+#endif
+
+#ifndef ALLOW_SHAP_FILT
+      IF (useSHAP_FILT) CALL PACKAGES_CHECK_ERROR('SHAP_FILT', myThid)
+#endif
+
+#ifndef ALLOW_ZONAL_FILT
+      IF (useZONAL_FILT) CALL PACKAGES_CHECK_ERROR('ZONAL_FILT',myThid)
+#endif
+
 #ifndef ALLOW_FLT
       IF (useFLT) CALL PACKAGES_CHECK_ERROR('FLT', myThid)
+#endif
+
+#ifdef ALLOW_SBO
+      IF (useSBO) CALL SBO_CHECK( myThid )
+#else
+      IF (useSBO) CALL PACKAGES_CHECK_ERROR('SBO', myThid)
 #endif
 
 #ifdef ALLOW_SEAICE

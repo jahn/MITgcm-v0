@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/Attic/calc_diffusivity.F,v 1.16.6.1 2002/04/17 14:05:34 heimbach Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/Attic/calc_diffusivity.F,v 1.16.6.2 2003/03/07 23:10:20 heimbach Exp $
 C $Name:  $
 
 #include "CPP_OPTIONS.h"
