@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/shap_filt/Attic/shap_filt_apply.F,v 1.3.2.6 2001/05/07 19:42:51 adcroft Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/shap_filt/Attic/shap_filt_apply.F,v 1.3.2.7 2001/05/09 13:30:22 adcroft Exp $
 C $Name:  $
 
 #include "SHAP_FILT_OPTIONS.h"
@@ -68,6 +68,10 @@ C--        Update fields in top level according to tendency terms
         IF ( momStepping .AND. nShapUV.GT.0) THEN
           IF (Shap_funct.EQ.1) THEN
             CALL SHAP_FILT_UV_S1(
+     U           uFld, vFld,
+     I           myTime, myThid )
+          ELSEIF (Shap_funct.EQ.2) THEN
+            CALL SHAP_FILT_UV_S2(
      U           uFld, vFld,
      I           myTime, myThid )
           ELSEIF (Shap_funct.EQ.4) THEN
