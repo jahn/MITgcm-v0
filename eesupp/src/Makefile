@@ -1,4 +1,4 @@
-# $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/eesupp/src/Makefile,v 1.1.2.1 2001/03/28 19:48:51 adcroft Exp $
+# $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/eesupp/src/Makefile,v 1.1.2.2 2001/03/28 20:21:19 adcroft Exp $
 # $Name:  $
 
 # Makefile for generate eesupp source code from templates.
@@ -23,60 +23,60 @@ clean:
 
 # exch_xy_rx
 exch_xy_rl.F: exch_xy_rx.template
-	sed 's/RX/RL/g' $< > $@
+	sed 's/RX/RL/g' exch_xy_rx.template > $@
 exch_xy_rs.F: exch_xy_rx.template
-	sed 's/RX/RS/g' $< > $@
+	sed 's/RX/RS/g' exch_xy_rx.template > $@
 
 # exch_xyz_rx
 exch_xyz_rl.F: exch_xyz_rx.template
-	sed 's/RX/RL/g' $< > $@
+	sed 's/RX/RL/g' exch_xyz_rx.template > $@
 exch_xyz_rs.F: exch_xyz_rx.template
-	sed 's/RX/RS/g' $< > $@
+	sed 's/RX/RS/g' exch_xyz_rx.template > $@
 
 # exch_uv_xy_rx
 exch_uv_xy_rl.F: exch_uv_xy_rx.template
-	sed 's/RX/RL/g' $< > $@
+	sed 's/RX/RL/g' exch_uv_xy_rx.template > $@
 exch_uv_xy_rs.F: exch_uv_xy_rx.template
-	sed 's/RX/RS/g' $< > $@
+	sed 's/RX/RS/g' exch_uv_xy_rx.template > $@
 
 # exch_uv_xyz_rx
 exch_uv_xyz_rl.F: exch_uv_xyz_rx.template
-	sed 's/RX/RL/g' $< > $@
+	sed 's/RX/RL/g' exch_uv_xyz_rx.template > $@
 exch_uv_xyz_rs.F: exch_uv_xyz_rx.template
-	sed 's/RX/RS/g' $< > $@
+	sed 's/RX/RS/g' exch_uv_xyz_rx.template > $@
 
 # exch_x_xy_rx
 exch_z_xy_rl.F: exch_z_xy_rx.template
-	sed 's/RX/RL/g' $< > $@
+	sed 's/RX/RL/g' exch_z_xy_rx.template > $@
 exch_z_xy_rs.F: exch_z_xy_rx.template
-	sed 's/RX/RS/g' $< > $@
+	sed 's/RX/RS/g' exch_z_xy_rx.template > $@
 
 # exch_z_xyz_rx
 exch_z_xyz_rl.F: exch_z_xyz_rx.template
-	sed 's/RX/RL/g' $< > $@
+	sed 's/RX/RL/g' exch_z_xyz_rx.template > $@
 exch_z_xyz_rs.F: exch_z_xyz_rx.template
-	sed 's/RX/RS/g' $< > $@
+	sed 's/RX/RS/g' exch_z_xyz_rx.template > $@
 
 # exch_rx
 exch_rl.F: exch_rx.template
-	sed 's/RX/RL/g' $< > $@
+	sed 's/RX/RL/g' exch_rx.template > $@
 exch_rs.F: exch_rx.template
-	sed 's/RX/RS/g' $< > $@
+	sed 's/RX/RS/g' exch_rx.template > $@
 
 # exch_rx_cube
 exch_rl_cube.F: exch_rx_cube.template
-	sed 's/RX/RL/g' $< > $@
+	sed 's/RX/RL/g' exch_rx_cube.template > $@
 exch_rs_cube.F: exch_rx_cube.template
-	sed 's/RX/RS/g' $< > $@
+	sed 's/RX/RS/g' exch_rx_cube.template > $@
 
 # exch_uv_rx_cube
 exch_uv_rl_cube.F: exch_uv_rx_cube.template
-	sed 's/RX/RL/g' $< > $@
+	sed 's/RX/RL/g' exch_uv_rx_cube.template > $@
 exch_uv_rs_cube.F: exch_uv_rx_cube.template
-	sed 's/RX/RS/g' $< > $@
+	sed 's/RX/RS/g' exch_uv_rx_cube.template > $@
 
 # exch_z_rx_cube
 exch_z_rl_cube.F: exch_z_rx_cube.template
-	sed 's/RX/RL/g' $< > $@
+	sed 's/RX/RL/g' exch_z_rx_cube.template > $@
 exch_z_rs_cube.F: exch_z_rx_cube.template
-	sed 's/RX/RS/g' $< > $@
+	sed 's/RX/RS/g' exch_z_rx_cube.template > $@
