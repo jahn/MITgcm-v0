@@ -30,6 +30,7 @@ function [AA] = rdmds(fname,varargin)
 %   'ieee-be.l64' or 's' - IEEE floating point with big-endian byte
 %                          ordering and 64 bit long data type.
 %
+% $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/utils/matlab/rdmds.m,v 1.1.4.1 2001/04/13 18:28:23 adcroft Exp $
 
 % Default options
 ieee='b';
