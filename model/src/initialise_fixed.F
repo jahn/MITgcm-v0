@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/initialise_fixed.F,v 1.32 2004/07/09 02:41:52 edhill Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/initialise_fixed.F,v 1.33 2004/07/09 14:24:19 adcroft Exp $
 C $Name:  $
 
 #include "PACKAGES_CONFIG.h"
@@ -60,6 +60,10 @@ C      |
 C      |-- CONFIG_CHECK
 C      |
 C      |-- CONFIG_SUMMARY
+C      |
+C      |-- INI_MODEL_IO
+C      |
+C      |-- WRITE_GRID
 
 C     !USES:
       IMPLICIT NONE
