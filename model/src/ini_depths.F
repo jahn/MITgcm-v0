@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/ini_depths.F,v 1.22.2.2 2001/04/09 22:22:24 cnh Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/ini_depths.F,v 1.22.2.3 2001/04/10 02:55:39 cnh Exp $
 C $Name:  $
 
 #include "CPP_OPTIONS.h"
@@ -48,7 +48,7 @@ C--------------------
 C     oldPrec - Temporary used in controlling binary input dataset precision
       INTEGER iG, jG
       INTEGER bi, bj
-      INTEGER  I, J, K
+      INTEGER  I, J
       _RL Hdefault
       _RS H(1-OLx:sNx+OLx,1-OLy:sNy+OLy,nSx,nSy)
 
@@ -95,17 +95,6 @@ C    &                    'RS', 1, H, 1, myThid )
 
 C     _EXCH_XY_R4(    H, myThid )
 
-      IF (usingSphericalPolarGrid) THEN
-       DO bj = myByLo(myThid), myByHi(myThid)
-        DO bi = myBxLo(myThid), myBxHi(myThid)
-         DO j=1-Oly,sNy+Oly
-          DO i=1-Olx,sNx+Olx
-           IF (abs(yC(I,J,bi,bj)).GE.90.) H(I,J,bi,bj)=0.
-          ENDDO
-         ENDDO
-        ENDDO
-       ENDDO
-      ENDIF
 C
 C     CALL PLOT_FIELD_XYRS(H,'Model depths (ini_depths)',1,myThid)
 C
@@ -116,6 +105,9 @@ C
           DO i=1-Olx,sNx+Olx
            R_low(I,J,bi,bj) = rF(Nr+1)
            Ro_surf(I,J,bi,bj) = H(I,J,bi,bj)
+           IF (usingSphericalPolarGrid .AND. abs(yC(I,J,bi,bj)).GE.90. ) THEN
+            Ro_surf(I,J,bi,bj) = 0.
+           ENDIF
           ENDDO
          ENDDO
         ENDDO
@@ -127,6 +119,9 @@ C
           DO i=1-Olx,sNx+Olx
            R_low(I,J,bi,bj) = H(I,J,bi,bj)
            Ro_surf(I,J,bi,bj) = Ro_SeaLevel
+           IF (usingSphericalPolarGrid .AND. abs(yC(I,J,bi,bj)).GE.90. ) THEN
+            R_low(I,J,bi,bj) = 0.
+           ENDIF
           ENDDO
          ENDDO
         ENDDO
