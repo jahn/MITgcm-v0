@@ -1,4 +1,4 @@
-# $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/verification/natl_box_adjoint/code/Attic/.genmakerc,v 1.1.2.3 2003/02/13 23:49:41 heimbach Exp $
+# $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/verification/natl_box_adjoint/code_bulk/Attic/.genmakerc,v 1.1.2.1 2003/02/13 23:49:41 heimbach Exp $
 # $Name:  $
 
 # Disable packages that are not needed
