@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/cost/cost_accumulate_mean.F,v 1.1 2004/09/27 18:00:19 heimbach Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/cost/cost_accumulate_mean.F,v 1.2 2004/12/03 00:43:24 mlosch Exp $
 C $Name:  $
 
 #include "CPP_OPTIONS.h"
