@@ -1,3 +1,4 @@
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/ini_parms.F,v 1.105 2004/01/03 00:39:42 jmc Exp $
 C $Name:  $
 
 #include "CPP_OPTIONS.h"
