@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/calc_phi_hyd.F,v 1.8.2.4 2001/01/25 19:43:32 adcroft Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/calc_phi_hyd.F,v 1.8.2.5 2001/01/31 17:11:16 jmc Exp $
 
 #include "CPP_OPTIONS.h"
 
@@ -170,9 +170,9 @@ C-----------------------------------------------------------------------
               phiHyd(i,j,K)=phiHyd(i,j,K-1)
      &           -( ddRm*(theta(I,J,K-1,bi,bj)-tRef(K-1))
      &             +ddRp*(theta(I,J, K ,bi,bj)-tRef( K )) )
-C             Old code bug looked like this
-Cold          phiHyd(i,j,K)=phiHyd(i,j,K-1)-(ddRm1*
-Cold &      (theta(I,J,K-1,bi,bj)+theta(I,J,K,bi,bj))-tRef(K))
+C             Old code (atmos-exact) looked like this
+Cold          phiHyd(i,j,K)=phiHyd(i,j,K-1) - ddRm1*
+Cold &      (theta(I,J,K-1,bi,bj)+theta(I,J,K,bi,bj)-2.*tRef(K))
             ENDDO
           ENDDO
         ENDIF
