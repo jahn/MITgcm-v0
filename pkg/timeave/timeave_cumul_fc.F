@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/timeave/Attic/timeave_cumul_fc.F,v 1.1.4.1 2002/02/06 15:48:09 heimbach Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/timeave/Attic/timeave_cumul_fc.F,v 1.1.4.2 2003/07/28 15:37:23 heimbach Exp $
 C $Name:  $
 #include "CPP_OPTIONS.h"
 
