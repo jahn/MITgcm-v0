@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/ini_cori.F,v 1.19 2004/10/10 06:08:47 edhill Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/ini_cori.F,v 1.20 2004/10/13 04:37:37 edhill Exp $
 C $Name:  $
 
 #include "PACKAGES_CONFIG.h"
@@ -17,6 +17,9 @@ C     !USES:
 #include "SIZE.h"
 #include "EEPARAMS.h"
 #include "PARAMS.h"
+#ifdef ALLOW_MNC
+#include "MNC_PARAMS.h"
+#endif
 #include "GRID.h"
 #include "DYNVARS.h"
 #ifdef ALLOW_MONITOR
