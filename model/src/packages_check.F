@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/packages_check.F,v 1.9 2001/09/26 18:09:16 cnh Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/packages_check.F,v 1.10 2002/01/31 14:52:28 jmc Exp $
 C $Name:  $
 
 #include "CPP_OPTIONS.h"
@@ -58,6 +58,14 @@ CEOP
 
 #ifndef ALLOW_AIM
       IF (useAIM) CALL PACKAGES_CHECK_ERROR('AIM', myThid)
+#endif
+
+#ifndef ALLOW_SHAP_FILT
+      IF (useSHAP_FILT) CALL PACKAGES_CHECK_ERROR('SHAP_FILT', myThid)
+#endif
+
+#ifndef ALLOW_ZONAL_FILT
+      IF (useZONAL_FILT) CALL PACKAGES_CHECK_ERROR('ZONAL_FILT',myThid)
 #endif
 
 #ifndef ALLOW_FLT
