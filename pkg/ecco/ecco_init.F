@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/ecco/Attic/ecco_init.F,v 1.1.6.5 2003/06/19 15:27:25 heimbach Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/ecco/Attic/ecco_init.F,v 1.1.6.6 2003/06/20 05:30:15 heimbach Exp $
 
 #include "CPP_OPTIONS.h"
 
@@ -43,8 +43,8 @@ c     == end of interface ==
 
 #ifdef ALLOW_COST
 c--   Initialise the time averages.
-      call cost_AveragesInit( mythid )
-      _BARRIER
+cph      call cost_AveragesInit( mythid )
+cph      _BARRIER
 #endif
 
 #endif

@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/cost/Attic/cost_init.F,v 1.2.6.5 2003/06/19 15:21:16 heimbach Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/cost/Attic/cost_init.F,v 1.2.6.6 2003/06/20 05:30:14 heimbach Exp $
 
 #include "COST_CPPOPTIONS.h"
 
@@ -126,10 +126,15 @@ cph(
 cph   The following init. shoud not be applied if in the middle
 cph   of a divided adjoint run
 cph)
+#ifndef ALLOW_TANGENTLINEAR_RUN
+cph!!! and I think it needs to be seen by TAF
+cph!!! for repeated TLM runs
+cph!!!
       inquire( file='costfinal', exist=exst )
       if ( .NOT. exst) then
          call cost_init_barfiles( mythid )
       endif
+#endif
 
 c--   Summarize the cost function's setup.
       _BEGIN_MASTER( mythid )

@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/cost/Attic/cost_initvaria.F,v 1.1.2.6 2003/06/19 15:21:16 heimbach Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/cost/Attic/cost_initvaria.F,v 1.1.2.7 2003/06/20 05:30:14 heimbach Exp $
 
 #include "COST_CPPOPTIONS.h"
 
@@ -44,6 +44,8 @@ c     == local variables ==
       integer jmin, jmax
       integer i,j,k
 
+      logical exst
+
 c     == external functions ==
 
 c     == end of interface ==
@@ -55,6 +57,21 @@ c     == end of interface ==
       jmax = sny+OLy
       imin = 1-OLx
       imax = snx+OLy
+
+c--   Initialise adjoint of monthly mean files calculated
+c--   in cost_averagesfields (and their ad...).
+      call cost_averagesinit( mythid )
+      _BARRIER
+#ifdef ALLOW_TANGENTLINEAR_RUN
+cph(
+cph   The following init. shoud not be applied if in the middle
+cph   of a divided adjoint run
+cph)
+      inquire( file='costfinal', exist=exst )
+      if ( .NOT. exst) then
+         call cost_init_barfiles( mythid )
+      endif
+#endif
 
 c--   Initialize the tiled cost function contributions.
       do bj = jtlo,jthi

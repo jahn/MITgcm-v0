@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/ecco/Attic/ecco_the_model_main.F,v 1.1.2.9 2003/03/08 00:13:12 heimbach Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/ecco/Attic/ecco_the_model_main.F,v 1.1.2.10 2003/06/20 05:30:15 heimbach Exp $
 C $Name:  $
 
 CBOI
@@ -496,9 +496,11 @@ C--   Set model configuration (fixed arrays)
       CALL COST_DEPENDENT_INIT ( mythid )
       _BARRIER
 
-#if ( defined (ALLOW_ADJOINT_RUN) || \
-      defined (ALLOW_ECCO_OPTIMIZATION) )
-# ifdef ALLOW_DIVIDED_ADJOINT
+#ifndef ALLOW_TANGENTLINEAR_RUN
+c
+# if ( defined (ALLOW_ADJOINT_RUN) || \
+       defined (ALLOW_ECCO_OPTIMIZATION) )
+#  ifdef ALLOW_DIVIDED_ADJOINT
 c-- The following assumes the TAF option '-pure'
       inquire( file='costfinal', exist=exst )
       IF ( .NOT. exst) THEN
@@ -513,16 +515,19 @@ c-- The following assumes the TAF option '-pure'
          CALL COST_FINAL_RESTORE ( mythid, lastdiva )
       ENDIF
 c--
-# else
+#  else /* ALLOW_DIVIDED_ADJOINT undef */
       CALL TIMER_START('ADTHE_MAIN_LOOP          [ADJOINT RUN]', mythid)
       CALL ADTHE_MAIN_LOOP ( mythid )
       CALL TIMER_STOP ('ADTHE_MAIN_LOOP          [ADJOINT RUN]', mythid)
+#  endif /* ALLOW_DIVIDED_ADJOINT */
 # endif
 c--
-#elif (defined (ALLOW_TANGENTLINEAR_RUN))
-      CALL TIMER_START('G_THE_MAIN_LOOP           [TANGENT RUN]',mythid)
-      CALL G_THE_MAIN_LOOP ( myCurrentTime, myCurrentIter, myThid )
-      CALL TIMER_STOP ('G_THE_MAIN_LOOP           [TANGENT RUN]',mythid)
+#else /* ALLOW_TANGENTLINEAR_RUN defined */
+c--
+cph      CALL TIMER_START('G_THE_MAIN_LOOP           [TANGENT RUN]',mythid)
+cph      CALL G_THE_MAIN_LOOP ( myCurrentTime, myCurrentIter, myThid )
+cph      CALL TIMER_STOP ('G_THE_MAIN_LOOP           [TANGENT RUN]',mythid)
+c--
 #endif
       _BARRIER
 
