@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/debug/debug_stats_rs.F,v 1.1 2001/06/06 14:55:46 adcroft Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/debug/debug_stats_rs.F,v 1.1.6.1 2003/03/07 03:11:04 heimbach Exp $
 C $Name:  $
 
 #include "CPP_OPTIONS.h"
@@ -32,7 +32,7 @@ C     === Local variables ====
       _RL theMean
       _RL theSD
 
-      CALL MON_STATS_RS(
+      CALL DEBUG_FLD_STATS_RS(
      I                myNr, arr,
      O                theMin,theMax,theMean,theSD,
      I                myThid )
