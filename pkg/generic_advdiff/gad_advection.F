@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/generic_advdiff/gad_advection.F,v 1.12 2002/03/24 02:12:50 heimbach Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/generic_advdiff/gad_advection.F,v 1.13 2002/07/13 04:59:42 heimbach Exp $
 C $Name:  $
 
 CBOI
