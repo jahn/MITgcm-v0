@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/write_state.F,v 1.42 2004/09/10 12:19:30 edhill Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/write_state.F,v 1.43 2004/09/17 22:57:12 heimbach Exp $
 C $Name:  $
 
 #include "PACKAGES_CONFIG.h"
@@ -55,9 +55,7 @@ C     !USES:
 #include "DYNVARS.h"
 #include "GRID.h" 
 #include "EOS.h"
-#ifdef ALLOW_PASSIVE_TRACER
-#include "TR1.h"
-#endif
+
       LOGICAL  DIFFERENT_MULTIPLE
       EXTERNAL DIFFERENT_MULTIPLE
       INTEGER  IO_ERRCOUNT
