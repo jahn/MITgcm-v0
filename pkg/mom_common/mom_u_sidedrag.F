@@ -1,7 +1,7 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/mom_fluxform/Attic/mom_u_sidedrag.F,v 1.4 2003/10/09 04:19:20 edhill Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/mom_common/mom_u_sidedrag.F,v 1.1 2004/05/14 17:43:11 adcroft Exp $
 C $Name:  $
 
-#include "MOM_FLUXFORM_OPTIONS.h"
+#include "MOM_COMMON_OPTIONS.h"
 
 CBOP
 C !ROUTINE: MOM_U_SIDEDRAG
@@ -72,8 +72,10 @@ C     - Laplacian  and bi-harmonic terms
      &               -viscA4*del2u(i,j)*cosFacU(J,bi,bj)
 #endif
 #else
-     &                viscAh*uFld(i,j)
-     &               -viscA4*del2u(i,j)
+     &     min(viscAh+viscAhGrid* rA(i,j,bi,bj)    /deltaTmom,viscAhMax)
+     &                *uFld(i,j)
+     &    -min(viscA4+viscA4Grid*(rA(i,j,bi,bj)**2)/deltaTmom,viscA4Max)
+     &                *del2u(i,j)
 #endif
      &              )
        ENDDO

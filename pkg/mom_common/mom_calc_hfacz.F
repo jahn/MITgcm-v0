@@ -1,7 +1,7 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/mom_fluxform/Attic/mom_calc_hfacz.F,v 1.4 2003/10/09 04:19:20 edhill Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/mom_common/mom_calc_hfacz.F,v 1.1 2004/05/14 17:43:11 adcroft Exp $
 C $Name:  $
 
-#include "MOM_FLUXFORM_OPTIONS.h"
+#include "MOM_COMMON_OPTIONS.h"
 
 CBOP
 C !ROUTINE: MOM_CALC_HFACZ
