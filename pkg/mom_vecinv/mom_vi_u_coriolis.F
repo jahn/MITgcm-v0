@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/mom_vecinv/mom_vi_u_coriolis.F,v 1.1.2.1 2001/03/30 21:13:33 adcroft Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/mom_vecinv/mom_vi_u_coriolis.F,v 1.1.2.2 2001/04/02 17:07:57 adcroft Exp $
 C $Name:  $
 
 #include "CPP_OPTIONS.h"
@@ -30,7 +30,7 @@ C     == Routine arguments ==
 
 C     == Local variables ==
       INTEGER I,J
-      _RL vBarXY,uBarXY,vort3u
+      _RL vBarXY,vort3u
       LOGICAL upwindVort3
 
       upwindVort3=.FALSE.
@@ -51,8 +51,8 @@ c    &               +vFld(i-1,j)+vFld(i-1,j+1))
            vort3u=omega3(I,J+1)*r_hFacZ(i,j+1)
           ENDIF
          ELSE
-          vort3u=0.5*(omega3(I,J)*r_hFacZ(i,j)
-     &               +omega3(I,J+1)*r_hFacZ(i,j+1))
+          vort3u=0.5*(omega3(i,j)*r_hFacZ(i,j)
+     &               +omega3(i,j+1)*r_hFacZ(i,j+1))
          ENDIF
          uCoriolisTerm(i,j)=
 C high order vorticity advection term

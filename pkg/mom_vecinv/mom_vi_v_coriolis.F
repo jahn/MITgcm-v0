@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/mom_vecinv/mom_vi_v_coriolis.F,v 1.1.2.1 2001/03/30 21:13:34 adcroft Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/mom_vecinv/mom_vi_v_coriolis.F,v 1.1.2.2 2001/04/02 17:08:33 adcroft Exp $
 C $Name:  $
 
 #include "CPP_OPTIONS.h"
@@ -46,13 +46,13 @@ c        uBarXY=0.25*( uFld(i, j )+uFld(i+1, j )
 c    &                +uFld(i,j-1)+uFld(i+1,j-1))
          IF (upwindVort3) THEN
           IF (uBarXY.GT.0.) THEN
-           vort3v=omega3(I,J)*r_hFacZ(i,j)
+           vort3v=omega3(i,j)*r_hFacZ(i,j)
           ELSE
-           vort3v=omega3(I+1,J)*r_hFacZ(i+1,j)
+           vort3v=omega3(i+1,j)*r_hFacZ(i+1,j)
           ENDIF
          ELSE
-          vort3v=0.5*(omega3(I,J)*r_hFacZ(i,j)
-     &               +omega3(I+1,J)*r_hFacZ(i+1,j))
+          vort3v=0.5*(omega3(i,j)*r_hFacZ(i,j)
+     &               +omega3(i+1,j)*r_hFacZ(i+1,j))
          ENDIF
          vCoriolisTerm(i,j)=
 C high order vorticity advection term
