@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/mdsio/Attic/mdsio_readvector.F,v 1.1 2001/03/06 15:28:54 adcroft Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/mdsio/Attic/mdsio_readvector.F,v 1.1.8.1 2003/03/07 04:30:20 heimbach Exp $
 C $Name:  $
 
 #include "MDSIO_OPTIONS.h"
@@ -140,6 +140,10 @@ C (This is a place-holder for the active/passive mechanism)
           fileIsOpen=.TRUE.
          else
           fileIsOpen=.FALSE.
+          write(msgbuf,'(a,a)')
+     &      ' MDSREADVECTOR: opening file: ',dataFName
+          call print_message( msgbuf, standardmessageunit,
+     &                        SQUEEZE_RIGHT , mythid)
           write(msgbuf,'(a)')
      &      ' MDSREADVECTOR: un-active tiles not implemented yet'
           call print_error( msgbuf, mythid )
