@@ -1,4 +1,4 @@
-c $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/exf/exf_getsurfacefluxes.F,v 1.1.6.4 2003/06/19 15:31:51 heimbach Exp $
+c $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/exf/exf_getsurfacefluxes.F,v 1.1.6.5 2003/06/20 20:03:57 heimbach Exp $
 
 #include "EXF_CPPOPTIONS.h"
 
@@ -38,9 +38,13 @@ c     == global variables ==
 #include "PARAMS.h"
 #include "GRID.h"
 
-#include "ctrl.h"
-#include "ctrl_dummy.h"
 #include "exf_fields.h"
+#if (defined (ALLOW_ADJOINT_RUN) || \
+     defined (ALLOW_TANGENTLINEAR_RUN) || \
+     defined (ALLOW_ECCO_OPTIMIZATION))
+# include "ctrl.h"
+# include "ctrl_dummy.h"
+#endif
 
 c     == routine arguments ==
 
