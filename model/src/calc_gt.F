@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/Attic/calc_gt.F,v 1.31.2.3 2001/03/30 23:09:36 jmc Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/Attic/calc_gt.F,v 1.31.2.4 2001/04/09 18:52:44 adcroft Exp $
 C $Name:  $
 
 #include "CPP_OPTIONS.h"
@@ -335,11 +335,9 @@ C           they are not algorithmically correct. These points
 C           are not used.
       DO j=jMin,jMax
        DO i=iMin,iMax
-#define _recip_VolT1(i,j,k,bi,bj) _recip_hFacC(i,j,k,bi,bj)*recip_drF(k)
-#define _recip_VolT2(i,j,k,bi,bj) /_rA(i,j,bi,bj)
         gT(i,j,k,bi,bj)=
-     &   -_recip_VolT1(i,j,k,bi,bj)
-     &    _recip_VolT2(i,j,k,bi,bj)
+     &   -_recip_hFacC(i,j,k,bi,bj)*recip_drF(k)
+     &    *recip_rA(i,j,bi,bj)
      &   *(
      &    +( fZon(i+1,j)-fZon(i,j) )
      &    +( fMer(i,j+1)-fMer(i,j) )
