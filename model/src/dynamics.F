@@ -1,6 +1,6 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/dynamics.F,v 1.23 1998/07/01 19:49:36 adcroft Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/dynamics.F,v 1.24 1998/07/01 19:57:22 adcroft Exp $
 
-#include "CPP_EEOPTIONS.h"
+#include "CPP_OPTIONS.h"
 
       SUBROUTINE DYNAMICS(myTime, myIter, myThid)
 C     /==========================================================\
