@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/ini_grid.F,v 1.12 2002/02/15 21:25:09 heimbach Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/ini_grid.F,v 1.13 2003/11/03 22:40:22 edhill Exp $
 C $Name:  $
 
 #include "CPP_OPTIONS.h"
@@ -90,7 +90,7 @@ C     and general post-analysis)
 
 C--   Print out statistics of each horizontal grid array (helps when debugging)
 
-#ifndef EXCLUDE_MONITOR
+#ifdef ALLOW_MONITOR
       CALL MON_PRINTSTATS_RS(1,XC,'XC',myThid)
       CALL MON_PRINTSTATS_RS(1,XG,'XG',myThid)
       CALL MON_PRINTSTATS_RS(1,DXC,'DXC',myThid)
