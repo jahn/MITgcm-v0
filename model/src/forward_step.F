@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/forward_step.F,v 1.10 2001/03/06 16:51:02 jmc Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/forward_step.F,v 1.10.2.1 2001/05/07 17:11:06 jmc Exp $
 C $Name:  $
 
 #include "CPP_OPTIONS.h"
@@ -96,6 +96,7 @@ C--   Step forward W field in N-H algorithm
 #endif
 
 #ifdef ALLOW_SHAP_FILT
+      IF (useSHAP_FILT) THEN
 C--   Step forward all tiles, filter and exchange.
       CALL TIMER_START('SHAP_FILT          [FORWARD_STEP]',myThid)
       CALL SHAP_FILT_APPLY( 
@@ -107,6 +108,7 @@ C      => Filtering of uVel,vVel is necessary
          CALL SHAP_FILT_UV( uVel, vVel, myCurrentTime, myThid )
       ENDIF
       CALL TIMER_STOP ('SHAP_FILT          [FORWARD_STEP]',myThid)
+      ENDIF
 #endif
 
 #ifdef ALLOW_ZONAL_FILT

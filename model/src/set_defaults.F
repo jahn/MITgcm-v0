@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/set_defaults.F,v 1.16.2.3 2001/04/06 13:02:39 jmc Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/set_defaults.F,v 1.16.2.4 2001/05/07 17:11:06 jmc Exp $
 C $Name:  $
 
 #include "CPP_OPTIONS.h"
@@ -119,7 +119,6 @@ C--   Set default "physical" parameters
       allowFreezing       = .FALSE.
       ivdc_kappa          = 0.D0
       groundAtK1          = .FALSE.
-      nShap               = 0
       zonal_filt_lat      = 90.
       zonal_filt_sinpow   = 2
       zonal_filt_cospow   = 2

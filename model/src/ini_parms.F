@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/ini_parms.F,v 1.56.2.3 2001/04/06 13:02:39 jmc Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/ini_parms.F,v 1.56.2.4 2001/05/07 17:11:06 jmc Exp $
 C $Name:  $
 
 #include "CPP_OPTIONS.h"
@@ -104,7 +104,7 @@ C--   Continuous equation parameters
      & writeBinaryPrec, readBinaryPrec, writeStatePrec,
      & nonHydrostatic, globalFiles,
      & allowFreezing, ivdc_kappa,
-     & nShap, zonal_filt_lat, zonal_filt_sinpow, zonal_filt_cospow,
+     & zonal_filt_lat, zonal_filt_sinpow, zonal_filt_cospow,
      & bottomDragLinear,bottomDragQuadratic
 
 C--   Elliptic solver parameters
