@@ -1,9 +1,9 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/shap_filt/shap_filt_uv_s2.F,v 1.1.2.3 2001/05/07 19:02:52 adcroft Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/shap_filt/Attic/shap_filt_uv_s2g.F,v 1.1.2.1 2001/05/07 19:10:17 adcroft Exp $
 C $Name:  $
 
 #include "SHAP_FILT_OPTIONS.h"
 
-      SUBROUTINE SHAP_FILT_UV_S2( 
+      SUBROUTINE SHAP_FILT_UV_S2G( 
      U           uFld, vFld,
      I           myTime, myThid )
 C     /==========================================================\
@@ -86,10 +86,10 @@ c---+----1----+----2----+----3----+----4----+----5----+----6----+----7-|--+----|
 c---+----1----+----2----+----3----+----4----+----5----+----6----+----7-|--+----|
            DO J=1,sNy+1
             DO I=1,sNx+1
-             tmpFldU(i,j,k,bi,bj) = -0.125*
-     &           rAw(i,j,bi,bj)*tmpGrdU(i,j)*_maskW(i,j,k,bi,bj)
-             tmpFldV(i,j,k,bi,bj) = -0.125*
-     &           rAs(i,j,bi,bj)*tmpGrdV(i,j)*_maskS(i,j,k,bi,bj)
+             tmpFldU(i,j,k,bi,bj) = -0.125*Shap_uvLength
+     &          *rAw(i,j,bi,bj)*tmpGrdU(i,j)*_maskW(i,j,k,bi,bj)
+             tmpFldV(i,j,k,bi,bj) = -0.125*Shap_uvLength
+     &          *rAs(i,j,bi,bj)*tmpGrdV(i,j)*_maskS(i,j,k,bi,bj)
             ENDDO
            ENDDO
 
@@ -116,8 +116,6 @@ C      F <-  [1 - (d_xx+d_yy)^n *deltat/tau].F
         ENDDO
        ENDDO
 
-c_jmc: ???
-c     CALL EXCH_UV_XYZ_RL(tmpFldU,tmpFldV,.TRUE.,myThid)
       CALL EXCH_UV_XYZ_RL(uFld,vFld,.TRUE.,myThid)
 
       ENDIF
