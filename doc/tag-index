@@ -1,9 +1,17 @@
-$Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/doc/tag-index,v 1.61 2002/02/15 21:31:57 heimbach Exp $
+$Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/doc/tag-index,v 1.61.2.1 2002/03/24 04:23:44 heimbach Exp $
 
     Notes on tags used in MITgcmUV
     ==============================
 
-o real fresh water flux implemented with non-linear free-surface.
+release1_final_v1
+o merged necessary patches:
+  - AD-related changes for GMRedi
+  - fixes i KPP (delZ -> drF)
+  - hook to OBCS songe layer code in external_forcing
+  - errorMessageUnit non-zero in eeboot.F
+  - modified test cost function and carbon verif.
+
+release1_final branched from chkpt44d_post
 
 chkpt44d_pre,post
 o added missing EXCLUDE_MONITOR flags
@@ -16,6 +24,8 @@ o added timer_stats.c routine for IBM SP3
 o removed variables in dynamics
 !!! I forgot to create tag chkpt44d_pre !!!
 !!! But chkpt44d_pre = chkpt44c_post    !!!
+
+o real fresh water flux implemented with non-linear free-surface.
 
 chkpt44c_pre,post
 o few fix (mask in shap_s2, EmPmR in external_field_load, 
