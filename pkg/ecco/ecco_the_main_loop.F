@@ -1,10 +1,12 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/ecco/Attic/ecco_the_main_loop.F,v 1.1.2.16 2003/05/23 16:26:26 heimbach Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/ecco/Attic/ecco_the_main_loop.F,v 1.1.2.17 2003/05/27 22:43:44 heimbach Exp $
 
 #include "CPP_OPTIONS.h"
 #ifdef ALLOW_OBCS
 # include "OBCS_OPTIONS.h"
 #endif
-
+#ifdef ALLOW_SEAICE
+# include "SEAICE_OPTIONS.h"
+#endif
 
       subroutine the_main_loop( myTime, myIter, mythid )
 
@@ -278,6 +280,12 @@ CADJ &     = COMMON,nchklev_1*snx*nsx*sny*nsy*nthreads_chkpt
 CADJ INIT comlev1_exf_2
 CADJ &     = COMMON,niter_bulk*nchklev_1*snx*nsx*sny*nsy*nthreads_chkpt
 # endif
+c--
+#ifdef ALLOW_SEAICE
+# ifdef SEAICE_ALLOW_DYNAMICS
+CADJ INIT comlev1_lsr = COMMON,nchklev_1*2
+# endif
+#endif /* ALLOW_SEAICE */
 c--
 #endif /* ALLOW_AUTODIFF_TAMC */
 c**************************************
