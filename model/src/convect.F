@@ -1,6 +1,6 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/Attic/convect.F,v 1.10 1998/10/28 03:11:37 cnh Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/Attic/convect.F,v 1.11 1998/11/06 22:44:45 cnh Exp $
 
-#include "CPP_EEOPTIONS.h"
+#include "CPP_OPTIONS.h"
 
       SUBROUTINE CONVECT( bi, bj, iMin, iMax, jMin, jMax, K,
      &       rhoKm1, rhoKp1,myTime,myIter, myThid )

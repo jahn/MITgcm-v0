@@ -1,6 +1,6 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/Attic/calc_buoyancy.F,v 1.4 1998/11/03 15:28:04 cnh Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/Attic/calc_buoyancy.F,v 1.5 1998/11/06 22:44:43 cnh Exp $
 
-#include "CPP_EEOPTIONS.h"
+#include "CPP_OPTIONS.h"
 
       SUBROUTINE CALC_BUOYANCY(
      I      bi, bj, iMin, iMax, jMin, jMax,  k, rhoLoc,

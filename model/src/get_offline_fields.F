@@ -1,6 +1,6 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/Attic/get_offline_fields.F,v 1.3 1998/10/28 03:11:37 cnh Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/Attic/get_offline_fields.F,v 1.4 1998/11/06 22:44:46 cnh Exp $
 
-#include "CPP_EEOPTIONS.h"
+#include "CPP_OPTIONS.h"
  
 CStartOfInterface
       SUBROUTINE GET_OFFLINE_FIELDS( myThid, fSuff )
