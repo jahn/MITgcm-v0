@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/ecco/Attic/ecco_the_main_loop.F,v 1.1.2.17 2003/05/27 22:43:44 heimbach Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/ecco/Attic/ecco_the_main_loop.F,v 1.1.2.18 2003/06/19 15:27:25 heimbach Exp $
 
 #include "CPP_OPTIONS.h"
 #ifdef ALLOW_OBCS
@@ -193,10 +193,17 @@ C--   Check status of solution (statistics, cfl, etc...)
 #ifdef ALLOW_COST
 c--   Compute the cost function contribution of the boundary forcing,
 c--   i.e. heat flux, salt flux, zonal and meridional wind stress.
-      call timer_start('COST_FORCING       [ECCO SPIN-UP]', mythid)
+      call timer_start('COST_FORCING        [ECCO SPIN-UP]', mythid)
       call cost_forcing( myiter, mytime, mythid )
-      call timer_stop ('COST_FORCING       [ECCO SPIN-UP]', mythid)
-#endif
+      call timer_stop ('COST_FORCING        [ECCO SPIN-UP]', mythid)
+
+# ifdef ALLOW_OBCS_COST_CONTRIBUTION
+      call timer_start('cost_obcs           [ECCO SPIN-UP]', mythid)
+      call cost_obcs( myiter, mytime, mythid )
+      call timer_stop ('cost_obcs           [ECCO SPIN-UP]', mythid)
+# endif
+
+#endif /* ALLOW_COST */
 
       call timer_stop ('ECCO SPIN-UP', mythid)
       _BARRIER
@@ -649,10 +656,10 @@ c--   Compute cost function contribution of Temperature and Salinity.
       call cost_Hyd( myiter, mytime, mythid )
       call timer_stop ('COST_HYD           [ECCO SPIN-DOWN]', mythid)
 
-#ifdef ALLOW_OBCS_COST_CONTRIBUTION
-      call timer_start('cost_obcs          [ECCO SPIN-DOWN]', mythid)
-      call cost_obcs( myiter, mytime, mythid )
-      call timer_stop ('cost_obcs          [ECCO SPIN-DOWN]', mythid)
+#ifdef ALLOW_CURMTR_COST_CONTRIBUTION
+      call timer_start('cost_curmtr        [ECCO SPIN-DOWN]', mythid)
+      call cost_curmtr( myiter, mytime, mythid )
+      call timer_stop ('cost_curmtr        [ECCO SPIN-DOWN]', mythid)
 #endif
 
 c--   Compute cost function contribution of SSH.

@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/ecco/Attic/ecco_init.F,v 1.1.6.4 2002/05/30 21:01:36 heimbach Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/ecco/Attic/ecco_init.F,v 1.1.6.5 2003/06/19 15:27:25 heimbach Exp $
 
 #include "CPP_OPTIONS.h"
 
@@ -42,15 +42,8 @@ c     == end of interface ==
 #ifdef INCLUDE_ECCO_PACKAGE
 
 #ifdef ALLOW_COST
-c--   Initialise the cost function.
-      call cost_InitVaria( mythid )
-
 c--   Initialise the time averages.
       call cost_AveragesInit( mythid )
-
-c--   Map the control variables onto the model state. 
-      call ctrl_init_variables ( mythid )
-      call ctrl_map( mythid )
       _BARRIER
 #endif
 
