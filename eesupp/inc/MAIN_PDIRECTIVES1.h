@@ -1,4 +1,4 @@
-C $Id: MAIN_PDIRECTIVES1.h,v 1.1.1.1 1998/04/22 19:15:30 cnh Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/eesupp/inc/MAIN_PDIRECTIVES1.h,v 1.3 1998/09/29 18:50:56 cnh Exp $
 C
 C     /==========================================================\
 C     | MAIN_PDIRECTIVES1.h                                      |
@@ -21,6 +21,7 @@ C$PAR& ,SCHEDTYPE(SELF(1))
 C
 #endif
 
+#define USE_KAP_THREADING
 #ifdef USE_KAP_THREADING
 C--
 C--  Parallel directives for Kuck and Associates compiler.

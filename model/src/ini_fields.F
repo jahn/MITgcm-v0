@@ -1,6 +1,6 @@
-C $Id: ini_fields.F,v 1.1.1.1 1998/04/22 19:15:30 cnh Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/ini_fields.F,v 1.6 2000/04/05 17:52:37 adcroft Exp $
 
-#include "CPP_EEOPTIONS.h"
+#include "CPP_OPTIONS.h"
 
 CStartOfInterface
       SUBROUTINE INI_FIELDS( myThid )
@@ -13,6 +13,7 @@ C     | set here. For continuation runs a restart file will be   |
 C     | used. For original runs custom rules can be included     |
 C     | here.                                                    |
 C     \==========================================================/
+      IMPLICIT NONE
 
 C     === Global variables ===
 #include "SIZE.h"
@@ -25,12 +26,17 @@ C     myThid -  Number of this instance of INI_FIELDS
 CEndOfInterface
 
 C--   Set model variables to initial/restart conditions
-      IF ( startTime .EQ. 0. ) THEN
+      IF ( startTime .EQ. 0. .AND.  nIter0 .EQ. 0 ) THEN
        CALL INI_UVEL( myThid )
        CALL INI_VVEL( myThid )
        CALL INI_THETA( myThid )
        CALL INI_SALT( myThid )
+       CALL INI_PSURF( myThid )
       ELSE
+       IF ( nIter0 .EQ. 0 ) THEN
+        nIter0 = INT(startTime/deltaTClock )
+       ENDIF
+       CALL READ_CHECKPOINT( nIter0, myThid )
       ENDIF
 
       RETURN

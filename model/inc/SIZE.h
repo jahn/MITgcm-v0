@@ -1,4 +1,4 @@
-C $Id: SIZE.h,v 1.1.1.1 1998/04/22 19:15:31 cnh Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/inc/SIZE.h,v 1.23 2000/11/13 16:32:57 heimbach Exp $
 C
 C     /==========================================================\
 C     | SIZE.h Declare size of underlying computational grid.    |
@@ -22,7 +22,7 @@ C     nPx - No. of processes to use in X.
 C     nPy - No. of processes to use in Y.
 C     Nx  - No. points in X for the total domain.
 C     Ny  - No. points in Y for the total domain.
-C     Nz  - No. points in Z for full process domain.
+C     Nr  - No. points in Z for full process domain.
       INTEGER sNx
       INTEGER sNy
       INTEGER OLx
@@ -33,24 +33,25 @@ C     Nz  - No. points in Z for full process domain.
       INTEGER nPy
       INTEGER Nx
       INTEGER Ny
-      INTEGER Nz
+      INTEGER Nr
       PARAMETER (
-     &           sNx =  60, 
-     &           sNy =  60,
-     &           OLx =   3,
-     &           OLy =   3,
+     &           sNx =  20,
+     &           sNy =  16,
+     &           OLx =   4,
+     &           OLy =   4,
      &           nSx =   1,
      &           nSy =   1,
      &           nPx =   1,
      &           nPy =   1,
      &           Nx  = sNx*nSx*nPx,
      &           Ny  = sNy*nSy*nPy,
-     &           Nz  =   2)
+     &           Nr  =  23)
 
-C     l - Runtime global problem size in X
-C     m - Runtime global problem size in Y
-C     n - Runtime global problem size in Z
-      COMMON /RUNSIZ/ l, m, n
-      INTEGER l
-      INTEGER m
-      INTEGER n
+C     MAX_OLX  - Set to the maximum overlap region size of any array
+C     MAX_OLY    that will be exchanged. Controls the sizing of exch
+C                routine buufers.
+      INTEGER MAX_OLX
+      INTEGER MAX_OLY
+      PARAMETER ( MAX_OLX = OLx,
+     &            MAX_OLY = OLy )
+

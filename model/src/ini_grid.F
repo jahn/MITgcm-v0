@@ -1,6 +1,6 @@
-C $Id: ini_grid.F,v 1.1.1.1 1998/04/22 19:15:30 cnh Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/ini_grid.F,v 1.6 1998/12/09 16:11:52 adcroft Exp $
 
-#include "CPP_EEOPTIONS.h"
+#include "CPP_OPTIONS.h"
 
 CStartOfInterface
       SUBROUTINE INI_GRID( myThid )
@@ -30,6 +30,7 @@ C     |   Both of the above also require modifying the support   |
 C     |   routines that map computational blocks to simulation   |
 C     |   domain blocks.                                         |
 C     \==========================================================/
+      IMPLICIT NONE
 
 C     === Global variables ===
 #include "SIZE.h"
@@ -46,7 +47,10 @@ C     == Local variables ==
 C     msgBuf - Used for informational I/O.
       CHARACTER*(MAX_LEN_MBUF) msgBuf
 
-C--   Set up grid coordinate system
+C--   Set up vertical grid and coordinate system
+      CALL INI_VERTICAL_GRID( myThid )
+
+C--   Set up horizontal grid and coordinate system
       IF ( usingCartesianGrid ) THEN
        CALL INI_CARTESIAN_GRID( myThid )
       ELSEIF ( usingSphericalPolarGrid ) THEN
@@ -62,5 +66,3 @@ C--   Set up grid coordinate system
 C
       RETURN
       END
-
-C     $Id: ini_grid.F,v 1.1.1.1 1998/04/22 19:15:30 cnh Exp $
