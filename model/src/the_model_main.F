@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/the_model_main.F,v 1.43.4.3 2003/01/31 05:06:51 dimitri Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/the_model_main.F,v 1.43.4.4 2003/02/16 02:07:00 dimitri Exp $
 C $Name:  $
 
 CBOI
@@ -545,7 +545,15 @@ C--   Final checkpoint (incase the in-loop checkpoint was missed)
      &        .TRUE., myCurrentTime, myCurrentIter, myThid )
       CALL TIMER_STOP ('WRITE_CHECKPOINT   [THE_MODEL_MAIN]',myThid)
 
+C--   Sea-ice checkpoint (special request by a fussy user)
+#ifdef ALLOW_SEAICE
+      IF ( useSEAICE )
+     &     CALL SEAICE_WRITE_PICKUP(
+     &     .TRUE., myCurrentTime, myCurrentIter, myThid )
+#endif
+
       CALL TIMER_STOP ('ALL                [THE_MODEL_MAIN]',myThid)
+      
 
 C--   Write timer statistics
       IF ( myThid .EQ. 1 ) THEN
