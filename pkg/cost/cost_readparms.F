@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/cost/cost_readparms.F,v 1.2.6.3.2.1 2003/03/11 18:20:39 dimitri Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/cost/cost_readparms.F,v 1.2.6.3.2.2 2003/03/29 17:35:57 dimitri Exp $
 
 #include "COST_CPPOPTIONS.h"
 
@@ -96,6 +96,7 @@ c--   Read the namelist input.
      &                   mult_ice,
      &                   costIceStart1, costIceStart2,
      &                   costIceEnd1, costIceEnd2,
+     &                   cost_ice_flag,
      &                   cost_iprec, cost_yftype
 
       _BEGIN_MASTER( myThid )
@@ -191,6 +192,7 @@ c--     Set default values.
         costIceStart2         =      0
         costIceEnd1           =      0
         costIceEnd2           =      0
+        cost_ice_flag         =      1
 
 c--     Check versions.
 

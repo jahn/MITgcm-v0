@@ -1,11 +1,13 @@
-$Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/doc/tag-index,v 1.53.4.32.2.2 2003/03/11 18:20:38 dimitri Exp $
+$Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/doc/tag-index,v 1.53.4.32.2.3 2003/03/29 17:35:57 dimitri Exp $
 
     Notes on tags used in MITgcmUV
     ==============================
 
 Branch icebear
 
-
+29 mar 03 (cvs tag icebear5)
+ Some additional options for pkg/cost/cost_ice.F
+ Updates to verification/natl_box_adjoint
 
 7 mar 03
  Branched off ecco_c44_e27
