@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/eesupp/inc/EEPARAMS.h,v 1.8 2001/02/04 14:38:41 cnh Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/eesupp/inc/EEPARAMS.h,v 1.8.2.1 2001/03/28 17:37:41 adcroft Exp $
 C $Name:  $
 C
 C     /==========================================================\
@@ -111,10 +111,12 @@ C     eeBootError - Flag indicating error during multi-processing
 C     eeEndError    initialisation/termination.
 C     fatalError  - Flag used to indicate that the model is ended with
 C                   an error
-      COMMON /EEPARAMS_L/ eeBootError, fatalError, eeEndError
+      COMMON /EEPARAMS_L/ eeBootError, fatalError, eeEndError,
+     &  useCubedSphereExchange
       LOGICAL eeBootError
       LOGICAL eeEndError
       LOGICAL fatalError
+      LOGICAL useCubedSphereExchange
 
 C--   COMMON /EPARAMS_I/ Execution environment public integer variables.
 C     errorMessageUnit    - Fortran IO unit for error messages

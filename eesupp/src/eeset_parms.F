@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/eesupp/src/eeset_parms.F,v 1.11 2001/02/04 14:38:43 cnh Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/eesupp/src/eeset_parms.F,v 1.11.2.1 2001/03/28 17:37:43 adcroft Exp $
 C $Name:  $
 
 #include "CPP_EEOPTIONS.h"
@@ -36,7 +36,7 @@ C     errIO - IO unit error flag
       INTEGER  ILNBLNK
       EXTERNAL ILNBLNK
       NAMELIST /EEPARMS/
-     & nTx, nTy,usingMPI
+     & nTx, nTy,usingMPI,useCubedSphereExchange
 
 
 C--   For now these options are fixed as the code does
@@ -74,6 +74,7 @@ C     is made.
 C
       notUsingXPeriodicity       = .FALSE.
       notUsingYPeriodicity       = .FALSE.
+      useCubedSphereExchange     = .FALSE.
       usingMPI                   = .FALSE.
       nTx                        = 1
       nTy                        = 1
