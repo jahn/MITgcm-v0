@@ -1,4 +1,4 @@
-c $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/exf/Attic/exf_fields.h,v 1.1.4.6 2003/02/09 15:11:51 dimitri Exp $
+c $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/exf/Attic/exf_fields.h,v 1.1.4.7 2003/05/22 20:49:14 dimitri Exp $
 c
 c
 c     ==================================================================
@@ -139,7 +139,7 @@ c     #ifndef SHORTWAVE_HEATING, hflux includes shortwave,
 c     that is, hflux = latent + sensible + lwflux +swflux
 c
 c     If (EXFwindOnBgrid .EQ. .TRUE.), uwind and vwind are
-c     defined on northeast B-grid U and V points, respectively.
+c     defined on southwest B-grid U and V points, respectively.
 c
 c     Arrays *0 and *1 below are used for temporal interpolation.
 c

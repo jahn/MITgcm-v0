@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/exf/Attic/EXF_CPPOPTIONS.h,v 1.1.4.2 2003/01/12 08:20:09 dimitri Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/exf/Attic/EXF_CPPOPTIONS.h,v 1.1.4.3 2003/05/22 20:49:14 dimitri Exp $
 C
 #include "CPP_OPTIONS.h"
 C 
@@ -76,7 +76,7 @@ c       table below.  The first configuration is the default,
 c       flux-forced, ocean model.  The next four are stand-alone
 c       configurations that use pkg/exf, open-water bulk formulae to
 c       compute the missing surface fluxes from atmospheric variables.
-c       The last two configurations can be used in conjunction with
+c       The last four configurations can be used in conjunction with
 c       pkg/seaice to model ice-covered regions.  The forcing fields
 c       in the rightmost column are defined in exf_fields.
 c
@@ -104,6 +104,15 @@ c         |     |     |     |     |
 c      -  | def |  -  | def |  -  | Read-in ustress, vstress, atemp,
 c         |     |     |     |     | aqh, swflux, lwflux, precip, and
 c         |     |     |     |     | runoff.  Compute hflux and sflux.
+c         |     |     |     |     |
+c     def | def |  -  |  -  | def | Read-in uwind, vwind, atemp, aqh,
+c         |     |     |     |     | swflux, lwflux, precip, runoff,
+c         |     |     |     |     | and evap.
+c         |     |     |     |     |
+c     def | def |  -  | def |  -  | Read-in uwind, vwind, atemp, aqh,
+c         |     |     |     |     | swflux, lwflux, precip, and runoff.
+c         |     |     |     |     | Compute open-water ustress, vstress,
+c         |     |     |     |     | hflux, swflux, and evap.
 c         |     |     |     |     |
 c     def | def | def |  -  | def | Read-in uwind, vwind, atemp, aqh,
 c         |     |     |     |     | swdown, lwdown, precip, runoff,

@@ -1,7 +1,13 @@
-$Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/doc/tag-index,v 1.53.2.37 2003/05/01 18:18:28 dimitri Exp $
+$Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/doc/tag-index,v 1.53.2.38 2003/05/22 20:49:14 dimitri Exp $
 
     Notes on tags used in MITgcmUV
     ==============================
+
+release1_p16
+o fixed gather/scatter inital MPI dialogue in ini_procs.F
+o pkg/seaice/lsr.F has been moved to SouthWest B-grid location
+  and has been made the default dynamic solver because of its
+  fast convergence properties relative to adi.F solver.
 
 release1_p15
 o Added CFC-11 diagnostics, see
@@ -15,7 +21,7 @@ o Added direct pressure solver pkg/solver.
   See pkg/solver/README.directSolver for instructions.
 
 release1_p13
-o bug fix for pkg/seaice dynamic solver
+o bug fix for pkg/seaice/adi.F dynamic solver
 
 release1_p13_pre
 o Added net flux to downward flux conversion to pkg/exf/exf_getffields.F
