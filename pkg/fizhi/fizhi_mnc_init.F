@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/fizhi/fizhi_mnc_init.F,v 1.6 2004/09/28 16:27:42 edhill Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/fizhi/fizhi_mnc_init.F,v 1.7 2004/09/28 19:53:40 edhill Exp $
 C $Name:  $
       
 #include "FIZHI_OPTIONS.h"
@@ -79,7 +79,7 @@ C           Loop just ONCE if the Horiz component is "-"
               ENDIF
             ENDIF
             
-            DO ivert = 1,5
+            DO ivert = 1,2
               DO itime = 1,2
                 
 C               horiz and hsub
