@@ -1,4 +1,4 @@
-c $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/exf/Attic/exf_clim_summary.F,v 1.1.4.3 2002/12/27 08:01:55 dimitri Exp $
+c $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/exf/Attic/exf_clim_summary.F,v 1.1.4.4 2003/01/12 08:20:10 dimitri Exp $
 
 #include "EXF_CPPOPTIONS.h"
 
@@ -13,7 +13,7 @@ c
 c     o List all the settings of the external forcing.
 c
 c     started: Ralf.Giering@FastOpt.de 25-Mai-2000
-c     changed: menemenlis@jpl.nasa.gov 20-Dec-2002
+c     mods for pkg/seaice: menemenlis@jpl.nasa.gov 20-Dec-2002
 c
 c     ==================================================================
 c     SUBROUTINE exf_clim_summary

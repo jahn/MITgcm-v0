@@ -1,7 +1,12 @@
-$Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/doc/tag-index,v 1.53.2.17 2002/12/27 08:01:54 dimitri Exp $
+$Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/doc/tag-index,v 1.53.2.18 2003/01/12 08:20:09 dimitri Exp $
 
     Notes on tags used in MITgcmUV
     ==============================
+
+release1_??? (not taged yet)
+o modifications for using pkg/exf with pkg/seaice
+  - improved description of the various forcing configurations
+  - added basic radiation bulk formulae to pkg/exf
 
 release1_p10
 o modifications for using pkg/exf with pkg/seaice
