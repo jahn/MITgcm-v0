@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/ini_masks_etc.F,v 1.20.2.2 2001/04/09 16:10:33 jmc Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/ini_masks_etc.F,v 1.20.2.3 2001/04/10 13:50:20 adcroft Exp $
 C $Name:  $
 
 #include "CPP_OPTIONS.h"
@@ -177,8 +177,7 @@ C     hFacW and hFacS (at U and V points)
         ENDDO
        ENDDO
       ENDDO
-      _EXCH_XYZ_R4(hFacW , myThid )
-      _EXCH_XYZ_R4(hFacS , myThid )
+      CALL EXCH_UV_XYZ_RL(hFacW,hFacS,.FALSE.,myThid)
 C     Re-do hFacW and hFacS (at U and V points)
       DO bj=myByLo(myThid), myByHi(myThid)
        DO bi=myBxLo(myThid), myBxHi(myThid)
