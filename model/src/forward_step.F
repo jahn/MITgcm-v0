@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/forward_step.F,v 1.23.2.3 2002/05/30 02:47:45 heimbach Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/forward_step.F,v 1.23.2.4 2002/07/11 14:31:52 heimbach Exp $
 C $Name:  $
 
 #include "CPP_OPTIONS.h"
@@ -253,7 +253,6 @@ C--   Check status of solution (statistics, cfl, etc...)
       CALL MONITOR( myIter, myTime, myThid )
 #endif /* EXCLUDE_MONITOR */
 
-#ifndef ALLOW_AUTODIFF_TAMC
 C--   Do IO if needed.
       CALL TIMER_START('DO_THE_MODEL_IO     [THE_MAIN_LOOP]',myThid)
       CALL DO_THE_MODEL_IO( myTime, myIter, myThid )
@@ -276,7 +275,5 @@ C     at time level 1
       CALL WRITE_CHECKPOINT(
      &        .FALSE., myTime, myIter, myThid )
       CALL TIMER_STOP ('WRITE_CHECKPOINT    [THE_MAIN_LOOP]',myThid)
-
-#endif /* ALLOW_AUTODIFF_TAMC */
 
       END
