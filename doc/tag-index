@@ -1,7 +1,29 @@
-$Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/doc/tag-index,v 1.53.2.11 2002/10/23 18:26:35 mlosch Exp $
+$Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/doc/tag-index,v 1.53.2.12 2002/11/07 17:23:42 heimbach Exp $
 
     Notes on tags used in MITgcmUV
     ==============================
+
+next patch:
+o GAD: 
+  - generated new common blocks to account for call of
+    same gad routines with differing traceridentities
+    (needed to modify tracerIdentity indices in GAD.h)
+  - generated separate common blocks for case useCubedSphereExchange
+    (Department of Futurology)
+  - parameter lists to gmredi_?transport: added tracerIdentity
+  - added new key indices to tamc.h
+o external_fields_load:
+  - added this routine to TAF list
+  - needed to make some common blocks global and additional storing
+    along the same lines as exf package (checkpoint_lev?_directives.h)
+o exf:
+  updated external forcing package
+  - bug fixes carried over from ecco-branch
+    (missing OBCS_OPTIONS.h in two routines)
+  - enable easy to use "no forcing".
+  - added exf I/O for atmospheric loading
+  - added exf I/O for runoff data
+  - transfered scaling between exf <-> MITgcm to exf namelist
 
 release1_p6
 o fixed the verification/global_ocean.90x40x15 experiment:
