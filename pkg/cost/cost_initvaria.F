@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/cost/Attic/cost_initvaria.F,v 1.1.2.1 2002/02/05 20:23:57 heimbach Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/cost/Attic/cost_initvaria.F,v 1.1.2.2 2002/02/15 22:27:47 heimbach Exp $
 
 #include "COST_CPPOPTIONS.h"
 
@@ -89,7 +89,7 @@ c--   Initialize the tiled cost function contributions.
         do bi = itlo,ithi
           do j = jmin,jmax
             do i = imin,imax
-#ifdef ALLOW_SSH_MEAN_COST_CONTRIBUTION
+#ifdef ALLOW_SSH_COST_CONTRIBUTION
                if (_hFacC(i,j,k,bi,bj) .eq. 0.) then
                   tpmeanmask(i,j,bi,bj) = 0. _d 0
                else

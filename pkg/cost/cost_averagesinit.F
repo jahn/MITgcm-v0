@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/cost/Attic/cost_averagesinit.F,v 1.1.2.1 2002/02/05 20:23:57 heimbach Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/cost/Attic/cost_averagesinit.F,v 1.1.2.2 2002/02/15 22:27:46 heimbach Exp $
 
 #include "COST_CPPOPTIONS.h"
 
@@ -34,6 +34,7 @@ c     == global variables ==
 #include "SIZE.h"
 
 #include "cost.h"
+#include "ctrl_dummy.h"
 
 c     == routine arguments ==
 
@@ -70,6 +71,8 @@ c--       Initialise surface pressure average.
               psbar(i,j,bi,bj) = 0. _d 0
             enddo
           enddo
+
+          xx_psbar_mean_dummy = 0. _d 0
 #endif
 
 #if (defined (ALLOW_THETA_COST_CONTRIBUTION) || \
@@ -85,6 +88,8 @@ c--       Initialise temperature average (3d).
               enddo
             enddo
           enddo
+
+          xx_tbar_mean_dummy = 0. _d 0
 #endif
 
 #if (defined (ALLOW_SALT_COST_CONTRIBUTION) || \
@@ -99,6 +104,8 @@ c--       Initialise salt average.
               enddo
             enddo
           enddo
+
+          xx_sbar_mean_dummy = 0. _d 0
 #endif
 
 #if (defined (ALLOW_DRIFTER_COST_CONTRIBUTION) || \
@@ -112,6 +119,9 @@ c--       Initialise uvel, vvel average.
               enddo
             enddo
           enddo
+
+          xx_ubar_mean_dummy = 0. _d 0
+          xx_vbar_mean_dummy = 0. _d 0
 #endif
 
         enddo

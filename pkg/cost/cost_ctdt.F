@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/cost/Attic/cost_ctdt.F,v 1.1.2.1 2002/02/05 20:23:57 heimbach Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/cost/Attic/cost_ctdt.F,v 1.1.2.2 2002/02/15 22:27:47 heimbach Exp $
 
 #include "COST_CPPOPTIONS.h"
 
@@ -132,7 +132,7 @@ c--     Read time averages and the monthly mean data.
         call active_read_xy( fnametheta, tbar, irec,
      &          doglobalread, ladinit,
      &          optimcycle, mythid
-     &   , xx_theta_dummy )
+     &   , xx_tbar_mean_dummy )
   
 ce     &                       myiter, mytime )
 
