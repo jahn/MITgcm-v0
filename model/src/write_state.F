@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/write_state.F,v 1.15.4.3 2003/05/01 00:01:15 dimitri Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/write_state.F,v 1.15.4.4 2003/05/02 14:25:29 dimitri Exp $
 C $Name:  $
 #include "CPP_OPTIONS.h"
 
@@ -133,9 +133,6 @@ C         transfer analyse a particular snap-shots
         CALL WRITE_FLD_XYZ_RL( 'T.',suff,theta,myIter,myThid)
         CALL WRITE_FLD_XYZ_RL( 'S.',suff,salt,myIter,myThid)
         CALL WRITE_FLD_XYZ_RL( 'W.',suff,wVel,myIter,myThid)
-#ifdef ALLOW_PASSIVE_TRACER
-        CALL WRITE_FLD_XYZ_RL( 'TR1.',suff,tr1,myIter,myThid)
-#endif
 #endif /* DUMP_STUVW_SNAPSHOTS */
         CALL WRITE_FLD_XY_RL('Eta.',suff,etaN,myIter,myThid)
 #ifdef ALLOW_NONHYDROSTATIC
@@ -155,6 +152,22 @@ C         transfer analyse a particular snap-shots
          _BARRIER
 
       ENDIF
+
+#ifdef ALLOW_PASSIVE_TRACER
+      IF ( 
+     &     DIFFERENT_MULTIPLE(tr1dumpFreq,myCurrentTime,
+     &     myCurrentTime-deltaTClock) .OR. 
+     &     myCurrentTime.EQ.endTime .OR.
+     &     myCurrentTime.EQ.startTime
+     &     ) THEN
+         _BARRIER
+         _BEGIN_MASTER( myThid )
+         WRITE(suff,'(I10.10)') myIter
+         CALL WRITE_FLD_XYZ_RL( 'TR1.',suff,tr1,myIter,myThid)
+         _END_MASTER( myThid )
+         _BARRIER
+      ENDIF
+#endif
 
       RETURN
       END
