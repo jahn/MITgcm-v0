@@ -1,10 +1,15 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/mom_vecinv/Attic/calc_mom_rhs.F,v 1.4 2001/07/31 20:02:24 adcroft Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/mom_vecinv/mom_vecinv.F,v 1.1 2001/08/16 17:16:03 adcroft Exp $
 C $Name:  $
 
 #include "CPP_OPTIONS.h"
 
+      SUBROUTINE MOM_VECINV( 
+     I        bi,bj,iMin,iMax,jMin,jMax,k,kUp,kDown,
+     I        phi_hyd,KappaRU,KappaRV,
+     U        fVerU, fVerV,
+     I        myCurrentTime, myThid)
 C     /==========================================================\
-C     | S/R CALC_MOM_RHS                                         |
+C     | S/R MOM_VECINV                                           |
 C     | o Form the right hand-side of the momentum equation.     |
 C     |==========================================================|
 C     | Terms are evaluated one layer at a time working from     |
@@ -18,12 +23,6 @@ C     | form produces a diffusive flux that does not scale with  |
 C     | open-area. Need to do something to solidfy this and to   |
 C     | deal "properly" with thin walls.                         |
 C     \==========================================================/
-      SUBROUTINE CALC_MOM_RHS( 
-     I        bi,bj,iMin,iMax,jMin,jMax,k,kUp,kDown,
-     I        phi_hyd,KappaRU,KappaRV,
-     U        fVerU, fVerV,
-     I        myCurrentTime, myThid)
-
       IMPLICIT NONE
 
 C     == Global variables ==
