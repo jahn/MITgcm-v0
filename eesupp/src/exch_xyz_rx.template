@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/eesupp/src/exch_xyz_rx.template,v 1.1.2.2 2001/04/02 20:03:21 adcroft Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/eesupp/src/exch_xyz_rx.template,v 1.1.2.3 2001/04/12 10:52:48 cnh Exp $
 C $Name:  $
 
 #include "CPP_EEOPTIONS.h"
@@ -63,7 +63,6 @@ C                However, the slow, simple exchange interface
 C                that is calling it here is meant to ensure 
 C                that threads are synchronised before exchanges
 C                begine.
-      _BARRIER
       IF (useCubedSphereExchange) THEN
        CALL EXCH_RX_CUBE( phi,
      I            OLw, OLe, OLs, OLn, myNz,
@@ -75,7 +74,6 @@ C                begine.
      I            exchWidthX, exchWidthY,
      I            FORWARD_SIMULATION, EXCH_UPDATE_CORNERS, myThid )
       ENDIF
-      _BARRIER
 
       RETURN
       END

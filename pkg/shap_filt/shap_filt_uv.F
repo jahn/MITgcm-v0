@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/shap_filt/Attic/shap_filt_uv.F,v 1.3.2.1 2001/04/09 18:35:14 adcroft Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/shap_filt/Attic/shap_filt_uv.F,v 1.3.2.2 2001/04/12 10:52:50 cnh Exp $
 C $Name:  $
 
 #include "SHAP_FILT_OPTIONS.h"
@@ -18,6 +18,9 @@ C     == Global variables ===
 #include "EEPARAMS.h"
 #include "PARAMS.h"
 #include "GRID.h"
+#ifdef ALLOW_SHAP_FILT
+#include "SHAP_FILT_UV.h"
+#endif
 
 C     == Routine arguments
       _RL uFld(1-OLx:sNx+OLx,1-OLy:sNy+OLy,Nr,nSx,nSy)
@@ -29,8 +32,6 @@ C     == Routine arguments
 
 C     == Local variables ==
       INTEGER bi,bj,K,I,J,N
-      _RL tmpFldU(1-OLx:sNx+OLx,1-OLy:sNy+OLy,Nr,nSx,nSy)
-      _RL tmpFldV(1-OLx:sNx+OLx,1-OLy:sNy+OLy,Nr,nSx,nSy)
       _RL tmpGrdU(1-OLx:sNx+OLx,1-OLy:sNy+OLy)
       _RL tmpGrdV(1-OLx:sNx+OLx,1-OLy:sNy+OLy)
       _RL maskZj,maskZp

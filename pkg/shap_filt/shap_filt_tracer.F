@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/shap_filt/Attic/shap_filt_tracer.F,v 1.3 2001/02/04 14:38:50 cnh Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/shap_filt/Attic/shap_filt_tracer.F,v 1.3.2.1 2001/04/12 10:52:50 cnh Exp $
 C $Name:  $
 
 #include "SHAP_FILT_OPTIONS.h"
@@ -18,6 +18,9 @@ C     == Global variables ===
 #include "EEPARAMS.h"
 #include "PARAMS.h"
 #include "GRID.h"
+#ifdef ALLOW_SHAP_FILT
+#include "SHAP_FILT_TRACER.h"
+#endif
 
 C     == Routine arguments
       _RL field(1-OLx:sNx+OLx,1-OLy:sNy+OLy,Nr,nSx,nSy)
@@ -28,7 +31,6 @@ C     == Routine arguments
 
 C     == Local variables ==
       INTEGER bi,bj,K,I,J,N
-      _RL tmpFld(1-OLx:sNx+OLx,1-OLy:sNy+OLy,Nr,nSx,nSy)
       _RL tmpGrd(1-OLx:sNx+OLx,1-OLy:sNy+OLy)
 #ifndef SEQUENTIAL_2D_SHAP
       _RL tmpScal

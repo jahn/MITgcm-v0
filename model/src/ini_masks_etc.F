@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/ini_masks_etc.F,v 1.20.2.4 2001/04/10 13:52:15 adcroft Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/ini_masks_etc.F,v 1.20.2.5 2001/04/12 10:52:49 cnh Exp $
 C $Name:  $
 
 #include "CPP_OPTIONS.h"
@@ -131,8 +131,8 @@ C - end bi,bj loops.
        ENDDO
       ENDDO
 
-      CALL PLOT_FIELD_XYRS( tmpfld, 
-     &         'Model Depths K Index' , 1, myThid )
+C     CALL PLOT_FIELD_XYRS( tmpfld, 
+C    &         'Model Depths K Index' , 1, myThid )
       CALL PLOT_FIELD_XYRS(R_low, 
      &         'Model R_low (ini_masks_etc)', 1, myThid)
       CALL PLOT_FIELD_XYRS(Ro_surf, 
