@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/thermodynamics.F,v 1.13.2.3 2002/04/08 20:27:12 heimbach Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/thermodynamics.F,v 1.13.2.4 2002/04/17 01:40:26 heimbach Exp $
 C $Name:  $
 
 #include "CPP_OPTIONS.h"
@@ -377,6 +377,11 @@ CADJ &     = comlev1_bibj, key=ikey, byte=isbyte
 
 #ifdef  ALLOW_GMREDI
 
+#ifdef ALLOW_AUTODIFF_TAMC
+CADJ STORE sigmaX(:,:,k)        = comlev1_bibj_k, key=kkey, byte=isbyte
+CADJ STORE sigmaY(:,:,k)        = comlev1_bibj_k, key=kkey, byte=isbyte
+CADJ STORE sigmaR(:,:,k)        = comlev1_bibj_k, key=kkey, byte=isbyte
+#endif /* ALLOW_AUTODIFF_TAMC */
 C--     Calculate iso-neutral slopes for the GM/Redi parameterisation
         IF (useGMRedi) THEN
           CALL GMREDI_CALC_TENSOR(
