@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/ecco/Attic/ecco_the_main_loop.F,v 1.1.2.18 2003/06/19 15:27:25 heimbach Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/ecco/Attic/ecco_the_main_loop.F,v 1.1.2.19 2003/06/23 23:35:56 heimbach Exp $
 
 #include "CPP_OPTIONS.h"
 #ifdef ALLOW_OBCS
@@ -736,14 +736,8 @@ c--   Compute initial vs. final T/S deviation
 
 c--   Sum all cost function contributions.
       call timer_start('COST_FINAL         [ECCO SPIN-DOWN]', mythid)
-      call cost_Final( mythid )
+      call cost_final( mythid )
       call timer_stop ('COST_FINAL         [ECCO SPIN-DOWN]', mythid)
-
-c--   Finalize the average fields used for the cost function
-c--   evaluation.
-      call timer_start('COST_AVERAGESFINAL [ECCO SPIN-DOWN]', mythid)
-      call cost_AveragesFinal( mythid )
-      call timer_stop ('COST_AVERAGESFINAL [ECCO SPIN-DOWN]', mythid)
 
 #endif /* ALLOW_COST */
 

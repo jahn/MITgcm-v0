@@ -1,12 +1,12 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/cost/Attic/cost_init.F,v 1.2.6.6 2003/06/20 05:30:14 heimbach Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/cost/Attic/cost_init_fixed.F,v 1.1.2.1 2003/06/23 23:35:56 heimbach Exp $
 
 #include "COST_CPPOPTIONS.h"
 
 
-      subroutine cost_init( mythid )
+      subroutine cost_init_fixed( mythid )
 
 c     ==================================================================
-c     SUBROUTINE cost_Init
+c     SUBROUTINE cost_init_fixed
 c     ==================================================================
 c
 c     o Set contributions to the cost function and the cost function
@@ -25,7 +25,7 @@ c
 c              - move namelist reading to cost_readparms.F
 c
 c     ==================================================================
-c     SUBROUTINE cost_Init
+c     SUBROUTINE cost_init_fixed
 c     ==================================================================
 
       implicit none
