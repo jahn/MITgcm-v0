@@ -1,6 +1,7 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/ecco/ecco_cost_init_fixed.F,v 1.1 2003/11/06 22:10:08 heimbach Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/ecco/ecco_cost_init_fixed.F,v 1.2 2003/11/17 22:32:33 heimbach Exp $
 
 #include "PACKAGES_CONFIG.h"
+#include "AD_CONFIG.h"
 #include "COST_CPPOPTIONS.h"
 
       subroutine ecco_cost_init_fixed( mythid )
