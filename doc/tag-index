@@ -1,4 +1,4 @@
-$Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/doc/tag-index,v 1.53.2.31 2003/02/25 06:34:57 dimitri Exp $
+$Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/doc/tag-index,v 1.53.2.32 2003/02/27 22:29:13 dimitri Exp $
 
     Notes on tags used in MITgcmUV
     ==============================
@@ -6,6 +6,7 @@ $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/doc/t
 untagged
 o Added net flux to downward flux conversion to pkg/exf/exf_getffields.F
 o Added SEAICE_initialHEFF to pkg/seaice
+o SEAICE_WRITE_PICKUP needs to be called before WRITE_CHECKPOINT
 
 release1_p12
 o Added missing /* */ to CPP comments in pkg/seaice, pkg/exf,
