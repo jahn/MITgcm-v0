@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/ctrl/Attic/ctrl_getsaltflux.F,v 1.1.2.1 2002/02/05 20:23:58 heimbach Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/ctrl/Attic/ctrl_getsaltflux.F,v 1.1.2.2 2002/03/25 22:50:46 heimbach Exp $
 
 #include "CTRL_CPPOPTIONS.h"
 
@@ -108,38 +108,20 @@ c--   Get the counters, flags, and the interpolation factor.
      O                  sflcount0,sflcount1,
      I                  mytime, myiter, mythid )
 
-        call active_read_xy( fnamesfl, tmpfld2d, sflcount0,
+      if ( sflfirst ) then
+       call active_read_xy( fnamesfl, xx_sflux1, sflcount0,
+     &                      doglobalread, ladinit, optimcycle,
+     &                      mythid, xx_sflux_dummy )
+      endif
+
+
+       if (( sflfirst ) .or. ( sflchanged )) then
+        call exf_SwapFFields( xx_sflux0, xx_sflux1, mythid )
+
+        call active_read_xy( fnamesfl,xx_sflux1 , sflcount1,
      &                       doglobalread, ladinit, optimcycle,
      &                       mythid, xx_sflux_dummy )
-
-ce      myiter, mytime )
-
-
-        do bj = jtlo,jthi
-          do bi = itlo,ithi
-            do j = jmin,jmax
-              do i = imin,imax
-                xx_sflux0(i,j,bi,bj)  = tmpfld2d (i,j,bi,bj)
-              enddo
-            enddo
-          enddo
-        enddo
-
-        call active_read_xy( fnamesfl, tmpfld2d, sflcount1,
-     &                       doglobalread, ladinit, optimcycle,
-     &                       mythid, xx_sflux_dummy )
-
-ce      myiter, mytime )
-
-        do bj = jtlo,jthi
-          do bi = itlo,ithi
-            do j = jmin,jmax
-              do i = imin,imax
-                xx_sflux1 (i,j,bi,bj) = tmpfld2d (i,j,bi,bj)
-              enddo
-            enddo
-          enddo
-        enddo
+      endif
 
 c--   Add control to model variable.
         do bj = jtlo,jthi

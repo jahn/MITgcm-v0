@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/ecco/Attic/ecco_init.F,v 1.1.6.1 2002/02/05 20:23:58 heimbach Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/ecco/Attic/ecco_init.F,v 1.1.6.2 2002/03/25 22:50:46 heimbach Exp $
 
 #include "CPP_OPTIONS.h"
 
@@ -55,6 +55,7 @@ c--   Initialise the time averages.
       call cost_AveragesInit( mythid )
 
 c--   Map the control variables onto the model state. 
+      call ctrl_init_variables ( mythid )
       call ctrl_map( mythid )
       _BARRIER
 #endif

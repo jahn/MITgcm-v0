@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/ctrl/Attic/ctrl_getmerstress.F,v 1.1.2.1 2002/02/05 20:23:58 heimbach Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/ctrl/Attic/ctrl_getmerstress.F,v 1.1.2.2 2002/03/25 22:50:46 heimbach Exp $
 
 #include "CTRL_CPPOPTIONS.h"
 
@@ -108,37 +108,19 @@ c--   Get the counters, flags, and the interpolation factor.
      O                  vstcount0,vstcount1,
      I                  mytime, myiter, mythid )
 
-        call active_read_xy( fnamevst, tmpfld2d, vstcount0,
+      if ( vstfirst ) then
+       call active_read_xy( fnamevst, xx_tauv1, vstcount0,
+     &                      doglobalread, ladinit, optimcycle,
+     &                      mythid, xx_tauv_dummy )
+      endif
+
+       if (( vstfirst ) .or. ( vstchanged )) then
+        call exf_SwapFFields( xx_tauv0, xx_tauv1, mythid )
+
+        call active_read_xy( fnamevst,xx_tauv1 , vstcount1,
      &                       doglobalread, ladinit, optimcycle,
      &                       mythid, xx_tauv_dummy )
-
-ce      myiter, mytime )
-
-        do bj = jtlo,jthi
-          do bi = itlo,ithi
-            do j = jmin,jmax
-              do i = imin,imax
-                xx_tauv0(i,j,bi,bj)  = tmpfld2d (i,j,bi,bj)
-              enddo
-            enddo
-          enddo
-        enddo
-
-        call active_read_xy( fnamevst, tmpfld2d, vstcount1,
-     &                       doglobalread, ladinit, optimcycle,
-     &                       mythid, xx_tauv_dummy )
-
-ce      myiter, mytime )
-
-        do bj = jtlo,jthi
-          do bi = itlo,ithi
-            do j = jmin,jmax
-              do i = imin,imax
-                xx_tauv1 (i,j,bi,bj) = tmpfld2d (i,j,bi,bj)
-              enddo
-            enddo
-          enddo
-        enddo
+      endif
 
 c--   Add control to model variable.
         do bj = jtlo,jthi
