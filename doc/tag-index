@@ -1,7 +1,11 @@
-$Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/doc/tag-index,v 1.53.4.42 2003/05/30 12:47:19 heimbach Exp $
+$Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/doc/tag-index,v 1.53.4.43 2003/06/17 20:48:22 dimitri Exp $
 
     Notes on tags used in MITgcmUV
     ==============================
+
+untagged:
+o minor changes to pkg/seaice pkg/cost/cost_ice.F
+  and verification/natl_box_adjoint/README
 
 ecco_c50_e32
 o Patrick's adjoint-model storage directives for pkg/seaice

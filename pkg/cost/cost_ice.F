@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/cost/Attic/cost_ice.F,v 1.1.2.2 2003/04/30 08:23:07 dimitri Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/cost/Attic/cost_ice.F,v 1.1.2.3 2003/06/17 20:48:22 dimitri Exp $
 
 #include "COST_CPPOPTIONS.h"
 
@@ -34,6 +34,11 @@ c
 c     cost_ice_flag = 5
 c     - heat content of top level plus sea-ice plus latent heat of snow
 c       costIceStart < mytime < costIceEnd
+c
+c     cost_ice_flag = 6
+c     - quadratic cost function measuring difference between pkg/seaice
+c       AREA variable and simulated sea-ice measurements at every time
+c       step.
 c
 c     ==================================================================
 c
@@ -177,6 +182,23 @@ c     heat content of top level plus sea-ice plus latent heat of snow
                enddo
               enddo
              enddo
+            enddo
+
+         elseif ( cost_ice_flag .eq. 6 ) then
+c     Qadratic cost function measuring difference between pkg/seaice
+c     AREA variable and simulated sea-ice measurements at every time
+c     step.  For time being no measurements are read-in.  It is
+c     assumed that measurements are AREA=0.5 at all times everywhere.
+            do bj=myByLo(myThid),myByHi(myThid)
+               do bi=myBxLo(myThid),myBxHi(myThid)
+                  do j = 1,sny
+                     do i =  1,snx
+                        objf_ice(bi,bj) = objf_ice(bi,bj) +
+     &                       ( AREA(i,j,1,bi,bj) - 0.5 ) *
+     &                       ( AREA(i,j,1,bi,bj) - 0.5 )
+                     enddo
+                  enddo
+               enddo
             enddo
 
          else
