@@ -1,12 +1,14 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/thermodynamics.F,v 1.13.2.4 2002/04/17 01:40:26 heimbach Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/thermodynamics.F,v 1.13.2.5 2002/05/30 02:51:24 heimbach Exp $
 C $Name:  $
 
 #include "CPP_OPTIONS.h"
-#ifdef ALLOW_GMREDI
-# include "GMREDI_OPTIONS.h"
-#endif
-#ifdef ALLOW_KPP
-# include "KPP_OPTIONS.h"
+#ifdef ALLOW_AUTODIFF_TAMC
+# ifdef ALLOW_GMREDI
+#  include "GMREDI_OPTIONS.h"
+# endif
+# ifdef ALLOW_KPP
+#  include "KPP_OPTIONS.h"
+# endif
 #endif
 
 CBOP
@@ -257,9 +259,9 @@ C This is currently also used by IVDC and Diagnostics
          ENDDO
         ENDDO
 
-        iMin = 1-OLx+1
+        iMin = 1-OLx
         iMax = sNx+OLx
-        jMin = 1-OLy+1
+        jMin = 1-OLy
         jMax = sNy+OLy
 
 
@@ -299,6 +301,10 @@ C--       Apply OBC to W if in N-H mode
           ENDIF
 #endif    /* ALLOW_NONHYDROSTATIC */
 #endif    /* ALLOW_OBCS */
+
+C--       Attention: by defining "SINGLE_LAYER_MODE" in CPP_OPTIONS.h 
+C--       MOST of THERMODYNAMICS will be disabled
+#ifndef SINGLE_LAYER_MODE
 
 C--       Calculate gradients of potential density for isoneutral
 C         slope terms (e.g. GM/Redi tensor or IVDC diffusivity)
@@ -341,6 +347,8 @@ c ==> should use sigmaR !!!
      I        myTime, myIter, myThid)
           ENDIF
 
+#endif /* SINGLE_LAYER_MODE */
+
 C--     end of diagnostic k loop (Nr:1)
         ENDDO
 
@@ -374,6 +382,10 @@ CADJ &     = comlev1_bibj, key=ikey, byte=isbyte
 CADJ STORE surfacetendencyT(:,:,bi,bj)
 CADJ &     = comlev1_bibj, key=ikey, byte=isbyte
 #endif /* ALLOW_AUTODIFF_TAMC */
+
+C--     Attention: by defining "SINGLE_LAYER_MODE" in CPP_OPTIONS.h 
+C--     MOST of THERMODYNAMICS will be disabled
+#ifndef SINGLE_LAYER_MODE
 
 #ifdef  ALLOW_GMREDI
 
@@ -656,6 +668,8 @@ C--      Apply open boundary conditions
 
 C--     End If implicitDiffusion
         ENDIF
+
+#endif /* SINGLE_LAYER_MODE */
 
 Ccs-
        ENDDO
