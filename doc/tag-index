@@ -1,10 +1,18 @@
-$Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/doc/tag-index,v 1.53.2.3 2002/04/08 20:27:12 heimbach Exp $
+$Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/doc/tag-index,v 1.53.2.4 2002/04/17 01:48:17 heimbach Exp $
 
     Notes on tags used in MITgcmUV
     ==============================
 
-release1_p1
+release1_p2
+o fixed array boundary problem for adjoint
+  (related to partial recomputation within subroutine
+  related to dynamics -> calc_viscosity -> mom_...
+o fixed recomputation in thermodynamics
+o prepare (but not complete) recomputation problem in impldiff
+o fixed problem for adjoint of global_max
+o switched off sponge layer code in external_forcing
 
+release1_p1
 o merged necessary patches:
   - AD-related changes for GMRedi
   - fixes i KPP (delZ -> drF)
