@@ -1,11 +1,9 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/cost/Attic/cost_init.F,v 1.2.6.3 2002/04/04 10:58:58 heimbach Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/cost/Attic/cost_init.F,v 1.2.6.4 2003/03/04 21:04:38 heimbach Exp $
 
 #include "COST_CPPOPTIONS.h"
 
 
-      subroutine cost_Init(
-     I                      mythid
-     &                    )
+      subroutine cost_init( mythid )
 
 c     ==================================================================
 c     SUBROUTINE cost_Init
@@ -46,6 +44,8 @@ c     == routine arguments ==
 
 c     == local variables ==
 
+      logical exst
+
 c     == external functions ==
 
       integer  cal_IntMonths
@@ -66,7 +66,14 @@ c--   function contributions.
 
 c--   Initialise adjoint of monthly mean files calculated
 c--   in cost_averagesfields (and their ad...).
-      call cost_init_barfiles( mythid )
+cph(
+cph   The following init. shoud not be applied if in the middle
+cph   of a divided adjoint run
+cph)
+      inquire( file='costfinal', exist=exst )
+      if ( .NOT. exst) then
+         call cost_init_barfiles( mythid )
+      endif
 
 c--   Summarize the cost function's setup.
       _BEGIN_MASTER( mythid )
