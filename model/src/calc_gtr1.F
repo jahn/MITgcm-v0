@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/Attic/calc_gtr1.F,v 1.6 2001/09/26 18:09:14 cnh Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/Attic/calc_gtr1.F,v 1.6.4.1 2002/07/18 23:37:55 jmc Exp $
 C $Name:  $
 
 #include "CPP_OPTIONS.h"
@@ -26,7 +26,9 @@ C     == GLobal variables ==
 #include "EEPARAMS.h"
 #include "PARAMS.h"
 #include "GAD.h"
+#ifdef ALLOW_PASSIVE_TRACER
 #include "TR1.h"
+#endif
 
 C     !INPUT/OUTPUT PARAMETERS:
 C     == Routine arguments ==
@@ -56,6 +58,8 @@ C     myThid - Instance number for this innvocation of CALC_GT
       INTEGER myThid
 
 CEOP
+
+#ifdef ALLOW_PASSIVE_TRACER
 
 #ifdef ALLOW_AUTODIFF_TAMC
 C--   only the kUp part of fverT is set in this subroutine
@@ -95,6 +99,8 @@ C--   External thermal forcing term(s)
      I                          myThid )
       ENDIF
 #endif /* NONLIN_FRSURF */
+
+#endif /* ALLOW_PASSIVE_TRACER */
 
       RETURN
       END
