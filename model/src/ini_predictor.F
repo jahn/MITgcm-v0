@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/Attic/ini_precdictor.F,v 1.1 1998/06/30 17:21:10 cnh Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/Attic/ini_predictor.F,v 1.2 1998/08/20 16:28:44 cnh Exp $
 
 #include "CPP_EEOPTIONS.h"
 
