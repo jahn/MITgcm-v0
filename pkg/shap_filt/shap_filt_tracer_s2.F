@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/shap_filt/shap_filt_tracer_s2.F,v 1.1.2.1 2001/05/02 20:35:58 adcroft Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/shap_filt/shap_filt_tracer_s2.F,v 1.1.2.2 2001/05/07 16:29:08 adcroft Exp $
 C $Name:  $
 
 #include "SHAP_FILT_OPTIONS.h"
@@ -64,7 +64,7 @@ C      ( d_xx +d_yy )^n tmpFld
      &        ( tmpFld(i+1,j,k,bi,bj)-tmpFld( i ,j,k,bi,bj) )
      &            *_maskW(i+1,j,k,bi,bj)
      &       -( tmpFld( i ,j,k,bi,bj)-tmpFld(i-1,j,k,bi,bj) )
-     &            *_maskW( j ,j,k,bi,bj) 
+     &            *_maskW( i ,j,k,bi,bj) 
      &       +( tmpFld(i,j+1,k,bi,bj)-tmpFld(i, j ,k,bi,bj) )
      &            *_maskS(i,j+1,k,bi,bj)
      &       -( tmpFld(i, j ,k,bi,bj)-tmpFld(i,j-1,k,bi,bj) )
