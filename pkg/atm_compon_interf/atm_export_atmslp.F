@@ -1,14 +1,14 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/atm_compon_interf/Attic/atm_export_qsensible.F,v 1.1 2003/12/15 02:44:48 jmc Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/atm_compon_interf/Attic/atm_export_atmslp.F,v 1.1 2004/05/21 19:59:38 jmc Exp $
 C $Name:  $  
 
 #include "CPP_OPTIONS.h"
 
 CStartOfInterface
-      SUBROUTINE ATM_EXPORT_QSENSIBLE( myThid )
+      SUBROUTINE ATM_EXPORT_ATMSLP( myThid )
 C     /==========================================================\
-C     | SUBROUTINE ATM_EXPORT_QSENSIBLE                          |
-C     | o Routine for exporting sensible heat flux               |
-C     |   lower boundary to coupling layer.                      |
+C     | SUBROUTINE ATM_EXPORT_ATMSLP                             |
+C     | o Routine for exporting atmos. Sea Level Pressure        |
+C     |   to coupling layer.                                     |
 C     |==========================================================|
 C     | This version talks to the MIT Coupler. It uses the MIT   |
 C     | Coupler "checkpoint1" library calls.                     |
@@ -38,35 +38,35 @@ C     bi, bj   ::
       INTEGER bi
       INTEGER bj
 
-C     Convert time integrated flux to mean value ready for
+C     Convert time integrated heatflux to mean value ready for
 C     export.
-       DO bj=myByLo(myThid),myByHi(myThid)
-        DO bi=myBxLo(myThid),myBxHi(myThid)
-        IF ( ABS(QsensibleTime(bi,bj) -1. _d 0).GT. 1. _d -12
-     &     .AND. QsensibleTime(bi,bj) .NE. 0. ) THEN
-         recipAvT = 1. _d 0/QsensibleTime(bi,bj)
+      DO bj=myByLo(myThid),myByHi(myThid)
+       DO bi=myBxLo(myThid),myBxHi(myThid)
+        IF ( ABS(atmSLPrTime(bi,bj) -1. _d 0).GT. 1. _d -12
+     &     .AND. atmSLPrTime(bi,bj) .NE. 0. ) THEN 
+         recipAvT = 1. _d 0/atmSLPrTime(bi,bj)
          DO J=1,sNy
           DO I=1,sNx
-           Qsensible(I,J,bi,bj) = Qsensible(I,J,bi,bj)*recipAvT
+           atmSLPr(I,J,bi,bj) = atmSLPr(I,J,bi,bj)*recipAvT
           ENDDO
          ENDDO
-         WRITE(errorMessageUnit,*)'ATM_EXPORT_QSENSIBLE: 1-CountTime=',
-     &                             bi,bj,1.-QsensibleTime(bi,bj)
+         WRITE(errorMessageUnit,*)'ATM_EXPORT_ATMSLP: 1-CountTime=',
+     &                             bi,bj,1.-atmSLPrTime(bi,bj)
         ENDIF
        ENDDO
       ENDDO
 
-C     o Send zonal momentum flux to coupling layer.
-      CALL COMPSEND_R8TILES( atmQsensibleName,
-     I     sNx, OLx, sNy, OLy, 1, nSx, nSy, Qsensible )
+C     o Send freshwater flux to coupling layer.
+      CALL COMPSEND_R8TILES( atmSLPrName,
+     I     sNx, OLx, sNy, OLy, 1, nSx, nSy, atmSLPr )
 
-C     Reset flux to start accumulating again.
+C     Reset fresh water flux to start accumulating again.
       DO bj=myByLo(myThid),myByHi(myThid)
        DO bi=myBxLo(myThid),myBxHi(myThid)
-        QsensibleTime(bi,bj) = 0.
+        atmSLPrTime(bi,bj) = 0.
         DO J=1,sNy
          DO I=1,sNx
-          Qsensible(I,J,bi,bj) = 0.
+          atmSLPr(I,J,bi,bj) = 0.
          ENDDO
         ENDDO
        ENDDO
