@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/dynamics.F,v 1.54.2.12 2001/01/30 21:02:59 adcroft Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/dynamics.F,v 1.54.2.13 2001/01/31 16:14:04 jmc Exp $
 
 #include "CPP_OPTIONS.h"
 
@@ -185,6 +185,7 @@ C     uninitialised but inert locations.
         uTrans(i,j)  = 0. _d 0
         vTrans(i,j)  = 0. _d 0
         DO k=1,Nr
+         phiHyd(i,j,k)  = 0. _d 0 
          KappaRU(i,j,k) = 0. _d 0
          KappaRV(i,j,k) = 0. _d 0
          sigmaX(i,j,k) = 0. _d 0
@@ -369,6 +370,15 @@ CADJ STORE uvel (:,:,:,bi,bj) = comlev1_bibj, key = ikey, byte = isbyte
 CADJ STORE vvel (:,:,:,bi,bj) = comlev1_bibj, key = ikey, byte = isbyte
 #endif /* ALLOW_AUTODIFF_TAMC */
 
+#ifdef ALLOW_AIM
+C       AIM - atmospheric intermediate model, physics package code.
+C note(jmc) : phiHyd=0 at this point but is not really used in Molteni Physics
+        IF ( useAIM ) THEN
+         CALL TIMER_START('AIM_DO_ATMOS_PHYS      [DYNAMICS]', myThid)
+         CALL AIM_DO_ATMOS_PHYSICS( phiHyd, myTime, myThid )
+         CALL TIMER_STOP ('AIM_DO_ATMOS_PHYS      [DYNAMICS]', myThid)
+        ENDIF
+#endif /* ALLOW_AIM */
 
 
 C--     Start of thermodynamics loop
