@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/initialise_varia.F,v 1.4 2000/11/13 16:32:58 heimbach Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/initialise_varia.F,v 1.4.2.1 2001/01/04 21:41:33 adcroft Exp $
 
 #include "CPP_OPTIONS.h"
 
@@ -27,9 +27,7 @@ C     == Routine arguments ==
 CEndOfInterface
 
 C     == Local variables ==
-#ifdef ALLOW_OBCS
-      INTEGER bi,bj,K
-#endif
+      INTEGER bi,bj,K,iMin,iMax,jMin,jMax
 
 C--   Initialise model fields.
 C     Starting values of U, V, W, temp., salt. and tendency terms
@@ -38,9 +36,19 @@ C     stored files.
       CALL INI_FIELDS( myThid )
       _BARRIER
 
-C--   Initialise time-stepping (predictor variables are carried in G)
+C--   Initial conditions are convectively adjusted (for historical reasons)
       IF ( startTime .EQ. 0. ) THEN
-        CALL INI_PREDICTOR( myThid )
+        DO bj = myByLo(myThid), myByHi(myThid)
+         DO bi = myBxLo(myThid), myBxHi(myThid)
+           iMin=1-Olx
+           iMax=sNx+Olx
+           jMin=1-Oly
+           jMax=sNy+Oly
+           CALL CONVECTIVE_ADJUSTMENT(
+     I       bi, bj, iMin, iMax, jMin, jMax,
+     I       startTime, 0, myThid )
+         ENDDO
+        ENDDO
         _BARRIER
       END IF
 
