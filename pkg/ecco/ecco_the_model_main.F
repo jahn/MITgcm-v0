@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/ecco/Attic/ecco_the_model_main.F,v 1.1.2.2 2002/02/06 22:55:38 heimbach Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/ecco/Attic/ecco_the_model_main.F,v 1.1.2.3 2003/02/16 04:56:24 dimitri Exp $
 C $Name:  $
 
 #include "CPP_OPTIONS.h"
@@ -115,6 +115,13 @@ C--   Final checkpoint (incase the in-loop checkpoint was missed)
       CALL WRITE_CHECKPOINT(
      &        .TRUE., myCurrentTime, myCurrentIter, myThid )
       CALL TIMER_STOP ('WRITE_CHECKPOINT   [THE_MODEL_MAIN]',myThid)
+
+C--   Sea-ice checkpoint (special request by a fussy user)
+#ifdef ALLOW_SEAICE
+      IF ( useSEAICE )
+     &     CALL SEAICE_WRITE_PICKUP(
+     &     .TRUE., myCurrentTime, myCurrentIter, myThid )
+#endif
 
       CALL TIMER_STOP ('ALL                [THE_MODEL_MAIN]',myThid)
 

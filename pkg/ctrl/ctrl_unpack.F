@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/ctrl/ctrl_unpack.F,v 1.4.6.3 2002/05/30 19:56:44 heimbach Exp $
+ $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/ctrl/ctrl_unpack.F,v 1.4.6.4 2003/02/16 04:56:24 dimitri Exp $
 
 #include "CTRL_CPPOPTIONS.h"
 
@@ -160,6 +160,8 @@ c     == end of interface ==
 #ifndef ALLOW_ECCO_OPTIMIZATION
       optimcycle = 0
 #endif
+
+      tmpvar = 0. _d 0
 
 c--   Check if this is the first model time step.
       if ( mytime .lt. modelstart + 0.5*modelstep ) then
