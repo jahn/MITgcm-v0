@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/Attic/the_correction_step.F,v 1.1.2.1 2001/01/04 21:41:33 adcroft Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/Attic/the_correction_step.F,v 1.1.2.2 2001/01/09 21:26:07 adcroft Exp $
 C Tag $Name:  $
 
 #include "CPP_OPTIONS.h"
@@ -36,10 +36,6 @@ C     myThid - Thread number for this instance of the routine.
 C     == Local variables
       _RL etaSurfX(1-OLx:sNx+OLx,1-OLy:sNy+OLy)
       _RL etaSurfY(1-OLx:sNx+OLx,1-OLy:sNy+OLy)
-#ifdef INCLUDE_CONVECT_CALL
-      _RL rhoKm1  (1-OLx:sNx+OLx,1-OLy:sNy+OLy)
-      _RL rhoK    (1-OLx:sNx+OLx,1-OLy:sNy+OLy)
-#endif
       INTEGER iMin,iMax
       INTEGER jMin,jMax
       INTEGER bi,bj
@@ -108,7 +104,9 @@ CADJ STORE vvel (:,:,k,bi,bj) = comlev1_bibj, key = ikey, byte = isbyte
 CADJ STORE theta(:,:,k,bi,bj) = comlev1_bibj, key = ikey, byte = isbyte
 CADJ STORE salt (:,:,k,bi,bj) = comlev1_bibj, key = ikey, byte = isbyte
 #endif /* ALLOW_AUTODIFF_TAMC */
-          IF (openBoundaries) CALL APPLY_OBCS1(bi,bj,K,myThid)
+          IF (openBoundaries) THEN
+            CALL OBCS_APPLY_UV(bi,bj,K,uVel,vVel,myThid)
+          ENDIF
 #endif    /* ALLOW_OBCS */
 
 C--     End DO K=1,Nr

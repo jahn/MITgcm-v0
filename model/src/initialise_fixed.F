@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/initialise_fixed.F,v 1.3 2000/09/11 23:05:56 heimbach Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/initialise_fixed.F,v 1.3.2.1 2001/01/09 21:26:07 adcroft Exp $
 
 #include "CPP_OPTIONS.h"
 
@@ -28,9 +28,6 @@ C     == Routine arguments ==
 CEndOfInterface
 
 C     == Local variables ==
-#ifdef ALLOW_OBCS
-      INTEGER bi,bj,K
-#endif
 
 C--   Set model parameters.
 C     Parameters are set to defaults and then updates are read from
@@ -40,7 +37,9 @@ C     an input file called data.
 
 #ifdef ALLOW_OBCS
 C--   Open boundaries positions
-      CALL INI_OBCS( myThid )
+      IF (openBoundaries) THEN
+        CALL OBCS_INIT( myThid )
+      ENDIF
 #endif
       _BARRIER
 

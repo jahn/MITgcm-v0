@@ -1,12 +1,12 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/Attic/set_obcs.F,v 1.8 2000/09/11 20:49:33 heimbach Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/Attic/obcs_calc.F,v 1.1.2.1 2001/01/09 21:26:07 adcroft Exp $
 
 #include "CPP_OPTIONS.h"
 
-CStartOfInterface
-      SUBROUTINE SET_OBCS( K, bi, bj, myCurrentTime, myThid )
+      SUBROUTINE OBCS_CALC( bi, bj, K, futureTime, myThid )
 C     /==========================================================\
-C     | SUBROUTINE SET_OBCS                                      |
-C     | o Set boundary conditions at open boundaries             |
+C     | SUBROUTINE OBCS_CALC                                     |
+C     | o Calculate future boundary data at open boundaries      |
+C     |   at time = futureTime                                   |
 C     |==========================================================|
 C     |                                                          |
 C     \==========================================================/
@@ -16,31 +16,18 @@ C     === Global variables ===
 #include "SIZE.h"
 #include "EEPARAMS.h"
 #include "PARAMS.h"
-#include "DYNVARS.h"
 #include "OBCS.h"
+#include "DYNVARS.h"
 
 C     == Routine arguments ==
-C     myThid -  Number of this instance of INI_DEPTHS
-      INTEGER K, bi, bj
-      _RL myCurrentTime
+      INTEGER bi, bj, K
+      _RL futureTime
       INTEGER myThid
-CEndOfInterface
 
 #ifdef ALLOW_OBCS
 
 C     == Local variables ==
-C     xG, yG - Global coordinate location.
-C     zG
-C     zUpper - Work arrays for upper and lower
-C     zLower   cell-face heights.
-C     phi    - Temporary scalar
-C     iG, jG - Global coordinate index
-C     bi,bj  - Loop counters
-C     zUpper - Temporary arrays holding z coordinates of
-C     zLower   upper and lower faces.
-C     I,i,K
-      INTEGER iG, jG
-      INTEGER  I,  J
+      INTEGER I,J
  
       DO J=1-Oly,sNy+Oly
        OBEu(J,K,bi,bj)=0.

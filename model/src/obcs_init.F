@@ -1,12 +1,11 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/Attic/ini_obcs.F,v 1.5 1999/08/30 18:29:26 adcroft Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/Attic/obcs_init.F,v 1.1.2.1 2001/01/09 21:26:07 adcroft Exp $
 
 #include "CPP_OPTIONS.h"
 
-CStartOfInterface
-      SUBROUTINE INI_OBCS( myThid )
+      SUBROUTINE OBCS_INIT( myThid )
 C     /==========================================================\
-C     | SUBROUTINE INI_OBCS                                      |
-C     | o Initialise OB arrays                                   |
+C     | SUBROUTINE OBCS_INIT                                     |
+C     | o Initialise OBCs arrays                                 |
 C     |==========================================================|
 C     |                                                          |
 C     \==========================================================/
@@ -21,24 +20,13 @@ C     === Global variables ===
 C     == Routine arguments ==
 C     myThid -  Number of this instance of INI_DEPTHS
       INTEGER myThid
-CEndOfInterface
 
 #ifdef ALLOW_OBCS
 
 C     == Local variables ==
-C     xG, yG - Global coordinate location.
-C     zG
-C     zUpper - Work arrays for upper and lower
-C     zLower   cell-face heights.
-C     phi    - Temporary scalar
-C     iG, jG - Global coordinate index
-C     bi,bj  - Loop counters
-C     zUpper - Temporary arrays holding z coordinates of
-C     zLower   upper and lower faces.
-C     I,i,K
       INTEGER iG, jG, iGm, jGm
       INTEGER bi, bj
-      INTEGER  I,  J, K
+      INTEGER I, J, K
 c
 
       DO bj = myByLo(myThid), myByHi(myThid)
