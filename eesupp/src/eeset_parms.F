@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/eesupp/src/eeset_parms.F,v 1.13 2001/09/21 03:54:34 cnh Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/eesupp/src/eeset_parms.F,v 1.13.6.1 2003/03/07 05:14:11 heimbach Exp $
 C $Name:  $
 
 #include "CPP_EEOPTIONS.h"
@@ -153,6 +153,7 @@ C--   Report contents of parameter file
       READ(UNIT=iUnit,NML=EEPARMS,IOSTAT=errIO,err=3)
       IF ( errIO .GE. 0 ) GOTO 4
     3 CONTINUE
+#ifndef TARGET_PWR3
        WRITE(msgBuf,'(A)') 
      &  'S/R EESET_PARMS'
        CALL PRINT_ERROR( msgBuf , 1)
@@ -164,6 +165,7 @@ C--   Report contents of parameter file
        CALL PRINT_ERROR( msgBuf , 1)
        CALL EEDATA_EXAMPLE
        STOP 'ABNORMAL END: S/R EESET_PARMS'
+#endif
    4  CONTINUE
 
 C--   Execution Environment parameter file read
