@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/ini_cori.F,v 1.18 2004/09/15 21:23:32 edhill Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/ini_cori.F,v 1.19 2004/10/10 06:08:47 edhill Exp $
 C $Name:  $
 
 #include "PACKAGES_CONFIG.h"
@@ -21,9 +21,6 @@ C     !USES:
 #include "DYNVARS.h"
 #ifdef ALLOW_MONITOR
 #include "MONITOR.h"
-#endif
-#ifdef ALLOW_MNC
-#include "MNC_PARAMS.h"
 #endif
 
 C     !INPUT/OUTPUT PARAMETERS:
