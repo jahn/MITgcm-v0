@@ -1,6 +1,6 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/timeave/timeave_norma_2v.F,v 1.1 2003/11/23 01:23:18 jmc Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/timeave/timeave_norma_2v.F,v 1.2 2003/12/05 02:27:58 jmc Exp $
 C $Name:  $
-#include "TIMEAVE_OPTIONS.h"
+#include "CPP_EEOPTIONS.h"
 
 CStartofinterface
       SUBROUTINE TIMEAVE_NORMA_2V( 

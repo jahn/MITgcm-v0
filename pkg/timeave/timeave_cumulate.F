@@ -1,6 +1,6 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/timeave/timeave_cumulate.F,v 1.2 2003/10/09 04:19:20 edhill Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/timeave/timeave_cumulate.F,v 1.3 2003/12/05 02:27:59 jmc Exp $
 C $Name:  $
-#include "TIMEAVE_OPTIONS.h"
+#include "CPP_EEOPTIONS.h"
 
 CStartofinterface
       SUBROUTINE TIMEAVE_CUMULATE( 
