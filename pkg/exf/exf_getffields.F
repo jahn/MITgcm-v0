@@ -1,4 +1,4 @@
-c $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/exf/exf_getffields.F,v 1.2.4.3 2002/12/27 08:01:55 dimitri Exp $
+c $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/exf/exf_getffields.F,v 1.2.4.4 2002/12/28 04:26:07 dimitri Exp $
 
 #include "EXF_CPPOPTIONS.h"
 
@@ -208,6 +208,14 @@ c     == external functions ==
       _RL       exf_BulkRhn
       external  exf_BulkRhn
 #endif /* ALLOW_BULKFORMULAE */
+
+#ifndef ALLOW_ATM_WIND
+      _RL       TMP1
+      _RL       TMP2
+      _RL       TMP3
+      _RL       TMP4
+      _RL       TMP5
+#endif
 
 c     == end of interface ==
 
