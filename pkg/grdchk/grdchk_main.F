@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/grdchk/grdchk_main.F,v 1.3.6.4 2003/03/07 04:01:59 heimbach Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/grdchk/grdchk_main.F,v 1.3.6.5 2003/06/20 19:38:59 heimbach Exp $
 
 #include "CPP_OPTIONS.h"
 
@@ -100,6 +100,7 @@ c     == local variables ==
       integer jtile
       integer itile
       integer layer
+      integer obcspos
       integer itilepos
       integer jtilepos
       integer itest
@@ -198,7 +199,7 @@ c--   gradient checks.
 c--         Determine the location of icomp on the grid.
             if ( myProcId .EQ. grdchkwhichproc ) then
                call grdchk_loc( icomp, ichknum, 
-     &              icvrec, itile, jtile, layer,
+     &              icvrec, itile, jtile, layer, obcspos,
      &              itilepos, jtilepos, itest, ierr,
      &              mythid )
             endif
@@ -381,6 +382,7 @@ c******************************************************
                ilocmem   ( ichknum ) = itilepos
                jlocmem   ( ichknum ) = jtilepos
                klocmem   ( ichknum ) = layer
+               iobcsmem  ( ichknum ) = obcspos
                icompmem  ( ichknum ) = icomp
                ichkmem   ( ichknum ) = ichknum
                itestmem  ( ichknum ) = itest
