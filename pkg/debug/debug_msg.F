@@ -1,7 +1,7 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/debug/debug_msg.F,v 1.2 2003/06/06 16:36:29 adcroft Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/debug/debug_msg.F,v 1.3 2003/10/09 04:19:19 edhill Exp $
 C $Name:  $
 
-#include "CPP_OPTIONS.h"
+#include "DEBUG_OPTIONS.h"
 
       SUBROUTINE DEBUG_MSG(
      I                text,

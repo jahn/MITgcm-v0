@@ -1,4 +1,5 @@
-C $Header:
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/seaice/Attic/seaice_get_forcing.F,v 1.6 2003/10/09 04:19:20 edhill Exp $
+C $Name:  $
 
 #include "SEAICE_OPTIONS.h"
  

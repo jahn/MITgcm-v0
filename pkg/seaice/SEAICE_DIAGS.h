@@ -1,4 +1,5 @@
-C $Header:
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/seaice/Attic/SEAICE_DIAGS.h,v 1.4 2003/10/09 04:19:20 edhill Exp $
+C $Name:  $
 
 #ifdef ALLOW_SEAICE
 

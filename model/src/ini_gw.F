@@ -1,6 +1,7 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/Attic/ini_gw.F,v 1.2 2001/09/26 18:09:15 cnh Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/Attic/ini_gw.F,v 1.3 2003/10/09 04:19:18 edhill Exp $
 C $Name:  $
 
+#include "PACKAGES_CONFIG.h"
 #include "CPP_OPTIONS.h"
 
 CBOP
@@ -30,6 +31,7 @@ C     myThid -  Number of this instance of INI_GW
 CEndOfInterface
 
 #ifdef ALLOW_NONHYDROSTATIC
+ceh3 needs an IF ( useNONHYDROSTATIC ) THEN
 
 C     !LOCAL VARIABLES:
 C     == Local variables ==

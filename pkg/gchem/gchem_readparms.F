@@ -1,3 +1,6 @@
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/gchem/gchem_readparms.F,v 1.4 2003/10/09 04:19:19 edhill Exp $
+C $Name:  $
+
 #include "PTRACERS_OPTIONS.h"
 #include "GCHEM_OPTIONS.h"
 

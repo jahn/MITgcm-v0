@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/verification/advect_xz/code/Attic/ini_vel.F,v 1.3 2003/10/02 16:12:23 jmc Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/verification/advect_xz/code/Attic/ini_vel.F,v 1.4 2003/10/09 04:19:22 edhill Exp $
 C $Name:  $
 
 #include "CPP_OPTIONS.h"

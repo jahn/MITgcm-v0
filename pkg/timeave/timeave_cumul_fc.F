@@ -1,6 +1,6 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/timeave/Attic/timeave_cumul_fc.F,v 1.1 2002/01/03 15:56:52 jmc Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/timeave/Attic/timeave_cumul_fc.F,v 1.2 2003/10/09 04:19:20 edhill Exp $
 C $Name:  $
-#include "CPP_OPTIONS.h"
+#include "TIMEAVE_OPTIONS.h"
 
 CStartofinterface
       SUBROUTINE TIMEAVE_CUMUL_FC( 

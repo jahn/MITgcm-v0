@@ -1,6 +1,7 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/cal/cal_monthsforyear.F,v 1.1 2001/05/14 22:07:26 heimbach Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/cal/cal_monthsforyear.F,v 1.2 2003/10/09 04:19:19 edhill Exp $
+C $Name:  $
 
-#include "CAL_CPPOPTIONS.h"
+#include "CAL_OPTIONS.h"
 
       subroutine cal_MonthsForYear(
      I                              iyear,

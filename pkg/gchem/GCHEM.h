@@ -1,3 +1,6 @@
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/gchem/GCHEM.h,v 1.4 2003/10/09 04:19:19 edhill Exp $
+C $Name:  $
+
 #ifdef ALLOW_PTRACERS
 #ifdef ALLOW_GCHEM
 

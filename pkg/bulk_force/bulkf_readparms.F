@@ -1,5 +1,7 @@
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/bulk_force/bulkf_readparms.F,v 1.2 2003/10/09 04:19:19 edhill Exp $
+C $Name:  $
 
-#include "CPP_OPTIONS.h"
+#include "BULK_FORCE_OPTIONS.h"
 
       SUBROUTINE BULKF_READPARMS( myThid )
 C     /==========================================================\

@@ -1,6 +1,8 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/calc_gw.F,v 1.9 2001/09/26 18:09:14 cnh Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/calc_gw.F,v 1.10 2003/10/09 04:19:18 edhill Exp $
 C     !DESCRIPTION: \bv
 C $Name:  $
+
+#include "PACKAGES_CONFIG.h"
 #include "CPP_OPTIONS.h"
 
 CBOP
@@ -69,6 +71,8 @@ C     I,J,K - Loop counters
 #define J0 1
 #define Jn sNy
 CEOP
+
+ceh3 needs an IF ( useNONHYDROSTATIC ) THEN
 
 C     Adams-Bashforth timestepping weights
       ab15=1.5+abeps

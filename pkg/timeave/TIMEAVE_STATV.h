@@ -1,5 +1,7 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/timeave/TIMEAVE_STATV.h,v 1.6 2003/08/03 02:58:29 jmc Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/timeave/TIMEAVE_STATV.h,v 1.7 2003/10/09 04:19:20 edhill Exp $
 C $Name:  $
+
+#include "TIMEAVE_OPTIONS.h"
 
 #ifdef ALLOW_TIMEAVE
 

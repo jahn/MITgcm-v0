@@ -1,7 +1,7 @@
-c $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/bulk_force/Attic/exf_bulkcdn.F,v 1.1 2002/11/21 19:11:42 cheisey Exp $
+c $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/bulk_force/Attic/exf_bulkcdn.F,v 1.2 2003/10/09 04:19:19 edhill Exp $
+C $Name:  $
 
-
-#include "CPP_OPTIONS.h"
+#include "BULK_FORCE_OPTIONS.h"
 
       _RL function exf_BulkCdn(
      I                          umps

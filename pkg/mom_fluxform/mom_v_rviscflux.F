@@ -1,7 +1,7 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/mom_fluxform/Attic/mom_v_rviscflux.F,v 1.4 2002/12/16 21:40:07 mlosch Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/mom_fluxform/Attic/mom_v_rviscflux.F,v 1.5 2003/10/09 04:19:20 edhill Exp $
 C $Name:  $
 
-#include "CPP_OPTIONS.h"
+#include "MOM_FLUXFORM_OPTIONS.h"
 
 CBOP
 C !ROUTINE: MOM_V_RVISCFLUX

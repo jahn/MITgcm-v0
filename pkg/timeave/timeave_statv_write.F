@@ -1,6 +1,6 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/timeave/timeave_statv_write.F,v 1.8 2003/08/03 02:58:29 jmc Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/timeave/timeave_statv_write.F,v 1.9 2003/10/09 04:19:20 edhill Exp $
 C $Name:  $
-#include "CPP_OPTIONS.h"
+#include "TIMEAVE_OPTIONS.h"
 
       SUBROUTINE TIMEAVE_STATV_WRITE(myTime, myIter, myThid)
 C     /==========================================================\
