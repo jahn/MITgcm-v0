@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/timeave/timeave_statv_write.F,v 1.1.2.1 2001/05/02 21:17:49 adcroft Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/timeave/timeave_statv_write.F,v 1.1.2.2 2001/05/02 21:20:11 adcroft Exp $
 C $Name:  $
 #include "CPP_OPTIONS.h"
 
@@ -80,8 +80,8 @@ C--     Set IO "context" for writing state
 #endif
 C--     Read IO error counter
         beginIOErrCount = IO_ERRCOUNT(myThid)
-        prevPrec = writeBinaryPrec
-        writeBinaryPrec = precFloat32
+c       prevPrec = writeBinaryPrec
+c       writeBinaryPrec = precFloat32
         CALL WRITE_FLD_XY_RL('ETAtave.',suff,etaTave,myIter,myThid)
 
         CALL WRITE_FLD_XYZ_RL('Ttave.',suff,thetatave,myIter,myThid)
@@ -97,7 +97,7 @@ C--     Read IO error counter
         CALL WRITE_FLD_XYZ_RL('PhHytave.',suff,phiHydtave,myIter,myThid)
         CALL WRITE_FLD_XYZ_RL('Convtave.',suff,ConvectCountTave,
      &                        myIter,myThid)
-        writeBinaryPrec = prevPrec
+c       writeBinaryPrec = prevPrec
 C--     Reread IO error counter
         endIOErrCount = IO_ERRCOUNT(myThid)
 
