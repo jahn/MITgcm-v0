@@ -1,13 +1,14 @@
-$Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/doc/tag-index,v 1.53.2.29 2003/02/15 14:22:39 dimitri Exp $
+$Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/doc/tag-index,v 1.53.2.30 2003/02/16 16:28:29 dimitri Exp $
 
     Notes on tags used in MITgcmUV
     ==============================
 
-untagged
+release1_p12
 o Added missing /* */ to CPP comments in pkg/seaice, pkg/exf,
   kpp_transport_t.F, forward_step.F, and the_main_loop.F
 o pkg/seaice:
   - adjoint-friendly modifications
+  - added a SEAICE_WRITE_PICKUP at end of the_model_main.F
 
 release1_p12_pre
 o Updated useSingleCpuIO option in mdsio_writefield.F to
