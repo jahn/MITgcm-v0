@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/ini_masks_etc.F,v 1.12 1998/12/08 18:01:52 adcroft Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/ini_masks_etc.F,v 1.13 1998/12/09 16:11:52 adcroft Exp $
 
 #include "CPP_OPTIONS.h"
 
@@ -14,6 +14,7 @@ C     | and fractional height factors (0<hFac<1). The latter     |
 C     | distinguish between the lopped-cell and full-step        |
 C     | topographic representations.                             |
 C     \==========================================================/
+      IMPLICIT NONE
 
 C     === Global variables ===
 #include "SIZE.h"

@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/solve_for_pressure.F,v 1.7 1998/11/06 22:44:49 cnh Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/solve_for_pressure.F,v 1.8 1998/12/09 16:11:54 adcroft Exp $
 
 #include "CPP_OPTIONS.h"
 
@@ -9,6 +9,7 @@ C     | SUBROUTINE SOLVE_FOR_PRESSURE                            |
 C     | o Controls inversion of two and/or three-dimensional     |
 C     |   elliptic problems for the pressure field.              |
 C     \==========================================================/
+      IMPLICIT NONE
 
 C     == Global variables
 #include "SIZE.h"
