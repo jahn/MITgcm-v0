@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/verification/natl_box_adjoint/code/Attic/CPP_OPTIONS.h,v 1.1.2.1 2002/02/05 20:34:35 heimbach Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/verification/natl_box_adjoint/code/Attic/CPP_OPTIONS.h,v 1.1.2.2 2002/02/06 22:54:38 heimbach Exp $
 C
 
 C 
@@ -25,7 +25,7 @@ C   coriolis terms
 #define  INCLUDE_CD_CODE
 
 C o Include/exclude code for open-boundary conditions
-#define  ALLOW_OBCS
+#undef  ALLOW_OBCS
 
 C o Include/exclude diagnostics package interface code
 #define  INCLUDE_DIAGNOSTICS_INTERFACE_CODE
