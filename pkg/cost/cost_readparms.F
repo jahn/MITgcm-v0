@@ -1,11 +1,9 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/cost/cost_readparms.F,v 1.2 2001/07/13 13:37:45 heimbach Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/cost/cost_readparms.F,v 1.2.4.1 2002/04/08 20:10:38 heimbach Exp $
 
 #include "COST_CPPOPTIONS.h"
 
 
-      subroutine cost_readparms(
-     I                           mythid
-     &                         )
+      subroutine cost_readparms( mythid )
 
 c     ==================================================================
 c     SUBROUTINE cost_readparms

@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/gmredi/gmredi_slope_limit.F,v 1.7.2.1 2002/02/26 16:04:49 adcroft Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/gmredi/gmredi_slope_limit.F,v 1.7.2.2 2002/04/08 20:10:39 heimbach Exp $
 C $Name:  $
 
 #include "GMREDI_OPTIONS.h"
@@ -237,8 +237,8 @@ C-      Large, Danabasoglu and Doney, JPO 1997
           Cspd=2.
           Lrho=100.e3
           if (FCori(i,j,bi,bj).NE.0.) Lrho=Cspd/abs(Fcori(i,j,bi,bj))
-          Lrho=min(Lrho,100.e3)
-          Lrho=max(Lrho,15.e3)
+          Lrho=min(Lrho , 100. _d 3)
+          Lrho=max(Lrho , 15. _d 3)
           if (Smod.NE.0.) then
             Rnondim=depthZ/(Lrho*Smod)
           else

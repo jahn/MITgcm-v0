@@ -1,4 +1,4 @@
-c $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/exf/exf_getsurfacefluxes.F,v 1.1 2001/05/14 22:08:41 heimbach Exp $
+c $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/exf/exf_getsurfacefluxes.F,v 1.1.4.1 2002/04/08 20:10:38 heimbach Exp $
 
 #include "EXF_CPPOPTIONS.h"
 
@@ -41,9 +41,6 @@ c     == routine arguments ==
 c     == global variables ==
 
 c     == end of interface ==
-
-c     Get the surface forcing fields.
-      call exf_GetFFields(  mytime, myiter, mythid )
 
 #ifdef ALLOW_HFLUX_CONTROL
       call ctrl_getheatflux ( mytime, myiter, mythid )

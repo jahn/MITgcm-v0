@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/dynamics.F,v 1.83.2.1 2002/02/26 16:04:47 adcroft Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/dynamics.F,v 1.83.2.2 2002/04/08 20:10:37 heimbach Exp $
 C $Name:  $
 
 #include "CPP_OPTIONS.h"
@@ -153,9 +153,6 @@ C                      index into fVerTerm.
       _RL phiSurfY(1-OLx:sNx+OLx,1-OLy:sNy+OLy)
       _RL KappaRU (1-Olx:sNx+Olx,1-Oly:sNy+Oly,Nr)
       _RL KappaRV (1-Olx:sNx+Olx,1-Oly:sNy+Oly,Nr)
-      _RL sigmaX  (1-OLx:sNx+OLx,1-OLy:sNy+OLy,Nr)
-      _RL sigmaY  (1-OLx:sNx+OLx,1-OLy:sNy+OLy,Nr)
-      _RL sigmaR  (1-OLx:sNx+OLx,1-OLy:sNy+OLy,Nr)
 
       INTEGER iMin, iMax
       INTEGER jMin, jMax
@@ -225,9 +222,6 @@ C     uninitialised but inert locations.
          phiHyd(i,j,k)  = 0. _d 0 
          KappaRU(i,j,k) = 0. _d 0
          KappaRV(i,j,k) = 0. _d 0
-         sigmaX(i,j,k) = 0. _d 0
-         sigmaY(i,j,k) = 0. _d 0
-         sigmaR(i,j,k) = 0. _d 0
         ENDDO
         rhoKM1 (i,j) = 0. _d 0
         rhok   (i,j) = 0. _d 0

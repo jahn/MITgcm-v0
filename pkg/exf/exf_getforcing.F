@@ -1,4 +1,4 @@
-c $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/exf/exf_getforcing.F,v 1.2 2001/09/28 15:55:25 heimbach Exp $
+c $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/exf/exf_getforcing.F,v 1.2.4.1 2002/04/08 20:10:38 heimbach Exp $
 
 #include "CPP_OPTIONS.h"
 
@@ -107,25 +107,16 @@ c     == end of interface ==
 CEOP
 
 c     Get values of climatological fields.
-      call exf_getclim(
-     I                     mytime, myiter, mythid
-     &                   )
+      call exf_getclim( mytime, myiter, mythid )
 
-c     Get values of the surface fluxes.
-      call exf_getsurfacefluxes(
-     I                           mytime, myiter, mythid
-     &                         )
+c     Get the surface forcing fields.
+      call exf_getffields( mytime, myiter, mythid )
 
-#ifdef ALLOW_OBCS
-      call exf_getobcs(
-     I                           mytime, myiter, mythid
-     &                         )
-#endif
+c     Get values of the surface flux anomalies.
+      call exf_getsurfacefluxes( mytime, myiter, mythid )
 
 c     Map the forcing fields onto the corresponding model fields.
-      call exf_mapfields(
-     I                    mythid
-     &                  )
+      call exf_mapfields( mythid )
 
       end
 

@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/initialise_varia.F,v 1.20.2.1 2002/02/26 16:04:47 adcroft Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/initialise_varia.F,v 1.20.2.2 2002/04/08 20:10:37 heimbach Exp $
 C $Name:  $
 
 #include "CPP_OPTIONS.h"
@@ -155,7 +155,7 @@ C--   Initialize variable data for packages
 C--   Compute the surface level thickness <-- function of etaH(n)
 C     and modify hFac(C,W,S) accordingly :
       IF (nonlinFreeSurf.GT.0) THEN
-        CALL CALC_SURF_DR(etaH, startTime, nIter0, myThid )
+        CALL CALC_SURF_DR(etaH, startTime, -1 , myThid )
         CALL UPDATE_SURF_DR( startTime, nIter0, myThid )
       ENDIF
 C-    update also CG2D matrix (and preconditioner)

@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/thermodynamics.F,v 1.13.2.1 2002/02/26 16:04:48 adcroft Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/thermodynamics.F,v 1.13.2.2 2002/04/08 20:10:37 heimbach Exp $
 C $Name:  $
 
 #include "CPP_OPTIONS.h"
@@ -339,7 +339,7 @@ CADJ STORE wvel (:,:,:,bi,bj) = comlev1_bibj, key=ikey, byte=isbyte
 #ifdef  ALLOW_OBCS
 C--     Calculate future values on open boundaries
         IF (useOBCS) THEN
-          CALL OBCS_CALC( bi, bj, myTime+deltaT,
+          CALL OBCS_CALC( bi, bj, myTime+deltaT, myIter+1,
      I            uVel, vVel, wVel, theta, salt,
      I            myThid )
         ENDIF

@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/generic_advdiff/gad_fluxlimit_adv_r.F,v 1.5 2001/09/21 13:11:43 adcroft Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/generic_advdiff/gad_fluxlimit_adv_r.F,v 1.5.4.1 2002/04/08 20:10:39 heimbach Exp $
 C $Name:  $
 
 #include "GAD_OPTIONS.h"
@@ -93,10 +93,10 @@ C      for maskC(...) and wVel(...)
        DO j=1-Oly,sNy+Oly
         DO i=1-Olx,sNx+Olx
          Rjp=(tracer(i,j,kp1,bi,bj)-tracer(i,j,k,bi,bj))
-     &        *maskC(i,j,kp1,bi,bj)
+     &        *maskC(i,j,kp1,bi_arg,bj_arg)
          Rj=(tracer(i,j,k,bi,bj)-tracer(i,j,kM1,bi,bj))
          Rjm=(tracer(i,j,km1,bi,bj)-tracer(i,j,kM2,bi,bj))
-     &        *maskC(i,j,km2,bi,bj)
+     &        *maskC(i,j,km2,bi_arg,bj_arg)
          IF (Rj.NE.0.) THEN
           IF (rTrans(i,j).LT.0.) THEN
             Cr=Rjm/Rj

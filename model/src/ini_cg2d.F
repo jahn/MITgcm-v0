@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/ini_cg2d.F,v 1.37 2001/09/26 18:09:15 cnh Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/ini_cg2d.F,v 1.37.4.1 2002/04/08 20:10:37 heimbach Exp $
 C $Name:  $
 
 #include "CPP_OPTIONS.h"
@@ -55,6 +55,29 @@ C     sumArea - Work variable used to compute the total Domain Area
       _RL     sumArea
       _RL     aC, aCw, aCs
 CEOP
+
+C--   Initialize arrays in common blocs (CG2D.h) ; not really necessary 
+C     but safer when EXCH do not fill all the overlap regions.
+      DO bj=myByLo(myThid),myByHi(myThid)
+       DO bi=myBxLo(myThid),myBxHi(myThid)
+        DO J=1-OLy,sNy+OLy
+         DO I=1-OLx,sNx+OLx
+          aW2d(I,J,bi,bj) = 0. _d 0
+          aS2d(I,J,bi,bj) = 0. _d 0
+          pW(I,J,bi,bj) = 0. _d 0
+          pS(I,J,bi,bj) = 0. _d 0
+          pC(I,J,bi,bj) = 0. _d 0
+          cg2d_q(I,J,bi,bj) = 0. _d 0
+         ENDDO
+        ENDDO
+        DO J=1-1,sNy+1
+         DO I=1-1,sNx+1
+          cg2d_r(I,J,bi,bj) = 0. _d 0
+          cg2d_s(I,J,bi,bj) = 0. _d 0
+         ENDDO
+        ENDDO
+       ENDDO
+      ENDDO
 
 C--   Initialise laplace operator
 C     aW2d: integral in Z Ax/dX

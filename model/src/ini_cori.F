@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/ini_cori.F,v 1.12 2001/09/26 18:09:15 cnh Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/ini_cori.F,v 1.12.4.1 2002/04/08 20:10:37 heimbach Exp $
 C $Name:  $
 
 #include "CPP_OPTIONS.h"
@@ -105,8 +105,10 @@ C
 c     _EXCH_XY_R4(fCori,myThid)
 c     CALL EXCH_Z_XY_RS(fCoriG,myThid)
 
+#ifndef EXCLUDE_MONITOR
       CALL MON_PRINTSTATS_RS(1,fCori,'fCori',myThid)
       CALL MON_PRINTSTATS_RS(1,fCoriG,'fCoriG',myThid)
+#endif
 
       RETURN
       END

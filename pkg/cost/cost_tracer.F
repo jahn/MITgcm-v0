@@ -1,6 +1,6 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/cost/cost_tracer.F,v 1.1 2001/07/13 13:37:45 heimbach Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/cost/cost_tracer.F,v 1.1.4.1 2002/04/08 20:10:38 heimbach Exp $
 
-#include "CPP_OPTIONS.h"
+#include "COST_CPPOPTIONS.h"
 
       subroutine cost_tracer( bi, bj, myThid )
 C     /==========================================================\
