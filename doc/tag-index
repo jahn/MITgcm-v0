@@ -1,4 +1,4 @@
-$Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/doc/tag-index,v 1.53.4.46 2003/06/20 22:36:51 heimbach Exp $
+$Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/doc/tag-index,v 1.53.4.47 2003/06/21 23:52:40 heimbach Exp $
 
     Notes on tags used in MITgcmUV
     ==============================
@@ -27,6 +27,8 @@ o extended grdchk to enable obcs gradient checks
 o some generalizations for easier TLM <-> ADM switches
 o added configuration example for parallel divided adjoint
   (see verification/natl_box_adjoint/code_diva_mpi/README )
+o started verification exp. for obcs control
+  (still needs checking)
 
 ecco_c50_e32
 o Patrick's adjoint-model storage directives for pkg/seaice
