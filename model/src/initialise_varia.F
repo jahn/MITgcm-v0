@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/initialise_varia.F,v 1.20.2.2 2002/04/08 20:10:37 heimbach Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/initialise_varia.F,v 1.20.2.3 2002/05/21 00:03:01 heimbach Exp $
 C $Name:  $
 
 #include "CPP_OPTIONS.h"
@@ -120,6 +120,9 @@ C--   Initialise active fields to help TAMC
       _BARRIER
 #endif
 
+C--   Initialize variable data for packages
+      CALL PACKAGES_INIT_VARIABLES( myThid )
+
 #ifndef ALLOW_AUTODIFF_TAMC
       IF ( usePickupBeforeC35 ) THEN
 C-- IMPORTANT : Need to activate the following call to restart from 
@@ -147,9 +150,6 @@ CADJ loop = parallel
         ENDDO
         _BARRIER
       END IF
-
-C--   Initialize variable data for packages
-      CALL PACKAGES_INIT_VARIABLES( myThid )
 
 #ifdef NONLIN_FRSURF
 C--   Compute the surface level thickness <-- function of etaH(n)
