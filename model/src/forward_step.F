@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/forward_step.F,v 1.23.4.1 2002/02/06 15:48:07 heimbach Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/forward_step.F,v 1.23.4.2 2002/02/06 23:25:04 heimbach Exp $
 C $Name:  $
 
 #include "CPP_OPTIONS.h"
@@ -45,10 +45,19 @@ C     == Global variables ==
 #endif
 
 #ifdef ALLOW_AUTODIFF_TAMC
-#include "tamc.h"
-#include "ctrl.h"
-#include "ctrl_dummy.h"
-#include "cost.h"
+# include "tamc.h"
+# include "ctrl.h"
+# include "ctrl_dummy.h"
+# include "cost.h"
+# ifdef INCLUDE_EXTERNAL_FORCING_PACKAGE
+#  include "exf_fields.h"
+#  ifdef ALLOW_BULKFORMULAE
+#   include "exf_constants.h"
+#  endif
+# endif
+# ifdef ALLOW_OBCS
+#  include "OBCS.h"
+# endif
 #endif
 
 C     !LOCAL VARIABLES:
