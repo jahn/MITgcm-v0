@@ -1,5 +1,5 @@
 C
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/ctrl/ctrl_set_fname.F,v 1.6 2003/10/30 19:09:05 heimbach Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/ctrl/ctrl_set_fname.F,v 1.7 2003/11/06 22:05:08 heimbach Exp $
 C $Name:  $
 
 #include "CTRL_CPPOPTIONS.h"
@@ -26,9 +26,7 @@ c     == global variables ==
 #include "PARAMS.h"
 #include "GRID.h"
 
-#include "ecco.h"
 #include "ctrl.h"
-#include "cost.h"
 
 #ifdef ALLOW_ECCO_OPTIMIZATION
 #include "optim.h"
