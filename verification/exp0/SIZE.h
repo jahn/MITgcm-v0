@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/verification/exp2/Attic/SIZE.h,v 1.3 1998/11/02 03:34:12 cnh Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/verification/exp0/Attic/SIZE.h,v 1.1 1998/11/02 03:34:12 cnh Exp $
 C
 C     /==========================================================\
 C     | SIZE.h Declare size of underlying computational grid.    |
@@ -22,7 +22,7 @@ C     nPx - No. of processes to use in X.
 C     nPy - No. of processes to use in Y.
 C     Nx  - No. points in X for the total domain.
 C     Ny  - No. points in Y for the total domain.
-C     Nr  - No. points in Z for full process domain.
+C     Nr  - No. points in R for full process domain.
       INTEGER sNx
       INTEGER sNy
       INTEGER OLx
@@ -35,8 +35,8 @@ C     Nr  - No. points in Z for full process domain.
       INTEGER Ny
       INTEGER Nr
       PARAMETER (
-     &           sNx =  90,
-     &           sNy =  40,
+     &           sNx =  60,
+     &           sNy =  60,
      &           OLx =   3,
      &           OLy =   3,
      &           nSx =   1,
@@ -45,7 +45,7 @@ C     Nr  - No. points in Z for full process domain.
      &           nPy =   1,
      &           Nx  = sNx*nSx*nPx,
      &           Ny  = sNy*nSy*nPy,
-     &           Nr  =  20)
+     &           Nr  =   1)
 
 C     l - Runtime global problem size in X
 C     m - Runtime global problem size in Y
