@@ -1,4 +1,4 @@
-C $Id: barrier.F,v 1.1 1998/04/22 19:15:30 cnh Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/eesupp/src/barrier.F,v 1.2 1998/04/23 20:37:29 cnh Exp $
 
 #include "CPP_EEOPTIONS.h"
 
@@ -210,5 +210,3 @@ CcnhDebugEnds
      
       RETURN
       END
-
-C $Id: barrier.F,v 1.1 1998/04/22 19:15:30 cnh Exp $
