@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/aim/Attic/phy_shtorh.F,v 1.1.2.2 2001/01/26 17:54:25 adcroft Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/aim/Attic/phy_shtorh.F,v 1.1.2.3 2001/01/30 15:28:18 cnh Exp $
 C $Name:  $
  
       SUBROUTINE SHTORH (IMODE,NGP,TA,PS,SIG,QA,RH,QSAT)
@@ -41,9 +41,6 @@ C
 C 
       DO 110 J=1,NGP
         QSAT(J)=0.
-CcnhDebugStarts
-        WRITE(0,*) TA(J)
-CcnhDebugEnds
         IF (TA(J).GE.T0) THEN
           QSAT(J)=E0*EXP(C1*(TA(J)-T0)/(TA(J)-T1))
         ELSE IF ( TA(J).GT.0.) then
