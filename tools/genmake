@@ -1,6 +1,6 @@
 #!/bin/csh -f
 #
-# $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/tools/Attic/genmake,v 1.33.2.8 2001/04/05 15:49:51 jamous Exp $
+# $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/tools/Attic/genmake,v 1.33.2.9 2001/05/09 14:13:03 adcroft Exp $
 #
 # Makefile generator for MITgcm UV codes
 #   created  by cnh 03/98
@@ -213,7 +213,7 @@ foreach dr ($SOURCEDIRS)
   if (! -d $adr) then
     echo mods directory $adr not found.; exit 1
   endif
-  echo Adding mods directory $adr
+  echo Adding mods dir: $adr
 end
 if (! $?PACKAGES) then
   set PACKAGES=()
@@ -244,11 +244,11 @@ foreach dr ($PACKAGES)
     if (! -d $adr) then
       echo Source directory $adr not found.; exit 1
     endif
-    echo Adding package directory $adr
+    echo Adding pkg dir: $adr
     set SOURCEDIRS = ($SOURCEDIRS $adr)
     set INCLUDEDIRS = ($INCLUDEDIRS $adr)
   else
-    echo "*" Package \"$dr\" has not been enabled.
+    echo "                                      *" Package \"$dr\" NOT enabled.
   endif
 end
 if (! $?STANDARDDIRS) set STANDARDDIRS=(eesupp model)
@@ -257,7 +257,7 @@ foreach dr ($STANDARDDIRS)
   if (! -d $adr) then
     echo Source directory $adr not found.; exit 1
   endif
-  echo Adding source directory $adr
+  echo Adding src dir: $adr
   set SOURCEDIRS = ($SOURCEDIRS $adr)
   set idr = `echo $adr | sed 's/src/inc/'`
   set INCLUDEDIRS = ($INCLUDEDIRS $idr)
