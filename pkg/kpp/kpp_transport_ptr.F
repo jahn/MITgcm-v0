@@ -1,9 +1,6 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/kpp/kpp_transport_ptr.F,v 1.3 2003/09/24 04:52:38 dimitri Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/kpp/kpp_transport_ptr.F,v 1.4 2003/09/25 03:01:59 dimitri Exp $
 C $Name:  $
 
-#ifdef ALLOW_PTRACERS
-#include "PTRACERS_OPTIONS.h"
-#endif /* ALLOW_PTRACERS */
 #include "KPP_OPTIONS.h"
 
       subroutine KPP_TRANSPORT_PTR (
