@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/Attic/calc_gt.F,v 1.27.2.1 2001/01/09 16:21:18 adcroft Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/Attic/calc_gt.F,v 1.27.2.2 2001/01/24 21:46:21 adcroft Exp $
 
 #include "CPP_OPTIONS.h"
 
@@ -360,13 +360,6 @@ C--   External thermal forcing term(s)
      I     maskC,
      I     myCurrentTime,myThid)
 #endif /*  INCLUDE_T_FORCING_CODE */
-
-#ifdef INCLUDE_LAT_CIRC_FFT_FILTER_CODE
-C--   Zonal FFT filter of tendency
-      CALL FILTER_LATCIRCS_FFT_APPLY( 
-     U     gT, 
-     I     1, sNy, k, k, bi, bj, 1, myThid)
-#endif /* INCLUDE_LAT_CIRC_FFT_FILTER_CODE */
 
       RETURN
       END

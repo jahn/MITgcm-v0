@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/Attic/calc_gs.F,v 1.22.2.2 2001/01/17 15:09:05 jmc Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/Attic/calc_gs.F,v 1.22.2.3 2001/01/24 21:46:21 adcroft Exp $
 
 #include "CPP_OPTIONS.h"
 
@@ -298,13 +298,6 @@ C--   External forcing term(s)
      I     iMin,iMax,jMin,jMax,bi,bj,k,
      I     maskC,
      I     myCurrentTime,myThid)
-
-#ifdef INCLUDE_LAT_CIRC_FFT_FILTER_CODE
-C--
-      CALL FILTER_LATCIRCS_FFT_APPLY( 
-     U     gS, 
-     I     1, sNy, k, k, bi, bj, 1, myThid)
-#endif
 
       RETURN
       END

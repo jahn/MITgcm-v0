@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/Attic/calc_mom_rhs.F,v 1.42.2.6 2001/01/17 21:33:53 jmc Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/Attic/calc_mom_rhs.F,v 1.42.2.7 2001/01/24 21:46:21 adcroft Exp $
 
 #include "CPP_OPTIONS.h"
 
@@ -1068,14 +1068,6 @@ C--   Set dv/dt on boundaries to zero
         gV(i,j,k,bi,bj) = gV(i,j,k,bi,bj)*_maskS(i,j,k,bi,bj)
        ENDDO
       ENDDO
-
-#ifdef INCLUDE_LAT_CIRC_FFT_FILTER_CODE
-      CALL FILTER_LATCIRCS_FFT_APPLY(
-     &    gU, 1-1, sNy+1, k, k, bi, bj, 1, myThid)
-      CALL FILTER_LATCIRCS_FFT_APPLY(
-     &    gV, 1-1, sNy+1, k, k, bi, bj, 2, myThid)
-#endif
-
 
 #ifdef INCLUDE_CD_CODE
 C--   Save "previous time level" variables
