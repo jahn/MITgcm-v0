@@ -1,6 +1,6 @@
 #!/bin/csh -f
 #
-# $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/tools/Attic/genmake,v 1.22.2.4 2001/01/25 18:41:18 adcroft Exp $
+# $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/tools/Attic/genmake,v 1.22.2.5 2001/01/26 00:14:32 cnh Exp $
 #
 # Makefile generator for MITgcm UV codes
 #   created by cnh 03/98
@@ -269,7 +269,7 @@ switch ($platform$USEMPI)
     set CPP        = ( '/lib/cpp -traditional -P' )
     set DEFINES    = ( ${DEFINES} '-DWORDLENGTH=4' )
     set FC         = ( 'pgf77' )
-    set FFLAGS     = ( '-byteswapio' )
+    set FFLAGS     = ( '-byteswapio -r8 -Mnodclchk -Mextend' )
     set FOPTIM     = ( '-tp p6 -v -O2 -Munroll -Mvect=cachesize:512000,transform -Kieee' )
     set LINK       = ( 'pgf77' )
     breaksw
