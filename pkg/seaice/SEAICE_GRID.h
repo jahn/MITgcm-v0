@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/seaice/Attic/SEAICE_GRID.h,v 1.8 2004/12/27 20:34:11 dimitri Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/seaice/Attic/SEAICE_GRID.h,v 1.9 2005/04/17 00:25:46 edhill Exp $
 C $Name:  $
 
 C     /==========================================================\
@@ -50,3 +50,7 @@ C
       COMMON/SEAICE_GRID/ TNGTICE, TNGICE, CSTICE, CSUICE, SINEICE,
      &                    RECIP_CSTICE, RECIP_CSUICE,
      &                    DXTICE, DXUICE, DYTICE, DYUICE
+
+CEH3 ;;; Local Variables: ***
+CEH3 ;;; mode:fortran ***
+CEH3 ;;; End: ***
