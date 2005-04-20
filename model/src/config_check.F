@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/config_check.F,v 1.23 2005/04/20 15:46:07 spk Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/config_check.F,v 1.24 2005/04/20 19:51:37 edhill Exp $
 C $Name:  $
 
 #include "PACKAGES_CONFIG.h"
@@ -459,7 +459,8 @@ C- jmc: but ultimately, this block can/will be removed.
 
       IF ( useMATRIX .AND. .NOT.usePTRACERS ) THEN
         WRITE(msgBuf,'(2A)')
-     &   'CONFIG_CHECK: cannot set useMATRIX without setting usePTRACERS'
+     &       'CONFIG_CHECK: cannot set useMATRIX without ',
+     &       'setting usePTRACERS'
         CALL PRINT_ERROR( msgBuf , myThid)
         STOP 'ABNORMAL END: S/R CONFIG_CHECK'
       ENDIF      

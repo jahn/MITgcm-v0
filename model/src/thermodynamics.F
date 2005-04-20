@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/thermodynamics.F,v 1.91 2005/04/20 15:52:22 spk Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/thermodynamics.F,v 1.92 2005/04/20 19:51:37 edhill Exp $
 C $Name:  $
 
 #include "PACKAGES_CONFIG.h"
@@ -524,7 +524,7 @@ C       field for implicit matrix calculation
 
 #ifdef ALLOW_MATRIX
         IF (useMATRIX) 
-     &    CALL MATRIX_STORE_TENDENCY_EXP( bi, bj, myTime, myIter, myThid )
+     &    CALL MATRIX_STORE_TENDENCY_EXP(bi,bj, myTime,myIter,myThid)
 #endif 
 
         iMin = 1
