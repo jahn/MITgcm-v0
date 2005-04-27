@@ -1,8 +1,7 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/obcs/obcs_sponge.F,v 1.5 2004/10/14 17:08:06 adcroft Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/obcs/obcs_sponge.F,v 1.6 2005/04/27 14:10:06 jmc Exp $
 C $Name:  $
 
 #include "OBCS_OPTIONS.h"
-#include "PACKAGES_CONFIG.h"
 #include "AD_CONFIG.h"
 
 CStartOfInterface

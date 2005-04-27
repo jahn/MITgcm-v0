@@ -1,7 +1,6 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/exf/exf_set_uv.F,v 1.8 2005/02/21 05:32:55 dimitri Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/exf/exf_set_uv.F,v 1.9 2005/04/27 14:10:06 jmc Exp $
 C $Name:  $
 
-#include "PACKAGES_CONFIG.h"
 #include "EXF_OPTIONS.h"
 
       subroutine exf_set_uv(

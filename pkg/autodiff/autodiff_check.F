@@ -1,10 +1,9 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/autodiff/autodiff_check.F,v 1.1 2004/10/08 17:25:37 heimbach Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/autodiff/autodiff_check.F,v 1.2 2005/04/27 14:10:05 jmc Exp $
 C $Name:  $
 
 C---+----1----+----2----+----3----+----4----+----5----+----6----+----7-|--+----|
 
-#include "PACKAGES_CONFIG.h"
-#include "CPP_OPTIONS.h"
+#include "AUTODIFF_OPTIONS.h"
 
 CBOP
 C     !ROUTINE: AUTODIFF_CHECK
