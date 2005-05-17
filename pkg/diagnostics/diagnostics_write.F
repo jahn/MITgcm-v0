@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/diagnostics/diagnostics_write.F,v 1.15 2005/05/16 23:41:32 molod Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/diagnostics/diagnostics_write.F,v 1.16 2005/05/17 00:22:00 molod Exp $
 C $Name:  $
 
 #include "DIAG_OPTIONS.h"
@@ -39,7 +39,8 @@ c ===============
       INTEGER thisdate(4), prevdate(4)
 #endif
 #ifdef ALLOW_FIZHI
-      integer nsecf2,mmdd,hhmmss,alarm2
+      integer nsecf2,mmdd,hhmmss
+      logical alarm2
       character *9 tagname
 #endif
 
