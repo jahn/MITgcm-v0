@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/ini_parms.F,v 1.156 2005/05/31 14:49:38 adcroft Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/ini_parms.F,v 1.157 2005/06/09 15:53:55 jmc Exp $
 C $Name:  $
 
 #include "PACKAGES_CONFIG.h"
@@ -173,7 +173,7 @@ C--   Continuous equation parameters
      & multiDimAdvection, useEnergyConservingCoriolis,
      & useCDscheme, useJamartWetPoints, useJamartMomAdv, useNHMTerms,
      & SadournyCoriolis, upwindVorticity, highOrderVorticity,
-     & useAbsVorticity,
+     & useAbsVorticity, upwindShear,
      & useRealFreshWaterFlux, convertFW2Salt,
      & temp_EvPrRn, salt_EvPrRn, trac_EvPrRn,
      & zonal_filt_lat,
