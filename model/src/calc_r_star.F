@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/calc_r_star.F,v 1.4 2005/06/19 21:43:49 jmc Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/calc_r_star.F,v 1.5 2005/06/19 23:26:25 jmc Exp $
 C $Name:  $
 
 #include "PACKAGES_CONFIG.h"
@@ -60,9 +60,9 @@ C---+----1----+----2----+----3----+----4----+----5----+----6----+----7-|--+----|
 #endif
 
       IF (groundAtK1) THEN
-       km = 1
-      ELSE
        km = Nr
+      ELSE
+       km = 1
       ENDIF 
 
       DO bj=myByLo(myThid), myByHi(myThid)
