@@ -1,13 +1,12 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/Attic/mom_v_implicit_r.F,v 1.2 2004/12/03 15:41:15 jmc Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/mom_common/mom_v_implicit_r.F,v 1.1 2005/06/21 13:46:15 jmc Exp $
 C $Name:  $
 
-#include "PACKAGES_CONFIG.h"
-#include "CPP_OPTIONS.h"
+#include "MOM_COMMON_OPTIONS.h"
 
 CBOP
 C     !ROUTINE: MOM_V_IMPLICIT_R
 C     !INTERFACE:
-      SUBROUTINE MOM_V_IMPLICIT_R( 
+      SUBROUTINE MOM_V_IMPLICIT_R(
      I                 kappaRV,
      I                 bi, bj, myTime, myIter, myThid )
 C     !DESCRIPTION: \bv
@@ -79,7 +78,7 @@ C-     1rst lower diagonal :
        DO k=2,Nr
         DO j=jMin,jMax
          DO i=iMin,iMax
-          IF (maskS(i,j,k-1,bi,bj).EQ.1.) 
+          IF (maskS(i,j,k-1,bi,bj).EQ.1.)
      &     b5d(i,j,k) = -deltaTmom
      &                  *recip_hFacS(i,j,k,bi,bj)*recip_drF(k)
      &                  *kappaRV(i,j, k )*recip_drC( k )
@@ -90,7 +89,7 @@ C-     1rst upper diagonal :
        DO k=1,Nr-1
         DO j=jMin,jMax
          DO i=iMin,iMax
-          IF (maskS(i,j,k+1,bi,bj).EQ.1.) 
+          IF (maskS(i,j,k+1,bi,bj).EQ.1.)
      &     d5d(i,j,k) = -deltaTmom
      &                 *recip_hFacS(i,j,k,bi,bj)*recip_drF(k)
      &                 *KappaRV(i,j,k+1)*recip_drC(k+1)
@@ -157,7 +156,7 @@ C-          space Centered advection scheme, Flux form:
      &                 - rFlx*recip_hFacS(i,j,k-1,bi,bj)*recip_drF(k-1)
              ENDDO
             ENDDO
-            STOP 'MOM_IMPLICIT_R: Flux Form not yet finished'
+            STOP 'MOM_IMPLICIT_R: Flux Form not yet finished.'
           ENDIF
 
 C--     end k loop
@@ -174,10 +173,10 @@ C--   Solve tri-diagonal system :
      O                          errCode,
      I                          bi, bj, myThid )
         IF (errCode.GE.1) THEN
-          STOP 'MOM_IMPLICIT_R: error when solving 3-Diag problem'
+          STOP 'MOM_IMPLICIT_R: error when solving 3-Diag problem.'
         ENDIF
       ELSEIF ( diagonalNumber .NE. 1 ) THEN
-        STOP 'MOM_IMPLICIT_R: no solver available'
+        STOP 'MOM_IMPLICIT_R: no solver available.'
       ENDIF
 
       RETURN
