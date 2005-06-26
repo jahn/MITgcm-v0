@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/diagnostics/diagnostics_setdiag.F,v 1.2 2005/06/26 16:51:49 jmc Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/diagnostics/diagnostics_setdiag.F,v 1.3 2005/06/26 18:23:03 jmc Exp $
 C $Name:  $
 
 #include "DIAG_OPTIONS.h"
@@ -99,6 +99,7 @@ C---+----1----+----2----+----3----+----4----+----5----+----6----+----7-|--+----|
      &    '- WARNING - SETDIAG: Diagnostic #', ndId, cdiag(ndId),
      &    ' has already been set'
         CALL PRINT_MESSAGE(msgBuf, errUnit, SQUEEZE_RIGHT, myThid)
+        mate = 0
         RETURN
       ENDIF
 
