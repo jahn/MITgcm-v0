@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/verification/fizhi-cs-aqualev10/code/Attic/fizhi_init_fixed.F,v 1.2 2005/06/14 23:08:15 molod Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/verification/fizhi-cs-aqualev10/code/Attic/fizhi_init_fixed.F,v 1.3 2005/06/30 22:31:51 molod Exp $
 C $Name:  $
 
 #include "FIZHI_OPTIONS.h"
@@ -58,6 +58,12 @@ c-----------------------------------------------------------------------
 #ifdef ALLOW_MNC
        if (useMNC) then
         call fizhi_mnc_init(myThid)
+       endif
+#endif
+
+#ifdef ALLOW_DIAGNOSTICS
+       if ( useDiagnostics ) then
+        call fizhi_diagnostics_init( myThid )
        endif
 #endif
 
