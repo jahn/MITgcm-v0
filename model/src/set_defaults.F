@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/set_defaults.F,v 1.97 2005/07/31 22:07:47 jmc Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/set_defaults.F,v 1.98 2005/08/15 23:05:28 molod Exp $
 C $Name:  $
 
 #include "CPP_OPTIONS.h"
@@ -275,6 +275,7 @@ C--   Time stepping parameters
       tCylIn             = 0.
       tCylOut            = 20.
       calendarDumps     = .FALSE.
+      nodumps     = .FALSE.
 
 C--   Input files
       bathyFile       = ' '
