@@ -1,5 +1,5 @@
 C
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/verification/OpenAD/code_ad/CPP_OPTIONS.h,v 1.1 2005/08/18 17:53:04 utke Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/verification/OpenAD/code_ad/CPP_OPTIONS.h,v 1.2 2005/08/23 13:06:42 heimbach Exp $
 C $Name:  $
 
 C CPP flags controlling which code in included in the files that
