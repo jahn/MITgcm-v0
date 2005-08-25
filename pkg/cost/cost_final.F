@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/cost/cost_final.F,v 1.12 2005/02/10 01:04:33 heimbach Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/cost/cost_final.F,v 1.13 2005/08/25 16:10:42 heimbach Exp $
 
 #include "PACKAGES_CONFIG.h"
 #include "COST_CPPOPTIONS.h"
@@ -48,6 +48,10 @@ c     == end of interface ==
       jthi = mybyhi(mythid)
       itlo = mybxlo(mythid)
       ithi = mybxhi(mythid)
+
+#ifdef ALLOW_SEAICE
+      CALL SEAICE_COST_FINAL (myThid)
+#endif
 
 #if (defined (ALLOW_ECCO))
       CALL ECCO_COST_FINAL (myThid)
