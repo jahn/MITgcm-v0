@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/seaice/seaice_cost_weights.F,v 1.2 2005/09/01 14:23:45 heimbach Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/seaice/seaice_cost_weights.F,v 1.3 2005/09/01 14:35:22 heimbach Exp $
 
 #include "SEAICE_OPTIONS.h"
 
@@ -21,9 +21,9 @@ c     == global variables ==
 #include "PARAMS.h"
 #include "GRID.h"
 
-#include "ctrl.h"
-#include "ecco_cost.h"
 #ifdef ALLOW_COST
+# include "ctrl.h"
+# include "ecco_cost.h"
 # include "SEAICE_COST.h"
 #endif
 
