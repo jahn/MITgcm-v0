@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/write_grid.F,v 1.13 2005/09/06 02:16:10 edhill Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/write_grid.F,v 1.14 2005/09/06 17:50:56 jmc Exp $
 C $Name:  $
       
 #include "PACKAGES_CONFIG.h"
@@ -69,6 +69,7 @@ C     Write horizontal grid arrays
       CALL WRITE_FLD_XY_RS( 'RAC',' ',rA,0,myThid)
       CALL WRITE_FLD_XY_RS( 'RAW',' ',rAw,0,myThid)
       CALL WRITE_FLD_XY_RS( 'RAS',' ',rAs,0,myThid)
+      CALL WRITE_FLD_XY_RS( 'RAZ',' ',rAz,0,myThid)
       CALL WRITE_FLD_XY_RS( 'DXG',' ',DXG,0,myThid)
       CALL WRITE_FLD_XY_RS( 'DYG',' ',DYG,0,myThid)
       CALL WRITE_FLD_XY_RS( 'DXC',' ',DXC,0,myThid)
