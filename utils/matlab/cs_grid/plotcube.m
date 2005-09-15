@@ -1,5 +1,5 @@
-function [] = fancycube(XX,YY,C,H,r)
-% fancycube(x,y,c,h)
+function [] = plotcube(XX,YY,C)
+% plotcube(x,y,c)
 %
 % Plots cubed-sphere data in 3D on sphere. (x,y) are
 % coordinates, c is cell-centered scalar to be plotted.
@@ -18,10 +18,15 @@ function [] = fancycube(XX,YY,C,H,r)
 % xg=rdmds('XG');
 % yg=rdmds('YG');
 % ps=rdmds('Eta.0000000000');
-% h=rdmds('ETOPO5');
-% fancycube(xg,yg,ps,h,0.05/5000);
-
-% $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/utils/matlab/Attic/fancycube.m,v 1.2 2005/05/06 17:32:54 adcroft Exp $
+% plotube(xg,yg,ps);
+%
+% xc=rdmds('XC');
+% yc=rdmds('YC');
+% plotube(xg,yg,ps);shading interp
+%
+% Written by adcroft@.mit.edu, 2001.
+% $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/utils/matlab/cs_grid/plotcube.m,v 1.1 2005/09/15 20:04:57 jmc Exp $
+% $Name:  $
 
 if max(max(max(YY)))-min(min(min(YY))) < 3*pi
  X=tiles(XX*180/pi,1:6);
@@ -30,14 +35,7 @@ else
  X=tiles(XX,1:6);
  Y=tiles(YY,1:6);
 end
-Q=(tiles(C,1:6));
-Qmin=min(Q(:)); Qmax=max(Q(:)); Q=(Q-Qmin)/(Qmax-Qmin)-1;
-q=(tiles(H,1:6));
-q( find(~isnan(Q)) )=NaN;
-%q=min(q,5000);
-%q=max(q,0);
-qmin=min(q(:)); qmax=max(q(:)); q=(q-qmin)/(qmax-qmin);
-Q( find(isnan(Q)) )=q( find(isnan(Q)) );
+Q=tiles(C,1:6);
 
 % Assume model grid corner coordinates were provided.
 if size(X,1)==size(Q,1)
@@ -56,12 +54,9 @@ if size(X,1)==size(Q,1)
 end
 [nx ny nt]=size(X);
 
-H=tiles(H,1:6); H(end+1,:,:)=H(end,:,:);H(:,end+1,:)=H(:,end,:);
-R=ones(size(X))+r*H;
-
-z=R.*sin(Y*pi/180);
-x=R.*cos(Y*pi/180).*cos(X*pi/180-pi/2);
-y=R.*cos(Y*pi/180).*sin(X*pi/180-pi/2);
+z=sin(Y*pi/180);
+x=cos(Y*pi/180).*cos(X*pi/180);
+y=cos(Y*pi/180).*sin(X*pi/180);
 
 surf(x(:,:,1),y(:,:,1),z(:,:,1),Q(:,:,1))
 hold on
@@ -72,21 +67,3 @@ hold off
 xlabel('X');
 ylabel('Y');
 zlabel('Z');
-
-% Remake colormap
-if size(colormap,1)==64
- CM=colormap;
- cm=cm_landwater(64,0);
- colormap( [CM' cm']' )
-end
-
-shading flat
-axis([-1 1 -1 1 -1 1]*max(R(:)))
-axis square
-axis vis3d
-pos=get(gcf,'pos');set(gcf,'pos',[pos(1:2) [1 1]*480])	% Movie size (+ screen)
-set(gca,'pos',[0 0 1 1]+.25*[-1 -1 2 2]);		% Fill window
-set(gcf,'paperposition',[0 0 4 4])			% Square printing
-set(gca,'projection','perspective')
-
-

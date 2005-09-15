@@ -1,6 +1,10 @@
 function [] = drawedges(xg,yg,varargin)
 % Draws edges of cube on plot
 % >> drawedges(xg,yg)
+%
+% Written by adcroft@.mit.edu, 2001.
+% $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/utils/matlab/cs_grid/drawedges.m,v 1.1 2005/09/15 20:04:56 jmc Exp $
+% $Name:  $
 
 [nx ny nt]=size(xg);
 hnx=ceil(nx/2);
