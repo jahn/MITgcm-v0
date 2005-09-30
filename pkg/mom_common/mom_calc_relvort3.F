@@ -1,8 +1,8 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/mom_common/mom_calc_relvort3.F,v 1.4 2005/09/23 19:16:25 jmc Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/mom_common/mom_calc_relvort3.F,v 1.5 2005/09/30 01:19:23 jmc Exp $
 C $Name:  $
 
 #include "MOM_COMMON_OPTIONS.h"
-#define CALC_CS_CORNER_EXTENDED
+#undef CALC_CS_CORNER_EXTENDED
 
       SUBROUTINE MOM_CALC_RELVORT3(
      I        bi,bj,k,
