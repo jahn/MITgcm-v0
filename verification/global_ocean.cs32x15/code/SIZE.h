@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/verification/global_ocean.cs32x15/code/SIZE.h,v 1.3 2004/05/03 21:34:05 dimitri Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/verification/global_ocean.cs32x15/code/SIZE.h,v 1.4 2005/10/01 21:13:42 jmc Exp $
 C $Name:  $
 
 C
@@ -39,8 +39,8 @@ C     Nr  - No. points in Z for full process domain.
       PARAMETER (
      &           sNx =  32,
      &           sNy =  32,
-     &           OLx =   2,
-     &           OLy =   2,
+     &           OLx =   3,
+     &           OLy =   3,
      &           nSx =   6,
      &           nSy =   1,
      &           nPx =   1,
