@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/fizhi/fizhi_diagalarms.F,v 1.4 2005/10/03 18:46:50 molod Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/fizhi/fizhi_diagalarms.F,v 1.5 2005/10/14 16:58:33 molod Exp $
 C $Name:  $
 
 #include "FIZHI_OPTIONS.h"
@@ -34,7 +34,7 @@ c -------------------
       integer mmdd,hhmmss,nsecf2
       character *9 tagname
       integer  nymdb,nhmsb
-      integer absfreq
+      _RL absfreq
 
 c Set Alarm Clocks
 c ----------------
