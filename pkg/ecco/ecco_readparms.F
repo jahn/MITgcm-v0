@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/ecco/ecco_readparms.F,v 1.14 2005/08/25 16:10:42 heimbach Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/ecco/ecco_readparms.F,v 1.15 2005/10/14 19:54:49 heimbach Exp $
 
 #include "COST_CPPOPTIONS.h"
 
@@ -68,6 +68,7 @@ c--   Read the namelist input.
      &                   udrifterrfile, vdrifterrfile,
      &                   curmtrufile,curmtrvfile,
      &                   salterrfile, temperrfile, velerrfile,
+     &                   salt0errfile, temp0errfile, vel0errfile,
      &                   hflux_errfile, sflux_errfile,
      &                   tauu_errfile, tauv_errfile,
      &                   atemp_errfile, aqh_errfile, 
