@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/forward_step.F,v 1.122 2005/10/13 19:43:07 jmc Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/forward_step.F,v 1.123 2005/11/04 01:19:24 jmc Exp $
 C $Name:  $
 
 #include "PACKAGES_CONFIG.h"
@@ -115,7 +115,9 @@ C     myThid - thread number for this instance of the routine.
       _RL     myTime
 
 C     == Local variables ==
+#ifdef COMPONENT_MODULE
       INTEGER myItP1
+#endif
 CEOP
 
 #ifdef ALLOW_DEBUG
