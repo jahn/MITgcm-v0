@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/thsice/thsice_ini_vars.F,v 1.4 2005/01/31 19:37:06 jmc Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/thsice/thsice_ini_vars.F,v 1.5 2005/11/04 01:34:35 jmc Exp $
 C $Name:  $
 
 #include "THSICE_OPTIONS.h"
@@ -40,7 +40,7 @@ C     i,j    :: Loop counters
       INTEGER bi, bj
       INTEGER I, J
       INTEGER prec
-      CHARACTER*(MAX_LEN_FNAM) fn
+c     CHARACTER*(MAX_LEN_FNAM) fn
       _RL v2Loc
 
 
