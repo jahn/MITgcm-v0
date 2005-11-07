@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/eesupp/inc/MAIN_PDIRECTIVES2.h,v 1.6 2004/03/27 03:51:50 edhill Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/eesupp/inc/MAIN_PDIRECTIVES2.h,v 1.7 2005/11/07 18:16:08 cnh Exp $
 C $Name:  $
 CBOP
 C     !ROUTINE: MAIN_PDIRECTIVES2.h
@@ -47,3 +47,6 @@ C
 #endif
 C
 
+#ifdef USE_OMP_THREADING
+C$OMP  END PARALLEL
+#endif 
