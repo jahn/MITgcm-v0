@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/mom_vecinv/mom_vecinv.F,v 1.54 2005/10/12 01:52:09 jmc Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/mom_vecinv/mom_vecinv.F,v 1.55 2005/12/08 15:44:34 heimbach Exp $
 C $Name:  $
 
 #include "MOM_VECINV_OPTIONS.h"
@@ -164,6 +164,7 @@ c       mT(i,j)    = 0.
 #ifdef ALLOW_AUTODIFF_TAMC
         strain(i,j)  = 0. _d 0
         tension(i,j) = 0. _d 0
+        hFacZ(i,j)   = 0. _d 0
 #endif
        ENDDO
       ENDDO
