@@ -1,8 +1,11 @@
-$Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/doc/tag-index,v 1.588 2005/12/08 15:47:40 heimbach Exp $
+$Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/doc/tag-index,v 1.589 2005/12/08 22:25:07 jmc Exp $
 $Name:  $
 
     Notes on tags used in MITgcmUV
     ==============================
+
+o gmredi: fix bugs in slope tapering ldd97 (depthZ had the wrong sign)
+     and update lab_sea output.txt file.
 
 checkpoint57y_post
 First step for a NLFS adjoint
