@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/ini_parms.F,v 1.176 2006/02/07 11:47:48 mlosch Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/ini_parms.F,v 1.177 2006/02/10 07:56:20 mlosch Exp $
 C $Name:  $
 
 #include "PACKAGES_CONFIG.h"
@@ -183,7 +183,8 @@ C--   Continuous equation parameters
      & useRealFreshWaterFlux, convertFW2Salt,
      & temp_EvPrRn, salt_EvPrRn, trac_EvPrRn,
      & zonal_filt_lat,
-     & inAdExact
+     & inAdExact,
+     & balanceEmPmR, balanceQnet, balancePrintMean
 
 C--   Elliptic solver parameters
       NAMELIST /PARM02/
