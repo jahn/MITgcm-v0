@@ -1,4 +1,4 @@
-errC $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/ecco/cost_averagesfields.F,v 1.7 2006/02/16 21:57:12 heimbach Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/ecco/cost_averagesfields.F,v 1.8 2006/02/16 22:05:51 heimbach Exp $
 
 #include "COST_CPPOPTIONS.h"
 #ifdef ALLOW_OBCS
