@@ -1,4 +1,4 @@
-c $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/exf/exf_getforcing.F,v 1.21 2005/12/13 19:46:46 heimbach Exp $
+c $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/exf/exf_getforcing.F,v 1.22 2006/03/02 15:30:11 heimbach Exp $
 
 #include "EXF_OPTIONS.h"
 
@@ -220,7 +220,7 @@ c     Diagnostics output
       call exf_diagnostics_fill( mytime, myiter, mythid )
 
 c     Map the forcing fields onto the corresponding model fields.
-      call exf_mapfields( mythid )
+      call exf_mapfields( mytime, myiter, mythid )
 
       end
 
