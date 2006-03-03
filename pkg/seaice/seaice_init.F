@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/seaice/Attic/seaice_init.F,v 1.28 2004/12/27 20:34:11 dimitri Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/seaice/Attic/seaice_init.F,v 1.29 2006/03/03 07:52:01 mlosch Exp $
 C $Name:  $
 
 #include "SEAICE_OPTIONS.h"
@@ -216,6 +216,8 @@ C--   Make sure that DXTICE and DYTICE do not contain any zeros
           UICEC(I,J,bi,bj)=ZERO
           VICEC(I,J,bi,bj)=ZERO
           AMASS(I,J,bi,bj)=1000.0 _d 0
+          GWATX(I,J,bi,bj)=ZERO
+          GWATY(I,J,bi,bj)=ZERO
          ENDDO
         ENDDO
 
