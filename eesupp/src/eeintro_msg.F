@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/eesupp/src/eeintro_msg.F,v 1.9 2004/09/04 18:19:21 edhill Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/eesupp/src/eeintro_msg.F,v 1.10 2006/03/03 18:36:53 edhill Exp $
 
 #include "CPP_EEOPTIONS.h"
 
@@ -16,6 +16,7 @@ C     checkpoint of the code is running.  The routine doesnt currently
 C     report the user id or machine name correctly.
 
 C     !USES:
+#include "BUILD_INFO.h"
 #include "SIZE.h"
 #include "EEPARAMS.h"
 #include "EESUPPORT.h"
