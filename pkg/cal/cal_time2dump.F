@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/cal/Attic/cal_time2write.F,v 1.1 2006/03/20 15:14:28 jmc Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/cal/cal_time2dump.F,v 1.1 2006/03/22 21:05:37 heimbach Exp $
 C $Name:  $
 
 #include "CAL_OPTIONS.h"
