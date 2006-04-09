@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/forward_step.F,v 1.138 2006/04/04 14:52:43 heimbach Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/forward_step.F,v 1.139 2006/04/09 17:35:30 heimbach Exp $
 C $Name:  $
 
 #include "PACKAGES_CONFIG.h"
@@ -90,6 +90,9 @@ C     == Global variables ==
 # endif
 # ifdef ALLOW_CD_CODE
 #  include "CD_CODE_VARS.h"
+# endif
+# ifdef ALLOW_THSICE
+#  include "THSICE_VARS.h"
 # endif
 # ifdef ALLOW_EBM
 #  include "EBM.h"
