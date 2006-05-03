@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/the_main_loop.F,v 1.69 2006/04/09 17:35:30 heimbach Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/the_main_loop.F,v 1.70 2006/05/03 23:34:42 heimbach Exp $
 C $Name:  $
 
 #include "PACKAGES_CONFIG.h"
@@ -54,6 +54,7 @@ c They provide the fields to be stored.
 # include "FFIELDS.h"
 # include "EOS.h"
 # include "GAD.h"
+# include "MOM_FLUXFORM.h"
 # ifdef ALLOW_CD_CODE
 #  include "CD_CODE_VARS.h"
 # endif
