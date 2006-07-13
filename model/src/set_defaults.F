@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/set_defaults.F,v 1.116 2006/06/07 01:55:13 heimbach Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/set_defaults.F,v 1.117 2006/07/13 02:58:03 jmc Exp $
 C $Name:  $
 
 #include "CPP_OPTIONS.h"
@@ -74,7 +74,8 @@ C     General cylindrical coordinate system
 C     Coriolis map:
       useConstantF        = .FALSE.
       useBetaPlaneF       = .FALSE.
-      useSphereF          = .FALSE.
+      useSphereF          = .TRUE.
+      use3dCoriolis       = .TRUE.
 
 
 C--   Set default "physical" parameters
