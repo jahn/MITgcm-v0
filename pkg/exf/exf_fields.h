@@ -1,4 +1,4 @@
-c $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/exf/Attic/exf_fields.h,v 1.15 2006/06/05 14:56:59 heimbach Exp $
+c $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/exf/Attic/exf_fields.h,v 1.16 2006/12/11 16:19:19 dimitri Exp $
 c
 c
 c     ==================================================================
@@ -251,4 +251,6 @@ c
 #if defined (ALLOW_RUNOFF) || defined (ALLOW_SEAICE)
       common /exfl_runoff_r/ runoff
       _RL runoff    (1-olx:snx+olx,1-oly:sny+oly,nsx,nsy)
+      _RL runoff0   (1-olx:snx+olx,1-oly:sny+oly,nsx,nsy)
+      _RL runoff1   (1-olx:snx+olx,1-oly:sny+oly,nsx,nsy)
 #endif
