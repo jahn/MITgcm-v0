@@ -1,4 +1,4 @@
-c $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/exf/Attic/exf_set_climsst.F,v 1.14 2005/11/08 15:53:41 cnh Exp $
+c $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/exf/Attic/exf_set_climsst.F,v 1.15 2006/12/14 22:15:27 dimitri Exp $
 
 #include "EXF_OPTIONS.h"
 
@@ -113,7 +113,7 @@ c     get record numbers and interpolation factor for climsst
       _BARRIER
           interp_method = 2
           call exf_interp(
-     &    climsstfile, exf_iprec
+     &    climsstfile, exf_clim_iprec
      &  , climsst1, count1, xC, yC
      &  ,climsst_lon0,climsst_lon_inc
      &  ,climsst_lat0,climsst_lat_inc
