@@ -63,7 +63,8 @@ function [AA,iters,MM] = rdmds(fnamearg,varargin)
 %     'n' 'l' 'b' 'd' 'g' 'c' 'a' 's'  - see FOPEN for more details
 %
 
-% $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/utils/matlab/rdmds.m,v 1.20 2007/01/26 22:36:34 jmc Exp $
+% $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/utils/matlab/rdmds.m,v 1.21 2007/02/17 23:49:43 jmc Exp $
+% $Name:  $
 
 AA=[];
 iters=[];

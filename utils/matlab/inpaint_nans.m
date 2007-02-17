@@ -65,6 +65,9 @@ function B=inpaint_nans(A,method)
 % arguments (output):
 %   B - nxm array with NaNs replaced
 
+% $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/utils/matlab/inpaint_nans.m,v 1.2 2007/02/17 23:49:43 jmc Exp $
+% $Name:  $
+
 % I always need to know which elements are NaN,
 % and what size the array is for any method
 [n,m]=size(A);

@@ -39,7 +39,8 @@ function [] = nc_add(nc,shortName,longName,units,grid,var,varargin)
 % >> close(nc);
 %
 % Written by adcroft@mit.edu, 2004.
-% $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/utils/matlab/nc_add.m,v 1.1 2004/06/04 15:50:52 adcroft Exp $
+% $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/utils/matlab/nc_add.m,v 1.2 2007/02/17 23:49:43 jmc Exp $
+% $Name:  $
 
 if strcmp(shortName,grid{1})
  nc(shortName) = length(var);
