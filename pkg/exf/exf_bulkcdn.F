@@ -1,4 +1,5 @@
-c $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/exf/Attic/exf_bulkcdn.F,v 1.6 2007/01/18 23:44:43 dimitri Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/exf/Attic/exf_bulkcdn.F,v 1.7 2007/04/16 23:27:20 jmc Exp $
+C $Name:  $
 
 #include "EXF_OPTIONS.h"
 
@@ -37,8 +38,8 @@ c     ==================================================================
 c     == global variables ==
 
 #include "SIZE.h"
-#include "exf_constants.h"
-#include "exf_param.h"
+#include "EXF_CONSTANTS.h"
+#include "EXF_PARAM.h"
 
 c     == function arguments ==
       _RL umps
