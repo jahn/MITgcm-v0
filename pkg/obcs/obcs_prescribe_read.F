@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/obcs/obcs_prescribe_read.F,v 1.9 2006/03/22 19:21:58 mlosch Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/obcs/obcs_prescribe_read.F,v 1.10 2007/04/16 23:35:58 jmc Exp $
 C $Name:  $
 
 # include "OBCS_OPTIONS.h"
@@ -25,7 +25,7 @@ c     == global variables ==
 #include "GRID.h"
 #include "OBCS.h"
 #ifdef ALLOW_EXF
-# include "exf_param.h"
+# include "EXF_PARAM.h"
 #endif
 #ifdef ALLOW_PTRACERS.h
 # include "PARAMS.h"
