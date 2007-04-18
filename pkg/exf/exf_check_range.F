@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/exf/exf_check_range.F,v 1.27 2007/04/16 23:27:20 jmc Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/exf/exf_check_range.F,v 1.28 2007/04/18 19:55:34 heimbach Exp $
 C $Name:  $
 
 #include "EXF_OPTIONS.h"
@@ -21,7 +21,6 @@ c     == global variables ==
 #include "EXF_PARAM.h"
 #include "EXF_CONSTANTS.h"
 #include "EXF_FIELDS.h"
-#include "EXF_CLIM_FIELDS.h"
 c     == routine arguments ==
 
 c     mythid - thread number for this instance of the routine.

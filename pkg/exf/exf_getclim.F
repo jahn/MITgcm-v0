@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/exf/exf_getclim.F,v 1.9 2007/04/18 15:34:40 heimbach Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/exf/exf_getclim.F,v 1.10 2007/04/18 19:55:34 heimbach Exp $
 C $Name:  $
 
 #include "EXF_OPTIONS.h"
@@ -41,8 +41,6 @@ c     == global variables ==
 #include "EXF_PARAM.h"
 #include "EXF_CONSTANTS.h"
 #include "EXF_FIELDS.h"
-#include "EXF_CLIM_PARAM.h"
-#include "EXF_CLIM_FIELDS.h"
 
 c     == routine arguments ==
 
