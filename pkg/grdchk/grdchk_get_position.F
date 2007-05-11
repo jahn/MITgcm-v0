@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/grdchk/grdchk_get_position.F,v 1.3 2006/11/19 23:17:17 heimbach Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/grdchk/grdchk_get_position.F,v 1.4 2007/05/11 20:23:26 utke Exp $
 
 #include "CTRL_CPPOPTIONS.h"
 
@@ -46,7 +46,6 @@ c     == local variables ==
 
       integer iG,jG
       integer bi,bj
-      integer pi,pj
       integer i,j,k
       integer iobcs
       integer biwrk,bjwrk
