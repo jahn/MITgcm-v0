@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/packages_boot.F,v 1.40 2007/04/19 13:23:36 heimbach Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/packages_boot.F,v 1.41 2007/06/15 20:48:38 gforget Exp $
 C $Name:  $
 
 #include "PACKAGES_CONFIG.h"
@@ -145,6 +145,10 @@ C--   Close the open data file
 C--   packages with hard-coded switch
 #ifdef ALLOW_CAL
       IF (useEXF) useCAL = .TRUE.
+#endif
+
+#ifdef ALLOW_PROFILES
+      useCAL = .TRUE.
 #endif
 
 C--   packages with an implied switch
