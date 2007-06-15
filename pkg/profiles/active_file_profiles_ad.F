@@ -1,6 +1,6 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/profiles/active_file_profiles_ad.F,v 1.4 2006/07/14 22:12:23 gforget Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/profiles/active_file_profiles_ad.F,v 1.5 2007/06/15 04:46:40 gforget Exp $
 
-#include "CPP_OPTIONS.h"
+#include "PROFILES_OPTIONS.h"
 
 c     ==================================================================
 c
