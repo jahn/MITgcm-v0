@@ -1,5 +1,5 @@
-C$Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/gchem/gchem_fields_load.F,v 1.6 2006/08/09 00:50:10 jmc Exp $
-C$Name:  $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/gchem/gchem_fields_load.F,v 1.7 2007/07/31 23:01:58 ce107 Exp $
+C $Name:  $
 
 #include "GCHEM_OPTIONS.h"
 

@@ -1,5 +1,5 @@
-C$Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/mom_common/mom_init_fixed.F,v 1.3 2006/06/07 01:55:14 heimbach Exp $
-C$Name:  $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/mom_common/mom_init_fixed.F,v 1.4 2007/07/31 23:01:58 ce107 Exp $
+C $Name:  $
 
 #include "MOM_COMMON_OPTIONS.h"
 

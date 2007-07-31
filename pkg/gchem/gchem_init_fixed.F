@@ -1,5 +1,5 @@
-C$Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/gchem/gchem_init_fixed.F,v 1.7 2006/08/02 22:41:42 jmc Exp $
-C$Name:  $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/gchem/gchem_init_fixed.F,v 1.8 2007/07/31 23:01:58 ce107 Exp $
+C $Name:  $
 
 #include "GCHEM_OPTIONS.h"
 

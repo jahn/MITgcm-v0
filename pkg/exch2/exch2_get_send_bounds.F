@@ -1,4 +1,4 @@
-C$Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/exch2/Attic/exch2_get_send_bounds.F,v 1.1 2004/01/09 20:46:09 afe Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/exch2/Attic/exch2_get_send_bounds.F,v 1.2 2007/07/31 23:01:58 ce107 Exp $
 
       SUBROUTINE EXCH2_GET_SEND_BOUNDS(
      I           fCode, eWdth,

@@ -1,5 +1,5 @@
-C$Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/opps/opps_calc.F,v 1.5 2005/05/15 03:04:57 jmc Exp $
-C$Name:  $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/opps/opps_calc.F,v 1.6 2007/07/31 23:01:58 ce107 Exp $
+C $Name:  $
 
 #include "OPPS_OPTIONS.h"
 

@@ -1,5 +1,5 @@
-C$Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/my82/my82_calc_visc.F,v 1.1 2004/09/02 09:11:54 mlosch Exp $
-C$Name:  $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/my82/my82_calc_visc.F,v 1.2 2007/07/31 23:01:58 ce107 Exp $
+C $Name:  $
 #include "MY82_OPTIONS.h"
 
       SUBROUTINE MY82_CALC_VISC( 

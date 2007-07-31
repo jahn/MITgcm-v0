@@ -1,5 +1,5 @@
-C$Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/cost/cost_check.F,v 1.6 2005/10/19 03:27:45 heimbach Exp $
-C$Name:  $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/cost/cost_check.F,v 1.7 2007/07/31 23:01:58 ce107 Exp $
+C $Name:  $
 
 #include "COST_CPPOPTIONS.h"
 
