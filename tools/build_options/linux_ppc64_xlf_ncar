@@ -1,6 +1,6 @@
 #!/bin/bash
 #
-#  $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/tools/build_options/Attic/linux_ppc64_xlf_ncar,v 1.1 2005/08/05 23:38:58 ce107 Exp $
+#  $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/tools/build_options/Attic/linux_ppc64_xlf_ncar,v 1.2 2007/07/31 22:24:51 ce107 Exp $
 #
 
 #  tested on frost, ce107 Aug 4 2005
@@ -10,7 +10,7 @@
 
 S64='$(TOOLSDIR)/set64bitConst.sh'
 MAKEDEPEND=makedepend
-DEFINES='-DWORDLENGTH=4'
+DEFINES='-DWORDLENGTH=4 -DNML_TERMINATOR'
 INCLUDES='-I/contrib/fe_tools/xlc64/netcdf-3.6.0-p1/include'
 CPP='/lib/cpp -traditional -P'
 FC='xlf -q64'
