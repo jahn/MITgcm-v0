@@ -1,5 +1,5 @@
-C$Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/remove_mean.F,v 1.1 2006/02/10 09:09:19 mlosch Exp $
-C$Name:  $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/remove_mean.F,v 1.2 2007/07/31 22:50:24 ce107 Exp $
+C $Name:  $
 
 #include "CPP_OPTIONS.h"
 
