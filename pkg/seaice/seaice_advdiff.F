@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/seaice/seaice_advdiff.F,v 1.21 2007/09/15 16:52:26 jmc Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/seaice/seaice_advdiff.F,v 1.22 2007/09/18 21:18:12 dimitri Exp $
 C $Name:  $
 
 #include "SEAICE_OPTIONS.h"
@@ -270,7 +270,7 @@ C     now do the "explicit" time step
         ENDIF
 
 #ifdef SEAICE_SALINITY
-C--   Effective Sea Ice Salinity
+C--   Effective Sea Ice Salinity (Mass of salt)
         IF ( SEAICEadvSalt ) THEN
          DO j=1-Oly,sNy+Oly
           DO i=1-Olx,sNx+Olx
