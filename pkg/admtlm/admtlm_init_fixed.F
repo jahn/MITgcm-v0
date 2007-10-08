@@ -1,3 +1,5 @@
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/admtlm/admtlm_init_fixed.F,v 1.3 2007/10/08 23:45:51 jmc Exp $
+C $Name:  $
 
 #include "CPP_OPTIONS.h"
 
@@ -55,5 +57,5 @@ c
       call active_write_xy('wetan',wetan,1,0,mythid,dummy)
 
 #endif
-      
+
       end
