@@ -1,3 +1,6 @@
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/autodiff/global_max_ad.flow,v 1.4 2007/10/08 23:50:53 jmc Exp $
+C $Name:  $
+
 C     /==========================================================\
 C     | SUBROUTINE GLOBAL_MAX_R* is linear                       |
 C     | only the array argument is active                        |

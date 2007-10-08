@@ -1,3 +1,5 @@
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/autodiff/adzero_adj.F,v 1.2 2007/10/08 23:50:53 jmc Exp $
+C $Name:  $
 
 #include "CPP_OPTIONS.h"
 
