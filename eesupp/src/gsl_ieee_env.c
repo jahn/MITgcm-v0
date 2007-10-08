@@ -1,4 +1,7 @@
 /* 
+ * $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/eesupp/src/gsl_ieee_env.c,v 1.2 2007/10/08 17:28:53 jmc Exp $
+ * $Name:  $
+ *
  * A cross-platform way of providing access to gsl_ieee_env_setup 
  * from Fortran on any system MITgcm runs on currently.
  */

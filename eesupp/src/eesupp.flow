@@ -1,3 +1,6 @@
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/eesupp/src/eesupp.flow,v 1.8 2007/10/08 17:28:53 jmc Exp $
+C $Name:  $
+
 C---------------------------------------------------------------
 C Subroutine barrier is difficult to handle,
 C it is required but it does not compute values.
