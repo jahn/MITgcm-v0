@@ -1,3 +1,5 @@
+# $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/mnc/README.txt,v 1.15 2007/10/08 17:00:17 jmc Exp $
+# $Name:  $
 
 API Discussions:
 ================

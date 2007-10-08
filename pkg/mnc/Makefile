@@ -1,5 +1,6 @@
 #
-#  $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/mnc/Makefile,v 1.17 2005/02/28 17:53:29 edhill Exp $
+# $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/mnc/Makefile,v 1.18 2007/10/08 17:00:16 jmc Exp $
+# $Name:  $
 #
 #  A Makefile for MNC templates and testing
 #
