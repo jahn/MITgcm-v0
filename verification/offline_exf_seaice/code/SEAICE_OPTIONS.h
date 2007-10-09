@@ -1,4 +1,5 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/verification/offline_exf_seaice/code/SEAICE_OPTIONS.h,v 1.1 2007/06/23 15:02:20 heimbach Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/verification/offline_exf_seaice/code/SEAICE_OPTIONS.h,v 1.2 2007/10/09 02:29:10 jmc Exp $
+C $Name:  $
 
 C     /==========================================================\
 C     | SEAICE_OPTIONS.h                                         |

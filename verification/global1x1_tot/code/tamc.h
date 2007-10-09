@@ -1,3 +1,5 @@
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/verification/global1x1_tot/code/Attic/tamc.h,v 1.5 2007/10/09 02:29:10 jmc Exp $
+C $Name:  $
 
 c     ==================================================================
 c     HEADER TAMC

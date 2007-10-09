@@ -1,7 +1,9 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/verification/natl_box_adjoint/code/Attic/CPP_OPTIONS.h,v 1.3 2004/05/11 20:57:08 heimbach Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/verification/natl_box_adjoint/code/Attic/CPP_OPTIONS.h,v 1.4 2007/10/09 02:29:10 jmc Exp $
+C $Name:  $
+
 C
 
-C 
+C
 C CPP flags controlling which code in included in the files that
 C will be compiled.
 
