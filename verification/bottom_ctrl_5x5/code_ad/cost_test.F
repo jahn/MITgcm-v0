@@ -1,4 +1,5 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/verification/bottom_ctrl_5x5/code_ad/cost_test.F,v 1.1 2006/06/07 02:00:01 heimbach Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/verification/bottom_ctrl_5x5/code_ad/cost_test.F,v 1.2 2007/10/09 02:36:41 jmc Exp $
+C $Name:  $
 
 #include "CPP_OPTIONS.h"
 

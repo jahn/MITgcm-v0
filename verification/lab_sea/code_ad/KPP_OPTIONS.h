@@ -1,3 +1,6 @@
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/verification/lab_sea/code_ad/Attic/KPP_OPTIONS.h,v 1.2 2007/10/09 02:36:27 jmc Exp $
+C $Name:  $
+
 C     /==========================================================\
 C     | KPP_OPTIONS.h                                            |
 C     | o CPP options file for KPP package.                      |
