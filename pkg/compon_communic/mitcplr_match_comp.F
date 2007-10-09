@@ -1,3 +1,6 @@
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/compon_communic/mitcplr_match_comp.F,v 1.2 2007/10/08 23:58:21 jmc Exp $
+C $Name:  $
+
 !=======================================================================
       integer function mitcplr_match_comp( carg )
       implicit none

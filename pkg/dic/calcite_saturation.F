@@ -1,3 +1,6 @@
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/dic/calcite_saturation.F,v 1.4 2007/10/09 00:01:42 jmc Exp $
+C $Name:  $
+
 #include "DIC_OPTIONS.h"
 #include "GCHEM_OPTIONS.h"
 

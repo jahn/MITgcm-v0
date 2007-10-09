@@ -1,3 +1,5 @@
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/cost/cost_vector.F,v 1.4 2007/10/08 23:59:21 jmc Exp $
+C $Name:  $
 
 #include "COST_CPPOPTIONS.h"
 
@@ -85,5 +87,5 @@ C     &             * 0.5*(theta(i,j,k,bi,bj)+theta(i,j-1,k,bi,bj))
       END DO
 
 #endif
-      
+
       end

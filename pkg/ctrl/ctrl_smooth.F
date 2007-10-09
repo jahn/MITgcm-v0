@@ -1,3 +1,6 @@
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/ctrl/ctrl_smooth.F,v 1.3 2007/10/09 00:00:01 jmc Exp $
+C $Name:  $
+
 #include "CPP_OPTIONS.h"
 
       subroutine ctrl_smooth (

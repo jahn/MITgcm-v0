@@ -1,3 +1,6 @@
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/compon_communic/compsend_r4tiles.F,v 1.2 2007/10/08 23:58:20 jmc Exp $
+C $Name:  $
+
 !=======================================================================
       subroutine compsend_r4tiles( dataname,Ni,Oi,Nj,Oj,Nk,Ti,Tj, arr )
       implicit none

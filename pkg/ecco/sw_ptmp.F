@@ -1,4 +1,5 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/ecco/Attic/sw_ptmp.F,v 1.1 2003/11/06 22:10:08 heimbach Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/ecco/Attic/sw_ptmp.F,v 1.2 2007/10/09 00:02:51 jmc Exp $
+C $Name:  $
 
 #include "CPP_OPTIONS.h"
 
@@ -6,17 +7,17 @@ C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg
       _RL function SW_PTMP  (S,T,P,PR)
 
 c     ==================================================================
-c     SUBROUTINE SW_PTMP  
+c     SUBROUTINE SW_PTMP
 c     ==================================================================
 c
 c     o   Calculates potential temperature as per UNESCO 1983 report.
 c
-c     started: 
+c     started:
 c
 c              Armin Koehl akoehl@ucsd.edu
 c
 c     ==================================================================
-c     SUBROUTINE SW_PTMP  
+c     SUBROUTINE SW_PTMP
 c     ==================================================================
 C     S  = salinity    [psu      (PSS-78) ]
 C     T  = temperature [degree C (IPTS-68)]

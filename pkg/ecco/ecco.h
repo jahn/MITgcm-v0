@@ -1,3 +1,5 @@
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/ecco/ecco.h,v 1.2 2007/10/09 00:02:51 jmc Exp $
+C $Name:  $
 
 c     ==================================================================
 c     HEADER ECCO

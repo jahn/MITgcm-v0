@@ -1,3 +1,5 @@
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/ctrl/ctrl_dummy.h,v 1.18 2007/10/09 00:00:00 jmc Exp $
+C $Name:  $
 
 c     ==================================================================
 c     HEADER CONTROL DUMMIES

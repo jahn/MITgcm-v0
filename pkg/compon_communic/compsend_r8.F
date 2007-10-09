@@ -1,3 +1,6 @@
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/compon_communic/compsend_r8.F,v 1.2 2007/10/08 23:58:20 jmc Exp $
+C $Name:  $
+
 !=======================================================================
       subroutine compsend_r8( dataname, Ni,Oi,Nj,Oj, arr )
       implicit none

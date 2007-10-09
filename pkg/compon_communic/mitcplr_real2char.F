@@ -1,3 +1,6 @@
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/compon_communic/mitcplr_real2char.F,v 1.2 2007/10/08 23:58:22 jmc Exp $
+C $Name:  $
+
 !=======================================================================
       subroutine mitcplr_real2char( rarg, carg )
       implicit none

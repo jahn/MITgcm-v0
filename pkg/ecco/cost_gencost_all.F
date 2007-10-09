@@ -1,3 +1,5 @@
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/ecco/cost_gencost_all.F,v 1.2 2007/10/09 00:02:50 jmc Exp $
+C $Name:  $
 
 #include "COST_CPPOPTIONS.h"
 

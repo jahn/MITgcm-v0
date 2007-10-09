@@ -1,4 +1,5 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/ecco/Attic/cost_readgeoid.F,v 1.2 2005/05/23 16:11:38 heimbach Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/ecco/Attic/cost_readgeoid.F,v 1.3 2007/10/09 00:02:50 jmc Exp $
+C $Name:  $
 
 #include "COST_CPPOPTIONS.h"
 

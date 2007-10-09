@@ -1,3 +1,5 @@
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/cost/adcost.h,v 1.7 2007/10/08 23:59:21 jmc Exp $
+C $Name:  $
 
 c     ==================================================================
 c     HEADER ADCOST

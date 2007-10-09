@@ -1,3 +1,5 @@
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/ctrl/ctrl_init_variables.F,v 1.9 2007/10/09 00:00:00 jmc Exp $
+C $Name:  $
 
 #include "CTRL_CPPOPTIONS.h"
 

@@ -1,4 +1,5 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/cost/cost_init_varia.F,v 1.8 2007/03/24 02:23:09 heimbach Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/cost/cost_init_varia.F,v 1.9 2007/10/08 23:59:21 jmc Exp $
+C $Name:  $
 
 #include "PACKAGES_CONFIG.h"
 #include "COST_CPPOPTIONS.h"
