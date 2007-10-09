@@ -1,3 +1,5 @@
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/rbcs/rbcs_add_tendency.F,v 1.3 2007/10/09 00:09:25 jmc Exp $
+C $Name:  $
 
 #include "CPP_OPTIONS.h"
 #include "PACKAGES_CONFIG.h"

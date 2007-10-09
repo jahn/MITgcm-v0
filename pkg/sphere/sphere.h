@@ -1,3 +1,5 @@
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/sphere/sphere.h,v 1.3 2007/10/09 00:11:39 jmc Exp $
+C $Name:  $
 
 c     ==================================================================
 c     HEADER SPHERE

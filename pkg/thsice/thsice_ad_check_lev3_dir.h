@@ -1,3 +1,6 @@
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/thsice/thsice_ad_check_lev3_dir.h,v 1.4 2007/10/09 00:12:13 jmc Exp $
+C $Name:  $
+
 CADJ STORE iceMask    = tapelev3, key = ilev_3
 CADJ STORE iceHeight  = tapelev3, key = ilev_3
 CADJ STORE snowHeight = tapelev3, key = ilev_3

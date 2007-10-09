@@ -1,3 +1,5 @@
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/seaice/seaice_ad_check_lev3_dir.h,v 1.13 2007/10/09 00:10:13 jmc Exp $
+C $Name:  $
 
 CADJ STORE StoreSEAICE    = tapelev3, key = ilev_3
 

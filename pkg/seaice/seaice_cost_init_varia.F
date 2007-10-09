@@ -1,4 +1,5 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/seaice/seaice_cost_init_varia.F,v 1.3 2007/09/28 00:52:18 heimbach Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/seaice/seaice_cost_init_varia.F,v 1.4 2007/10/09 00:10:13 jmc Exp $
+C $Name:  $
 
 #include "AD_CONFIG.h"
 #include "SEAICE_OPTIONS.h"

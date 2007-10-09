@@ -1,3 +1,5 @@
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/seaice/seaice_cost_export.F,v 1.2 2007/10/09 00:10:13 jmc Exp $
+C $Name:  $
 
 #include "SEAICE_OPTIONS.h"
 
@@ -54,5 +56,5 @@ c--   end of bi,bj loop
       end do
 
 #endif
-      
+
       end

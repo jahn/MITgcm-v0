@@ -1,3 +1,6 @@
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/my82/MY82_OPTIONS.h,v 1.2 2007/10/09 00:13:15 jmc Exp $
+C $Name:  $
+
 C     /===========================================================\
 C     | MY82_OPTIONS.h                                            |
 C     | o CPP options file for MY82 package.                      |
