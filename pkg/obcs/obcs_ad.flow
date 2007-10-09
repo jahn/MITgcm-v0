@@ -1,3 +1,5 @@
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/obcs/obcs_ad.flow,v 1.2 2007/10/09 00:07:14 jmc Exp $
+C $Name:  $
 
 C----------------------------------------
 C subroutine  OBCS_DIAGS

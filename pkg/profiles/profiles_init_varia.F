@@ -1,4 +1,5 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/profiles/profiles_init_varia.F,v 1.6 2006/10/25 01:47:31 gforget Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/profiles/profiles_init_varia.F,v 1.7 2007/10/09 00:07:59 jmc Exp $
+C $Name:  $
 
 #include "PROFILES_OPTIONS.h"
 

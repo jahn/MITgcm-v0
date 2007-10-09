@@ -1,3 +1,6 @@
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/obcs/obcs_ad_check_lev3_dir.h,v 1.4 2007/10/09 00:07:14 jmc Exp $
+C $Name:  $
+
 #ifdef ALLOW_OBCS
 #
 CADJ STORE shiftvel = tapelev3, key = ilev_3

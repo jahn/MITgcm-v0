@@ -1,4 +1,5 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/grdchk/grdchk_check.F,v 1.1 2005/09/03 04:17:57 heimbach Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/grdchk/grdchk_check.F,v 1.2 2007/10/09 00:05:45 jmc Exp $
+C $Name:  $
 
 #include "CTRL_CPPOPTIONS.h"
 
