@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/obcs/orlanski_south.F,v 1.5 2004/09/20 23:22:58 heimbach Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/obcs/orlanski_south.F,v 1.6 2007/11/04 03:48:53 jmc Exp $
 C $Name:  $
 
 #include "OBCS_OPTIONS.h"
@@ -245,7 +245,7 @@ C              copy (current time) t to t-1 arrays
          ENDDO
       ENDDO
 
-#endif ALLOW_OBCS_SOUTH */
+#endif /* ALLOW_OBCS_SOUTH */
 #endif /* ALLOW_ORLANSKI */
       RETURN
       END
