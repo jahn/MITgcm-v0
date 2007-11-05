@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/thermodynamics.F,v 1.119 2007/10/23 16:55:46 heimbach Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/thermodynamics.F,v 1.120 2007/11/05 18:52:21 jmc Exp $
 C $Name:  $
 
 #include "PACKAGES_CONFIG.h"
@@ -87,7 +87,8 @@ C     == Global variables ===
 #endif
 #ifdef ALLOW_PTRACERS
 # include "PTRACERS_SIZE.h"
-# include "PTRACERS.h"
+# include "PTRACERS_PARAMS.h"
+# include "PTRACERS_FIELDS.h"
 #endif
 #ifdef ALLOW_TIMEAVE
 # include "TIMEAVE_STATV.h"
