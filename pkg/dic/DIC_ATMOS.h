@@ -1,3 +1,6 @@
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/dic/DIC_ATMOS.h,v 1.2 2007/11/08 22:35:23 jmc Exp $
+C $Name:  $
+
        COMMON /INTERACT_ATMOS_NEEDS/
      &              co2atmos,
      &              total_atmos_carbon, total_ocean_carbon,
