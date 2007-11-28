@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/packages_init_variables.F,v 1.63 2007/11/28 00:18:17 dimitri Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/packages_init_variables.F,v 1.64 2007/11/28 09:26:16 dimitri Exp $
 C $Name:  $
 
 #include "PACKAGES_CONFIG.h"
@@ -330,7 +330,7 @@ C Initialize FIZHI state variables
 #endif
 
 #ifdef ALLOW_SALT_PLUME
-      IF ( useSaltPlume ) CALL SALT_PLUME_INIT_VARIA( myThid )
+      IF ( useSALT_PLUME ) CALL SALT_PLUME_INIT_VARIA( myThid )
 #endif
 
 #ifdef ALLOW_DEBUG
