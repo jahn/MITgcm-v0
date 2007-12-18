@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/kpp/KPP.h,v 1.9 2007/09/22 17:55:32 dimitri Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/kpp/KPP.h,v 1.10 2007/12/18 09:05:59 dimitri Exp $
 C $Name:  $
 
 #ifdef ALLOW_KPP
@@ -43,7 +43,6 @@ CEOP
       COMMON /kpp_short/ KPPfrac
 
 #endif /* ALLOW_KPP */
-
 
 CEH3 ;;; Local Variables: ***
 CEH3 ;;; mode:fortran ***
