@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/set_defaults.F,v 1.133 2008/02/05 13:32:49 mlosch Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/set_defaults.F,v 1.134 2008/02/25 20:57:24 mlosch Exp $
 C $Name:  $
 
 #include "CPP_OPTIONS.h"
@@ -275,6 +275,7 @@ C--   Time stepping parameters
       pickup_read_mdsio = .TRUE.
       pickup_write_mdsio= .TRUE.
       pickup_write_immed= .FALSE.
+      writePickupAtEnd  = .TRUE.
       dumpFreq          = deltaT*0
       adjDumpFreq       = deltaT*0
       diagFreq          = deltaT*0
