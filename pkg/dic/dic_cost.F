@@ -1,10 +1,7 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/dic/dic_cost.F,v 1.8 2008/04/04 21:37:06 dfer Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/dic/dic_cost.F,v 1.9 2008/04/07 20:31:16 dfer Exp $
 C $Name:  $
 
-cswdcost -- add sunroutine ---
 #include "DIC_OPTIONS.h"
-#include "GCHEM_OPTIONS.h"
-
 
 CStartOfInterFace
       SUBROUTINE DIC_COST (

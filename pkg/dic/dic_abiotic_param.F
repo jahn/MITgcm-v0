@@ -1,8 +1,7 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/dic/Attic/dic_abiotic_param.F,v 1.9 2008/04/04 21:32:37 dfer Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/dic/Attic/dic_abiotic_param.F,v 1.10 2008/04/07 20:31:16 dfer Exp $
 C $Name:  $
 
 #include "DIC_OPTIONS.h"
-#include "GCHEM_OPTIONS.h"
 
 CBOP
 C !ROUTINE: DIC_ABIOTIC_PARAM

@@ -1,8 +1,7 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/dic/calcite_saturation.F,v 1.7 2008/04/04 21:32:36 dfer Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/dic/calcite_saturation.F,v 1.8 2008/04/07 20:31:16 dfer Exp $
 C $Name:  $
 
 #include "DIC_OPTIONS.h"
-#include "GCHEM_OPTIONS.h"
 
 CBOP
 C !ROUTINE: CAR_FLUX
