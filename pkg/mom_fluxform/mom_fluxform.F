@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/mom_fluxform/mom_fluxform.F,v 1.40 2007/10/28 21:38:21 jmc Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/mom_fluxform/mom_fluxform.F,v 1.41 2008/04/18 18:11:43 heimbach Exp $
 C $Name:  $
 
 CBOI
@@ -195,7 +195,7 @@ C     Initialise intermediate terms
         rTransU(i,j)= 0.
         rTransV(i,j)= 0.
 c       KE(i,j)     = 0.
-c       hDiv(i,j)   = 0.
+        hDiv(i,j)   = 0.
         vort3(i,j)  = 0.
         strain(i,j) = 0.
         tension(i,j)= 0.
