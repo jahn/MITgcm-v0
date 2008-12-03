@@ -1,7 +1,7 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/flt/Attic/flt_functions.F,v 1.2 2003/10/28 22:21:27 jmc Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/flt/Attic/flt_functions.F,v 1.3 2008/12/03 01:32:35 jmc Exp $
 C $Name:  $
 
-#include "FLT_CPPOPTIONS.h"
+#include "FLT_OPTIONS.h"
 
       _RL     function global2local_i(
      I                                rG,
