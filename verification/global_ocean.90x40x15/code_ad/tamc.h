@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/verification/global_ocean.90x40x15/code_ad/tamc.h,v 1.14 2009/02/13 21:52:16 heimbach Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/verification/global_ocean.90x40x15/code_ad/tamc.h,v 1.15 2009/02/13 21:52:16 heimbach Exp $
 C $Name:  $
 
 #include "PACKAGES_CONFIG.h"
