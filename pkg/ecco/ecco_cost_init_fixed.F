@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/ecco/ecco_cost_init_fixed.F,v 1.15 2009/03/14 12:12:12 heimbach Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/ecco/ecco_cost_init_fixed.F,v 1.16 2009/03/17 15:35:24 heimbach Exp $
 C $Name:  $
 
 #include "PACKAGES_CONFIG.h"
@@ -59,6 +59,7 @@ c     == local variables ==
       _RL     dummy
       _RL     missingObsFlag
       PARAMETER ( missingObsFlag = 1. _d 23 )
+      character*(max_len_mbuf) msgbuf
 
 c     == external functions ==
 
