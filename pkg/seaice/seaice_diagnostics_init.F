@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/seaice/seaice_diagnostics_init.F,v 1.17 2009/06/21 23:08:48 dimitri Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/seaice/seaice_diagnostics_init.F,v 1.18 2009/06/22 05:26:09 dimitri Exp $
 C $Name:  $
 
 #include "SEAICE_OPTIONS.h"
@@ -160,7 +160,7 @@ C     is EmPmR before impact of ice.
      I          diagName, diagCode, diagUnits, diagTitle, myThid )
 
       diagName  = 'SIatmFW '
-      diagTitle = 'Net freshwater flux from the atmosphere (+=down)'
+      diagTitle = 'Net freshwater flux from atmosphere & land (+=down)'
       diagUnits = 'kg/m^2/s        '
       diagCode  = 'SM      U1      '
       CALL DIAGNOSTICS_ADD2LIST( diagNum,
