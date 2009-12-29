@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/thsice/thsice_ave.F,v 1.12 2009/09/03 20:49:25 jmc Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/thsice/thsice_ave.F,v 1.13 2009/12/29 23:07:43 jmc Exp $
 C $Name:  $
 
 #include "THSICE_OPTIONS.h"
@@ -115,7 +115,7 @@ C-- average of Ocean Mixed-Layer temp. & salinity
      &                       1, thSIce_deltaT, bi, bj, myThid )
       ENDIF
 
-       ice_timeAve(1,bi,bj)=ice_timeAve(1,bi,bj)+thSIce_deltaT
+       ice_timeAve(bi,bj) = ice_timeAve(bi,bj)+thSIce_deltaT
 
       ENDIF
 #endif /* ALLOW_TIMEAVE */
