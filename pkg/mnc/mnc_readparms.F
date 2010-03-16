@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/mnc/mnc_readparms.F,v 1.33 2009/06/14 15:36:01 jmc Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/mnc/mnc_readparms.F,v 1.34 2010/03/16 00:16:50 jmc Exp $
 C $Name:  $
 
 #include "MNC_OPTIONS.h"
@@ -52,7 +52,7 @@ C     Functions
 
 C-----
 C     Need some work to make MNC multi-threaded safe.
-C     For now, switch it off (otherwise, it's hanging up somewhere)
+C     For now, switch it off (otherwise, it is hanging up somewhere)
       IF ( nThreads.GT.1 ) THEN
         _BARRIER
         _BEGIN_MASTER( myThid )
