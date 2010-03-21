@@ -1,6 +1,6 @@
 #!/bin/bash
 #
-#  $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/tools/build_options/Attic/linux_ia32_pgf77+authors_fc2,v 1.1 2005/04/26 20:15:38 edhill Exp $
+#  $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/tools/build_options/unsupported/linux_ia32_pgf77+authors_fc2,v 1.1 2010/03/21 16:08:29 jmc Exp $
 #
 
 FC='/usr/local/pkg/pgi/pgi-5.2/linux86/5.2/bin/pgf77'
