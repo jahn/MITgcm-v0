@@ -1,5 +1,8 @@
 #!/bin/bash
 #
+# $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/tools/build_options/Attic/linux_ia64_ifort+oad,v 1.3 2010/03/21 18:01:13 jmc Exp $
+# $Name:  $
+
 #  Build options for the intel compiler with OpenAD
 
 FC=ifort
