@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/ctrl/ctrl_getrec.F,v 1.9 2007/10/09 00:00:00 jmc Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/ctrl/ctrl_getrec.F,v 1.10 2010/03/22 02:16:43 jmc Exp $
 C $Name:  $
 
 #include "PACKAGES_CONFIG.h"
@@ -352,7 +352,7 @@ cgg   Added a 0.5 safety net.
 
 c     Weight belonging to irec for linear interpolation purposes.
 c     Note: The weight as chosen here is 1. - fac of the "old"
-c           MITgcm's estimation program.
+c           MITgcm estimation program.
       fac = 1. - fldsecs/fldperiod
 
 #ifdef ECCO_VERBOSE

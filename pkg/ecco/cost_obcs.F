@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/ecco/cost_obcs.F,v 1.3 2007/10/09 00:02:50 jmc Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/ecco/cost_obcs.F,v 1.4 2010/03/22 02:19:35 jmc Exp $
 C $Name:  $
 
 #include "COST_CPPOPTIONS.h"
@@ -14,7 +14,7 @@ c     ==================================================================
 c     SUBROUTINE cost_obcs
 c     ==================================================================
 c
-c     o Evaluate cost function contributions for obc's
+c     o Evaluate cost function contributions for obcs
 c
 c     ==================================================================
 c     SUBROUTINE cost_obcs
