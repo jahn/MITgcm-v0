@@ -1,6 +1,6 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/exch2/W2_OPTIONS.h,v 1.3 2007/07/25 21:16:54 jmc Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/exch2/W2_OPTIONS.h,v 1.4 2010/04/23 20:21:06 jmc Exp $
 C $Name:  $
- 
+
 C CPP options file for EXCH2 package
 
 #ifndef W2_OPTIONS_H
