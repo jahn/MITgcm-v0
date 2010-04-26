@@ -1,4 +1,6 @@
-#include "CPP_OPTIONS.h"
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/icefront/Attic/icefront_sgrunoff_read.F,v 1.2 2010/04/26 22:12:29 dimitri Exp $
+C $Name:  $
+
 #include "ICEFRONT_OPTIONS.h"
 
       subroutine SGRUNOFF_READ(
