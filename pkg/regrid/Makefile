@@ -1,5 +1,5 @@
 #
-#  $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/regrid/Makefile,v 1.1 2006/08/15 04:05:48 edhill Exp $
+#  $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/regrid/Makefile,v 1.2 2010/05/25 23:30:34 jmc Exp $
 #
 #  A Makefile for REGRID templates
 #
@@ -44,3 +44,4 @@ Clean:
 clean: 
 	-rm -f $(TEMPLATE_FILES)
 
+clean_old:
