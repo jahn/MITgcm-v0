@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/pp81/pp81_readparms.F,v 1.2 2009/10/08 20:08:20 jmc Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/pp81/pp81_readparms.F,v 1.3 2010/08/24 14:59:55 jmc Exp $
 C $Name:  $
 
 #include "PP81_OPTIONS.h"
@@ -29,8 +29,8 @@ C  none
 #ifdef ALLOW_PP81
 
 C !LOCAL VARIABLES: ====================================================
-C  iUnit		:: unit number for I/O
-C  msgBuf		:: message buffer
+C  iUnit                :: unit number for I/O
+C  msgBuf               :: message buffer
       INTEGER iUnit
       CHARACTER*(MAX_LEN_MBUF) msgBuf
 CEOP
