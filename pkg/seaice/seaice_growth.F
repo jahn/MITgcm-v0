@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/seaice/seaice_growth.F,v 1.68 2010/09/03 23:33:49 dimitri Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/seaice/seaice_growth.F,v 1.69 2010/09/14 15:14:07 dimitri Exp $
 C $Name:  $
 
 #include "SEAICE_OPTIONS.h"
