@@ -1,9 +1,10 @@
-$Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/doc/tag-index,v 1.1297 2010/09/16 21:42:40 heimbach Exp $
+$Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/doc/tag-index,v 1.1298 2010/09/17 21:20:52 jmc Exp $
 $Name:  $
 
     Notes on tags used in MITgcmUV
     ==============================
 
+checkpoint62k (2010/09/17)
 o adjoint
    * changed verification/global_ocean.cs32x15 ; adjoint now tests
      Adams-Bashforth 3 + NLFS + RSTAR
