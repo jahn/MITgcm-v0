@@ -1,9 +1,14 @@
 C
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/ctrl/ctrl_check.F,v 1.6 2010/05/11 15:47:10 mlosch Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/ctrl/ctrl_check.F,v 1.7 2010/10/20 22:06:51 gforget Exp $
 C $Name:  $
 
 #include "AD_CONFIG.h"
 #include "CTRL_CPPOPTIONS.h"
+#ifdef ALLOW_ECCO_EVOLUTION
+#ifdef ALLOW_EXF
+# include "EXF_OPTIONS.h"
+#endif
+#endif
 
       SUBROUTINE CTRL_CHECK( myThid )
 C     /==========================================================\
