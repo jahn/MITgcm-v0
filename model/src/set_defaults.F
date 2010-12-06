@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/set_defaults.F,v 1.150 2010/11/12 03:16:16 jmc Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/set_defaults.F,v 1.151 2010/12/06 10:46:17 mlosch Exp $
 C $Name:  $
 
 #include "CPP_OPTIONS.h"
@@ -341,6 +341,7 @@ C--   Input files
       lambdaThetaFile = ' '
       lambdaSaltFile  = ' '
       mdsioLocalDir   = ' '
+      adTapeDir       = ' '
       the_run_name    = ' '
 
       RETURN
