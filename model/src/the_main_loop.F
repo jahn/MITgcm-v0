@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/the_main_loop.F,v 1.111 2010/12/17 04:04:58 gforget Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/the_main_loop.F,v 1.112 2011/01/07 12:29:54 heimbach Exp $
 C $Name:  $
 
 #include "PACKAGES_CONFIG.h"
@@ -108,6 +108,10 @@ c They provide the fields to be stored.
 #  ifdef ALLOW_THSICE
 #   include "THSICE_SIZE.h"
 #   include "THSICE_VARS.h"
+#  endif
+#  ifdef ALLOW_SHELFICE
+#   include "SHELFICE.h"
+#   include "SHELFICE_COST.h"
 #  endif
 #  ifdef ALLOW_EBM
 #   include "EBM.h"
