@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/generic_advdiff/gad_dst3_adv_x.F,v 1.13 2008/02/29 01:30:59 mlosch Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/generic_advdiff/gad_dst3_adv_x.F,v 1.14 2011/03/29 15:47:19 jmc Exp $
 C $Name:  $
 
 #include "GAD_OPTIONS.h"
@@ -23,9 +23,11 @@ C !USES: ===============================================================
 
 C     == GLobal variables ==
 #include "SIZE.h"
-#include "GRID.h"
+#ifdef OLD_DST3_FORMULATION
 #include "EEPARAMS.h"
 #include "PARAMS.h"
+#endif
+#include "GRID.h"
 #include "GAD.h"
 
 C     == Routine arguments ==
