@@ -1,4 +1,3 @@
-# $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/verification/offline_exf_seaice/input.seaicetd/Attic/data.exf,v 1.2 2010/02/17 21:10:57 gforget Exp $
 #
 # *********************
 # External Forcing Data
@@ -8,7 +7,6 @@
  useExfCheckRange  = .TRUE.,
  repeatPeriod      = 31622400.0,
  exf_iprec         = 32,
- exf_yftype        = 'RL',
 #
  &
 
