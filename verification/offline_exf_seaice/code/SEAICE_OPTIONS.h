@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/verification/offline_exf_seaice/code/SEAICE_OPTIONS.h,v 1.5 2011/03/05 18:16:31 heimbach Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/verification/offline_exf_seaice/code/SEAICE_OPTIONS.h,v 1.6 2011/04/28 02:09:00 ifenty Exp $
 C $Name:  $
 
 C     *==========================================================*
@@ -68,7 +68,7 @@ C--   Allow SEAICEuseFlooding, which converts snow to ice if submerged.
 #undef ALLOW_SEAICE_FLOODING
 
 C--   By default sea ice is fresh.  Set following flag for salty ice.
-#undef SEAICE_SALINITY
+#undef SEAICE_VARIABLE_SALINITY
 
 C--   Track sea ice age.
 #undef SEAICE_AGE
