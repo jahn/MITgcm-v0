@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/shelfice/shelfice_cost_accumulate.F,v 1.1 2011/05/09 15:17:12 heimbach Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/shelfice/shelfice_cost_accumulate.F,v 1.2 2011/05/10 07:49:19 mlosch Exp $
 C $Name:  $
 
 #include "SHELFICE_OPTIONS.h"
