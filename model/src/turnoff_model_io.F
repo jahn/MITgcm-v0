@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/turnoff_model_io.F,v 1.5 2011/05/17 22:14:43 jmc Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/turnoff_model_io.F,v 1.6 2011/05/24 20:25:33 jmc Exp $
 C $Name:  $
 
 #include "PACKAGES_CONFIG.h"
@@ -33,7 +33,7 @@ c#endif
 # include "EXF_PARAM.h"
 #endif
 #ifdef ALLOW_OBCS
-# include "OBCS.h"
+# include "OBCS_PARAMS.h"
 #endif
 
 C     !INPUT/OUTPUT PARAMETERS:
