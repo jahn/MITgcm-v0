@@ -1,7 +1,6 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/cost/cost_init_varia.F,v 1.9 2007/10/08 23:59:21 jmc Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/cost/cost_init_varia.F,v 1.10 2011/05/24 22:14:36 jmc Exp $
 C $Name:  $
 
-#include "PACKAGES_CONFIG.h"
 #include "COST_CPPOPTIONS.h"
 
       subroutine cost_init_varia( mythid )
@@ -115,4 +114,3 @@ c--   Initialise the "global" parts of the cost function.
 
       return
       end
-
