@@ -1,8 +1,7 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/grdchk/grdchk_check.F,v 1.3 2010/04/16 02:34:39 jmc Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/grdchk/grdchk_check.F,v 1.4 2011/05/24 22:41:57 jmc Exp $
 C $Name:  $
 
-#include "CTRL_CPPOPTIONS.h"
-
+#include "GRDCHK_OPTIONS.h"
 
       SUBROUTINE GRDCHK_CHECK( myThid )
 
