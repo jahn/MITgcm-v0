@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/diagnostics/diagnostics_calc_phivel.F,v 1.2 2011/06/21 18:00:48 jmc Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/diagnostics/diagnostics_calc_phivel.F,v 1.3 2011/06/24 22:15:48 jmc Exp $
 C $Name:  $
 
 #include "DIAG_OPTIONS.h"
@@ -58,7 +58,7 @@ C     !LOCAL VARIABLES:
 C     i,j,k :: loop indices
       INTEGER i, j, k
       INTEGER bi, bj
-      CHARACTER*(MAX_LEN_MBUF) msgBuf
+c     CHARACTER*(MAX_LEN_MBUF) msgBuf
 
       INTEGER ks
       INTEGER numIters
