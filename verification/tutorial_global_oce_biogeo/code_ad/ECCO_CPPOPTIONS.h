@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/verification/tutorial_global_oce_biogeo/code_ad/Attic/ECCO_CPPOPTIONS.h,v 1.2 2011/08/16 10:35:15 heimbach Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/verification/tutorial_global_oce_biogeo/code_ad/Attic/ECCO_CPPOPTIONS.h,v 1.3 2011/08/16 14:23:01 heimbach Exp $
 C $Name:  $
 
 C
@@ -43,6 +43,8 @@ C
 C       >>> Cost function contributions
 #undef ALLOW_COST_TRACER
 #define ALLOW_DIC_COST
+#undef ALLOW_COST_TEST
+#undef ALLOW_COST_TSQUARED
 
 C ********************************************************************
 C ***               Control vector Package                         ***
