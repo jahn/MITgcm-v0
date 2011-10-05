@@ -1,11 +1,11 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/obcs/obcs_write_pickup.F,v 1.3 2011/05/24 14:31:14 jmc Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/obcs/obcs_write_pickup.F,v 1.4 2011/10/05 14:55:29 mlosch Exp $
 C $Name:  $
 
 #include "OBCS_OPTIONS.h"
 
 C---+----1----+----2----+----3----+----4----+----5----+----6----+----7-|--+----|
 CBOP 0
-C     !ROUTINE: OBCS_READ_PICKUP
+C     !ROUTINE: OBCS_WRITE_PICKUP
 
 C     !INTERFACE:
       SUBROUTINE OBCS_WRITE_PICKUP(
