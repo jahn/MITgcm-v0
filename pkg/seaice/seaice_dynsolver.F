@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/seaice/seaice_dynsolver.F,v 1.46 2011/10/30 16:14:16 heimbach Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/seaice/seaice_dynsolver.F,v 1.47 2011/10/30 22:20:02 heimbach Exp $
 C $Name:  $
 
 #include "SEAICE_OPTIONS.h"
@@ -76,8 +76,10 @@ C incured by IF (DIFFERENT_MULTIPLE ... statement
           PRESS0(i,j,bi,bj) = PRESS0(i,j,bi,bj)*HEFFM(i,j,bi,bj)
           TAUX(i,j,bi,bj)   = 0. _d 0
           TAUY(i,j,bi,bj)   = 0. _d 0
+#ifdef SEAICE_ALLOW_FREEDRIFT
           uice_fd(i,j,bi,bj)= 0. _d 0
           vice_fd(i,j,bi,bj)= 0. _d 0
+#endif
          ENDDO
         ENDDO
        ENDDO
