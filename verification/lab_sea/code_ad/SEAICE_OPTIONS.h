@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/verification/lab_sea/code_ad/SEAICE_OPTIONS.h,v 1.12 2011/10/27 20:48:55 jmc Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/verification/lab_sea/code_ad/SEAICE_OPTIONS.h,v 1.13 2011/10/31 03:20:59 heimbach Exp $
 C $Name:  $
 
 C     *==========================================================*
@@ -111,7 +111,7 @@ C--   not recommended
 #undef SEAICE_ALLOW_CLIPVELS
 
 C     enable free drift code
-#undef SEAICE_ALLOW_FREEDRIFT
+#define SEAICE_ALLOW_FREEDRIFT
 
 #endif /* SEAICE_OPTIONS_H */
 
