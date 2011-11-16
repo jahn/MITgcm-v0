@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/cheapaml/cheapaml_read_pickup.F,v 1.3 2011/03/18 22:38:31 wienders Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/cheapaml/cheapaml_read_pickup.F,v 1.4 2011/11/16 20:00:31 wienders Exp $
 C $Name:  $
 
 #include "CHEAPAML_OPTIONS.h"
