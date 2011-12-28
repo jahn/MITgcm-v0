@@ -1,3 +1,5 @@
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/cheapaml/cheapaml_init_fixed.F,v 1.5 2011/12/28 16:41:19 jmc Exp $
+C $Name:  $
 
 #include "CHEAPAML_OPTIONS.h"
 
