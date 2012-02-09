@@ -1,11 +1,11 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/thsice/thsice_step_fwd.F,v 1.35 2012/02/08 22:32:24 jmc Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/thsice/thsice_step_fwd.F,v 1.36 2012/02/09 02:20:00 heimbach Exp $
 C $Name:  $
 
 #include "THSICE_OPTIONS.h"
 #ifdef ALLOW_ATM2D
 # include "ctrparam.h"
 #endif
-#define THSICE_OLD_STEP_FWD
+#undef THSICE_OLD_STEP_FWD
 
 CBOP
 C     !ROUTINE: THSICE_STEP_FWD
