@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/autodiff/autodiff_restore.F,v 1.20 2011/06/07 20:06:32 jmc Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/autodiff/autodiff_restore.F,v 1.21 2012/03/06 15:37:24 jmc Exp $
 C $Name:  $
 
 #include "AUTODIFF_OPTIONS.h"
@@ -57,6 +57,7 @@ c They provide the fields to be stored.
 #  endif
 # endif /* ALLOW_EXF */
 # ifdef ALLOW_SEAICE
+#  include "SEAICE_SIZE.h"
 #  include "SEAICE.h"
 # endif
 
