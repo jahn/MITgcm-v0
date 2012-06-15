@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/the_main_loop.F,v 1.126 2012/04/03 12:00:22 heimbach Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/the_main_loop.F,v 1.127 2012/06/15 20:11:49 heimbach Exp $
 C $Name:  $
 
 #include "PACKAGES_CONFIG.h"
@@ -135,6 +135,9 @@ c They provide the fields to be stored.
 #  endif
 #  ifdef ALLOW_OFFLINE
 #   include "OFFLINE.h"
+#  endif
+#  ifdef ALLOW_DEPTH_CONTROL
+#   include "CG2D.h"
 #  endif
 #  ifdef ALLOW_DIVIDED_ADJOINT_MPI
 #   include "mpif.h"
