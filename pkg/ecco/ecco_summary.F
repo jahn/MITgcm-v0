@@ -1,9 +1,8 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/ecco/ecco_summary.F,v 1.10 2012/04/05 00:00:22 jmc Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/ecco/ecco_summary.F,v 1.11 2012/07/06 23:01:31 jmc Exp $
 C $Name:  $
 
-#include "AD_CONFIG.h"
 #include "CPP_OPTIONS.h"
-
+#include "AD_CONFIG.h"
 
       subroutine ecco_Summary(
      I                         mythid
