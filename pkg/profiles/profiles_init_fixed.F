@@ -1,7 +1,8 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/profiles/profiles_init_fixed.F,v 1.21 2012/06/23 17:06:12 jmc Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/profiles/profiles_init_fixed.F,v 1.22 2012/07/06 23:10:28 jmc Exp $
 C $Name:  $
 
 #include "PROFILES_OPTIONS.h"
+#include "AD_CONFIG.h"
 
 C     *==========================================================*
 C     | subroutine profiles_init_fixed
