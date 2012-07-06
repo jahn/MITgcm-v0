@@ -1,9 +1,8 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/ptracers/ptracers_ad_dump.F,v 1.2 2011/08/18 09:10:26 heimbach Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/ptracers/ptracers_ad_dump.F,v 1.3 2012/07/06 23:03:40 jmc Exp $
 C $Name:  $
 
-#include "AD_CONFIG.h"
-#include "PACKAGES_CONFIG.h"
 #include "PTRACERS_OPTIONS.h"
+#include "AD_CONFIG.h"
 
 CBOP
 C     !ROUTINE: ptracers_ad_dump
