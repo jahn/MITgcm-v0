@@ -1,8 +1,7 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/obcs/obcs_sponge.F,v 1.9 2011/05/24 14:31:14 jmc Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/obcs/obcs_sponge.F,v 1.10 2012/07/06 23:07:23 jmc Exp $
 C $Name:  $
 
 #include "OBCS_OPTIONS.h"
-#include "AD_CONFIG.h"
 
 C--   File obcs_sponge.F:
 C--    Contents:

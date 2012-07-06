@@ -1,7 +1,6 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/ptracers/ptracers_monitor_ad.F,v 1.5 2011/09/30 18:43:57 jmc Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/ptracers/ptracers_monitor_ad.F,v 1.6 2012/07/06 23:07:23 jmc Exp $
 C $Name:  $
 
-#include "AD_CONFIG.h"
 #include "PTRACERS_OPTIONS.h"
 
 CBOP
