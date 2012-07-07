@@ -1,7 +1,6 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/autodiff/adread_adwrite.F,v 1.17 2011/06/07 20:06:32 jmc Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/autodiff/adread_adwrite.F,v 1.18 2012/07/07 00:09:49 jmc Exp $
 C $Name:  $
 
-#include "PACKAGES_CONFIG.h"
 #include "AUTODIFF_OPTIONS.h"
 
 c     ==================================================================
