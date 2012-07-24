@@ -1,9 +1,11 @@
-$Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/doc/tag-index,v 1.1694 2012/07/23 23:27:10 jmc Exp $
+$Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/doc/tag-index,v 1.1695 2012/07/24 22:28:02 jmc Exp $
 $Name:  $
 
     Notes on tags used in MITgcmUV
     ==============================
 
+o pkg/exf:
+  - fix and refine checking of surface-relaxation setting when using EXF
 o verification (adjoint exp):
   - reduce length of simulation by half for experiment global_ocean.cs32x15
     (std, seaice & seaice_dynmix) and exp tutorial_dic_adjoffline; update output.
