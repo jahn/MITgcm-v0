@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/ctrl/ctrl_get_gen_rec.F,v 1.13 2011/05/24 22:02:22 jmc Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/ctrl/ctrl_get_gen_rec.F,v 1.14 2012/07/31 16:05:56 heimbach Exp $
 C $Name:  $
 
 #include "CTRL_CPPOPTIONS.h"
@@ -34,7 +34,6 @@ c     == global variables ==
 
 #include "EEPARAMS.h"
 #include "SIZE.h"
-
 #include "ctrl.h"
 #ifdef ALLOW_CAL
 # include "cal.h"
