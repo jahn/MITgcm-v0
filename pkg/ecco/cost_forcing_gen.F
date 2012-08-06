@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/ecco/Attic/cost_forcing_gen.F,v 1.10 2009/04/28 18:13:28 jmc Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/ecco/Attic/cost_forcing_gen.F,v 1.11 2012/08/06 20:41:54 heimbach Exp $
 C $Name:  $
 
 #include "COST_CPPOPTIONS.h"
@@ -46,7 +46,6 @@ c     == global variables ==
 
 #include "ecco_cost.h"
 #include "ctrl.h"
-#include "ctrl_dummy.h"
 #include "optim.h"
 
 c     == routine arguments ==
