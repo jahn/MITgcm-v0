@@ -1,10 +1,10 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/ctrl/ctrl_init_ctrlvar.F,v 1.12 2012/07/06 23:10:28 jmc Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/ctrl/ctrl_init_ctrlvar.F,v 1.13 2012/08/10 19:38:57 jmc Exp $
 C $Name:  $
 
-#include "CTRL_CPPOPTIONS.h"
+#include "CTRL_OPTIONS.h"
 #include "AD_CONFIG.h"
 
-      subroutine ctrl_init_ctrlvar( 
+      subroutine ctrl_init_ctrlvar(
      &       xx_fname
      &     , ivarindex
      &     , ncvarindex_loc

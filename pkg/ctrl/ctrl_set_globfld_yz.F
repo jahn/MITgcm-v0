@@ -1,10 +1,10 @@
 C
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/ctrl/ctrl_set_globfld_yz.F,v 1.16 2011/05/09 08:55:48 mlosch Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/ctrl/ctrl_set_globfld_yz.F,v 1.17 2012/08/10 19:38:58 jmc Exp $
 C $Name:  $
 
-#include "CTRL_CPPOPTIONS.h"
+#include "CTRL_OPTIONS.h"
 
-      subroutine ctrl_set_globfld_yz( 
+      subroutine ctrl_set_globfld_yz(
      I     fname, ivartype, mythid )
 
 c     ==================================================================
@@ -106,7 +106,7 @@ C     method that works for .not.useSingleCPUio cannot be used
        call MDSWRITEFIELD( fname, ctrlprec,.FALSE., 'RL',
      &      Nr, globfld3d,
      &      irec,   optimcycle,  mythid)
-       
+
       enddo
 
       do irec = nrec_nl*Nx+1, ncvarrecs(ivartype)
