@@ -1,7 +1,7 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/ecco/Attic/cost_kapgm.F,v 1.8 2012/08/06 20:41:55 heimbach Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/ecco/Attic/cost_kapgm.F,v 1.9 2012/08/10 19:45:26 jmc Exp $
 C $Name:  $
 
-#include "COST_CPPOPTIONS.h"
+#include "ECCO_OPTIONS.h"
 
 
       subroutine cost_kapgm(

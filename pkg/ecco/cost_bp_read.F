@@ -1,7 +1,7 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/ecco/cost_bp_read.F,v 1.3 2012/02/28 00:51:07 gforget Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/ecco/cost_bp_read.F,v 1.4 2012/08/10 19:45:25 jmc Exp $
 C $Name:  $
 
-#include "COST_CPPOPTIONS.h"
+#include "ECCO_OPTIONS.h"
 
 
       subroutine cost_bp_read(

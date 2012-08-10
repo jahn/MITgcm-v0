@@ -1,7 +1,7 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/ecco/cost_generic.F,v 1.17 2012/08/10 14:34:41 gforget Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/ecco/cost_generic.F,v 1.18 2012/08/10 19:45:26 jmc Exp $
 C $Name:  $
 
-#include "COST_CPPOPTIONS.h"
+#include "ECCO_OPTIONS.h"
 
 
       subroutine cost_generic(

@@ -1,7 +1,7 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/ecco/Attic/cost_readtopex.F,v 1.12 2012/04/13 18:04:30 jmc Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/ecco/Attic/cost_readtopex.F,v 1.13 2012/08/10 19:45:26 jmc Exp $
 C $Name:  $
 
-#include "COST_CPPOPTIONS.h"
+#include "ECCO_OPTIONS.h"
 
 
       subroutine cost_readtopex( irec, mythid )

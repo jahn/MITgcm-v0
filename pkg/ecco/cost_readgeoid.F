@@ -1,7 +1,7 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/ecco/Attic/cost_readgeoid.F,v 1.3 2007/10/09 00:02:50 jmc Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/ecco/Attic/cost_readgeoid.F,v 1.4 2012/08/10 19:45:26 jmc Exp $
 C $Name:  $
 
-#include "COST_CPPOPTIONS.h"
+#include "ECCO_OPTIONS.h"
 
       subroutine cost_readgeoid(
      I                     geoid_covariancefile, reclength, jrec,
