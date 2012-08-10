@@ -1,7 +1,7 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/cost/cost_tile.F,v 1.15 2011/05/24 22:11:29 jmc Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/cost/cost_tile.F,v 1.16 2012/08/10 19:36:02 jmc Exp $
 C $Name:  $
 
-#include "COST_CPPOPTIONS.h"
+#include "COST_OPTIONS.h"
 
 CBOI
 C
