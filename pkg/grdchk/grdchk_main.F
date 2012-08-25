@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/grdchk/grdchk_main.F,v 1.41 2012/08/24 18:43:41 jmc Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/grdchk/grdchk_main.F,v 1.42 2012/08/25 14:18:51 jmc Exp $
 C $Name:  $
 
 #include "GRDCHK_OPTIONS.h"
@@ -80,9 +80,7 @@ C     == global variables ==
 #include "grdchk.h"
 #include "cost.h"
 #include "ctrl.h"
-#ifdef ALLOW_TANGENTLINEAR_RUN
 #include "g_cost.h"
-#endif
 
 C     !INPUT/OUTPUT PARAMETERS:
 C     == routine arguments ==
