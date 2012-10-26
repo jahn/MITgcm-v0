@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/eesupp/inc/DEF_IN_MAKEFILE.h,v 1.2 2012/09/06 22:54:49 jmc Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/eesupp/inc/DEF_IN_MAKEFILE.h,v 1.3 2012/10/26 18:50:17 jmc Exp $
 C $Name:  $
 
 C=====  WARNING: DO NOT include this file in any source code =====
@@ -36,6 +36,7 @@ C-- options set in Makefile by genmake2:
 #undef HAVE_STAT
 #undef HAVE_NETCDF
 #undef HAVE_LAPACK
+#undef HAVE_FLUSH
 
 C-- options that can be set in Makefile by the OPTFILE
 C-  platform specific options:
