@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/seaice/seaice_turnoff_io.F,v 1.1 2010/05/09 22:35:18 jmc Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/seaice/seaice_turnoff_io.F,v 1.2 2012/11/09 22:15:18 heimbach Exp $
 C $Name:  $
 
 #include "SEAICE_OPTIONS.h"
@@ -25,6 +25,7 @@ C     === Global variables ===
 #include "SIZE.h"
 #include "EEPARAMS.h"
 c#include "PARAMS.h"
+#include "SEAICE_SIZE.h"
 #include "SEAICE_PARAMS.h"
 
 C     !INPUT/OUTPUT PARAMETERS:
