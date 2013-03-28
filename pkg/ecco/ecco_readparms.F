@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/ecco/ecco_readparms.F,v 1.62 2013/03/27 15:43:24 gforget Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/ecco/ecco_readparms.F,v 1.63 2013/03/28 00:25:56 gforget Exp $
 C $Name:  $
 
 #include "ECCO_OPTIONS.h"
@@ -58,7 +58,7 @@ c--   Read the namelist input.
      &                   costTranspDataFile,  topexmeanfile,
      &                   using_cost_altim, 
      &                   using_cost_bp, using_cost_scat, 
-     &                   using_cost_sst,
+     &                   using_cost_sst, using_cost_seaice,
      &                   using_topex, using_ers, using_gfo,
      &                   topexstartdate1, topexstartdate2,
      &                   topexperiod, topexfile, tpTimeMaskFile,
