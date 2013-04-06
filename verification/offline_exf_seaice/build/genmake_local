@@ -1,8 +1,0 @@
-#!/bin/bash
-
-# $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/verification/offline_exf_seaice/build/Attic/genmake_local,v 1.1 2013/02/20 20:27:16 jmc Exp $
-
-#  This is the local options file for the "new" version of genmake
-
-MAKEDEPEND=tools_xmakedepend
-
