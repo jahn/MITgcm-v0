@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/packages_write_pickup.F,v 1.40 2013/05/08 00:06:32 jmc Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/packages_write_pickup.F,v 1.41 2013/07/11 14:16:00 m_bates Exp $
 C $Name:  $
 
 #include "PACKAGES_CONFIG.h"
@@ -167,6 +167,11 @@ C     Write pickup file for diagnostics package
         CALL DIAGNOSTICS_WRITE_PICKUP( permPickup,
      I                         suffix, myTime, myIter, myThid )
       ENDIF
+#endif
+
+#ifdef ALLOW_GMREDI
+      CALL GMREDI_WRITE_PICKUP( permPickup,
+     I                          suffix, myTime, myIter, myThid )
 #endif
 
 #ifdef  COMPONENT_MODULE
