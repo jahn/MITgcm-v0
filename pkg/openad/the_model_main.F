@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/verification/OpenAD/code_oad_all/Attic/the_model_main.F,v 1.8 2013/07/07 00:31:20 jmc Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/openad/the_model_main.F,v 1.1 2013/08/20 17:41:50 jahn Exp $
 
 CBOI
 C
