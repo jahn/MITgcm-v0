@@ -1,5 +1,5 @@
 /*
- * $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/compon_communic/Attic/setdir.c,v 1.2 2011/11/16 17:00:04 jmc Exp $
+ * $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/eesupp/src/setdir.c,v 1.1 2013/10/25 17:29:58 jmc Exp $
  * $Name:  $
 */
 
