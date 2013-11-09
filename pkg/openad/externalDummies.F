@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/verification/tutorial_tracer_adjsens/code_oad/Attic/externalDummies.F,v 1.2 2013/11/06 22:07:13 jmc Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/openad/externalDummies.F,v 1.1 2013/11/09 12:17:06 heimbach Exp $
 C $Name:  $
 C ###########################################################
       SUBROUTINE EXCH1_RL(
