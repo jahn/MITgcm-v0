@@ -1,7 +1,10 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/ctrl/ctrl_unpack.F,v 1.47 2013/02/02 23:25:47 jmc Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/ctrl/ctrl_unpack.F,v 1.48 2014/04/04 21:17:33 jmc Exp $
 C $Name:  $
 
 #include "CTRL_OPTIONS.h"
+#ifdef ALLOW_COST
+# include "COST_OPTIONS.h"
+#endif
 #ifdef ALLOW_EXF
 # include "EXF_OPTIONS.h"
 #endif
