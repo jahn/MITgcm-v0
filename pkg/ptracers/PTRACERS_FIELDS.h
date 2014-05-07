@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/ptracers/PTRACERS_FIELDS.h,v 1.1 2007/11/05 18:48:04 jmc Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/ptracers/PTRACERS_FIELDS.h,v 1.2 2014/05/07 15:23:04 jahn Exp $
 C $Name:  $
 
 #ifdef ALLOW_PTRACERS
@@ -28,6 +28,9 @@ C     surfaceForcingPTr :: passive tracer surface forcing
      &              PTRACERS_num)
       COMMON /PTRACERS_FIELDS/
      &              pTracer, gPtr, gpTrNm1, surfaceForcingPTr
+
+      _RL totSurfCorPTr(PTRACERS_num)
+      COMMON /PTRACERS_SURFCOR_FIELDS/ totSurfCorPTr
 
 #endif /* ALLOW_PTRACERS */
 
