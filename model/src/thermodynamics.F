@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/thermodynamics.F,v 1.149 2014/05/07 15:23:03 jahn Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/thermodynamics.F,v 1.150 2014/05/07 22:21:01 heimbach Exp $
 C $Name:  $
 
 #include "PACKAGES_CONFIG.h"
@@ -182,9 +182,11 @@ CADJ STORE theta,salt,wvel = comlev1, key = ikey_dynamics, byte=isbyte
      &                     myTime, myIter, myThid )
       ENDIF
 
+#ifdef DO_PTRACERS_HERE
       IF ( PTRACERS_calcSurfCor ) THEN
        CALL PTRACERS_CALC_WSURF_TR(wVel,myTime,myIter,myThid)
       ENDIF
+#endif
 
       DO bj=myByLo(myThid),myByHi(myThid)
        DO bi=myBxLo(myThid),myBxHi(myThid)
