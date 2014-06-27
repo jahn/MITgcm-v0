@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/cost/cost_tile.F,v 1.20 2014/04/04 21:05:31 jmc Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/cost/cost_tile.F,v 1.21 2014/06/27 13:56:05 mlosch Exp $
 C $Name:  $
 
 #include "COST_OPTIONS.h"
@@ -130,7 +130,7 @@ CADJ &     kind = isbyte
          CALL SHELFICE_COST_ACCUMULATE (myThid)
 #endif
 
-#ifdef ALLOW_THSICE_COST_TEST
+#if (defined ALLOW_THSICE && defined ALLOW_THSICE_COST_TEST)
          IF (useThSIce)
      &    CALL THSICE_COST_DRIVER (myTime, myIter, myThid)
 #endif
