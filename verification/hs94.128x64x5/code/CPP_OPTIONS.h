@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/verification/hs94.cs-32x32x5/code/CPP_OPTIONS.h,v 1.6 2014/07/11 18:51:24 jmc Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/verification/hs94.128x64x5/code/CPP_OPTIONS.h,v 1.8 2014/07/11 18:52:04 jmc Exp $
 C $Name:  $
 
 #ifndef CPP_OPTIONS_H
@@ -41,10 +41,10 @@ C o Include/exclude Implicit vertical advection code
 #define INCLUDE_IMPLVERTADV_CODE
 
 C o Include/exclude AdamsBashforth-3rd-Order code
-#define ALLOW_ADAMSBASHFORTH_3
+#undef ALLOW_ADAMSBASHFORTH_3
 
 C o Include/exclude nonHydrostatic code
-#define ALLOW_NONHYDROSTATIC
+#undef ALLOW_NONHYDROSTATIC
 
 C o Allow to account for heating due to friction (and momentum dissipation)
 #undef ALLOW_FRICTION_HEATING
@@ -76,7 +76,7 @@ C   so that d/dt(eta) is exactly equal to - Div.Transport
 
 C o Allow the use of Non-Linear Free-Surface formulation
 C   this implies that surface thickness (hFactors) vary with time
-#define NONLIN_FRSURF
+#undef NONLIN_FRSURF
 
 C o Include/exclude code for single reduction Conjugate-Gradient solver
 #define ALLOW_SRCG
