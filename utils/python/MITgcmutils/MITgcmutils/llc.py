@@ -1,3 +1,5 @@
+# $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/utils/python/MITgcmutils/MITgcmutils/llc.py,v 1.2 2014/08/08 07:08:48 mlosch Exp $
+# $Name:  $
 import sys
 import numpy as np
 import matplotlib.pyplot as plt
