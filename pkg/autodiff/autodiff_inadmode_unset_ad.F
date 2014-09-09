@@ -1,7 +1,10 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/autodiff/autodiff_inadmode_unset_ad.F,v 1.11 2014/06/28 22:41:00 gforget Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/autodiff/autodiff_inadmode_unset_ad.F,v 1.12 2014/09/09 22:37:23 jmc Exp $
 C $Name:  $
 
 #include "AUTODIFF_OPTIONS.h"
+#ifdef ALLOW_CTRL
+# include "CTRL_OPTIONS.h"
+#endif
 
       SUBROUTINE ADAUTODIFF_INADMODE_UNSET( myThid )
 C     *==========================================================*
