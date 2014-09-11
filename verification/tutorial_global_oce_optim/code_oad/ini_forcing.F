@@ -1,8 +1,11 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/verification/tutorial_global_oce_optim/code_oad/ini_forcing.F,v 1.1 2014/01/17 22:01:16 heimbach Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/verification/tutorial_global_oce_optim/code_oad/ini_forcing.F,v 1.2 2014/09/11 19:54:57 jmc Exp $
 C $Name:  $
 
 #include "PACKAGES_CONFIG.h"
 #include "CPP_OPTIONS.h"
+#ifdef ALLOW_CTRL
+# include "CTRL_OPTIONS.h"
+#endif
 
 CBOP
 C     !ROUTINE: INI_FORCING
