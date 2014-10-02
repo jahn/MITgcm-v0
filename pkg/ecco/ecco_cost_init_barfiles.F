@@ -1,8 +1,11 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/ecco/ecco_cost_init_barfiles.F,v 1.30 2014/09/29 16:47:50 gforget Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/ecco/ecco_cost_init_barfiles.F,v 1.31 2014/10/02 12:28:37 gforget Exp $
 C $Name:  $
 
 #include "ECCO_OPTIONS.h"
 #include "AD_CONFIG.h"
+#ifdef ALLOW_SEAICE
+# include "SEAICE_OPTIONS.h"
+#endif
 
       subroutine ecco_cost_init_barfiles( mythid )
 
