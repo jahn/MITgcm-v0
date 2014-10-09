@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/grdchk/grdchk_get_obcs_mask.F,v 1.9 2014/04/04 21:39:56 jmc Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/grdchk/grdchk_get_obcs_mask.F,v 1.10 2014/10/09 00:50:54 gforget Exp $
 C $Name:  $
 
 #include "GRDCHK_OPTIONS.h"
@@ -28,6 +28,7 @@ c     == global variables ==
 #include "SIZE.h"
 #include "GRID.h"
 #include "ctrl.h"
+#include "CTRL_OBCS.h"
 #include "grdchk.h"
 
 c     == routine arguments ==
