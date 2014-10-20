@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/seaice/lsr.F,v 1.34 2013/01/11 20:18:57 jmc Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/seaice/lsr.F,v 1.35 2014/10/20 03:20:57 gforget Exp $
 C $Name:  $
 
 #ifndef SEAICE_LSRBNEW
@@ -8,6 +8,9 @@ C#define SEAICE_TEST
 #endif
 
 #include "SEAICE_OPTIONS.h"
+#ifdef ALLOW_AUTODIFF
+# include "AUTODIFF_OPTIONS.h"
+#endif
 
 CStartOfInterface
       SUBROUTINE lsr( ilcall, myThid )
