@@ -1,9 +1,12 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/smooth/smooth_correl2dw.F,v 1.10 2014/10/16 19:47:09 gforget Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/smooth/smooth_correl2dw.F,v 1.11 2014/10/20 03:10:16 gforget Exp $
 C $Name:  $
 
 #include "SMOOTH_OPTIONS.h"
 #ifdef ALLOW_CTRL
 # include "CTRL_OPTIONS.h"
+#endif
+#ifdef ALLOW_ECCO
+# include "ECCO_OPTIONS.h"
 #endif
 
       subroutine smooth_correl2Dw (

@@ -1,7 +1,10 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/smooth/smooth_diff3d.F,v 1.8 2014/08/14 16:41:06 jmc Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/smooth/smooth_diff3d.F,v 1.9 2014/10/20 03:10:16 gforget Exp $
 C $Name:  $
 
 #include "SMOOTH_OPTIONS.h"
+#ifdef ALLOW_AUTODIFF
+# include "AUTODIFF_OPTIONS.h"
+#endif
 
       subroutine smooth_diff3D (fld_in,nbt_in,mythid)
 

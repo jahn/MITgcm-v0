@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/main_do_loop.F,v 1.17 2014/10/09 00:46:30 gforget Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/main_do_loop.F,v 1.18 2014/10/20 03:09:03 gforget Exp $
 C $Name:  $
 
 #include "PACKAGES_CONFIG.h"
@@ -33,6 +33,9 @@ c#endif
 #ifdef ALLOW_CTRL
 # include "CTRL_OPTIONS.h"
 #endif
+c#ifdef ALLOW_ECCO
+c# include "ECCO_OPTIONS.h"
+c#endif
 
 CBOP
 C     !ROUTINE: MAIN_DO_LOOP
