@@ -1,7 +1,10 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/ctrl/ctrl_map_ini_genarr.F,v 1.10 2014/10/21 13:13:40 gforget Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/ctrl/ctrl_map_ini_genarr.F,v 1.11 2014/10/21 13:27:00 gforget Exp $
 C $Name:  $
 
 #include "CTRL_OPTIONS.h"
+#ifdef ALLOW_GMREDI
+# include "GMREDI_OPTIONS.h"
+#endif
 
 CBOP
 C     !ROUTINE: CTRL_MAP_INI_GENARR
