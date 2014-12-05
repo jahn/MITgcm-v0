@@ -1,7 +1,6 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/gmredi/gmredi_do_exch.F,v 1.2 2013/09/15 14:31:11 m_bates Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/gmredi/gmredi_do_exch.F,v 1.3 2014/12/05 17:39:39 jmc Exp $
 C $Name:  $
 
-#include "CPP_OPTIONS.h"
 #include "GMREDI_OPTIONS.h"
 
 CBOP
