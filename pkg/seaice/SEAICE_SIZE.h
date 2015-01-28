@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/seaice/SEAICE_SIZE.h,v 1.11 2014/10/20 03:20:57 gforget Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/seaice/SEAICE_SIZE.h,v 1.12 2015/01/28 15:14:35 mlosch Exp $
 C $Name:  $
 
 #ifdef ALLOW_SEAICE
