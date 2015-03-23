@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/autodiff/autodiff_whtapeio_sync.F,v 1.9 2014/04/04 23:04:40 jmc Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/autodiff/autodiff_whtapeio_sync.F,v 1.10 2015/03/23 21:06:13 gforget Exp $
 C $Name:  $
 
 #include "AUTODIFF_OPTIONS.h"
@@ -61,6 +61,10 @@ c     == functions ==
       INTEGER  MDS_RECLEN
       EXTERNAL ILNBLNK
       EXTERNAL MDS_RECLEN
+
+      IF ( .NOT.useAUTODIFF ) THEN
+        RETURN
+      ENDIF
 
       IF ( tapeConcatIO ) THEN
 
