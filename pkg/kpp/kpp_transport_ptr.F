@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/kpp/kpp_transport_ptr.F,v 1.16 2015/07/16 23:24:50 jmc Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/kpp/kpp_transport_ptr.F,v 1.17 2015/07/17 14:26:23 jmc Exp $
 C $Name:  $
 
 #include "KPP_OPTIONS.h"
@@ -49,6 +49,8 @@ c#include "PTRACERS_PARAMS.h"
 #endif
 #ifdef ALLOW_OFFLINE
 # include "OFFLINE_SWITCH.h"
+#else
+      LOGICAL offlineLoadKPP
 #endif
 
 C     == Routine arguments ==
