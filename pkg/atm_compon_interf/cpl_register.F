@@ -1,8 +1,7 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/atm_compon_interf/cpl_register.F,v 1.4 2015/06/15 15:19:32 jmc Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/atm_compon_interf/cpl_register.F,v 1.5 2015/11/12 01:01:58 jmc Exp $
 C $Name:  $
 
-#include "PACKAGES_CONFIG.h"
-#include "CPP_OPTIONS.h"
+#include "ATM_CPL_OPTIONS.h"
 
 CBOP 0
 C !ROUTINE: CPL_REGISTER
