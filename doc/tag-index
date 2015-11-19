@@ -1,8 +1,11 @@
-$Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/doc/tag-index,v 1.2202 2015/11/18 14:58:09 jmc Exp $
+$Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/doc/tag-index,v 1.2203 2015/11/19 14:29:30 mlosch Exp $
 $Name:  $
 
     Notes on tags used in MITgcmUV
     ==============================
+
+o pkg/seaice/seaice_evp:
+  - refine residual computation
 
 checkpoint65q (2015/11/18)
 o pkg/seaice/seaice_evp:
