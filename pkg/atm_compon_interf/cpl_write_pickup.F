@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/atm_compon_interf/cpl_write_pickup.F,v 1.6 2015/12/25 04:38:42 jmc Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/pkg/atm_compon_interf/cpl_write_pickup.F,v 1.7 2015/12/25 21:41:24 jmc Exp $
 C $Name:  $
 
 #include "ATM_CPL_OPTIONS.h"
@@ -146,7 +146,6 @@ c     ENDIF
      &                        sWSpeed   , -j, myIter, myThid )
         IF (j.LE.listDim) wrFldList(j) = 'wndSpeed'
       ENDIF
-# endif /* ALLOW_THSICE */
 #endif /* ALLOW_AIM */
 C-    with only 2-D fields:
         nj = -j
