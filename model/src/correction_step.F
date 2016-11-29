@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/correction_step.F,v 1.27 2016/11/28 23:05:05 jmc Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/correction_step.F,v 1.28 2016/11/29 22:43:58 jmc Exp $
 C $Name:  $
 
 #include "PACKAGES_CONFIG.h"
@@ -52,7 +52,9 @@ C     i,j          :: Loop counters
 C     psFac, nhFac :: Scaling parameters for supressing gradients
       INTEGER i,j
       _RL     psFac, nhFac
+#ifdef ALLOW_SOLVE4_PS_AND_DRAG
       _RL     deltaT_ps
+#endif
 CEOP
 
 #ifdef ALLOW_SOLVE4_PS_AND_DRAG
