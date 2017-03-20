@@ -1,4 +1,4 @@
-C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/the_main_loop.F,v 1.180 2016/05/23 13:12:09 jmc Exp $
+C $Header: /home/jahn/src/cvs2git/MITgcm/20170915-2/gcmpack-all-patch/MITgcm/model/src/the_main_loop.F,v 1.181 2017/03/20 19:38:16 mmazloff Exp $
 C $Name:  $
 
 #include "PACKAGES_CONFIG.h"
@@ -117,8 +117,6 @@ c They provide the fields to be stored.
 #  ifdef ALLOW_BLING
 #   include "BLING_VARS.h"
 #   include "BLING_LOAD.h"
-#   include "BLING_CTRL.h"
-#   include "BLING_COST.h"
 #  endif
 #  ifdef ALLOW_OBCS
 #   include "OBCS_PARAMS.h"
